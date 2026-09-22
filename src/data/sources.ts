@@ -15,6 +15,81 @@ export type Source = {
 
 export const sources: Source[] = [
   {
+    id: 'talent-park-gov', publisher: 'UBND quận Nam Sơn · Thâm Quyến', title: 'Trang giới thiệu Công viên Nhân tài Thâm Quyến', date: '2026', tier: 'primary',
+    url: 'https://www.szns.gov.cn/mlns/stns/lc/csgy/content/post_12595660.html',
+    scope: 'Diện tích, diện tích mặt nước, ngày mở cửa và vị thế công viên chủ đề nhân tài đầu tiên cả nước.',
+  },
+  {
+    id: 'mt-drone-econ', publisher: '21 Thế kỷ Kinh tế Đạo báo', title: 'Không chỉ giao đồ ăn: drone Meituan muốn có lãi trong hai ba năm', date: '25/05/2026', tier: 'secondary',
+    url: 'https://www.21jingji.com/article/20260525/herald/388a82619d8a8b1bd08cef8892f34852.html',
+    scope: 'Phỏng vấn lãnh đạo mảng drone của Meituan: tỷ lệ người trên drone, đà giảm chi phí mỗi đơn, sản lượng một điểm cất cánh và tình hình lãi lỗ. Đây là số do Meituan tự nêu trong phỏng vấn, không phải số trong báo cáo tài chính đã kiểm toán.',
+  },
+  {
+    id: 'mt-talent-route', publisher: 'Meituan', title: 'Tuyến drone Công viên Nhân tài Thâm Quyến khai trương tháng 9', date: '04/09/2023', tier: 'primary',
+    url: 'https://www.meituan.com/news/NN230904058001287',
+    scope: 'Thông cáo của Meituan về tuyến Coastal City – Công viên Nhân tài: ngày khai trương, thứ tự tuyến, điểm cất cánh, đối tác và mức rút ngắn thời gian giao. Con số rút ngắn 50% là do Meituan tự công bố, không có kiểm chứng độc lập.',
+  },
+  {
+    id: 'mt-drone-test', publisher: '21 Thế kỷ Kinh tế Đạo báo', title: 'Tham vọng drone của Meituan không dừng ở giao đồ ăn', date: '23/05/2026', tier: 'secondary',
+    url: 'https://www.21jingji.com/article/20260523/herald/b356afb90c235049a99921270f8f7e78.html',
+    scope: 'Phóng viên tự đặt một đơn tại Thâm Quyến ngày 21/05/2026 và bấm giờ: 21 phút từ lúc đặt tới lúc nhận, trong đó 6 phút là drone bay. Đây là một lần đo thực địa, không phải thời gian trung bình do Meituan công bố.',
+  },
+  {
+    id: 'hqb-szgov', publisher: 'Cổng thông tin Chính quyền TP Thâm Quyến', title: 'Chuyện Thâm Quyến — “Phố điện tử số một Trung Quốc” Hoa Cường Bắc', date: '03/2023', tier: 'primary',
+    url: 'https://www.sz.gov.cn/szstory/202303/content/post_10466042.html',
+    scope: 'Các mốc hình thành khu chợ: khu công nghiệp Thượng Bộ, chợ linh kiện 1988, danh hiệu 2008, bốn năm rào đường làm metro và ngày mở lại phố đi bộ 14/01/2017.',
+  },
+  {
+    id: 'dachong-nfapp', publisher: 'Nam Phương Plus', title: 'Hoa Nhuận Thành: dự án cải tạo làng trong phố lớn nhất Quảng Đông', date: '19/09/2019', tier: 'secondary',
+    url: 'https://static.nfapp.southcn.com/content/201909/19/c2638568.html',
+    scope: 'Quy mô cải tạo làng Đại Xung thành khu Hoa Nhuận Thành, nơi MixC World toạ lạc. Số hộ và số công trình di dời do báo chí dẫn từ hồ sơ dự án, không phải công bố của cơ quan quản lý đất đai.',
+  },
+  {
+    id: 'hqb-markets', publisher: 'Cục Lưu trữ TP Thâm Quyến', title: 'Hoa Cường Bắc — từ chợ linh kiện đến địa danh thương mại công nghệ', date: '2026', tier: 'secondary',
+    url: 'https://www.szdag.gov.cn/gzdt/gzdt/content/post_1615342.html',
+    scope: 'Dùng cho quá trình hình thành và cách phân chia chợ chuyên ngành. Chi tiết từng tầng bán gì là tổng hợp từ hướng dẫn mua sắm tiếng Trung, không phải công bố chính thức của ban quản lý chợ.',
+  },
+  {
+    id: 'dongmen-duten', publisher: 'Đọc Đặc · Tập đoàn Báo chí Thâm Quyến', title: 'Đến Đông Môn, chứng kiến quá khứ và tương lai của Thâm Quyến', date: '2026', tier: 'secondary',
+    url: 'https://m.dutenews.com/n/article/7814945',
+    scope: 'Số thương hiệu trong khu và các di tích còn lại giữa phố mua sắm. Báo địa phương tổng hợp, chưa đối chiếu số liệu quản lý thị trường.',
+  },
+  {
+    id: 'luohu-trades', publisher: 'The Paper và Tinh Đảo Đầu Điều', title: 'Luohu Commercial City: chín nhóm ngành và phố may đo', date: '2024–2025', tier: 'secondary',
+    url: 'https://www.thepaper.cn/newsDetail_forward_22765971',
+    scope: 'Chín nhóm ngành, hơn 140 tiệm may đo, khoảng 70.000 bộ mỗi năm và tỷ lệ khách Hong Kong. Số do báo chí Trung Quốc và Hong Kong tổng hợp, không phải thống kê của ban quản lý.',
+  },
+  {
+    id: 'seg-plaza-wiki', publisher: 'Wikipedia tiếng Anh', title: 'SEG Plaza', date: '2026', tier: 'secondary',
+    url: 'https://en.wikipedia.org/wiki/SEG_Plaza',
+    scope: 'Thông số toà nhà và sự cố rung lắc 18/05/2021. Chiều cao 291,6 m là số sau khi tháo cột ăng-ten; trước đó toà nhà được ghi 356 m.',
+  },
+  {
+    id: 'shenzhen-world-aipc', publisher: 'AIPC · Hiệp hội Trung tâm Hội nghị Quốc tế', title: 'Hồ sơ thành viên Shenzhen World Exhibition & Convention Center', date: '2026', tier: 'secondary',
+    url: 'https://aipc.org/member/shenzhen-world-exhibition-convention-center/',
+    scope: 'Quy mô trung tâm hội chợ: 400.000 m² trưng bày trong nhà ở giai đoạn 1, 19 hall. Trang chính thức của trung tâm dựng bằng JavaScript nên không đọc được số trực tiếp từ nguồn gốc.',
+  },
+  {
+    id: 'aha-warehouse', publisher: 'Ahamove', title: 'Dịch vụ Warehouse — giải pháp doanh nghiệp', date: 'Truy cập 22/09/2026', tier: 'primary',
+    url: 'https://ahamove.com/service/cooperate/warehouse',
+    scope: 'Trang dịch vụ tự công bố tracking real-time và quy trình qua kho. Chỉ dùng xác nhận nền tảng hiện hữu; không chứng minh đã có locker, QR/OTP tự nhận hoặc giao bằng UAV.',
+  },
+  {
+    id: 'aha-delivery-process', publisher: 'Ahamove', title: 'Quy trình giao hàng hoá', date: 'Truy cập 22/09/2026', tier: 'primary',
+    url: 'https://ahamove.com/quytrinhthuchiendonhang',
+    scope: 'Quy trình công khai có liên hệ người nhận, COD, xác thực giao hàng và hoàn trả. Thử nghiệm điểm nhận cần thiết kế riêng các ngoại lệ; không coi quét mã là thay thế toàn bộ nghiệp vụ.',
+  },
+  {
+    id: 'hcm-uav-delivery-2026', publisher: 'Sở Khoa học và Công nghệ TP.HCM', title: 'TP.HCM vận chuyển hàng bằng UAV xuyên biển', date: '12/02/2026', tier: 'primary',
+    url: 'https://dost.hochiminhcity.gov.vn/hoat-dong-so-khcn/tphcm-van-chuyen-hang-bang-uav-xuyen-bien/',
+    scope: 'Công bố tuyến Cần Giờ–Vũng Tàu của Vietnam Post và CT UAV, có giấy phép bay. Chứng minh một triển khai cụ thể, không chứng minh lợi nhuận, độ tin cậy dài hạn hoặc khả năng bay đại trà của Ahamove.',
+  },
+  {
+    id: 'vn-uav-decree-288', publisher: 'Công báo Chính phủ', title: 'Nghị định 288/2025/NĐ-CP về quản lý tàu bay không người lái và phương tiện bay khác', date: '05/11/2025', tier: 'primary',
+    url: 'https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-288-2025-nd-cp-46557.htm',
+    scope: 'Văn bản quản lý UAV được dẫn trong công bố tuyến Cần Giờ–Vũng Tàu. Không suy từ giấy phép tuyến này thành quyền khai thác cho tuyến hoặc đơn vị khác.',
+  },
+  {
     id: 'hqb-xinhua', publisher: 'Tân Hoa Xã', title: 'Nhìn cái đổi và cái không đổi của Hoa Cường Bắc qua “năm cái một”', date: '25/08/2025', tier: 'secondary',
     url: 'https://www.news.cn/fortune/20250825/2dff6f2aa52146d8b014ad21f2e36959/c.html',
     scope: 'Số liệu khu Hoa Cường Bắc do Tân Hoa Xã dẫn từ cơ quan quản lý địa phương. Phạm vi “khu” theo cách bài báo dùng, không trùng ranh giới phường Hoa Cường Bắc trong thống kê hành chính.',

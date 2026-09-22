@@ -1,15 +1,37 @@
-.place-layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: 48px; align-items: center; min-height: 0; }
+/* Ba cột: ảnh · diễn giải · số liệu. Ảnh phủ kín cột nên cao thấp của ba cột luôn bằng nhau. */
+.place-layout { display: grid; grid-template-columns: .82fr 1fr .92fr; gap: 30px; align-items: stretch; min-height: 0; }
+.place-photo { position: relative; display: block; min-height: 0; margin: 0; overflow: hidden; border-radius: 18px; background: var(--surface); }
+.place-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.place-photo figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 22px 16px 10px; color: #fffdf9; font-size: 10px; letter-spacing: .04em; line-height: 1.4; background: linear-gradient(transparent, #0f2130cc); }
 .place-copy { display: grid; gap: 22px; align-content: center; min-width: 0; }
-.place-lead { margin: 0; color: var(--paper); font-size: 21px; line-height: 1.6; }
+.place-lead { margin: 0; color: var(--paper); font-size: 19px; line-height: 1.6; }
 .place-note { margin: 0; padding: 18px 22px; border-left: 3px solid var(--brand); background: #fff3e3; color: var(--paper); font-size: 16px; line-height: 1.6; }
 .place-sources { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .04em; }
 
-.place-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; min-height: 0; }
-.place-metrics > li { display: flex; flex-direction: column; justify-content: center; min-height: 0; padding: 24px 24px 20px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.place-metrics { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin: 0; padding: 0; list-style: none; min-height: 0; }
+.place-metrics > li { display: flex; flex-direction: column; justify-content: center; min-height: 0; padding: 14px 20px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
 .place-metrics > li:first-child { background: #fff3e3; border-color: #ead6b9; }
-/* Ba số liệu thì ô đầu chiếm trọn hàng trên cho cân, khỏi để trống một góc. */
-.place-metrics:has(> li:nth-child(3):last-child) > li:first-child { grid-column: 1 / -1; }
 .place-value { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 6px; margin: 0; color: var(--brand); letter-spacing: -.05em; line-height: 1; }
 .place-value small { font-size: .38em; letter-spacing: -.01em; }
-.place-label { margin: 12px 0 0; color: var(--paper); font-size: 15px; line-height: 1.45; }
-.place-asof { margin: 8px 0 0; color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.place-label { margin: 8px 0 0; color: var(--paper); font-size: 15px; line-height: 1.45; }
+.place-asof { margin: 6px 0 0; color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+
+/* Trang đặc điểm: ảnh nằm dọc bên trái, bốn đặc điểm xếp dọc bên phải. */
+.place-features { display: grid; grid-template-columns: .58fr 1fr; gap: 34px; align-items: stretch; min-height: 0; }
+.place-photo.is-wide { border-radius: 18px; }
+.place-feature-list { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; min-height: 0; }
+.place-feature-list > li { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 18px; min-height: 0; padding: 16px 22px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.place-feature-list > li:nth-child(odd) { background: #fff3e3; border-color: #ead6b9; }
+.place-feature-index { color: var(--brand); font-size: 22px; letter-spacing: -.06em; line-height: 1.3; }
+.place-feature-list h4 { margin: 0 0 6px; font-size: 19px; font-weight: 600; letter-spacing: -.03em; line-height: 1.2; }
+.place-feature-list p { margin: 0; color: var(--mist); font-size: 15px; line-height: 1.5; }
+
+/* Trang gợi ý ghé thăm: bốn ô, đọc lướt là biết đi thế nào và cần lưu ý gì. */
+.place-visit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 0; padding: 0; list-style: none; min-height: 0; }
+.place-visit > li { display: flex; flex-direction: column; justify-content: center; min-height: 0; padding: 24px 28px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.place-visit > li:nth-child(4) { background: #15364d; border-color: #15364d; color: #fffaf2; }
+.place-visit-label { margin: 0 0 12px; color: var(--brand); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.place-visit > li:nth-child(4) .place-visit-label { color: #f2b183; }
+.place-visit h4 { margin: 0 0 10px; font-size: 23px; font-weight: 600; letter-spacing: -.035em; line-height: 1.2; }
+.place-visit-detail { margin: 0; color: var(--mist); font-size: 16px; line-height: 1.55; }
+.place-visit > li:nth-child(4) .place-visit-detail { color: #d5dee6; }

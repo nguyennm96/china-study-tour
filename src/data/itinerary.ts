@@ -67,7 +67,7 @@ export const stops: Stop[] = [
     ],
   },
   {
-    id: 'talent-park', order: 4, name: 'Talent Park', district: 'Nanshan', coordinates: [113.9441738, 22.5136618], embeddedSubjectIds: ['drone'],
+    id: 'talent-park', order: 4, name: 'Talent Park', district: 'Nanshan', coordinates: [113.9441738, 22.5136618], embeddedSubjectIds: ['place-talent-park', 'drone'],
     events: [
       { day: 2, title: 'Drone giao hàng Meituan', contributions: [
         { member: 'Phạm Minh Quân', text: 'Đặt gà rán KFC qua mini-program WeChat, drone hạ xuống tủ, lấy bằng mã. Ấn tượng nhất chuyến. Mô hình lai: người mang hàng ra bãi → drone bay chặng giữa → tủ nhận.' },

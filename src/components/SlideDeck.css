@@ -272,7 +272,7 @@
 @keyframes column-enter { from { transform: scaleY(.1); } to { transform: scaleY(1); } }
 
 /* Số liệu gom theo hai câu chuyện: quy mô và bối cảnh. */
-.deck-canvas:has(.deck-data-summary) .deck-slide-head { max-width: none; }
+.deck-canvas:has(.deck-data-summary, .deck-city-summary) .deck-slide-head { max-width: none; }
 .deck-data-summary { display: grid; grid-template-columns: 1.05fr 1fr; gap: 30px; height: 100%; min-height: 0; }
 .summary-facts { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 16px; min-width: 0; }
 .summary-hero { display: grid; grid-template-columns: minmax(0, 1fr) 112px; align-items: center; gap: 16px; padding: 22px 26px; border-radius: 16px; background: #15364d; color: #fffaf2; }
@@ -301,6 +301,13 @@
 .summary-chart .viz-bar-value { font-size: 26px; }
 .summary-reading { margin: 20px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.5; }
 .summary-scope { margin: 12px 0 0; color: var(--brand); font-size: 12px; line-height: 1.5; }
+.deck-city-summary { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 28px; height: 100%; min-height: 0; }
+.city-summary-scope { margin: 0; color: var(--mist); font-size: 17px; line-height: 1.5; }
+.deck-city-summary .summary-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 36px; }
+.deck-city-summary .summary-metrics .metric-value { font-size: 46px !important; }
+.deck-city-summary .summary-metrics .metric-value small { font-size: 17px; }
+.deck-city-summary .summary-metrics .metric-label { max-width: 30ch; font-size: 18px; line-height: 1.5; }
+.deck-city-summary .summary-metrics .metric-meta { margin-top: 12px; font-size: 12px; }
 
 /* Kết từng chương: một bài học, một liên hệ cụ thể với Ahamove. */
 .deck-canvas:has(.deck-subject-reference, .hotel-ahamove) .deck-slide-head { max-width: none; }
@@ -309,8 +316,13 @@
 .reference-lesson .deck-illustration { height: 170px; margin-bottom: 20px; }
 .reference-lesson .reference-eyebrow { margin: 0 0 10px; color: var(--brand); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 .reference-lesson h3 { margin: 0; font-size: 34px; font-weight: 600; line-height: 1.18; letter-spacing: -.045em; text-wrap: balance; }
-.reference-lesson > p:last-child { margin: 14px 0 0; color: var(--mist); font-size: 16px; line-height: 1.55; }
+.reference-lesson > .reference-observation { margin: 14px 0 0; color: var(--mist); font-size: 16px; line-height: 1.55; }
 .reference-application { display: flex; flex-direction: column; justify-content: center; gap: 23px; min-width: 0; }
+.deck-subject-reference.is-application-only { grid-template-columns: minmax(0, 1fr); }
+.is-application-only .reference-application { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; align-content: center; }
+.is-application-only .reference-application > section { margin-top: 0; }
+.is-application-only .reference-application > section:nth-child(2) { padding-top: 0; border-top: 0; }
+.is-application-only .reference-metrics, .is-application-only .reference-question { grid-column: 1 / -1; }
 .reference-application section h3 { margin: 0 0 8px; color: var(--brand); font-size: 12px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; }
 .reference-application section p { margin: 0; font-size: 21px; line-height: 1.5; letter-spacing: -.02em; }
 .reference-application .reference-metrics { padding-top: 17px; border-top: 1px solid var(--line); }
@@ -344,7 +356,7 @@
   .is-compact .reference-lesson { padding: 18px 24px; }
   .is-compact .reference-lesson .deck-illustration { height: 120px; margin-bottom: 14px; }
   .is-compact .reference-lesson h3 { font-size: 29px; }
-  .is-compact .reference-lesson > p:last-child { font-size: 14px; margin-top: 10px; }
+  .is-compact .reference-lesson > .reference-observation { font-size: 14px; margin-top: 10px; }
   .is-compact .reference-application { gap: 16px; }
   .is-compact .reference-application section h3 { font-size: 11px; margin-bottom: 6px; }
   .is-compact .reference-application section p { font-size: 18px; }
@@ -470,3 +482,12 @@ body.has-stop-modal .deck-foot { transform: translateY(calc(100% + 14px)); opaci
 }
 @keyframes topic-glow { 0%, 100% { filter: drop-shadow(0 1px 0 #b77c12); } 50% { filter: drop-shadow(0 0 5px #f5c53d); } }
 @keyframes topic-sparkle { 0%, 100% { opacity: .3; transform: scale(.65); } 50% { opacity: 1; transform: scale(1.12); } }
+
+/* Trang số liệu drone: hai nhóm cạnh nhau, mỗi nhóm một phạm vi đo. */
+.deck-drone-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px; min-height: 0; align-items: stretch; }
+.deck-drone-figures > section { display: grid; grid-template-rows: auto auto minmax(0, 1fr); min-height: 0; }
+/* Quy tắc "section + section" của khung modal vốn viết cho trang ghi chép; chặn nó ở đây. */
+.deck-drone-figures > section + section { margin-top: 0; padding-top: 0; border-top: 0; }
+.deck-drone-figures h3 { margin: 0 0 6px; font-size: 20px; font-weight: 600; letter-spacing: -.03em; }
+.deck-drone-figures + * { margin-top: 0; }
+.deck-drone-figures .summary-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); min-height: 0; }

@@ -4,6 +4,8 @@ Cập nhật 22/09/2026. Bài trình chiếu gồm ba chủ đề: **Drone giao 
 
 Trên màn chiếu, số liệu có giá trị, nhãn ngắn và mốc thời gian. Nguồn và giới hạn chi tiết nằm trong tài liệu này; không còn panel ghi chú trong ứng dụng. Chương robot được biên tập theo tài liệu do người dùng cung cấp ngày 22/09/2026.
 
+**Biên tập Drone mới nhất (22/09/2026):** chương hiện có 5 slide: mở đầu → trải nghiệm ba bước → quy mô và hạ tầng Thâm Quyến → mô phỏng → liên hệ Việt Nam/Ahamove. Modal Talent Park cũng có 5 trang; đã bỏ trang ghi chép cuối. Slide số liệu chỉ giữ bốn chỉ số của Thâm Quyến năm 2025, kèm mốc thời gian: 310 tuyến, 82 tuyến mới, hơn một triệu chuyến bay chở hàng (tăng 29%) và hơn 1.200 điểm cất/hạ cánh. Hai chỉ số năm 2026 (736.000 chuyến và tỷ trọng sản xuất drone tiêu dùng 70%) đã bỏ khỏi slide; vẫn được lưu trong sổ số liệu bên dưới. Đã bỏ số liệu Meituan toàn cầu, hai mốc 15/34 phút, biểu đồ luỹ kế và trang thông số thế hệ 4 khỏi slide này. Dữ liệu nguồn, ghi chép và thông số vẫn được lưu để đối chiếu. Số slide trong các bảng biên tập cũ bên dưới là lịch sử.
+
 Kiểm tra tự động: `node --test tests/topic-data.test.mjs` (15 test) xác nhận mọi `sourceId` phân giải được, mọi số liệu có mốc thời gian, chuỗi hiển thị khớp giá trị vẽ, các tổng cộng khớp, và hai mốc chưa xác nhận của đoàn không bị dùng làm số liệu.
 
 ## Quy ước
@@ -34,6 +36,29 @@ Kiểm tra tự động: `node --test tests/topic-data.test.mjs` (15 test) xác 
 
 ## Chủ đề 1 — Drone giao hàng
 
+### Việt Nam và Ahamove: đánh giá khả thi
+
+Đối chiếu nguồn công khai ngày 22/09/2026. **Định hướng biên tập theo góp ý của người dùng: drone là câu chuyện Ahamove có thể cân nhắc trong tương lai; pháp lý và hạ tầng là hai thách thức cần giải quyết trước khi triển khai rộng.** Slide không còn đề xuất thử điểm nhận trong ngắn hạn. Đây là nhận định thảo luận, không phải kế hoạch đã được Ahamove phê duyệt. Diễn đạt có điều kiện, không khẳng định Việt Nam cấm mọi hoạt động giao hàng bằng UAV: nguồn bên dưới ghi nhận một tuyến đã được cấp phép.
+
+| Bằng chứng công khai | Ý nghĩa và giới hạn |
+| --- | --- |
+| [Ahamove — dịch vụ Warehouse](https://ahamove.com/service/cooperate/warehouse) công bố theo dõi hành trình real-time và quy trình qua kho. | Có nền tảng vận hành liên quan. Không trình bày tracking như tính năng Ahamove chưa có; nguồn không xác nhận đã có QR/OTP tự nhận hoặc locker. |
+| [Ahamove — quy trình giao hàng](https://ahamove.com/quytrinhthuchiendonhang) có liên hệ khách, COD, xác thực và hoàn trả. | “Nhận một bước” là mục tiêu UX; thử nghiệm vẫn cần xử lý tiền, bàn giao, hàng không được nhận và tranh chấp. |
+| [Sở KH&CN TP.HCM, 12/02/2026](https://dost.hochiminhcity.gov.vn/hoat-dong-so-khcn/tphcm-van-chuyen-hang-bang-uav-xuyen-bien/) công bố tuyến Cần Giờ–Vũng Tàu do Vietnam Post và CT UAV triển khai, có giấy phép bay. | Việt Nam đã có một triển khai cụ thể. Chưa chứng minh hiệu quả kinh tế, độ tin cậy dài hạn hoặc năng lực UAV của Ahamove. |
+| [Nghị định 288/2025/NĐ-CP](https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-288-2025-nd-cp-46557.htm), ban hành và có hiệu lực 05/11/2025, là văn bản quản lý UAV được dẫn trong công bố tuyến trên. | Phải xác định điều kiện và chấp thuận áp dụng cho tuyến dự kiến. Giấy phép của đơn vị khác không phải quyền khai thác của Ahamove. |
+
+**Thách thức pháp lý:** điều kiện quản lý vùng bay, cấp phép cho tuyến dự kiến và trách nhiệm vận hành cần được làm rõ trước khi triển khai. Một tuyến đã được cấp phép không đồng nghĩa mô hình có thể mở rộng tự do hoặc Ahamove đã đủ điều kiện khai thác.
+
+**Thách thức hạ tầng:** cần chuẩn bị điểm cất/hạ cánh, trạm nhận hàng, hệ thống giám sát, bảo quản hàng và quy trình xử lý ngoại lệ. Chưa có dữ liệu xác nhận Ahamove đã có hạ tầng này. Đây là các điều kiện cần chuẩn bị cho hướng phát triển tương lai, không phải đề xuất triển khai ngay.
+
+**Điều kiện xem xét UAV:** chọn tuyến có lợi thế rõ so với đường bộ, chẳng hạn chặng phải đi vòng qua sông; làm cùng đơn vị đủ năng lực vận hành. Cần đánh giá vùng bay và giấy phép phù hợp, hai điểm cất/hạ cánh, thời tiết, tải hàng, năng lực giám sát và phương án giao đường bộ khi không bay được. Không suy từ một chuyến khai trương hoặc quan sát tại Talent Park thành khả năng triển khai đại trà.
+
+**Cách kiểm chứng:** so cùng khu vực, loại đơn và khung giờ với giao tận tay. Đo chi phí đầy đủ trên một đơn giao thành công (giao tới điểm, điểm nhận/thiết bị, nhân sự, bảo trì, hoàn và giao lại); thời gian đặt → khách thực nhận và sai lệch ETA; tỷ lệ khách tự nhận; tỷ lệ giao lại/sự cố. Ghi cả ngày không thể vận hành. Chưa có dữ liệu mật độ đơn, chi phí, tỷ lệ chấp nhận hay báo giá UAV nên chưa tính ROI hoặc đặt mục tiêu số.
+
+Ghi chép “ETA khá sát” là cảm nhận của đoàn. Chưa có phép đo so sánh để kết luận giảm can thiệp của con người tự động làm ETA chính xác hơn; người đóng gói, khách đến lấy, thời tiết và ngoại lệ vẫn ảnh hưởng hành trình.
+
+### Sổ số liệu Drone
+
 | Số liệu | Mốc | Nguồn |
 | --- | --- | --- |
 | >1.000.000 đơn giao thương mại luỹ kế | 30/06/2026 | 21 Thế kỷ Kinh tế Đạo báo, 21/09/2026 · đối chiếu với trang công nghệ Meituan, 07/2026 |
@@ -51,7 +76,7 @@ Kiểm tra tự động: `node --test tests/topic-data.test.mjs` (15 test) xác 
 | Gen 4: 2,5 kg tải · 10 km bán kính · 3 km ≈ 15 phút · gió cấp 6 · −20…50 °C · 30 TOPS | 2025 | Low Altitude Economy, dẫn công bố nhà sản xuất |
 | Giấy phép CAAC phủ toàn quốc, đầu tiên loại này | 04/2025 | Low Altitude Economy |
 
-**Giới hạn.** Con số 15 phút là năng lực thiết kế trên tuyến 3 km, không phải thời gian khách chờ. Slide đặt nó cạnh mốc 34 phút của Meituan kèm cảnh báo rằng hai phép đo khác phạm vi và không được chia cho nhau. Mô phỏng 3D là diễn giải nguyên lý, không tái tạo tuyến Talent Park.
+**Giới hạn.** Con số 15 phút là năng lực thiết kế trên tuyến 3 km, không phải thời gian khách chờ. Hai mốc 15/34 phút được giữ trong dữ liệu nguồn nhưng đã bỏ khỏi slide theo yêu cầu chỉ trình bày số liệu Thâm Quyến; hai phép đo khác phạm vi và không được chia cho nhau. Mô phỏng 3D là diễn giải nguyên lý, không tái tạo tuyến Talent Park.
 
 ## Chủ đề 2 — Robot giao tận phòng khách sạn
 

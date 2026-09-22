@@ -19,7 +19,7 @@ const { buildPresentation } = await import(load('deck'))
 
 test('V2 preserves every original slide once, in presentation order, including the two opening slides', () => {
   assert.deepEqual(Object.values(atlasChapters).flat(), buildPresentation())
-  assert.deepEqual(atlasChapterCounts, { team: 3, drone: 7, robots: 8, meituan: 7, takeaways: 4 })
+  assert.deepEqual(atlasChapterCounts, { team: 3, drone: 5, robots: 8, meituan: 7, takeaways: 4 })
   assert.deepEqual(atlasChapters.team.map(slide => slide.kind), ['team', 'roster', 'itinerary'])
   for (const id of ['drone', 'robots', 'meituan']) assert.match(atlasChapters[id].at(-1).kicker, /Ahamove/)
 })
@@ -34,7 +34,7 @@ test('entry starts with team; map and previews remain distinct from story deep l
 })
 
 test('out-of-range and malformed deep links cannot access missing slide data', () => {
-  assert.deepEqual(parseAtlasRoute('#drone/999999999999999999999999999', atlasChapterCounts), { chapter: 'drone', page: 6 })
+  assert.deepEqual(parseAtlasRoute('#drone/999999999999999999999999999', atlasChapterCounts), { chapter: 'drone', page: 4 })
   assert.deepEqual(parseAtlasRoute('#robots/0', atlasChapterCounts), { chapter: 'robots', page: 0 })
   for (const hash of ['#wrong/1', '#drone/NaN', '#robots/-1', '#drone/1.5', '#meituan/2/3']) assert.deepEqual(parseAtlasRoute(hash, atlasChapterCounts), { chapter: null, page: null })
 })

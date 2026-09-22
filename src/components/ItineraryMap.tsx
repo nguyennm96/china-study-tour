@@ -20,12 +20,11 @@ const PAGE_HEIGHT = 720
 /** Rổ slide có thể nhúng vào ghim: bài chính cộng các bài chia sẻ rời. */
 const allSlides = [...buildPresentation(), ...didiSlides(), ...placeSlides()]
 
-type Page = { kind: 'slide'; slide: Slide } | { kind: 'notes' }
+type Page = { kind: 'slide'; slide: Slide }
 
-const pagesFor = (stop: Stop): Page[] => [
-  ...(stop.embeddedSubjectIds ?? []).flatMap(id => allSlides.filter(slide => slide.subjectId === id).map(slide => ({ kind: 'slide' as const, slide }))),
-  { kind: 'notes' as const },
-]
+/** Chỉ hiện slide đã biên tập; ghi chép thô trong sheet không lên màn hình. */
+const pagesFor = (stop: Stop): Page[] =>
+  (stop.embeddedSubjectIds ?? []).flatMap(id => allSlides.filter(slide => slide.subjectId === id).map(slide => ({ kind: 'slide' as const, slide })))
 
 /** MapLibre tự quy đổi toạ độ chuột và touch theo CSS scale của khung trình chiếu. */
 export function ItineraryMap() {
@@ -124,8 +123,11 @@ export function ItineraryMap() {
   const stop = openId ? stops.find(item => item.id === openId) ?? null : null
   const pages = stop ? pagesFor(stop) : []
   const current = pages[Math.min(page, pages.length - 1)]
+  useEffect(() => {
+    setPage(value => Math.min(value, Math.max(0, pages.length - 1)))
+  }, [pages.length])
   // Một điểm có thể ôm nhiều chủ đề, nên tiêu đề bám theo trang đang mở thay vì ghép hết.
-  const embeddedTitle = current?.kind === 'slide' && current.slide.subjectId ? subjectTitles[current.slide.subjectId] ?? null : null
+  const embeddedTitle = current?.slide.subjectId ? subjectTitles[current.slide.subjectId] ?? null : null
 
   // Khung slide trong modal co theo kích thước thật của khung chứa.
   useLayoutEffect(() => {
@@ -219,31 +221,22 @@ export function ItineraryMap() {
         </header>
 
         <div className="itinerary-modal-body" ref={bodyRef}>
-          {current.kind === 'slide'
-            ? <div className="itinerary-page" style={{ width: PAGE_WIDTH, height: PAGE_HEIGHT, transform: `translate(-50%, -50%) scale(${scale})`, visibility: scale ? 'visible' : 'hidden' }}>
-                <div className={`deck-canvas ${slideOwnsHeading(current.slide) ? 'is-bare' : ''}`}>
-                  {!slideOwnsHeading(current.slide) && <header className="deck-slide-head">
-                    <p className="deck-kicker">{current.slide.kicker}</p>
-                    <h2 className="deck-slide-heading">{current.slide.title}</h2>
-                  </header>}
-                  <div className={`deck-slide-content deck-kind-${current.slide.kind}`}><SlideBody slide={current.slide} /></div>
-                </div>
-              </div>
-            : <div className="itinerary-notes-page">
-                {stop.events.map(event => <section key={event.title}>
-                  <h5>{event.title}</h5>
-                  {event.contributions.length === 0
-                    ? <p className="itinerary-empty">Không có ghi chép nào cho điểm này trong sheet.</p>
-                    : event.contributions.map(item => <p className="itinerary-note" key={item.member}><strong>{item.member}</strong>{item.text}</p>)}
-                </section>)}
-              </div>}
+          <div className="itinerary-page" style={{ width: PAGE_WIDTH, height: PAGE_HEIGHT, transform: `translate(-50%, -50%) scale(${scale})`, visibility: scale ? 'visible' : 'hidden' }}>
+            <div className={`deck-canvas ${slideOwnsHeading(current.slide) ? 'is-bare' : ''}`}>
+              {!slideOwnsHeading(current.slide) && <header className="deck-slide-head">
+                <p className="deck-kicker">{current.slide.kicker}</p>
+                <h2 className="deck-slide-heading">{current.slide.title}</h2>
+              </header>}
+              <div className={`deck-slide-content deck-kind-${current.slide.kind}`}><SlideBody slide={current.slide} /></div>
+            </div>
+          </div>
         </div>
 
         <footer className="itinerary-modal-foot">
           <button type="button" className="itinerary-back" ref={backRef} onClick={() => setOpenId(null)}>
             <MapTrifold size={16} aria-hidden="true" />Quay lại bản đồ
           </button>
-          <p className="itinerary-modal-label">{current.kind === 'slide' ? current.slide.kicker : 'Ghi chép của đoàn trong sheet'}</p>
+          <p className="itinerary-modal-label">{current.slide.kicker}</p>
           {pages.length > 1 && <div className="itinerary-pager">
             <span aria-live="polite">{String(page + 1).padStart(2, '0')} <small>/ {pages.length}</small></span>
             <button type="button" disabled={page === 0} onClick={() => setPage(value => value - 1)} aria-label="Trang trước"><ArrowLeft size={16} aria-hidden="true" /></button>

@@ -21,7 +21,7 @@ export type Slide = { chapter: string; kicker: string; title: string; subjectId?
   | { kind: 'hotel-robot'; page: HotelRobotPage }
   | { kind: 'ahamove'; subjectId: AhamoveSubject }
   | { kind: 'didi'; page: DidiPage }
-  | { kind: 'place'; placeId: string }
+  | { kind: 'place'; placeId: string; page: 'overview' | 'features' | 'visit' }
 )
 
 /** Nhãn ngắn dùng cho thanh tiến trình; tên chủ đề đầy đủ vẫn hiện ở chân slide. */
@@ -36,10 +36,13 @@ function subjectSlides(subject: Subject): Slide[] {
   const slides: Slide[] = [
     { kind: 'title', chapter, subjectId: subject.id, kicker: subject.label, title: subject.title },
     { kind: 'experience', chapter, subjectId: subject.id, kicker: subject.experience.eyebrow, title: `${subject.experience.headline} ${subject.experience.highlight}` },
-    { kind: 'data-summary', chartIndex: subject.id === 'drone' ? 0 : 1, chapter, subjectId: subject.id, kicker: 'Số liệu tổng hợp · Quy mô', title: subject.id === 'drone' ? 'Một triệu đơn. Một mạng lưới đang lớn lên.' : '150 triệu đơn — trong một ngày đạt đỉnh.' },
-    { kind: 'data-context', chartIndex: subject.id === 'drone' ? 1 : 0, chapter, subjectId: subject.id, kicker: 'Số liệu tổng hợp · Bối cảnh', title: subject.id === 'drone' ? 'Hạ tầng và tốc độ: đọc đúng phạm vi.' : 'Quy mô lớn. Chi phí cũng lớn.' },
+    { kind: 'data-summary', chartIndex: subject.id === 'drone' ? 0 : 1, chapter, subjectId: subject.id, kicker: subject.id === 'drone' ? 'Drone · Số liệu gom một trang' : 'Số liệu tổng hợp · Quy mô', title: subject.id === 'drone' ? 'Mạng bay của thành phố, cách vận hành của Meituan.' : '150 triệu đơn — trong một ngày đạt đỉnh.' },
   ]
-  if (subject.data.specs || subject.data.fieldNotes) {
+  // Drone chỉ trình bày số liệu Thâm Quyến; bỏ trang thông số theo lựa chọn biên tập.
+  if (subject.id !== 'drone') {
+    slides.push({ kind: 'data-context', chartIndex: 0, chapter, subjectId: subject.id, kicker: 'Số liệu tổng hợp · Bối cảnh', title: 'Quy mô lớn. Chi phí cũng lớn.' })
+  }
+  if (subject.id !== 'drone' && (subject.data.specs || subject.data.fieldNotes)) {
     slides.push({ kind: 'evidence', chapter, subjectId: subject.id, kicker: 'Ranh giới bằng chứng', title: subject.data.specs?.title ?? subject.data.fieldNotes!.title })
   }
   slides.push({
@@ -68,23 +71,27 @@ export function buildPresentation(): Slide[] {
   ]
 }
 
+/** Slide “Mang về” đang ẩn khỏi bài trình chiếu; đổi thành true là nó hiện lại.
+ *  Dữ liệu takeaways và kind 'takeaways' vẫn giữ nguyên, không xoá. */
+const SHOW_TAKEAWAYS = false
+
 /** Bài trình chiếu tuyến tính. Ba chủ đề đã có ghim riêng trên bản đồ hành trình nên
  *  không lặp lại ở đây; buildPresentation() vẫn giữ bản đầy đủ làm nguồn slide cho bản đồ. */
 export function classicDeck(): Slide[] {
   const full = buildPresentation()
   return [
     ...full.filter(slide => !slide.subjectId && slide.kind !== 'takeaway'),
-    // Bốn điều mang về gom vào một slide; buildPresentation() vẫn giữ bốn slide rời cho V2.
-    { kind: 'takeaways', chapter: 'Key takeaways', kicker: `Mang về · ${takeaways.length} điều`, title: 'Bốn điều mang về từ Thâm Quyến.' },
+    ...(SHOW_TAKEAWAYS ? [{ kind: 'takeaways' as const, chapter: 'Key takeaways', kicker: `Mang về · ${takeaways.length} điều`, title: 'Bốn điều mang về từ Thâm Quyến.' }] : []),
   ]
 }
 
 /** Năm điểm dừng còn lại: mỗi nơi một slide số liệu, chỉ hiện trong ghim tương ứng. */
 export function placeSlides(): Slide[] {
-  return places.map(place => ({
-    kind: 'place' as const, placeId: place.id, chapter: 'Điểm dừng', subjectId: place.id,
-    kicker: place.kicker, title: place.headline,
-  }))
+  return places.flatMap(place => [
+    { kind: 'place' as const, placeId: place.id, page: 'overview' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: place.kicker, title: place.headline },
+    { kind: 'place' as const, placeId: place.id, page: 'features' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Đặc điểm`, title: place.featuresTitle },
+    ...(place.visit ? [{ kind: 'place' as const, placeId: place.id, page: 'visit' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Gợi ý ghé thăm`, title: place.visit.title }] : []),
+  ])
 }
 
 /** Bài Didi của Sâm là phần chia sẻ rời: chỉ gắn vào ghim Sân bay Bảo An trên bản đồ,

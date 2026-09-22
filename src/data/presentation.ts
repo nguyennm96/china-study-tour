@@ -35,10 +35,10 @@ export const subjects: Subject[] = [
     source: { label: 'Tư liệu chuyến đi', url: droneMedia.station.url },
     experience: {
       eyebrow: 'Trải nghiệm tại Talent Park',
-      headline: 'Một đơn hàng,', highlight: 'bốn bước.',
+      headline: 'Một đơn hàng,', highlight: 'ba bước.',
+      note: 'Ba bước trình bày: gộp tới trạm và quét QR vào bước mở đầu, theo lựa chọn biên tập của đoàn.',
       moments: [
-        { title: 'Đặt qua Meituan', media: droneMedia.droneOrder },
-        { title: 'Tới trạm', media: droneMedia.station },
+        { title: 'Tới trạm và Scan QR Meituan', media: droneMedia.droneOrder },
         { title: 'Drone hạ cánh', media: droneMedia.landing, featured: true },
         { title: 'Lấy hàng', media: droneMedia.locker },
       ],

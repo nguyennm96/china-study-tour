@@ -74,11 +74,22 @@ function TitleSlide({ subject }: { subject: Subject }) {
 
 function DataSummarySlide({ subject, chartIndex, context = false }: { subject: Subject; chartIndex: number; context?: boolean }) {
   const data = subject.data
+  // Drone gom hết số liệu vào một trang, chia hai nhóm vì hai phạm vi đo khác nhau:
+  // hạ tầng cả thành phố bên trái, cách vận hành của riêng Meituan bên phải.
+  if (subject.id === 'drone' && data.context) {
+    return <div className="deck-drone-figures">
+      {([[data.context.title, data.context.caption, data.context.metrics],
+         ['Meituan: mạng bay của riêng họ', 'Số Meituan tự nêu, không phải số toàn thành phố.', data.metrics]] as const).map(([title, caption, metrics]) =>
+        <section key={title} aria-label={title}>
+          <h3>{title}</h3>
+          <p className="city-summary-scope">{caption}</p>
+          <ul className="summary-metrics">{metrics.map(metric => <MetricTile key={metric.label} metric={metric} dense />)}</ul>
+        </section>)}
+    </div>
+  }
   const chart = data.charts[chartIndex]
   const metrics = context ? data.context!.metrics : data.metrics
-  const note = subject.id === 'drone'
-    ? context ? '15 phút và 34 phút khác phạm vi đo; không suy ra mức nhanh hơn.' : 'Đơn thương mại luỹ kế toàn cầu; mạng giao y tế được đếm riêng.'
-    : context ? 'VNĐ ước tính · 3.947 VND/CNY, 19/09/2026. Số hợp nhất cả tập đoàn.' : 'Ngày đỉnh, không phải trung bình. Hai chương trình là tập con của tổng đơn.'
+  const note = context ? 'VNĐ ước tính · 3.947 VND/CNY, 19/09/2026. Số hợp nhất cả tập đoàn.' : 'Ngày đỉnh, không phải trung bình. Hai chương trình là tập con của tổng đơn.'
   return <div className={`deck-data-summary ${context ? 'is-context' : ''}`}>
     <section className="summary-facts" aria-label={context ? data.context!.title : 'Quy mô công bố'}>
       {context ? <div className="summary-context-head"><h3>{data.context!.title}</h3><p>{data.context!.caption}</p></div> : <div className="summary-hero">
@@ -98,18 +109,20 @@ function DataSummarySlide({ subject, chartIndex, context = false }: { subject: S
 
 function AhamoveSlide({ subjectId }: { subjectId: AhamoveSubject }) {
   const reference = ahamoveReferences[subjectId]
-  return <div className="deck-subject-reference">
-    <aside className="reference-lesson">
+  const showLesson = subjectId !== 'drone'
+  const labels = 'labels' in reference ? reference.labels : { connection: 'Liên hệ với Ahamove', trial: 'Có thể thử ở phạm vi nhỏ', metrics: 'Đo hiệu quả', conclusion: 'Để cùng thảo luận' }
+  return <div className={`deck-subject-reference ${showLesson ? '' : 'is-application-only'}`}>
+    {showLesson && <aside className="reference-lesson">
       <SubjectIllustration id={subjectId} />
       <p className="reference-eyebrow">Bài học từ chủ đề</p>
       <h3>{reference.lesson}</h3>
-      <p>{reference.observation}</p>
-    </aside>
+      <p className="reference-observation">{reference.observation}</p>
+    </aside>}
     <div className="reference-application">
-      <section><h3>Liên hệ với Ahamove</h3><p>{reference.connection}</p></section>
-      <section><h3>Có thể thử ở phạm vi nhỏ</h3><p>{reference.trial}</p></section>
-      <section className="reference-metrics"><h3>Đo hiệu quả</h3><p>{reference.metrics}</p></section>
-      <p className="reference-question"><span>Để cùng thảo luận</span><strong>{reference.question}</strong></p>
+      <section><h3>{labels.connection}</h3><p>{reference.connection}</p></section>
+      <section><h3>{labels.trial}</h3><p>{reference.trial}</p></section>
+      <section className="reference-metrics"><h3>{labels.metrics}</h3><p>{reference.metrics}</p></section>
+      <p className="reference-question"><span>{labels.conclusion}</span><strong>{reference.question}</strong></p>
     </div>
   </div>
 }
@@ -212,7 +225,7 @@ export function SlideBody({ slide }: { slide: Slide }) {
     case 'takeaways': return <TakeawayGridSlide />
     case 'hotel-robot': return <HotelRobotSlides page={slide.page} />
     case 'didi': return <DidiSlides page={slide.page} />
-    case 'place': return <PlaceSlide placeId={slide.placeId} />
+    case 'place': return <PlaceSlide placeId={slide.placeId} page={slide.page} />
     case 'ahamove': return <AhamoveSlide subjectId={slide.subjectId} />
   }
   if (!subject) return null

@@ -20,6 +20,7 @@ const { meituanFlow, robotFlow } = await import(load('mechanisms'))
 const { subjects, takeaways } = await import(load('presentation'))
 const { subjectLocations } = await import(load('subjectLocations'))
 const { buildPresentation, classicDeck, deckRail } = await import(load('deck'))
+const { ahamoveReferences } = await import(load('ahamove'))
 
 const topics = { drone: droneData, robots: robotData, meituan: meituanData }
 const allMetrics = data => [data.hero, ...data.metrics, ...(data.context?.metrics ?? [])]
@@ -28,6 +29,7 @@ const parseDisplay = display => Number(String(display).replace(/[≥×\s]/g, '')
 
 test('mọi sourceId được tham chiếu đều có trong sổ nguồn', () => {
   const referenced = [
+    ...ahamoveReferences.drone.sourceIds,
     ...Object.values(topics).flatMap(data => [
       ...allMetrics(data).map(metric => metric.sourceId),
       ...data.charts.flatMap(chart => chart.sourceIds),
@@ -164,14 +166,14 @@ test('bài chia sẻ là một dãy slide phẳng: mở đầu, ba chủ đề, 
   assert.equal(deck[0].kind, 'team', 'slide đầu là poster mở đầu')
   assert.equal(deck[1].kind, 'roster', 'slide hai là danh sách thành viên')
   assert.equal(deck[2].kind, 'itinerary', 'slide ba là bản đồ hành trình')
-  // Suy từ cấu phần thay vì số cố định, để thêm/bớt slide không phải sửa hai chỗ.
-  const perSubject = subjects.reduce((sum, subject) => sum + (subject.id === 'robots' ? 8 : 7), 0)
+  const expectedCounts = { drone: 5, robots: 8, meituan: 7 }
+  const perSubject = Object.values(expectedCounts).reduce((sum, count) => sum + count, 0)
   assert.equal(deck.length, 3 + perSubject + takeaways.length)
   assert.ok(!deck.some(slide => slide.kind === 'insights' || slide.kind === 'sources'), 'hai slide đã bỏ không được quay lại')
 
   for (const subject of subjects) {
     const own = deck.filter(slide => slide.subjectId === subject.id)
-    assert.equal(own.length, subject.id === 'robots' ? 8 : 7, `${subject.id} có sai số slide sau khi thêm liên hệ riêng`)
+    assert.equal(own.length, expectedCounts[subject.id], `${subject.id} có sai số slide`)
     assert.equal(own[0].kind, 'title')
     const references = own.filter(slide => slide.kind === 'ahamove' || (slide.kind === 'hotel-robot' && slide.page === 'ahamove'))
     assert.equal(references.length, 1, `${subject.id} cần đúng một slide liên hệ Ahamove`)
@@ -184,8 +186,14 @@ test('bài chia sẻ là một dãy slide phẳng: mở đầu, ba chủ đề, 
       assert.equal(own[1].kind, 'experience')
       assert.equal(own.at(-2).kind, 'mechanism', `${subject.id} đặt liên hệ ngay sau slide cơ chế`)
       const dataSlides = own.filter(slide => ['data-summary', 'data-context'].includes(slide.kind))
-      assert.deepEqual(dataSlides.map(slide => slide.kind), ['data-summary', 'data-context'])
-      assert.deepEqual(dataSlides.map(slide => slide.chartIndex).sort(), subject.data.charts.map((_, index) => index), 'các biểu đồ phải được giữ đủ, mỗi biểu đồ đúng một lần')
+      if (subject.id === 'drone') {
+        assert.deepEqual(own.map(slide => slide.kind), ['title', 'experience', 'data-summary', 'mechanism', 'ahamove'], 'Drone gom hết số liệu vào một trang và vẫn bỏ slide thông số')
+        assert.deepEqual(subject.experience.moments.map(moment => moment.title), ['Tới trạm và Scan QR Meituan', 'Drone hạ cánh', 'Lấy hàng'])
+        assert.ok(!subject.experience.moments.some(moment => moment.media.src.endsWith('/station.jpg')), 'khung tới trạm riêng đã được bỏ')
+      } else {
+        assert.deepEqual(dataSlides.map(slide => slide.kind), ['data-summary', 'data-context'])
+        assert.deepEqual(dataSlides.map(slide => slide.chartIndex).sort(), subject.data.charts.map((_, index) => index), 'các biểu đồ Meituan phải được giữ đủ, mỗi biểu đồ đúng một lần')
+      }
     }
   }
 
@@ -208,9 +216,9 @@ test('bài chia sẻ là một dãy slide phẳng: mở đầu, ba chủ đề, 
 
 test('bài tuyến tính bỏ ba chủ đề vì chúng đã nằm trong ghim bản đồ', () => {
   const deck = classicDeck()
-  assert.deepEqual(deck.map(slide => slide.kind), ['team', 'roster', 'itinerary', 'takeaways'])
+  assert.deepEqual(deck.map(slide => slide.kind), ['team', 'roster', 'itinerary'])
   assert.ok(!deck.some(slide => slide.subjectId), 'không slide chủ đề nào còn lặp lại trong bài tuyến tính')
-  assert.deepEqual(deckRail(deck).map(group => group.label), ['Mở đầu', 'Thành viên', 'Hành trình', 'Key takeaways'])
+  assert.deepEqual(deckRail(deck).map(group => group.label), ['Mở đầu', 'Thành viên', 'Hành trình'])
   // Bản đầy đủ vẫn phải còn nguyên: bản đồ lấy slide chủ đề từ đây.
   const full = buildPresentation()
   for (const id of ['drone', 'robots', 'meituan']) {
