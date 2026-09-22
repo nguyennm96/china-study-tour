@@ -1,0 +1,73 @@
+{
+  "verifiedOn": "2026-09-16",
+  "source": "OpenStreetMap via Nominatim",
+  "note": "Bay meeting point is the Shenzhen Bay Park metro station, not the park centroid. Presentation order is illustrative. The map displays location pins without connecting lines.",
+  "locations": [
+    {
+      "osm_type": "node",
+      "osm_id": 9062301243,
+      "lat": "22.5244887",
+      "lon": "113.9879978",
+      "category": "railway",
+      "type": "station",
+      "name": "深圳湾公园",
+      "display_name": "深圳湾公园, 滨海大道, 金城社区, 沙头街道, 福田区, 深圳市, 广东省, 518000, 中国",
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright"
+    },
+    {
+      "osm_type": "relation",
+      "osm_id": 10837975,
+      "lat": "22.5463725",
+      "lon": "114.0545223",
+      "category": "building",
+      "type": "civic",
+      "name": "市民中心",
+      "display_name": "市民中心, 福中三路, 福中社区, 莲花街道, 福田区, 深圳市, 广东省, 518038, 中国",
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3373068621,
+      "lat": "22.5448183",
+      "lon": "114.0815422",
+      "category": "place",
+      "type": "neighbourhood",
+      "name": "华强北",
+      "display_name": "华强北, 华航社区, 华强北街道, 福田区, 深圳市, 广东省, 518000, 中国",
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright"
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 322631274,
+      "lat": "22.5259532",
+      "lon": "113.9830035",
+      "category": "landuse",
+      "type": "retail",
+      "name": "欢乐海岸",
+      "display_name": "欢乐海岸, 东方社区, 沙河街道, 南山区, 深圳市, 广东省, 518000, 中国",
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright"
+    },
+    {
+      "osm_type": "relation",
+      "osm_id": 18459537,
+      "lat": "22.5136618",
+      "lon": "113.9441738",
+      "category": "leisure",
+      "type": "park",
+      "name": "深圳人才公园",
+      "display_name": "深圳人才公园, 粤海街道, 南山区, 深圳市, 广东省, 518052, 中国",
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright"
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 543176177,
+      "lat": "22.4860651",
+      "lon": "113.9118315",
+      "category": "landuse",
+      "type": "retail",
+      "name": "海上世界",
+      "display_name": "海上世界, 招商街道, 南山区, 深圳市, 广东省, 518000, 中国",
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright"
+    }
+  ]
+}

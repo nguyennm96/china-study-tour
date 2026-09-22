@@ -1,0 +1,12 @@
+[
+  {
+    "currentTime": 20.28299,
+    "duration": 79.481905,
+    "objectFit": "contain",
+    "paused": false,
+    "readyState": 4,
+    "src": "http://127.0.0.1:4174/media/trip/drone/drone-order.mp4",
+    "videoHeight": 1920,
+    "videoWidth": 1080
+  }
+]

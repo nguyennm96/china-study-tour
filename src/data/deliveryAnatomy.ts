@@ -1,0 +1,18 @@
+export type DeliveryStage = 'system' | 'cargo' | 'aircraft' | 'receiver' | 'storage' | 'collection' | 'delivery'
+const cabinetSource = { label: 'Fudan · Quy trình nhận hàng, 2025', url: 'https://news.fudan.edu.cn/2025/0317/c31a144526/page.htm' }
+const dispatchSource = { label: 'Meituan · Đóng gói và cất cánh, 2023', url: 'https://www.meituan.com/news/NN230322000052122' }
+export const deliverySteps: { eyebrow: string; title: string; description: string; anchor: 'worker' | 'cargo' | 'drone' | 'roof' | 'inside' | 'screen' | 'door'; source: typeof cabinetSource }[] = [
+  { eyebrow: 'Điểm xuất phát', title: 'Một hộp hàng trên mái.', description: 'Nhân viên chuẩn bị hộp tại bãi cất cánh. Cùng theo dõi từng lần bàn giao, từ con người tới drone và tủ nhận.', anchor: 'worker', source: dispatchSource },
+  { eyebrow: 'Mang hàng tới bãi', title: 'Con người làm đoạn đầu.', description: 'Nhân viên mang hộp từ khu chuẩn bị ra vị trí đặt drone. Hộp vẫn nằm trên tay người trong suốt đoạn này.', anchor: 'worker', source: dispatchSource },
+  { eyebrow: 'Gắn hàng', title: 'Hộp chuyển sang drone.', description: 'Hộp được đưa vào vị trí mang hàng bên dưới thân drone. Cùng một hộp sẽ đi tiếp trong chuyến bay.', anchor: 'cargo', source: dispatchSource },
+  { eyebrow: 'Trước khi cất cánh', title: 'Quay người, rời bãi.', description: 'Sau khi đặt hộp, nhân viên quay người rồi bước ra khỏi vùng cánh quạt. Drone chỉ nâng lên sau khi nhân viên đã đi ra xa.', anchor: 'worker', source: dispatchSource },
+  { eyebrow: 'Cất cánh', title: 'Nâng hàng khỏi mái.', description: 'Cánh quạt tạo lực nâng. Drone đưa hộp lên khỏi bãi trước khi di chuyển sang điểm nhận.', anchor: 'drone', source: dispatchSource },
+  { eyebrow: 'Vận chuyển', title: 'Hộp đi cùng chuyến bay.', description: 'Drone mang hộp tới điểm nhận. Cảnh bay minh họa sự chuyển tiếp từ một tòa nhà tới tủ ở mặt đất.', anchor: 'drone', source: dispatchSource },
+  { eyebrow: 'Tiếp cận tủ', title: 'Nóc tủ mở để đón hàng.', description: 'Drone hạ độ cao về phía khoang tiếp nhận. Cửa phía trên mở trước khi hộp được chuyển vào trong.', anchor: 'roof', source: cabinetSource },
+  { eyebrow: 'Bàn giao', title: 'Hộp đi xuống. Drone ở lại phía trên.', description: 'Hộp rời drone và đi vào tủ. Khay chuyển động ở đây giúp nhìn rõ luồng hàng; cơ cấu thực tế bên trong chưa được nguồn công bố.', anchor: 'inside', source: cabinetSource },
+  { eyebrow: 'Kết thúc chuyến bay', title: 'Hàng ở lại, drone rời đi.', description: 'Tủ đóng phía trên và giữ hộp. Thời điểm drone đến được tách khỏi thời điểm khách có mặt để lấy hàng.', anchor: 'door', source: cabinetSource },
+  { eyebrow: 'Nhìn gần · Nóc tủ', title: 'Cửa vào dành cho drone.', description: 'Khoang phía trên là nơi tiếp nhận hộp. Cặp nắp trượt này diễn giải chuyển động mở, không phải bản vẽ cơ khí của tủ thật.', anchor: 'roof', source: cabinetSource },
+  { eyebrow: 'Nhìn bên trong · Khay và khoang', title: 'Đưa hộp vào vùng giữ hàng.', description: 'Tách vỏ để thấy hộp, khay đỡ và đường chuyển xuống. Ray, khay và số khoang là cơ cấu minh họa nguyên lý.', anchor: 'inside', source: cabinetSource },
+  { eyebrow: 'Nhận hàng · Màn hình', title: 'Nối người nhận với hộp hàng.', description: 'Trong trải nghiệm được Fudan ghi nhận, khách nhập các số cuối của điện thoại để lấy hàng. Màn hình sáng biểu thị bước thao tác nhận.', anchor: 'screen', source: cabinetSource },
+  { eyebrow: 'Nhận hàng · Cửa phía trước', title: 'Mở cửa, lấy hộp.', description: 'Hộp được lấy ở mặt trước tủ, tách khỏi cửa nhận hàng trên nóc. Đến đây, lượt bàn giao cho người nhận đã hoàn tất trong mô phỏng.', anchor: 'door', source: cabinetSource },
+]

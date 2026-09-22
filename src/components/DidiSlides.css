@@ -1,0 +1,78 @@
+/* Trang Didi dùng chung khung canvas 1280×720 với các chủ đề khác, nên mọi bố cục
+   đều là grid có hàng minmax(0, 1fr) để nội dung không đẩy slide dài ra. */
+.didi-title { display: grid; grid-template-columns: 1.35fr .65fr; gap: 56px; align-items: center; min-height: 0; }
+.didi-title-index { display: flex; align-items: center; gap: 14px; margin: 0 0 28px; color: var(--muted); font-size: 11px; letter-spacing: .14em; line-height: 1.5; }
+.didi-title-index strong { color: var(--brand); font-size: 56px; letter-spacing: -.06em; }
+.didi-title-eyebrow { margin: 0 0 10px; color: var(--brand); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.didi-title-name { margin: 0 0 12px; font-size: 62px; font-weight: 600; letter-spacing: -.045em; line-height: 1.02; }
+.didi-title-headline { margin: 0 0 18px; color: var(--brand); font-size: 27px; font-weight: 600; letter-spacing: -.03em; }
+.didi-title-lead { margin: 0; max-width: 62ch; color: var(--mist); font-size: 18px; line-height: 1.65; }
+.didi-facts { display: grid; gap: 18px; margin: 0; padding: 0; list-style: none; }
+.didi-facts > li { padding: 20px 22px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.didi-facts strong { display: block; color: var(--brand); font-size: 46px; letter-spacing: -.05em; line-height: 1; }
+.didi-facts span { display: block; margin-top: 8px; color: var(--mist); font-size: 15px; line-height: 1.45; }
+
+.didi-intro { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 26px; min-height: 0; }
+.didi-intro-head { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+.didi-logo { height: 40px; width: auto; }
+.didi-hanzi { display: flex; align-items: baseline; gap: 10px; margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -.02em; }
+.didi-hanzi span { color: var(--muted); font-size: 13px; font-weight: 400; letter-spacing: .04em; }
+.didi-scale { display: flex; gap: 28px; margin: 0 0 0 auto; padding: 0; list-style: none; }
+.didi-scale strong { display: block; color: var(--brand); font-size: 40px; letter-spacing: -.05em; line-height: 1; }
+.didi-scale small { font-size: 15px; letter-spacing: -.01em; }
+.didi-scale span { display: block; margin-top: 6px; max-width: 22ch; color: var(--muted); font-size: 13px; line-height: 1.4; }
+.didi-features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0; padding: 0; list-style: none; min-height: 0; }
+.didi-features > li { display: flex; flex-direction: column; justify-content: center; min-height: 0; padding: 30px; color: var(--brand); border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+.didi-features > li:nth-child(2) { background: #fff3e3; border-color: #ead6b9; }
+.didi-features h4 { margin: 18px 0 10px; color: var(--paper); font-size: 24px; font-weight: 600; letter-spacing: -.035em; }
+.didi-features p { margin: 0; color: var(--mist); font-size: 16px; line-height: 1.55; }
+
+.didi-pricing { display: grid; grid-template-columns: 1.25fr .75fr; gap: 40px; align-items: start; min-height: 0; }
+.didi-table { width: 100%; border-collapse: collapse; font-size: 17px; }
+.didi-table th, .didi-table td { padding: 15px 18px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.didi-table thead th { color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
+.didi-table tbody th { font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
+.didi-table td { color: var(--mist); line-height: 1.5; }
+.didi-table .is-base { background: #fff3e3; }
+.didi-table .is-base th, .didi-table .is-base td { color: var(--paper); }
+.didi-side { display: grid; gap: 18px; }
+
+.didi-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; margin: 0; padding: 0; list-style: none; min-height: 0; }
+.didi-steps > li { display: flex; flex-direction: column; min-height: 0; padding: 26px 22px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.didi-step-num { color: var(--brand); font-size: 30px; letter-spacing: -.06em; }
+.didi-steps h4 { margin: 16px 0 10px; font-size: 21px; font-weight: 600; letter-spacing: -.035em; }
+.didi-steps p { margin: 0; color: var(--mist); font-size: 15px; line-height: 1.5; }
+
+.didi-split { display: grid; grid-template-columns: 1.2fr .8fr; gap: 44px; align-items: center; min-height: 0; }
+.didi-copy { min-width: 0; }
+.didi-photo { display: flex; flex-direction: column; align-items: center; justify-content: center; align-self: stretch; min-height: 0; margin: 0; padding: 20px; border-radius: 20px; background: var(--surface); }
+.didi-photo img { min-height: 0; max-height: 440px; width: auto; max-width: 100%; object-fit: contain; border-radius: 12px; }
+.didi-photo.is-tall img { max-height: 470px; }
+.didi-photo figcaption { margin-top: 14px; color: var(--muted); font-size: 12px; line-height: 1.5; text-align: center; }
+
+.didi-lead { margin: 0 0 20px; color: var(--mist); font-size: 19px; line-height: 1.6; }
+.didi-hero { display: flex; align-items: baseline; gap: 6px; margin: 0; color: var(--brand); font-size: 84px; letter-spacing: -.055em; line-height: 1; }
+.didi-hero small { font-size: 34px; letter-spacing: -.03em; }
+.didi-hero-label { margin: 12px 0 22px; max-width: 34ch; color: var(--mist); font-size: 17px; line-height: 1.5; }
+.didi-cards { display: grid; gap: 14px; }
+.didi-cards section { padding: 18px 22px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.didi-cards .is-accent { background: #fff3e3; border-color: #ead6b9; }
+.didi-cards h4 { margin: 0 0 8px; font-size: 19px; font-weight: 600; letter-spacing: -.03em; }
+.didi-cards p { margin: 0; color: var(--mist); font-size: 15px; line-height: 1.55; }
+.didi-chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 0; padding: 0; list-style: none; }
+.didi-chips > li { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 15px; }
+.didi-chips span { color: var(--muted); }
+.didi-chips strong { margin-left: 8px; font-weight: 600; letter-spacing: -.02em; }
+.didi-callout { margin: 20px 0 0; padding: 16px 20px; border-left: 3px solid var(--brand); background: #fff3e3; color: var(--paper); font-size: 16px; line-height: 1.55; }
+.didi-caveat { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+.didi-close { display: grid; grid-template-columns: 1.1fr .9fr; gap: 44px; align-items: center; min-height: 0; }
+.didi-trends { display: grid; gap: 14px; margin: 0 0 22px; padding: 0; list-style: none; }
+.didi-trends > li { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 18px; padding: 16px 20px; border-left: 3px solid var(--brand); background: var(--surface); }
+.didi-trends strong { font-size: 24px; font-weight: 600; letter-spacing: -.035em; white-space: nowrap; }
+.didi-trends span { color: var(--mist); font-size: 15px; line-height: 1.5; }
+.didi-questions { align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding: 30px 32px; border-radius: 20px; background: #15364d; color: #fffaf2; }
+.didi-questions h4 { margin: 0 0 20px; color: #f2b183; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.didi-questions ul { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.didi-questions li { padding-left: 22px; font-size: 17px; line-height: 1.5; position: relative; }
+.didi-questions li::before { content: "—"; position: absolute; left: 0; color: #f2b183; }

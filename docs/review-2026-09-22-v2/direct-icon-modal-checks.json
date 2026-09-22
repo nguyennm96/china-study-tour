@@ -1,0 +1,17 @@
+[
+  {
+    "heading": "Drone giao hàng",
+    "modal": true,
+    "route": "#drone/1"
+  },
+  {
+    "heading": "Robot giao tận phòng",
+    "modal": true,
+    "route": "#robots/1"
+  },
+  {
+    "heading": "Đặt đồ ăn trên Meituan",
+    "modal": true,
+    "route": "#meituan/1"
+  }
+]

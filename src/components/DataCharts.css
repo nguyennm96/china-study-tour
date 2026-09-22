@@ -1,0 +1,70 @@
+/* Biểu đồ dữ liệu — một trục, một chuỗi, nhãn trực tiếp, luôn có bản dạng bảng. */
+.deck-surface, .atlas-chapter {
+  --viz-series-1: #be4b0c;
+  --viz-series-2: #256abf;
+  --viz-series-3: #0f8a5f;
+  --viz-track: rgba(23, 43, 61, .07);
+  --viz-grid: rgba(23, 43, 61, .1);
+}
+.viz-series-1 { background: var(--viz-series-1); }
+.viz-series-2 { background: var(--viz-series-2); }
+.viz-series-3 { background: var(--viz-series-3); }
+
+.viz-figure { margin: 0; padding: 0; border: 0; background: none; }
+.viz-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-bottom: 4px; }
+.viz-table-toggle { display: inline-flex; flex-shrink: 0; align-items: center; gap: 6px; min-height: 32px; padding: 0 10px; border: 1px solid var(--line); border-radius: 7px; background: var(--ink); color: var(--mist); font-size: 10.5px; }
+.viz-table-toggle:hover { background: var(--surface); border-color: var(--line-bright); }
+.viz-table-toggle[aria-pressed=true] { color: var(--brand); border-color: #e2c3ae; background: #fdf3ec; }
+.viz-axis { margin: 0; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+/* Cột dọc */
+.viz-columns { position: relative; margin-top: 10px; padding-left: 46px; }
+.viz-grid { position: absolute; inset: 0 0 26px 46px; }
+.viz-grid span { position: absolute; left: 0; right: 0; height: 1px; background: var(--viz-grid); }
+.viz-grid span small { position: absolute; right: calc(100% + 9px); transform: translateY(-50%); font-size: 9.5px; font-variant-numeric: tabular-nums; color: var(--muted); }
+.viz-column-list { position: relative; display: flex; align-items: flex-end; gap: 34px; height: 300px; margin: 0; padding: 0 8px 28px; list-style: none; }
+.viz-column-list li { position: relative; display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+.viz-column-mark { width: 100%; max-width: 30px; border-radius: 4px 4px 0 0; background: var(--viz-series-2); }
+.viz-column-mark.is-emphasis { background: var(--viz-series-1); }
+.viz-column-value { margin-bottom: 9px; font-size: 30px; font-weight: 600; letter-spacing: -.04em; }
+.viz-column-label { position: absolute; top: calc(100% + 9px); font-size: 12.5px; text-align: center; color: var(--mist); white-space: nowrap; }
+
+/* Thanh ngang */
+.viz-bars { display: grid; gap: 12px; margin: 14px 0 0; padding: 0; list-style: none; }
+.viz-bars li { display: grid; grid-template-columns: minmax(0, 15.5em) minmax(0, 1fr) auto; gap: 14px; align-items: center; }
+.viz-bar-label { font-size: 13.5px; line-height: 1.4; color: var(--mist); }
+.viz-bar-track { height: 22px; border-radius: 3px; background: var(--viz-track); }
+.viz-bar-mark { display: block; height: 100%; border-radius: 0 4px 4px 0; background: var(--viz-series-2); }
+.viz-bar-mark.is-emphasis { background: var(--viz-series-1); }
+.viz-bar-value { min-width: 3.4em; font-size: 24px; font-weight: 600; letter-spacing: -.035em; font-variant-numeric: tabular-nums; text-align: right; }
+
+/* Thanh xếp lớp */
+.viz-stack { margin-top: 14px; }
+.viz-stack-track { display: flex; gap: 2px; height: 30px; }
+.viz-stack-mark:first-child { border-radius: 4px 0 0 4px; }
+.viz-stack-mark:last-child { border-radius: 0 4px 4px 0; }
+.viz-legend { display: grid; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.viz-legend li { display: grid; grid-template-columns: 11px minmax(0, 1fr) auto auto; gap: 12px; align-items: center; font-size: 13.5px; }
+.viz-legend-swatch { width: 10px; height: 10px; border-radius: 2px; }
+.viz-legend-label { color: var(--mist); }
+.viz-legend strong { font-size: 24px; font-weight: 600; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.viz-legend small { min-width: 2.6em; color: var(--muted); font-size: 10.5px; text-align: right; }
+
+/* Bảng dữ liệu */
+.viz-table { width: 100%; margin-top: 12px; border-collapse: collapse; font-size: 13px; }
+.viz-table caption { padding-bottom: 8px; color: var(--muted); font-size: 10px; text-align: left; }
+.viz-table th, .viz-table td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; font-weight: 400; }
+.viz-table thead th { color: var(--muted); font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; }
+.viz-table tbody th { color: var(--mist); }
+.viz-table td { font-variant-numeric: tabular-nums; text-align: right; font-weight: 600; }
+.viz-table-total th, .viz-table-total td { color: var(--paper); border-bottom: 0; }
+
+.viz-total { margin: 16px 0 0; font-size: 13px; color: var(--mist); }
+.viz-total strong { font-variant-numeric: tabular-nums; }
+
+@media (max-width: 900px) {
+  .viz-bars li { grid-template-columns: minmax(0, 1fr) auto; }
+  .viz-bar-label { grid-column: 1 / -1; }
+  .viz-column-list { gap: 14px; }
+  .viz-column-label { white-space: normal; max-width: 8em; }
+}

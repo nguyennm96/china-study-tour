@@ -1,0 +1,50 @@
+{
+  "url": "https://sprightly-frangipane-406bde.netlify.app/",
+  "references": [
+    {
+      "heading": "Meituan → Ahamove: hiệu quả từng đơn.",
+      "images": [
+        {
+          "complete": true,
+          "loaded": true,
+          "src": "/media/illustrations/subjects-2d/order.png"
+        }
+      ],
+      "slideCount": 28
+    },
+    {
+      "heading": "Drone → Ahamove: chuẩn hoá điểm nhận.",
+      "images": [
+        {
+          "complete": true,
+          "loaded": true,
+          "src": "/media/illustrations/subjects-2d/drone.png"
+        }
+      ],
+      "slideCount": 28
+    },
+    {
+      "heading": "Robot → Ahamove: bài toán điều phối.",
+      "images": [
+        {
+          "complete": true,
+          "loaded": true,
+          "src": "/media/illustrations/subjects-2d/hotel-robot.png"
+        }
+      ],
+      "slideCount": 28
+    }
+  ],
+  "video": {
+    "path": "/media/trip/drone/landing.mp4",
+    "endedAt": 4.333333,
+    "readyState": 4,
+    "error": null
+  },
+  "simulation": {
+    "slide": 8,
+    "completedStep": 13,
+    "screenshot": "netlify-live-08-simulation.png"
+  },
+  "hashReloadVerified": 24
+}

@@ -1,0 +1,82 @@
+.hotel-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; min-height: 0; align-items: center; }
+.hotel-explainer { min-width: 0; }
+.hotel-explainer h3 { margin: 24px 0 12px; font-size: 32px; letter-spacing: -.04em; }
+.hotel-explainer > p { color: var(--mist); font-size: 19px; line-height: 1.6; }
+.hotel-art-panel { display: flex; flex-direction: column; align-items: center; justify-content: center; align-self: stretch; min-height: 0; padding: 28px; border-radius: 22px; background: #f3eee5; }
+.hotel-art { width: 100%; min-height: 0; max-height: 390px; object-fit: contain; }
+.hotel-art-line { margin: 18px 0 0; text-align: center; font-size: 17px; line-height: 1.5; color: var(--mist); }
+.hotel-journey { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 20px; min-height: 0; }
+.hotel-step-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.hotel-step-grid > li, .hotel-step-grid > article { display: flex; flex-direction: column; justify-content: center; min-height: 0; padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.hotel-step-grid > li:nth-child(3), .hotel-step-grid > li:nth-child(6) { background: #fff3e3; border-color: #ead6b9; }
+.hotel-step-top { display: flex; align-items: center; justify-content: space-between; color: var(--brand); }
+.hotel-step-top span { font-size: 28px; letter-spacing: -.06em; color: #a99b8b; }
+.hotel-step-grid h3 { margin: 14px 0 8px; font-size: 22px; font-weight: 600; letter-spacing: -.035em; }
+.hotel-step-grid p { margin: 0; color: var(--mist); font-size: 16px; line-height: 1.5; }
+.hotel-bottom-line { margin: 0; padding: 14px 20px; color: #fffaf2; background: #15364d; border-radius: 10px; font-size: 18px; line-height: 1.4; }
+.hotel-routing { display: flex; align-items: center; gap: 20px; color: var(--brand); }
+.hotel-routing > div { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; flex: 1; padding: 18px 22px; background: #f3eee5; border-radius: 14px; }
+.hotel-routing small { color: var(--muted); font-size: 10px; letter-spacing: .13em; }
+.hotel-routing strong { grid-column: 1 / -1; font-size: 58px; line-height: 1.1; letter-spacing: -.05em; }
+.hotel-explainer > .hotel-example-label, .hotel-example-label { margin: 10px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.hotel-explainer > .hotel-callout { margin: 24px 0 0; padding: 16px 20px; border-left: 3px solid var(--brand); background: #fff3e3; color: var(--paper); font-size: 18px; line-height: 1.5; }
+.hotel-vertical-flow { display: grid; gap: 20px; margin: 0; padding: 0; list-style: none; }
+.hotel-vertical-flow > li { display: flex; align-items: flex-start; gap: 20px; }
+.hotel-vertical-flow > li > span { color: var(--brand); font-size: 26px; letter-spacing: -.05em; }
+.hotel-vertical-flow h3 { margin: 0 0 8px; font-size: 23px; letter-spacing: -.03em; }
+.hotel-vertical-flow p { margin: 0; color: var(--mist); font-size: 16px; line-height: 1.5; }
+.hotel-vertical-flow .hotel-flow-note { padding-top: 16px; border-top: 1px solid var(--line); }
+.hotel-dispatch { display: grid; grid-template-rows: 1fr 1fr auto; gap: 22px; min-height: 0; }
+.hotel-system-chain { display: flex; align-items: center; justify-content: space-between; gap: 22px; min-height: 0; }
+.hotel-system-chain > div { display: grid; justify-items: center; align-content: center; gap: 12px; flex: 1; height: 100%; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: white; }
+.hotel-system-chain > .is-central { flex: 1.3; background: #15364d; color: #fffaf2; border: 0; }
+.hotel-system-chain span { font-size: 25px; font-weight: 600; letter-spacing: -.03em; }
+.hotel-system-chain small { font-size: 13px; color: var(--muted); }
+.hotel-system-chain .is-central small { color: #cedbe3; }
+.hotel-dispatch-rules { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.hotel-dispatch-rules article { align-content: center; padding: 18px 0; border-top: 2px solid #decdbd; }
+.hotel-dispatch-rules svg, .hotel-infrastructure svg { color: var(--brand); }
+.hotel-dispatch-rules h3 { margin: 12px 0 10px; font-size: 22px; letter-spacing: -.03em; }
+.hotel-dispatch-rules p { margin: 0; font-size: 17px; line-height: 1.5; color: var(--mist); }
+.hotel-market-number { margin: 0; color: var(--brand); font-size: 66px; font-weight: 600; line-height: 1; letter-spacing: -.06em; }
+.hotel-market-number small { display: block; margin-top: 12px; color: var(--muted); font-size: 12px; font-weight: 400; letter-spacing: 0; }
+.hotel-explainer > .hotel-punchline { margin: 0 0 24px; font-size: 50px; font-weight: 600; letter-spacing: -.06em; line-height: 1.12; color: var(--paper); }
+.hotel-punchline em { color: var(--brand); font-style: normal; }
+.hotel-parallels { margin: 0; }
+.hotel-parallels > div { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.5; }
+.hotel-parallels > div:first-child { color: var(--brand); font-weight: 600; }
+.hotel-parallels dd { margin: 0; }
+.deck-title-visual.is-illustrated .deck-title-figure { padding: 24px; border-radius: 20px; background: #f3eee5; }
+.deck-title-visual.is-illustrated .deck-title-figure img { height: calc(100% - 30px); object-fit: contain; }
+.deck-title-visual.is-illustrated figcaption { text-align: center; }
+
+.is-compact .hotel-split { gap: 32px; }
+.is-compact .hotel-art-panel { padding: 18px; }
+.is-compact .hotel-art { max-height: 290px; }
+.is-compact .hotel-step-grid { gap: 12px; }
+.is-compact .hotel-step-grid > li, .is-compact .hotel-step-grid > article { padding: 14px 18px; }
+.is-compact .hotel-step-grid svg { width: 24px; height: 24px; }
+.is-compact .hotel-step-grid h3 { margin: 10px 0 6px; font-size: 19px; }
+.is-compact .hotel-step-grid p { font-size: 14px; }
+.is-compact .hotel-bottom-line { padding: 10px 16px; font-size: 16px; }
+.is-compact .hotel-journey { gap: 14px; }
+.is-compact .hotel-explainer h3 { margin: 16px 0 8px; font-size: 26px; }
+.is-compact .hotel-explainer > p { font-size: 16px; line-height: 1.5; }
+.is-compact .hotel-explainer > .hotel-callout { margin-top: 16px; padding: 12px 16px; font-size: 15px; }
+.is-compact .hotel-explainer > .hotel-example-label { font-size: 11px; }
+.is-compact .hotel-routing > div { padding: 12px 18px; }
+.is-compact .hotel-routing strong { font-size: 42px; }
+.is-compact .hotel-vertical-flow { gap: 14px; }
+.is-compact .hotel-vertical-flow h3 { font-size: 20px; margin-bottom: 5px; }
+.is-compact .hotel-vertical-flow p { font-size: 14px; }
+.is-compact .hotel-vertical-flow .hotel-flow-note { padding-top: 12px; }
+.is-compact .hotel-dispatch { gap: 14px; }
+.is-compact .hotel-system-chain > div { padding: 12px; gap: 6px; }
+.is-compact .hotel-system-chain span { font-size: 21px; }
+.is-compact .hotel-dispatch-rules article { padding: 12px 0; }
+.is-compact .hotel-dispatch-rules h3 { margin: 8px 0; font-size: 19px; }
+.is-compact .hotel-dispatch-rules p { font-size: 14px; }
+.is-compact .hotel-market-number { font-size: 52px; }
+.is-compact .hotel-market .chart-narrative { gap: 10px; }
+.is-compact .hotel-explainer > .hotel-punchline { margin-bottom: 14px; font-size: 38px; }
+.is-compact .hotel-parallels > div { padding: 8px 0; font-size: 13px; }

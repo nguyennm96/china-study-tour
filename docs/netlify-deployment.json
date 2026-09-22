@@ -1,0 +1,16 @@
+{
+  "provider": "Netlify",
+  "date": "2026-09-22",
+  "siteName": "sprightly-frangipane-406bde",
+  "url": "https://sprightly-frangipane-406bde.netlify.app/",
+  "dashboardUrl": "https://app.netlify.com/projects/sprightly-frangipane-406bde/overview",
+  "deploymentId": "6ab23881835b0311910c32bd",
+  "plan": "Free",
+  "monthlyPriceUsd": 0,
+  "access": "public",
+  "claimed": true,
+  "method": "manual static ZIP upload",
+  "archive": "outputs/china-study-tour-netlify.zip",
+  "archiveSha256": "83c57441e1bcd3b5b6bde835b013f875ef67fb734f846e416450999741e4dba3",
+  "slides": 28
+}

@@ -1,0 +1,9 @@
+# Team illustration v2
+
+Generated with the built-in Imagegen tool on 2026-09-20. Fictional illustration, not a photograph of the actual team. No real-person identity reference supplied.
+
+Asset: assets/generated/shenzhen-team-editorial-v2.png
+
+## Prompt
+
+Use case: illustration-story. Asset type: a premium editorial hero image for a Vietnamese company's Shenzhen study-tour presentation website, light UI with navy and burnt-orange accents. Create a beautiful cinematic 3D illustration, sophisticated contemporary animated-film art direction, tactile materials and believable anatomy. Exactly five adult Vietnamese coworkers (three men and two women, varied casual travel outfits in cream, navy, muted olive and small orange accents) are exploring Shenzhen together on a sunlit waterfront terrace. They should be large, friendly, lively and clearly recognizable as five separate people, waist-to-full-body, some facing three-quarter toward us and one pointing out the skyline while another holds a small camera. No resemblance to any specific real person. Behind them: Shenzhen Bay and an elegant recognizable Shenzhen skyline inspired by the China Resources Headquarters and Ping An Finance Center, bright pale blue sky, subtle atmospheric depth, a little warm sunlight, clean premium travel-magazine composition. Wide landscape 3:2 image, people grouped in the center and lower half with generous breathing room near all edges to allow responsive cropping. Focus on the people, do not let architecture dominate. Natural sunlit colors, restrained warm orange highlights, crisp detail, realistic fabric, art-directed composition. No robots, no drone, no luggage clutter, no text, no letters, no logos, no watermark. This is an explicitly fictional illustration for a mock presentation, not documentation of an actual trip.

@@ -1,0 +1,336 @@
+[
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 552,
+        "scroll": 552
+      }
+    ],
+    "previewCount": 1,
+    "title": "Drone giao hàng",
+    "url": "#drone/1"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 552,
+        "scroll": 560
+      }
+    ],
+    "previewCount": 1,
+    "title": "Một đơn hàng, bốn bước.",
+    "url": "#drone/2"
+  },
+  {
+    "charts": [
+      {
+        "color": "rgb(37, 106, 191)",
+        "height": 71.80902099609375
+      },
+      {
+        "color": "rgb(37, 106, 191)",
+        "height": 83.60134887695312
+      },
+      {
+        "color": "rgb(190, 75, 12)",
+        "height": 107.1790771484375
+      }
+    ],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Một triệu đơn. Một mạng lưới đang lớn lên.",
+    "url": "#drone/3"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Hạ tầng và tốc độ: đọc đúng phạm vi.",
+    "url": "#drone/4"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 432,
+        "scroll": 432
+      }
+    ],
+    "previewCount": 1,
+    "title": "Drone thế hệ 4 — năng lực nền tảng theo công bố",
+    "url": "#drone/5"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Theo chân một hộp hàng.",
+    "url": "#drone/6"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Drone → Ahamove: chuẩn hoá điểm nhận.",
+    "url": "#drone/7"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 552,
+        "scroll": 552
+      }
+    ],
+    "previewCount": 1,
+    "title": "Robot giao tận phòng",
+    "url": "#robots/1"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Sáu bước. Một lần giao tận phòng.",
+    "url": "#robots/2"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Biết đúng phòng. Không cần nhận diện món.",
+    "url": "#robots/3"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Lên đúng tầng nhờ kết nối thang máy.",
+    "url": "#robots/4"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Một đội robot cần một bộ điều phối.",
+    "url": "#robots/5"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Khách sạn phải sẵn sàng trước.",
+    "url": "#robots/6"
+  },
+  {
+    "charts": [
+      {
+        "color": "rgb(37, 106, 191)",
+        "height": 5.23138427734375
+      },
+      {
+        "color": "rgb(190, 75, 12)",
+        "height": 15.91961669921875
+      }
+    ],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Tăng trưởng nhanh. Tích hợp vẫn khó.",
+    "url": "#robots/7"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Robot → Ahamove: bài toán điều phối.",
+    "url": "#robots/8"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 552,
+        "scroll": 552
+      }
+    ],
+    "previewCount": 1,
+    "title": "Đặt đồ ăn trên Meituan",
+    "url": "#meituan/1"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 552,
+        "scroll": 560
+      }
+    ],
+    "previewCount": 1,
+    "title": "Hai bước, một rào cản.",
+    "url": "#meituan/2"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "150 triệu đơn — trong một ngày đạt đỉnh.",
+    "url": "#meituan/3"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Quy mô lớn. Chi phí cũng lớn.",
+    "url": "#meituan/4"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Đoàn đã tự trải nghiệm gì khi đặt món",
+    "url": "#meituan/5"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Ba mươi bốn phút được chia cho ai?",
+    "url": "#meituan/6"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Meituan → Ahamove: hiệu quả từng đơn.",
+    "url": "#meituan/7"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Hạ tầng mở đường cho tự động hoá.",
+    "url": "#takeaways/1"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Tự động hoá chặng lặp lại, giữ người ở hai đầu.",
+    "url": "#takeaways/2"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Một con số chỉ có nghĩa cùng phạm vi của nó.",
+    "url": "#takeaways/3"
+  },
+  {
+    "charts": [],
+    "overflow": [
+      {
+        "height": 474,
+        "scroll": 474
+      }
+    ],
+    "previewCount": 1,
+    "title": "Đọc sản lượng cùng với lợi nhuận.",
+    "url": "#takeaways/4"
+  }
+]

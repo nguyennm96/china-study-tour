@@ -1,0 +1,207 @@
+[
+  {
+    "hash": "#1",
+    "issues": [],
+    "missingImages": [
+      "http://127.0.0.1:4173/assets/team/shenzhen-study-trip-key-visual.webp"
+    ],
+    "title": "Sáu người. Ba chủ đề. Một hành trình."
+  },
+  {
+    "hash": "#2",
+    "issues": [],
+    "missingImages": [
+      "http://127.0.0.1:4173/media/illustrations/subjects-2d/drone.png",
+      "http://127.0.0.1:4173/media/illustrations/subjects-2d/robot.png"
+    ],
+    "title": "Ba cặp, ba chủ đề."
+  },
+  {
+    "hash": "#3",
+    "issues": [],
+    "missingImages": [
+      "http://127.0.0.1:4173/media/trip/drone/station.jpg"
+    ],
+    "title": "Drone giao hàng"
+  },
+  {
+    "hash": "#4",
+    "issues": [],
+    "missingImages": [],
+    "title": "Drone giao hàng"
+  },
+  {
+    "hash": "#5",
+    "issues": [],
+    "missingImages": [],
+    "title": "Một đơn hàng, bốn bước."
+  },
+  {
+    "hash": "#6",
+    "issues": [],
+    "missingImages": [],
+    "title": "Đơn drone thương mại luỹ kế"
+  },
+  {
+    "hash": "#7",
+    "issues": [],
+    "missingImages": [],
+    "title": "Nhanh hơn — nhưng đang so hai phép đo khác nhau"
+  },
+  {
+    "hash": "#8",
+    "issues": [],
+    "missingImages": [],
+    "title": "Thâm Quyến — nền hạ tầng phía dưới tuyến bay"
+  },
+  {
+    "hash": "#9",
+    "issues": [],
+    "missingImages": [],
+    "title": "Drone thế hệ 4 — năng lực nền tảng theo công bố"
+  },
+  {
+    "hash": "#10",
+    "issues": [],
+    "missingImages": [],
+    "title": "Theo chân một hộp hàng."
+  },
+  {
+    "hash": "#11",
+    "issues": [],
+    "missingImages": [
+      "http://127.0.0.1:4173/media/trip/drone/rider.jpg",
+      "http://127.0.0.1:4173/media/illustrations/subjects-2d/robot.png"
+    ],
+    "title": "Robot ship hàng"
+  },
+  {
+    "hash": "#12",
+    "issues": [],
+    "missingImages": [],
+    "title": "Robot ship hàng"
+  },
+  {
+    "hash": "#13",
+    "issues": [
+      {
+        "bottom": 648,
+        "class": "metric-meta",
+        "foot": 646,
+        "tag": "P",
+        "text": "10/2025"
+      },
+      {
+        "bottom": 651,
+        "class": "metric-meta",
+        "foot": 646,
+        "tag": "P",
+        "text": "07/2026"
+      }
+    ],
+    "missingImages": [],
+    "title": "Quy mô thật sự là bao nhiêu?"
+  },
+  {
+    "hash": "#14",
+    "issues": [],
+    "missingImages": [],
+    "title": "Đội xe không người tại Thâm Quyến theo nhà vận hành"
+  },
+  {
+    "hash": "#15",
+    "issues": [],
+    "missingImages": [],
+    "title": "Đội xe không người tại Thâm Quyến theo nhà vận hành"
+  },
+  {
+    "hash": "#16",
+    "issues": [],
+    "missingImages": [],
+    "title": "Thâm Quyến 2025 — cái gì tăng nhanh hơn cái gì"
+  },
+  {
+    "hash": "#17",
+    "issues": [],
+    "missingImages": [],
+    "title": "Thâm Quyến — cả thành phố, không riêng Meituan"
+  },
+  {
+    "hash": "#18",
+    "issues": [],
+    "missingImages": [],
+    "title": "Xe chạy làn đường. Robot đi vào toà nhà."
+  },
+  {
+    "hash": "#19",
+    "issues": [],
+    "missingImages": [],
+    "title": "Xe chạy làn đường. Robot đi vào toà nhà."
+  },
+  {
+    "hash": "#20",
+    "issues": [],
+    "missingImages": [],
+    "title": "Đặt đồ ăn trên Meituan"
+  },
+  {
+    "hash": "#21",
+    "issues": [],
+    "missingImages": [],
+    "title": "Hai bước, một rào cản."
+  },
+  {
+    "hash": "#22",
+    "issues": [],
+    "missingImages": [],
+    "title": "Doanh thu 2025 đến từ đâu"
+  },
+  {
+    "hash": "#23",
+    "issues": [],
+    "missingImages": [],
+    "title": "Doanh thu 2025 đến từ đâu"
+  },
+  {
+    "hash": "#24",
+    "issues": [],
+    "missingImages": [],
+    "title": "Cái giá của quy mô đó, đọc trong báo cáo 2025"
+  },
+  {
+    "hash": "#25",
+    "issues": [],
+    "missingImages": [],
+    "title": "Đoàn đã tự trải nghiệm gì khi đặt món"
+  },
+  {
+    "hash": "#26",
+    "issues": [],
+    "missingImages": [],
+    "title": "Ba mươi bốn phút được chia cho ai?"
+  },
+  {
+    "hash": "#27",
+    "issues": [],
+    "missingImages": [],
+    "title": "Ba mươi bốn phút được chia cho ai?"
+  },
+  {
+    "hash": "#28",
+    "issues": [],
+    "missingImages": [],
+    "title": "Thứ mở rộng trước không phải công nghệ."
+  },
+  {
+    "hash": "#29",
+    "issues": [],
+    "missingImages": [],
+    "title": "Tự động hoá chặng lặp lại, giữ người ở hai đầu."
+  },
+  {
+    "hash": "#30",
+    "issues": [],
+    "missingImages": [],
+    "title": "Một con số chỉ có nghĩa cùng phạm vi của nó."
+  }
+]

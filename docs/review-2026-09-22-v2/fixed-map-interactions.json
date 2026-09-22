@@ -1,0 +1,47 @@
+{
+  "before": {
+    "center": [
+      684.5,
+      522
+    ],
+    "floatingControls": 0,
+    "icons": [
+      {
+        "animation": "atlas-pin-bob",
+        "delay": "0s",
+        "state": "running",
+        "translate": "0px -8.27239px"
+      },
+      {
+        "animation": "atlas-pin-bob",
+        "delay": "-0.85s",
+        "state": "running",
+        "translate": "0px -13.1352px"
+      },
+      {
+        "animation": "atlas-pin-bob",
+        "delay": "-1.7s",
+        "state": "running",
+        "translate": "0px -21.9732px"
+      }
+    ],
+    "positions": [
+      "--stop-color: #d85c23; --bob-delay: 0s; transform: translate(-50%, -100%) translate(695px, 872px) rotateX(0deg) rotateZ(0deg); opacity: 1;",
+      "--stop-color: #167d91; --bob-delay: -0.85s; transform: translate(-50%, -100%) translate(1149px, 318px) rotateX(0deg) rotateZ(0deg); opacity: 1;",
+      "--stop-color: #7b6d23; --bob-delay: -1.7s; transform: translate(-50%, -100%) translate(342px, 426px) rotateX(0deg) rotateZ(0deg); opacity: 1;"
+    ]
+  },
+  "after": {
+    "floatingControls": 0,
+    "icons": [
+      "0px -13.3352px",
+      "0px -8.22627px",
+      "0px -18.1675px"
+    ],
+    "positions": [
+      "--stop-color: #d85c23; --bob-delay: 0s; transform: translate(-50%, -100%) translate(695px, 872px) rotateX(0deg) rotateZ(0deg); opacity: 1;",
+      "--stop-color: #167d91; --bob-delay: -0.85s; transform: translate(-50%, -100%) translate(1149px, 318px) rotateX(0deg) rotateZ(0deg); opacity: 1;",
+      "--stop-color: #7b6d23; --bob-delay: -1.7s; transform: translate(-50%, -100%) translate(342px, 426px) rotateX(0deg) rotateZ(0deg); opacity: 1;"
+    ]
+  }
+}

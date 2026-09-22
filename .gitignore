@@ -1,0 +1,15 @@
+node_modules/
+dist/
+
+# Local configuration and secrets
+.claude/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+*.tsbuildinfo
+
+# Local exports, deployment archives and Blender backups
+outputs/
+*.blend[0-9]
