@@ -21,7 +21,7 @@ export type Slide = { chapter: string; kicker: string; title: string; subjectId?
   | { kind: 'hotel-robot'; page: HotelRobotPage }
   | { kind: 'ahamove'; subjectId: AhamoveSubject }
   | { kind: 'didi'; page: DidiPage }
-  | { kind: 'place'; placeId: string; page: 'overview' | 'features' | 'visit' }
+  | { kind: 'place'; placeId: string; page: 'overview' | 'features' | 'gallery' | 'visit' }
 )
 
 /** Nhãn ngắn dùng cho thanh tiến trình; tên chủ đề đầy đủ vẫn hiện ở chân slide. */
@@ -90,6 +90,7 @@ export function placeSlides(): Slide[] {
   return places.flatMap(place => [
     { kind: 'place' as const, placeId: place.id, page: 'overview' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: place.kicker, title: place.headline },
     { kind: 'place' as const, placeId: place.id, page: 'features' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Đặc điểm`, title: place.featuresTitle },
+    ...(place.gallery ? [{ kind: 'place' as const, placeId: place.id, page: 'gallery' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Ảnh của đoàn`, title: place.gallery.title }] : []),
     ...(place.visit ? [{ kind: 'place' as const, placeId: place.id, page: 'visit' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Gợi ý ghé thăm`, title: place.visit.title }] : []),
   ])
 }

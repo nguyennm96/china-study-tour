@@ -8,7 +8,7 @@ const valueSize = (value: string, unit?: string) => {
   return ([[8, 52], [12, 44], [16, 36], [Infinity, 30]] as [number, number][]).find(([limit]) => weight <= limit)![1]
 }
 
-export function PlaceSlide({ placeId, page }: { placeId: string; page: 'overview' | 'features' | 'visit' }) {
+export function PlaceSlide({ placeId, page }: { placeId: string; page: 'overview' | 'features' | 'gallery' | 'visit' }) {
   const place = placeById[placeId]
   if (page === 'features') return <div className="place-features">
     <figure className="place-photo is-wide">
@@ -20,6 +20,24 @@ export function PlaceSlide({ placeId, page }: { placeId: string; page: 'overview
       <div><h4>{feature.title}</h4><p>{feature.detail}</p></div>
     </li>)}</ol>
   </div>
+
+  if (page === 'gallery' && place.gallery) {
+    const { video, photos } = place.gallery
+    const figures = photos.map(photo => <figure key={photo.src} className={`place-gallery-item ${photo.tall ? 'is-tall' : ''}`}>
+      <img src={photo.src} alt={photo.alt} style={photo.focus ? { objectPosition: photo.focus } : undefined} />
+      <figcaption>{photo.caption}</figcaption>
+    </figure>)
+    const columns = video ? undefined : { gridTemplateColumns: photos.map(photo => `minmax(0, ${photo.weight ?? 1}fr)`).join(' ') }
+    return <div className={`place-gallery ${video ? 'has-video' : ''}`} style={columns}>
+      {video && <figure className="place-gallery-video">
+        <video src={video.src} poster={video.poster} controls autoPlay muted loop playsInline preload="metadata" aria-label={video.alt}>Trình duyệt chưa phát được video.</video>
+        <figcaption>{video.caption}</figcaption>
+      </figure>}
+      {/* Lưới hai hàng: số cột đủ chứa mọi ảnh, ảnh dọc tính là hai ô. */}
+      {video ? <div className="place-gallery-grid" style={{ gridTemplateColumns: `repeat(${Math.ceil(photos.reduce((cells, photo) => cells + (photo.tall ? 2 : 1), 0) / 2)}, minmax(0, 1fr))` }}>{figures}</div> : figures}
+      <p className="place-gallery-credit">{video ? 'Ảnh và video' : 'Ảnh'} của đoàn · 08/2026</p>
+    </div>
+  }
 
   if (page === 'visit' && place.visit) return <ol className="place-visit">
     {place.visit.items.map(item => <li key={item.label}>

@@ -13,6 +13,15 @@ export type Place = {
   photo: { src: string; alt: string; credit: string }
   /** Ảnh thứ hai cho trang đặc điểm, để hai trang không lặp lại một khung hình. */
   photoAlt: { src: string; alt: string; credit: string }
+  /** Trang ảnh do đoàn tự chụp tại điểm dừng, xếp theo thứ tự muốn kể. */
+  gallery?: {
+    title: string
+    /** Video dọc đặt thành cột bên trái; khi có video, chú thích ảnh nằm đè lên ảnh cho gọn. */
+    video?: { src: string; poster: string; alt: string; caption: string }
+    /** tall: ảnh dọc chiếm trọn chiều cao lưới ảnh. focus: object-position khi cắt ảnh vào ô.
+     *  weight: độ rộng cột tương đối khi không có video, để ảnh dọc hẹp và ảnh ngang rộng. */
+    photos: { src: string; alt: string; caption: string; tall?: boolean; focus?: string; weight?: number }[]
+  }
   /** Trang gợi ý ghé thăm. Điểm chỉ đóng vai dẫn nhập cho một chủ đề thì không có. */
   visit?: { title: string; items: { label: string; title: string; detail: string }[] }
   metrics: PlaceMetric[]
@@ -95,6 +104,18 @@ export const places: Place[] = [
         { label: 'Lưu ý', title: 'Trả giá xuống 40–50% rồi hãy chốt', detail: 'Thử hàng ngay tại quầy trước khi trả tiền. Nhớ cài sẵn thanh toán nội địa vì gần như không ai nhận tiền mặt.' },
       ],
     },
+    gallery: {
+      title: 'Chợ linh kiện, và cả robot.',
+      video: {
+        src: '/media/places/seg-robot-boxing.mp4', poster: '/media/places/seg-robot-boxing-poster.jpg',
+        alt: 'Robot hình người màu đỏ bạc đá và đấm bao cát trong một sàn đấu nhỏ, khách đứng quanh quay điện thoại',
+        caption: 'Một gian trong chợ: robot hình người biểu diễn đá bao cát.',
+      },
+      photos: [
+        { src: '/media/places/seg-team-1.jpg', tall: true, alt: 'Nhìn lên giếng trời SEG Plaza: nhiều tầng gian hàng với biển hiệu điện tử sáng đèn', caption: 'Nhìn lên giếng trời: tầng nào cũng kín gian hàng, biển quảng cáo điốt và cuộn cảm.' },
+        { src: '/media/places/seg-team-2.jpg', tall: true, alt: 'Ba thành viên đoàn đi giữa các quầy linh kiện điện tử trong SEG Plaza', caption: 'Đoàn dạo giữa các quầy linh kiện.' },
+      ],
+    },
     sourceIds: ['hqb-xinhua', 'hqb-markets', 'hqb-szgov'],
   },
   {
@@ -135,6 +156,14 @@ export const places: Place[] = [
         { label: 'Lưu ý', title: 'Không nơi nào nhận tiền mặt', detail: 'Cài sẵn Alipay hoặc WeChat Pay trước khi đi, không thì chỉ đứng nhìn người ta mua.' },
       ],
     },
+    gallery: {
+      title: 'Một buổi tối ở Đông Môn.',
+      photos: [
+        { src: '/media/places/Dongmen_1.jpg', alt: 'Thành viên đoàn ngồi bên đường Đông Môn buổi tối, sau lưng là biển neon và dòng người, xe giao hàng', caption: 'Biển neon kín hai bên đường, shipper vẫn len giữa dòng người đi bộ.' },
+        { src: '/media/places/Dongmen_2.jpg', alt: 'Thành viên đoàn cầm xiên mực nướng dài và ly nước trên phố Đông Môn', caption: 'Phố ăn buổi tối: một xiên mực nướng cỡ lớn, vừa đi vừa ăn.' },
+        { src: '/media/places/Dongmen_3.jpg', alt: 'Dãy nhà mái ngói kiểu cũ ở Đông Môn sáng đèn về đêm, mặt sàn ướt phản chiếu ánh đèn', caption: 'Đoạn phố dựng lại theo diện mạo thị trấn cũ, sáng đèn về đêm.' },
+      ],
+    },
     sourceIds: ['dongmen-wiki', 'dongmen-duten'],
   },
   {
@@ -173,6 +202,21 @@ export const places: Place[] = [
         { label: 'Đi lúc nào', title: 'Chỉ trong ba ngày triển lãm', detail: 'Thường rơi vào cuối tháng 8. Cần đăng ký trước để lấy thẻ vào cửa.' },
         { label: 'Xem gì', title: 'Bốn hall theo bốn chủ đề', detail: 'RFID và NFC, cảm biến và định vị, nhãn e-paper và chống hàng giả, AI và robot.' },
         { label: 'Lưu ý', title: 'Đi hết bốn hall mất trọn một ngày', detail: 'Chọn trước hall cần xem thay vì đi tuần tự từ đầu, nếu không sẽ hết sức trước khi tới phần mình cần.' },
+      ],
+    },
+    gallery: {
+      title: 'AI bước ra khỏi màn hình.',
+      video: {
+        src: '/media/places/iote-robot-bar.mp4', poster: '/media/places/iote-robot-bar-poster.jpg',
+        alt: 'Cánh tay robot pha đồ uống từ dãy chai treo ngược trong một quầy tròn tại IOTE, khách đứng quay điện thoại',
+        caption: 'Quầy robot pha chế: cánh tay robot tự lấy đồ uống từ dãy chai treo.',
+      },
+      photos: [
+        { src: '/media/places/iote-team-1.jpg', tall: true, alt: 'Booth TunStar với khẩu hiệu tiếng Trung “Để AI bước ra khỏi màn hình, cảm nhận thế giới thật”, nhân viên giới thiệu thiết bị', caption: 'TunStar: “Để AI bước ra khỏi màn hình, cảm nhận thế giới thật.”' },
+        { src: '/media/places/iote-team-4.jpg', focus: '12% center', alt: 'Thành viên đoàn mặc áo Ahamove trao đổi với nhân viên booth XCC RFID, quầy trưng bày thẻ RFID và NFC', caption: 'Đoàn trao đổi tại booth thẻ RFID/NFC của XCC.' },
+        { src: '/media/places/iote-team-2.jpg', alt: 'Booth CTONE với vòng đèn tròn và biển “đầu cuối – biên – đám mây”, khách đứng kín lối đi', caption: 'CTONE: máy tính biên, đầu cuối – biên – đám mây.' },
+        { src: '/media/places/iote-team-5.jpg', focus: '45% center', alt: 'Lối đi giữa các booth đông kín khách, thành viên đoàn mặc áo Ahamove đứng giữa dòng người', caption: 'Đoàn Ahamove giữa lối đi.' },
+        { src: '/media/places/iote-team-3.jpg', alt: 'Booth ZNV với các vòng biển đỏ treo trên cao, đông khách chuyên ngành', caption: 'ZNV: AI cho “tình huống phức tạp”.' },
       ],
     },
     sourceIds: ['iote-2026', 'shenzhen-world-aipc'],
@@ -255,6 +299,15 @@ export const places: Place[] = [
         { label: 'Dành bao lâu', title: 'Một buổi chiều tối', detail: 'Nằm cạnh khu công nghệ cao nên đông nhất sau giờ tan làm.' },
         { label: 'Xem gì', title: 'Mười toà flagship và sáu tác phẩm nghệ thuật', detail: 'Trong đó có tượng voi khoác áo phao đã thành điểm hẹn quen, cùng hiệu sách và khu ẩm thực.' },
         { label: 'Lưu ý', title: 'Đây là chỗ xem cách bố trí, không phải chỗ mua rẻ', detail: 'Khách đi bộ ngoài trời giữa các toà nên trời mưa thì hơi cực.' },
+      ],
+    },
+    gallery: {
+      title: 'Một vòng quanh MixC World.',
+      photos: [
+        { src: '/media/places/mixc_ngoaitroi.jpg', weight: 3, alt: 'Ngã tư gần MixC World: cao ốc kính Nam Sơn, người đi xe đạp công cộng màu vàng và dòng người qua đường', caption: 'Bên ngoài: cao ốc Nam Sơn và xe đạp công cộng.' },
+        { src: '/media/places/mixc_2.jpg', weight: 2.2, alt: 'Tượng voi bơm hơi màu xám bám trên mặt tiền toà nhà MixC World, vòi buông dài xuống', caption: 'Tượng voi “khoác áo phao” trên mặt tiền.' },
+        { src: '/media/places/mixc_trienlam.jpg', weight: 5, alt: 'Triển lãm tượng đầu người khổng lồ màu bạc đặt trên thảm xanh giữa sảnh MixC World, khách đứng xem và chụp ảnh', caption: 'Triển lãm tượng đầu người khổng lồ ngay giữa sảnh, khách dừng lại chụp ảnh.' },
+        { src: '/media/places/mixc_ansaukhidi.jpg', weight: 3, alt: 'Thành viên đoàn ngồi bên vỉa hè buổi tối ăn ly mì bò hầm', caption: 'Kết thúc buổi đi: một ly mì bò hầm ngay bên vỉa hè.' },
       ],
     },
     sourceIds: ['mixc-nanshan-gov', 'dachong-nfapp'],
