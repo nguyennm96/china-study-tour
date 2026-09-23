@@ -255,31 +255,33 @@ Slide 1 hứa một cảnh ("lát nữa mọi người sẽ xem"), slide 10 tr�
 
 ---
 
-## SLIDE 10 · Xem một lượt giao thật · ⏱️ 1 phút 10 giây (gồm 36 giây video)
+## SLIDE 10 · Xem một lượt giao thật · ⏱️ 55 giây (gồm 17 giây video)
 
 🖥️ **TRÊN SLIDE**
-- Video của đoàn, **36 giây, không tiếng**, tự phát khi mở trang
+- Video của đoàn, **17 giây, không tiếng**, tự phát khi mở trang
+- Nội dung video: timeline **5 bước** *"Một đơn hàng đến tay khách như thế nào"*, mỗi bước kèm cảnh quay thật ở Rezen
 
 🎙️ **LỜI NÓI**
 
 **Trước khi video chạy (~10 giây):**
 > *"Đây là đúng lượt giao ở Rezen mà mình kể lúc đầu. Video không có tiếng, mình nói theo."*
 
-**Trong lúc video chạy: nói theo khung hình, mỗi ý một câu ngắn:**
-> - Khi hiện **"Quy trình sử dụng dịch vụ"**: *"Đặt trên app, vận chuyển, bàn giao. Ba chặng."*
-> - Khi hiện **ảnh robot ở sảnh**: *"Đơn từ Meituan chuyển thẳng sang hệ thống robot của khách sạn."* [T2]
-> - Khi hiện **robot trong thang máy**: *"Nó tự gọi thang, lên đúng tầng của đoàn."*
-> - Khi hiện **màn hình trên nắp robot**: *"Tới nơi, nó hiện mã. Khách quét, khoang mở."*
-> - Khi hiện **khung "Điểm nghẽn thực tế"**: im lặng hai giây, để cả phòng đọc.
+**Trong lúc video chạy (17 giây): mỗi chấm cam trên timeline một câu ngắn:**
+> - Chấm 1, **người cầm điện thoại**: *"Đặt trên app, chọn giao tới phòng."*
+> - Chấm 2, **robot ở sảnh**: *"Đồ được xếp vào khoang robot."*
+> - Chấm 3, **robot trong thang máy**: *"Nó tự gọi thang, lên đúng tầng của đoàn."*
+> - Chấm 4, **màn hình trên nắp robot**: *"Tới sảnh thang máy tầng mình, nó hiện mã để gọi khách."*
+> - Chấm 5, **người mở khoang**: *"Quét mã, khoang mở, lấy đồ."*
 
 **Sau khi video dừng (~25 giây):**
-> *"Khung cuối là thứ đoàn mình thấy tận mắt: **nhân viên khách sạn vẫn phải ra đỡ đoạn cuối**, vì thang đông, vì khách chưa quen bấm.* [T1]
+> *"Nhìn thì trơn tru vậy. Nhưng có một thứ đoàn mình thấy tận mắt mà video không quay: **nhân viên khách sạn vẫn phải ra đỡ đoạn cuối**, vì thang đông, vì khách chưa quen bấm.* [T1]
 >
 > *Mọi người còn nhớ hai ô màu cam lúc nãy không? Đây chính là nó. **Robot lo được chặng đi lại. Còn năm mươi mét cuối vẫn cần con người.**"*
 
 🎬 **GHI CHÚ SÂN KHẤU**
 - Video **tự phát và không có tiếng**. Nếu nó không tự chạy, bấm nút ▶ trên khung video.
-- Đừng nói đè liên tục lên video. Mỗi khung chỉ một câu, rồi để hình tự kể.
+- Video chỉ 17 giây, mỗi bước khoảng 3 giây: **nói thật ngắn**, câu nào chưa kịp nói thì bỏ, đừng nói đè sang bước sau.
+- Nếu muốn khán giả nhìn kỹ, xem trước một lượt không nói, rồi bấm ▶ lần hai để nói theo.
 - Câu cuối in đậm là **câu chốt cả chương**. Nói xong, dừng, rồi mới chuyển sang Meituan hoặc Q&A.
 - Nếu chương Meituan nói tiếp ngay sau: *"Robot là chặng cuối trong toà nhà. Còn chặng trước đó, từ lúc bấm đặt tới lúc đồ tới sảnh, là chuyện của Meituan."*
 
@@ -299,7 +301,7 @@ Slide 1 hứa một cảnh ("lát nữa mọi người sẽ xem"), slide 10 tr�
 
 ## ✅ Cần xác nhận trước buổi nói
 
-1. **Ai đặt đồ vào khoang robot ở Rezen:** shipper Meituan hay nhân viên khách sạn? Video ghi *"Xếp đồ vào khoang robot"* nhưng không nói ai làm. Lời nói slide 10 đang viết trung tính; nếu ai trong đoàn nhớ rõ thì thêm một câu.
+1. **Ai đặt đồ vào khoang robot ở Rezen:** shipper Meituan hay nhân viên khách sạn? Video (chấm 2) ghi *"Xếp đồ vào khoang robot"* nhưng không nói ai làm. Lời nói slide 10 đang viết trung tính; nếu ai trong đoàn nhớ rõ thì thêm một câu.
 2. **Robot giao tới cửa phòng hay chỉ tới sảnh thang máy của tầng?** Video ghi *"dừng tại sảnh thang máy, hiện mã để gọi khách"*. Lời nói slide 1 viết *"lên tới tầng của đoàn"* cho khớp. Nếu thực tế nó tới tận cửa thì sửa lại.
 3. **Ngày đặt:** ghi chép của đoàn ghi là **Ngày 2** (25/08). Slide 1 nói *"tối ngày thứ hai"*. Nếu thực tế là buổi trưa thì đổi chữ "tối".
 
@@ -309,7 +311,7 @@ Slide 1 hứa một cảnh ("lát nữa mọi người sẽ xem"), slide 10 tr�
 
 **Của đoàn**
 - [T1] Ghi chép chuyến đi, Ngày 2, *Test robot Meituan giao tới khách sạn* (Phạm Minh Quân, Nguyễn Thanh Bình) · `src/data/itinerary.ts`
-- [T2] Video của đoàn `public/media/trip/robot/Robot_giao_do-36s.mp4`, khung "Bên trong một lượt giao hàng"
+- [T2] Video của đoàn `public/media/trip/robot/Robot_giao_do-16-33.mp4` (giây 16–33 của bản gốc `Robot_giao_do.mp4`), timeline 5 bước
 
 **Bên ngoài** (kiểm chứng 23/09/2026)
 1. TechCrunch, *Starwood introduces robotic butlers at Aloft hotel*, 13/08/2014: https://techcrunch.com/2014/08/13/starwood-introduces-robotic-butlers-at-aloft-hotel-in-palo-alto/

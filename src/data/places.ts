@@ -213,6 +213,7 @@ export const places: Place[] = [
       },
       photos: [
         { src: '/media/places/iote-team-1.jpg', tall: true, alt: 'Booth TunStar với khẩu hiệu tiếng Trung “Để AI bước ra khỏi màn hình, cảm nhận thế giới thật”, nhân viên giới thiệu thiết bị', caption: 'TunStar: “Để AI bước ra khỏi màn hình, cảm nhận thế giới thật.”' },
+        { src: '/media/places/iote-team-6.jpg', tall: true, focus: '38% 45%', alt: 'Màn hình bảng viết cảm ứng tại một booth IOTE, dòng chữ viết tay phát sáng “Xin chào Ahamovers”, phía sau là khách tham quan', caption: 'Một booth chào đoàn trên bảng cảm ứng: “Xin chào Ahamovers”.' },
         { src: '/media/places/iote-team-4.jpg', focus: '12% center', alt: 'Thành viên đoàn mặc áo Ahamove trao đổi với nhân viên booth XCC RFID, quầy trưng bày thẻ RFID và NFC', caption: 'Đoàn trao đổi tại booth thẻ RFID/NFC của XCC.' },
         { src: '/media/places/iote-team-2.jpg', alt: 'Booth CTONE với vòng đèn tròn và biển “đầu cuối – biên – đám mây”, khách đứng kín lối đi', caption: 'CTONE: máy tính biên, đầu cuối – biên – đám mây.' },
         { src: '/media/places/iote-team-5.jpg', focus: '45% center', alt: 'Lối đi giữa các booth đông kín khách, thành viên đoàn mặc áo Ahamove đứng giữa dòng người', caption: 'Đoàn Ahamove giữa lối đi.' },
