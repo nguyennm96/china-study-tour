@@ -10,6 +10,7 @@ import { teamArt } from './TourSections'
 import { HotelRobotSlides } from './HotelRobotSlides'
 import { DidiSlides } from './DidiSlides'
 import { IoteSlides } from './IoteSlides'
+import { Hall9Slides } from './Hall9Slides'
 import { PlaceSlide } from './PlaceSlides'
 import { ahamoveReferences, type AhamoveSubject } from '../data/ahamove'
 
@@ -227,6 +228,7 @@ export function SlideBody({ slide }: { slide: Slide }) {
     case 'hotel-robot': return <HotelRobotSlides page={slide.page} />
     case 'didi': return <DidiSlides page={slide.page} />
     case 'iote': return <IoteSlides page={slide.page} />
+    case 'hall9': return <Hall9Slides page={slide.page} />
     case 'place': return <PlaceSlide placeId={slide.placeId} page={slide.page} />
     case 'ahamove': return <AhamoveSlide subjectId={slide.subjectId} />
   }

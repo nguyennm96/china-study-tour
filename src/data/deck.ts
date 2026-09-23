@@ -6,6 +6,7 @@ import { ahamoveReferences, type AhamoveSubject } from './ahamove'
 import { didiPages, type DidiPage } from './didi'
 import { iotePages, type IotePage } from './iote'
 import { places } from './places'
+import { hall9Pages, type Hall9Page } from './hall9'
 
 export type Slide = { chapter: string; kicker: string; title: string; subjectId?: string } & (
   | { kind: 'team' }
@@ -23,6 +24,7 @@ export type Slide = { chapter: string; kicker: string; title: string; subjectId?
   | { kind: 'ahamove'; subjectId: AhamoveSubject }
   | { kind: 'didi'; page: DidiPage }
   | { kind: 'iote'; page: IotePage }
+  | { kind: 'hall9'; page: Hall9Page }
   | { kind: 'place'; placeId: string; page: 'overview' | 'features' | 'gallery' | 'visit' }
 )
 
@@ -92,6 +94,8 @@ export function placeSlides(): Slide[] {
   return places.flatMap(place => [
     { kind: 'place' as const, placeId: place.id, page: 'overview' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: place.kicker, title: place.headline },
     { kind: 'place' as const, placeId: place.id, page: 'features' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Đặc điểm`, title: place.featuresTitle },
+    // Ghim IOTE đi sâu thêm Hall 9: hai trang NFC và RFID ngay sau trang bốn hall.
+    ...(place.id === 'place-iote' ? hall9Pages.map(page => ({ kind: 'hall9' as const, page: page.key, chapter: 'Điểm dừng', subjectId: place.id, kicker: page.kicker, title: page.title })) : []),
     ...(place.gallery ? [{ kind: 'place' as const, placeId: place.id, page: 'gallery' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Ảnh của đoàn`, title: place.gallery.title }] : []),
     ...(place.visit ? [{ kind: 'place' as const, placeId: place.id, page: 'visit' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Gợi ý ghé thăm`, title: place.visit.title }] : []),
   ])
