@@ -1,14 +1,36 @@
-import { ArrowRight, BatteryCharging, Bell, Buildings, CheckCircle, Cloud, Door, Elevator, ForkKnife, MapTrifold, Package, Path, PersonSimpleWalk, Robot, WifiHigh } from '@phosphor-icons/react'
-import { hotelInfrastructure, hotelRobotData, hotelRobotFlow, type HotelRobotPage } from '../data/hotelRobot'
-import { ChartPlot } from './DataCharts'
+import { ArrowRight, BatteryCharging, Bell, Buildings, CheckCircle, City, Cloud, Coins, Cpu, Door, Elevator, ForkKnife, MapTrifold, Package, Path, PersonSimpleWalk, Robot, Virus, WifiHigh } from '@phosphor-icons/react'
+import { hotelInfrastructure, hotelRobotDrivers, hotelRobotOutdoorNote, hotelRobotShenzhenPhotos, hotelRobotTimeline, hotelRobotFlow, hotelRobotVideo, type HotelRobotPage } from '../data/hotelRobot'
 import './HotelRobotSlides.css'
 
 const icons = { task: Package, map: MapTrifold, elevator: Elevator, wifi: WifiHigh, battery: BatteryCharging, human: PersonSimpleWalk }
+const driverIcons = { labor: Coins, covid: Virus, hardware: Cpu, city: City }
 const journeyIcons = [ForkKnife, Cloud, Package, Robot, Bell, CheckCircle]
 const art = '/media/illustrations/subjects-2d/hotel-robot.png'
 function RobotArt() { return <img className="hotel-art" src={art} alt="Minh hoạ 2D robot giao phòng cạnh thang máy khách sạn" /> }
 
 export function HotelRobotSlides({ page }: { page: HotelRobotPage }) {
+  if (page === 'origin') return <div className="hotel-origin">
+    <ol className="hotel-timeline">{hotelRobotTimeline.map(item => <li key={item.year}>
+      <figure><img src={item.image} alt={item.title} style={{ objectPosition: item.focus }} loading="lazy" /><figcaption>{item.credit}</figcaption></figure>
+      <p className="hotel-timeline-when"><strong>{item.year}</strong> · {item.place}</p>
+      <h3>{item.title}</h3><p>{item.detail}</p>
+    </li>)}</ol>
+    <p className="hotel-origin-note">{hotelRobotOutdoorNote}</p>
+  </div>
+
+  if (page === 'shenzhen') return <div className="hotel-shenzhen">
+    <div className="hotel-shenzhen-photos">
+      <figure className="is-main"><img src={hotelRobotShenzhenPhotos.main.src} alt={hotelRobotShenzhenPhotos.main.alt} /><figcaption>{hotelRobotShenzhenPhotos.main.credit}</figcaption></figure>
+      <figure><img src={hotelRobotShenzhenPhotos.detail.src} alt={hotelRobotShenzhenPhotos.detail.alt} /><figcaption>{hotelRobotShenzhenPhotos.detail.credit}</figcaption></figure>
+      <p className="hotel-shenzhen-cluster">{hotelRobotShenzhenPhotos.cluster}</p>
+    </div>
+    <div className="hotel-origin-drivers">{hotelRobotDrivers.map(item => {
+      const Icon = driverIcons[item.icon]
+      return <article key={item.title}><Icon size={26} aria-hidden="true" /><h3>{item.title}</h3><p>{item.detail}</p></article>
+    })}</div>
+    <p className="hotel-bottom-line">Robot không bùng nổ vì công nghệ mới. Nó bùng nổ khi linh kiện rẻ, nhân công đắt và COVID gặp nhau cùng lúc.</p>
+  </div>
+
   if (page === 'journey') return <div className="hotel-journey">
     <ol className="hotel-step-grid">{hotelRobotFlow.nodes.map((node, i) => {
       const Icon = journeyIcons[i]
@@ -46,9 +68,11 @@ export function HotelRobotSlides({ page }: { page: HotelRobotPage }) {
     <p className="hotel-bottom-line">Từ đơn hàng đến tác vụ, rồi từ tác vụ trở lại dữ liệu vận hành.</p>
   </div>
 
+  if (page === 'video') return <figure className="hotel-video">
+    <video src={hotelRobotVideo.src} poster={hotelRobotVideo.poster} controls autoPlay muted playsInline preload="metadata" aria-label={hotelRobotVideo.alt}>Trình duyệt chưa phát được video.</video>
+    <figcaption>{hotelRobotVideo.caption}</figcaption>
+  </figure>
+
   if (page === 'infrastructure') return <div className="hotel-journey"><div className="hotel-step-grid hotel-infrastructure">{hotelInfrastructure.map(item=>{const Icon=icons[item.icon];return <article key={item.title}><Icon size={30} aria-hidden="true" /><h3>{item.title}</h3><p>{item.detail}</p></article>})}</div><p className="hotel-bottom-line">Điểm khó khi nhân rộng: thang máy và hệ thống khách sạn cũ.</p></div>
-
-  if (page === 'market') return <div className="deck-chart-layout hotel-market"><ChartPlot chart={hotelRobotData.charts[0]} /><aside className="chart-narrative"><p className="hotel-market-number">~24%<small>CAGR 2026–2030 · dự báo</small></p><p className="viz-question">Tăng trưởng chưa bảo đảm lợi nhuận.</p><p className="viz-reading">Thiếu nhân lực, COVID và phần cứng rẻ tạo lực đẩy. Tích hợp tòa nhà, cạnh tranh giá và chi phí vẫn là rào cản.</p><p className="hotel-example-label">Ước lượng toàn cầu được tài liệu tổng hợp dẫn lại, không phải số riêng Trung Quốc.</p></aside></div>
-
-  return <div className="hotel-split hotel-ahamove"><div className="hotel-explainer"><p className="hotel-punchline">Last-mile<br /><em>theo chiều dọc.</em></p><dl className="hotel-parallels"><div><dt>Khách sạn</dt><dd>Truck On-Demand</dd></div><div><dt>Gán robot theo vị trí & pin</dt><dd>Gán tài xế theo vị trí & khả năng nhận</dd></div><div><dt>Hàng đợi thang máy</dt><dd>Điểm nghẽn trên tuyến giao</dd></div><div><dt>Task → giao → nhật ký</dt><dd>Đơn → dispatch → dữ liệu vận hành</dd></div></dl><p className="hotel-callout">Chặng nào đủ lặp lại để thử tự động hoá, và ai xử lý ngoại lệ?</p></div><div className="hotel-art-panel"><RobotArt /></div></div>
+  return null
 }
