@@ -1,6 +1,6 @@
 import { useEffect, useState, type CSSProperties, type ReactNode } from 'react'
 import {
-  ArrowRight, BatteryCharging, CheckCircle, CheckSquare, ChargingStation, HandTap, Info, Lightbulb, Microphone, XCircle,
+  ArrowRight, BatteryCharging, CheckCircle, CheckSquare, ChargingStation, Info, Lightbulb, Microphone, XCircle,
 } from '@phosphor-icons/react'
 import {
   didiCarbon, didiDriver, didiEv, didiOpen, didiPages, didiPhotos, didiRobotaxi, didiScale, didiScreens,
@@ -33,13 +33,12 @@ function useReveal() {
   return [shown, () => setShown(true)] as const
 }
 
-function Ask({ question, onReveal, label = 'Hỏi cả phòng', hint = 'Bấm hoặc nhấn → để lật đáp án' }: {
-  question: string; onReveal: () => void; label?: string; hint?: string
+function Ask({ question, onReveal, label = 'Hỏi cả phòng' }: {
+  question: string; onReveal: () => void; label?: string
 }) {
   return <button type="button" className="didi-ask" onClick={onReveal}>
     <span className="didi-ask-label">{label}</span>
     <strong>{question}</strong>
-    <span className="didi-ask-hint"><HandTap size={16} aria-hidden="true" />{hint}</span>
   </button>
 }
 
@@ -219,7 +218,7 @@ function DriverSlide() {
   return <div className={`didi-driver-layout ${shown ? 'is-shown' : ''}`}>
     <div className="didi-driver-main">
       {shown
-        ? <p className="didi-yes didi-pop">{didiDriver.answer}</p>
+        ? <div className="didi-yes-row didi-pop"><p className="didi-yes">{didiDriver.answer}</p><p className="didi-deal">{didiDriver.deal.text}<Ref page="driver" ids={didiDriver.deal.cite} /></p></div>
         : <Ask question={didiDriver.question} onReveal={reveal} />}
       <ol className="didi-boxes">{didiDriver.boxes.map((box, index) => <li key={box.head} className="didi-rise" style={stagger(index + 1)}>
         <b aria-hidden="true">0{index + 1}</b>
@@ -234,7 +233,6 @@ function DriverSlide() {
       <p className="didi-bill-title">{bill.title}</p>
       <dl>{bill.rows.map(row => <div key={row.label} className={'accent' in row ? 'is-accent' : ''}><dt>{row.label}</dt><dd>{row.value}</dd></div>)}</dl>
       <span className="didi-bill-bar" aria-hidden="true"><i /><i /></span>
-      <figcaption>{bill.note}</figcaption>
     </figure>
   </div>
 }
@@ -247,18 +245,22 @@ function CarbonSlide() {
       <Shot photo={didiPhotos.receipt} crop={didiCarbon.crop} rings={[{ rect: didiCarbon.ring }]} />
       <figcaption>{didiCarbon.caption}</figcaption>
     </figure>
-    <div className="didi-carbon-china">
+    {!shown && <div className="didi-carbon-china">
       <ul className="didi-points">{didiCarbon.points.map(point => <li key={point.head}><h4>{point.head}</h4><p>{point.body}<Ref page="carbon" ids={point.cite} /></p></li>)}</ul>
       <ol className="didi-loop">{didiCarbon.loop.map((step, index) => <li key={step}>{index > 0 && <ArrowRight size={16} aria-hidden="true" />}<span>{step}</span></li>)}</ol>
-    </div>
+    </div>}
     {shown
       ? <section className="didi-vietnam didi-pop">
-          <h4>{vietnam.head}</h4>
-          <p className="didi-decree">{vietnam.decree.lead} <span>{vietnam.decree.number}</span><Ref page="carbon" ids={vietnam.decree.cite} /></p>
-          <p className="didi-decree-dates">{vietnam.dates}</p>
+          <header>
+            <h4>{vietnam.head}</h4>
+            <p className="didi-decree">{vietnam.decree.lead} <span>{vietnam.decree.number}</span><Ref page="carbon" ids={vietnam.decree.cite} /></p>
+            <p className="didi-decree-dates">{vietnam.dates}</p>
+            <p className="didi-decree-lead">{vietnam.lead}</p>
+          </header>
           <ul>{vietnam.items.map(item => <li key={item.value}><strong>{item.value}</strong><span>{item.label}<Ref page="carbon" ids={item.cite} /></span>{'note' in item && <small>{item.note}</small>}</li>)}</ul>
+          <p className="didi-decree-duty">{vietnam.duty.text}<Ref page="carbon" ids={vietnam.duty.cite} /></p>
         </section>
-      : <Ask label={teaser.label} question={teaser.question} hint={teaser.hint} onReveal={reveal} />}
+      : <Ask label={teaser.label} question={teaser.question} onReveal={reveal} />}
   </div>
 }
 
@@ -293,12 +295,11 @@ function EvSlide() {
     <section className="didi-ev-block is-hanoi">
       <h4>{hanoi.head}</h4>
       <div className="didi-hanoi">
-        <figure><RingDiagram /><figcaption>{hanoi.diagramNote}</figcaption></figure>
+        <figure><RingDiagram /></figure>
         <ol className="didi-stages">{hanoi.stages.map((stage, index) => <li key={stage.date} data-stage={index}>
           <strong>{stage.date}</strong>{'status' in stage && <em>{stage.status}</em>}<span>{stage.scope}<Ref page="ev" ids={stage.cite} /></span>
         </li>)}</ol>
       </div>
-      <p className="didi-rule">{hanoi.rule.text}<Ref page="ev" ids={hanoi.rule.cite} /></p>
       <div className="didi-ev-key"><p>{hanoi.key.text}<Ref page="ev" ids={hanoi.key.cite} /></p><small>{hanoi.key.note}</small></div>
     </section>
     <section className="didi-ev-block is-swap">

@@ -149,7 +149,7 @@ export const sources: Source[] = [
   {
     id: 'amap-light-xinhua', publisher: 'Tân Hoa Xã', title: 'Amap chính thức ra mắt tính năng đếm ngược đèn giao thông, hỗ trợ hơn 80.000 nút giao', date: '15/08/2022', tier: 'secondary',
     url: 'https://www.news.cn/tech/20220815/fb3ad5003d834046b7c4d0d2e1f7c2a3/c.html',
-    scope: '[8] Mốc ra mắt và độ phủ hơn 80.000 nút giao lúc ra mắt; nhắc bằng giọng nói khi đèn đỏ còn khoảng 5 giây; nút giao đông thì hiện số nhịp đèn phải chờ.',
+    scope: '[8] Mốc ra mắt và độ phủ hơn 80.000 nút giao ở gần 240 thành phố lúc ra mắt; nhắc bằng giọng nói khi đèn đỏ còn khoảng 5 giây; nút giao đông thì hiện số nhịp đèn phải chờ.',
   },
   {
     id: 'amap-light-ithome-2026', publisher: 'IT之家', title: 'Đếm ngược đèn giao thông của Amap ra nước ngoài; đã phủ gần 500.000 nút giao', date: '20/05/2026', tier: 'secondary',
@@ -162,6 +162,16 @@ export const sources: Source[] = [
     scope: '[9] Dẫn bằng sáng chế của Amap: suy chu kỳ đèn từ quỹ đạo của các xe dừng chờ đèn. Bài cũng ghi một số địa phương có cơ quan giao thông chia sẻ thêm dữ liệu đèn cho nhà cung cấp bản đồ — nên không được nói là "không đấu nối gì hết".',
   },
   {
+    id: 'amap-light-yantai', publisher: '大众网 · Yên Đài', title: 'Cảnh sát giao thông Yên Đài cùng Amap làm 235 đèn giao thông “biết nói” — lần đầu tiên cả nước', date: '09/12/2019', tier: 'secondary',
+    url: 'https://yantai.dzwww.com/xinwen/ytxw/ytsh/201912/t20191209_17203181.htm',
+    scope: 'Yên Đài là nơi đầu tiên cảnh sát giao thông đưa dữ liệu tín hiệu thật của 235 nút giao lên Amap, từ 10/12/2019. Đây là trường hợp chia sẻ dữ liệu, không phải cách Amap làm ở phần lớn nút giao.',
+  },
+  {
+    id: 'amap-light-police-2023', publisher: '快科技 · qua 腾讯新闻', title: 'Amap hợp tác cảnh sát giao thông nhiều địa phương về dữ liệu đèn tín hiệu', date: '30/11/2023', tier: 'secondary',
+    url: 'https://news.qq.com/rain/a/20231130A09LTK00',
+    scope: 'Liệt kê Tây An, Lan Châu, Tuyền Châu, Tế Ninh, Bắc Kinh Diệc Trang là các nơi cảnh sát giao thông hợp tác với Amap. Không nêu số nút giao của từng nơi.',
+  },
+  {
     id: 'didi-commission-ithome', publisher: 'IT之家', title: 'Didi hạ trần hoa hồng mỗi đơn từ 29% xuống 27%, công khai giá toàn trình', date: '08/05/2026', tier: 'secondary',
     url: 'https://www.ithome.com/0/947/975.htm',
     scope: '[10] Trần hoa hồng mỗi đơn 29% → 27%; tài xế từ 50 đơn/tháng được bảo đảm hoa hồng trung bình tháng không quá 25% (hoàn phần vượt qua 返佣宝). Công bố trong đợt các nền tảng thực hiện danh sách cấm về thuật toán của Cục Quản lý Không gian mạng.',
@@ -169,7 +179,7 @@ export const sources: Source[] = [
   {
     id: 'didi-driver-bill-workercn', publisher: '中工网 (Báo Công nhân Trung Quốc)', title: 'Thương lượng thuật toán: hoa hồng của tài xế gọi xe có “sổ rõ ràng”', date: '31/05/2026', tier: 'secondary',
     url: 'https://www.workercn.cn/c/2026-05-31/8813487.shtml',
-    scope: '[11] App tài xế xem được thu nhập, thưởng, tỷ lệ hoa hồng từng đơn (có từ 2022) và mục hoa hồng trung bình 7 ngày, tháng trước; trần 27% nằm trong thoả thuận thuật toán ký cuối 2025 do Tổng Công đoàn điều phối. Mức giảm 68% khiếu nại là số giám sát của Ủy ban Giao thông Bắc Kinh, tính đến đầu 01/2026, trên 154.000 tài xế.',
+    scope: '[11] App tài xế xem được thu nhập, thưởng, tỷ lệ hoa hồng từng đơn (có từ 2022) và mục hoa hồng trung bình 7 ngày, tháng trước; trần 27% nằm trong «Thoả thuận về thuật toán và quy tắc lao động» Didi ký cuối 2025 — Công đoàn TP Bắc Kinh cùng nhiều sở ngành trực tiếp thúc đẩy, Tổng Công đoàn chỉ đạo chung (统筹指导), 7 đại diện tài xế tham gia thương lượng; bài không ghi rõ bên ký với Didi. Phần hoa hồng vượt 25% tự động trả lại tài khoản tài xế vào tháng sau. Hoá đơn tài xế bản mới thí điểm ở 21 thành phố. Mức giảm 68% khiếu nại liên quan hoa hồng là số giám sát của Ủy ban Giao thông Bắc Kinh, tính đến đầu 01/2026, trên 154.000 tài xế Didi ở Bắc Kinh, so với trước khi thương lượng (không nêu khoảng thời gian).',
   },
   {
     id: 'vn-driver-transparency-thuonggia', publisher: 'Thương Gia', title: 'Grab và “khoảng trống” minh bạch trong bài toán giá cước', date: '15/09/2026', tier: 'secondary',
@@ -179,27 +189,57 @@ export const sources: Source[] = [
   {
     id: 'didi-carbon-21jingji', publisher: '21世纪经济报道', title: 'Nền tảng lượng hoá hành vi xanh; sản phẩm carbon 碳元气 của Didi phủ 298 thành phố', date: '18/06/2026', tier: 'secondary',
     url: 'https://m.21jingji.com/article/20260618/herald/267c9983aa2ee5d8b4ee9a785089a8f9.html',
-    scope: '[12] Didi tự phát triển sản phẩm 碳普惠 “碳元气”, đã triển khai ở 298 thành phố. Lượng CO₂ giảm mỗi chuyến là số Didi ước tính.',
+    scope: '[12] Didi tự phát triển sản phẩm 碳普惠 “碳元气”, đã triển khai ở 298 thành phố; người dùng tích điểm qua đi lại xanh. Lượng CO₂ giảm mỗi chuyến là số Didi ước tính. Số “1,6 tỷ lượt xe điện, giảm 240.000 tấn” trong bài là của khách doanh nghiệp, không phải của 碳元气.',
+  },
+  {
+    id: 'didi-carbon-wuhan', publisher: 'Sở Sinh thái Môi trường Vũ Hán', title: 'Didi tham gia 碳普惠 Vũ Hán: điểm carbon đổi phiếu gọi xe, phiếu đi chung', date: '05/11/2024', tier: 'primary',
+    url: 'https://hbj.wuhan.gov.cn/hjxw/202411/t20241105_2480145.html',
+    scope: 'Ở Vũ Hán, điểm carbon của Didi đổi được phiếu giảm giá gọi xe và phiếu đi chung xe với nhiều mệnh giá; thoả thuận có hiệu lực từ 22/09/2024. Chỉ nói Vũ Hán, không phải mọi thành phố.',
+  },
+  {
+    id: 'didi-carbon-beijing', publisher: 'Sở Sinh thái Môi trường Bắc Kinh · hồ sơ dự án của 北京桔行科技', title: 'Hồ sơ thiết kế dự án 碳普惠 đi chung xe của Didi tại Bắc Kinh (V5.0)', date: '12/05/2024', tier: 'primary',
+    url: 'https://sthjj.beijing.gov.cn/bjhrb/index/xxgk69/zfxxgk43/fdzdgknr2/325924085/436464568/2024060610273424514.pdf',
+    scope: 'Dự án đi chung xe (拼车, 顺风车) từ 03/09/2023. Mốc so sánh là người dùng tự đi ô tô một mình; hệ số 0,104 kgCO₂/người·km. Người dùng nhận “滴碳能量” đúng bằng lượng giảm phát thải để đổi quà; phần giảm phát thải được xác nhận đem bán trên thị trường carbon để bù chi phí thưởng. Chỉ áp cho dự án đi chung xe ở Bắc Kinh — không dùng làm mốc so sánh cho chuyến xe điện đi riêng.',
   },
   {
     id: 'sh-carbon-credit', publisher: 'Sở Sinh thái Môi trường Thượng Hải', title: 'Hỏi đáp về điểm carbon 碳普惠 Thượng Hải', date: '30/10/2024', tier: 'primary',
     url: 'https://sthj.sh.gov.cn/hbzhywpt1098/ydqhbh/tph/20241030/a0fd51d73510459e8211da564ce271f5.html',
-    scope: '[13] Điểm carbon có hạn 2 năm, đổi được lì xì nhân dân tệ số, thẻ hội viên, phiếu ưu đãi. Đây là quy định của Thượng Hải — 碳普惠 do từng địa phương ban hành, chưa có văn bản thống nhất cấp quốc gia.',
+    scope: '[13] Mỗi lượt xe buýt giảm 422g CO₂, tàu điện ngầm 97g/km, xe đạp công cộng 98g/km; giảm 1g = 1 điểm. Điểm có hạn 2 năm, đổi được lì xì nhân dân tệ số, thẻ hội viên nền tảng nghe nhìn, các loại phiếu ưu đãi, quà lưu niệm; trang không nêu 1 điểm bằng bao nhiêu tiền. Tham gia qua app 随申办市民云. Đây là quy định của Thượng Hải — 碳普惠 do từng địa phương ban hành, chưa có văn bản thống nhất cấp quốc gia.',
   },
   {
     id: 'sz-lowcarbon-planet-gov', publisher: 'Cổng TTĐT Chính quyền TP Thẩm Quyến', title: 'Ra mắt nền tảng 碳普惠 đầu tiên của Thẩm Quyến “低碳星球”', date: '12/2021', tier: 'primary',
     url: 'https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_9462083.html',
-    scope: '[13b] Ra mắt 17/12/2021, hợp tác với Tencent; đi xe buýt điện, tàu điện ngầm được cộng điểm carbon. Không nêu giao thông là nguồn phát thải lớn nhất thành phố.',
+    scope: '[13b] Mini program WeChat, “nền tảng vận hành 碳普惠 được cấp phép đầu tiên của Thẩm Quyến”, ra mắt 17/12/2021 tại Diễn đàn Thành phố Carbon thấp quốc tế Thẩm Quyến lần 9. Bốn đơn vị cùng làm: 光明日报全媒体, Sở Sinh thái Môi trường Thẩm Quyến, Sở Giao dịch quyền phát thải Thẩm Quyến, Tencent (lo kỹ thuật, vận hành). Xe buýt điện qua 腾讯乘车码 giảm 26,9g CO₂/người/km, tàu điện ngầm 46,8g; điểm đổi quà qua cửa hàng điểm của 腾讯乘车码. Không nêu giao thông là nguồn phát thải lớn nhất thành phố.',
+  },
+  {
+    id: 'sz-lowcarbon-planet-tencent', publisher: '腾讯SSV · qua 腾讯新闻', title: 'Hơn 1 triệu người dân Thẩm Quyến tích điểm carbon qua “低碳星球”', date: '12/12/2022', tier: 'primary',
+    url: 'https://news.qq.com/rain/a/20221212A07QZE00',
+    scope: 'Số người dùng do chính Tencent công bố: hơn 1 triệu người dân Thẩm Quyến tích điểm carbon qua 低碳星球. Cùng ngày hoàn tất giao dịch 碳普惠 đầu tiên; khối lượng và bên mua không xác minh được.',
   },
   {
     id: 'vn-qd42-chinhphu', publisher: 'Cổng TTĐT Chính phủ', title: 'Quyết định 42/2026/QĐ-TTg ban hành danh mục lĩnh vực, cơ sở phát thải khí nhà kính phải kiểm kê (cập nhật)', date: '10/08/2026', tier: 'primary',
     url: 'https://chinhphu.vn/?docid=219154&pageid=27160',
-    scope: '[14] Văn bản gốc: ban hành 10/08/2026, hiệu lực 25/09/2026, Phó Thủ tướng Hồ Quốc Dũng ký.',
+    scope: '[14] Văn bản gốc: ban hành 10/08/2026, hiệu lực 25/09/2026, Phó Thủ tướng Hồ Quốc Dũng ký; thay Quyết định 13/2024/QĐ-TTg. Giao thông vận tải nay xếp chung vào “ngành xây dựng (gồm lĩnh vực xây dựng và lĩnh vực giao thông vận tải)” ở Phụ lục III.',
   },
   {
     id: 'vn-qd42-2026', publisher: 'VnEconomy', title: 'Năm 2026 thêm hàng trăm cơ sở phát thải khí nhà kính phải thực hiện kiểm kê', date: '12/08/2026', tier: 'secondary',
     url: 'https://vneconomy.vn/nam-2026-them-hang-tram-co-so-phat-thai-khi-nha-kinh-phai-thuc-hien-kiem-ke.htm',
-    scope: '[14b] 2.441 cơ sở phải kiểm kê, tăng 275 so với 2.166 cơ sở năm 2024; có lĩnh vực giao thông vận tải. Kiểm kê cấp cơ sở hiện bắt buộc phát thải trực tiếp và điện năng (phạm vi 1, 2); vận chuyển thuê ngoài (phạm vi 3) chưa bắt buộc.',
+    scope: '[14b] 2.441 cơ sở phải kiểm kê, tăng 275 so với 2.166 cơ sở năm 2024. Theo ngành: Công Thương 1.916, Xây dựng 411, Nông nghiệp và Môi trường 61, Giao thông vận tải 53. Danh sách 53 cơ sở GTVT (Phụ lục III.A của văn bản gốc) chủ yếu là hãng bay, nhà xe khách, vận tải thuỷ; dò bằng OCR không thấy nền tảng giao hàng nào — có sai số OCR.',
+  },
+  {
+    id: 'vn-nd06-2022', publisher: 'Cổng TTĐT Chính phủ', title: 'Nghị định 06/2022/NĐ-CP quy định giảm nhẹ phát thải khí nhà kính và bảo vệ tầng ô-dôn', date: '07/01/2022', tier: 'primary',
+    url: 'https://datafiles.chinhphu.vn/cpp/files/vbpq/2022/01/06-nd.signed.pdf',
+    scope: '[14c] Điều 6 khoản 1: cơ sở phải kiểm kê là cơ sở phát thải từ 3.000 tấn CO₂ tương đương/năm, hoặc thuộc các trường hợp, trong đó có “công ty kinh doanh vận tải hàng hoá có tổng tiêu thụ nhiên liệu hằng năm từ 1.000 TOE trở lên”. Nghị định 119/2025 không sửa điều này. Mẫu báo cáo kiểm kê (Mẫu 06) chỉ yêu cầu nguồn phát thải “trong phạm vi hoạt động của cơ sở”; không văn bản nào ghi chữ “phạm vi 3”.',
+  },
+  {
+    id: 'vn-nd119-2025', publisher: 'Cổng TTĐT Chính phủ', title: 'Nghị định 119/2025/NĐ-CP sửa đổi Nghị định 06/2022/NĐ-CP', date: '09/06/2025', tier: 'primary',
+    url: 'https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/119-nd.signed.pdf',
+    scope: '[14d] Cơ sở trong danh mục làm báo cáo kiểm kê định kỳ hai năm một lần, gửi UBND cấp tỉnh trước 31/3; báo cáo giảm nhẹ phát thải cấp cơ sở hằng năm, gửi trước 31/3 kể từ 2027. Hạn ngạch phát thải hiện chỉ phân bổ cho nhiệt điện, sắt thép, xi măng — chưa có vận tải.',
+  },
+  {
+    id: 'vn-toe-factor', publisher: 'Bộ Công Thương · tietkiemnangluong.com.vn', title: 'Hệ số chuyển đổi năng lượng áp dụng cho các cơ sở sử dụng năng lượng trọng điểm', date: '06/05/2016', tier: 'primary',
+    url: 'https://tietkiemnangluong.com.vn/tin-tuc/tai-lieu/t25077/he-so-chuyen-doi-nang-luong-ap-dung-cho-cac-co-so-su-dung-nang-luong-trong-diem',
+    scope: '[14e] Dầu DO: 0,88 TOE/1.000 lít. Quy đổi 1.000 TOE ≈ 1,14 triệu lít dầu diesel là do tụi em tự tính từ hệ số này, không có sẵn trong nguồn.',
   },
   {
     id: 'sz-charging-gov', publisher: 'Cổng TTĐT Chính quyền TP Thẩm Quyến', title: 'Thẩm Quyến có 1.057 trạm siêu sạc, hơn 487.000 trụ sạc', date: '11/08/2025', tier: 'primary',
@@ -217,14 +257,29 @@ export const sources: Source[] = [
     scope: '[17] Toàn thành phố có 21.689 taxi, đã điện hoá hoàn toàn. Số liệu năm 2019.',
   },
   {
+    id: 'sz-ridehail-ev-2023', publisher: 'Cổng TTĐT Chính quyền TP Thẩm Quyến · 深圳特区报', title: '96.000 xe công nghệ thuần điện: Thẩm Quyến điện hoá toàn bộ xe công nghệ', date: '15/11/2023', tier: 'primary',
+    url: 'https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_10960508.html',
+    scope: '[17b] “9,6 vạn xe công nghệ thuần điện, đưa Thẩm Quyến thành thành phố đầu tiên trên thế giới điện hoá toàn bộ xe công nghệ”. Đây là cách nói của báo chính quyền thành phố. Tới 30/06/2025 thành phố có 131.715 giấy phép xe công nghệ, nhưng báo cáo đó không nêu tỷ lệ xe điện.',
+  },
+  {
     id: 'hn-lez-nq57', publisher: 'HĐND TP Hà Nội · qua hhtp.gov.vn', title: 'Nghị quyết 57/2025/NQ-HĐND quy định thực hiện vùng phát thải thấp', date: '26/11/2025', tier: 'primary',
     url: 'https://www.hhtp.gov.vn/vi/tin-tuc/quy-dinh-thuc-hien-vung-phat-thai-thap-tren-dia-ban-thanh-pho-ha-noi-2684.html',
-    scope: '[18] Nguyên văn: xe mô tô, xe gắn máy dùng nhiên liệu hoá thạch kinh doanh trên nền tảng ứng dụng “cấm lưu thông trong vùng phát thải thấp”; xe máy xăng khác cấm theo khung giờ. Lộ trình: thí điểm 9 phường từ 01/07/2026, 14 phường từ 2028, 36 phường/xã từ 2030.',
+    scope: '[18] Nguyên văn: xe mô tô, xe gắn máy dùng nhiên liệu hoá thạch kinh doanh trên nền tảng ứng dụng “cấm lưu thông trong vùng phát thải thấp”; xe máy xăng khác cấm theo khung giờ. Lộ trình: thí điểm từ 01/07/2026 tới 31/12/2027 trong 9 phường vành đai 1 (Hai Bà Trưng, Cửa Nam, Hoàn Kiếm, Ô Chợ Dừa, Văn Miếu - Quốc Tử Giám, Ba Đình, Giảng Võ, Ngọc Hà, Tây Hồ); từ 2028 thêm 5 phường vành đai 2; từ 2030 tới vành đai 3 (36 phường, xã). Biện pháp kiểm soát: camera, màu nền biển số, mã QR, kết nối VNeID và iHanoi. Mức phạt cụ thể chưa xác minh được.',
   },
   {
     id: 'hn-lez-qd3273-tuoitre', publisher: 'Tuổi Trẻ', title: 'Hà Nội công bố đề án vùng phát thải thấp áp dụng từ ngày 1/7', date: '30/06/2026', tier: 'secondary',
     url: 'https://tuoitre.vn/ha-noi-cong-bo-de-an-vung-phat-thai-thap-ap-dung-tu-ngay-1-7-100260630153418275.htm',
-    scope: '[18b] Quyết định 3273 của UBND TP: từ 01/07/2026 áp dụng ở khu vực 1, 2 thuộc phường Hoàn Kiếm; nửa cuối 2026 chỉ khuyến khích xe máy xăng chạy app hạn chế hoạt động, cấm hẳn từ 01/01/2027.',
+    scope: '[18b] Quyết định 3273 của UBND TP: từ 01/07/2026 áp dụng ở khu vực 1, 2 thuộc phường Hoàn Kiếm. Khu vực 1 cấm toàn bộ mô tô, xe gắn máy, ô tô từ 19h đến 24h thứ Sáu, thứ Bảy, Chủ nhật. Giai đoạn 1 (01/07–31/12/2026): xe máy xăng kinh doanh trên nền tảng ứng dụng kết nối vận tải chỉ “khuyến khích hạn chế hoạt động”. Giai đoạn 2 (01/01–31/12/2027): không cho phép lưu thông trong khu vực 1, 2, 3 thuộc phường Hoàn Kiếm và Cửa Nam — không phải toàn vùng phát thải thấp.',
+  },
+  {
+    id: 'hn-lez-bnews', publisher: 'BNews · TTXVN', title: 'Hà Nội thí điểm vùng phát thải thấp: cấm xe cơ giới khu vực 1', date: '30/06/2026', tier: 'secondary',
+    url: 'https://bnews.vn/ha-noi-thi-diem-vung-phat-thai-thap-cam-xe-co-gioi-khu-vuc-1/426957.html',
+    scope: 'Khu vực 1 (phố đi bộ, chợ đêm quanh Hồ Gươm) giới hạn bởi 12 phố: Tràng Tiền, Hàng Khay, Lê Thái Tổ, Hàng Đào, Hàng Ngang, Hàng Buồm, Mã Mây, Hàng Bạc, Hàng Mắm, Nguyễn Hữu Huân, Lý Thái Tổ, Ngô Quyền. Khu vực 2 là phố cổ bên trong vòng Tràng Thi – Hàng Bông – Phùng Hưng – Trần Nhật Duật – Trần Quang Khải (ranh giới khu vực 2 mới đối chiếu qua bản tóm tắt).',
+  },
+  {
+    id: 'hn-lez-vanhoa-shipper', publisher: 'Báo Văn Hoá · qua vietnam.vn', title: 'Hà Nội thí điểm vùng phát thải thấp: shipper, xe tải nhỏ và hộ kinh doanh cần lưu ý gì', date: '02/07/2026', tier: 'secondary',
+    url: 'https://www.vietnam.vn/ha-noi-thi-diem-vung-phat-thai-thap-shipper-xe-tai-nho-va-ho-kinh-doanh-can-luu-y-gi',
+    scope: 'Báo hiểu lệnh cấm xe máy xăng chạy app gồm cả xe ôm công nghệ và shipper. Văn bản gốc không có chữ “giao hàng” hay “shipper”, chỉ ghi “kinh doanh trên nền tảng phần mềm ứng dụng hỗ trợ kết nối vận tải” — đây là cách hiểu của báo.',
   },
   {
     id: 'vgreen-swap-ktck', publisher: 'Kinh tế Chứng khoán', title: 'Loạt xe điện đổi pin bùng nổ thị trường 2026', date: '22/01/2026', tier: 'secondary',
@@ -240,6 +295,16 @@ export const sources: Source[] = [
     id: 'selex-swap-ndt', publisher: 'Người Đưa Tin', title: 'Danh sách xe máy điện đổi pin tại thị trường Việt Nam', date: '08/2026', tier: 'secondary',
     url: 'https://www.nguoiduatin.vn/danh-sach-xe-may-dien-doi-pin-tai-thi-truong-viet-nam-204260807045002722.htm',
     scope: '[20] Selex lắp tối đa 3 pin, đi khoảng 150 km, phí đổi 14.000đ/lần. Quãng đường là số nhà sản xuất công bố.',
+  },
+  {
+    id: 'selex-camel2', publisher: 'Selex Motors', title: 'Thông số Selex Camel 2', date: '2025', tier: 'primary',
+    url: 'https://selex.vn/selex-camel-2-2/',
+    scope: 'Số nhà sản xuất công bố: tối đa 3 pin chạy 150km, đổi pin tại trạm 2 phút, sạc tại nhà 5–8 tiếng.',
+  },
+  {
+    id: 'ahamove-selex-2025', publisher: 'Selex Motors', title: 'Ahamove tiên phong chuyển đổi 1.000 xe máy điện Selex', date: '17/06/2025', tier: 'primary',
+    url: 'https://selex.vn/ahamove-tien-phong-chuyen-doi-1000-xe-may-dien-selex-dan-dau-xu-huong-giao-hang-xanh-tai-viet-nam/',
+    scope: 'Thông cáo của Selex: Ahamove hợp tác triển khai 1.000 xe Selex Camel cho giao hàng, đợt đầu nhận 300 xe do Gopika vận hành. Là số công bố lúc ký, chưa đối chiếu số xe đang chạy hiện nay.',
   },
   {
     id: 'pony-sz-permit', publisher: 'Pony.ai · PR Newswire', title: 'Pony.ai granted Shenzhen’s first citywide permit for fully driverless commercial robotaxi operations', date: '31/10/2025', tier: 'primary',

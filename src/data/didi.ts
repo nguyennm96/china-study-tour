@@ -12,12 +12,12 @@ const chapter = { see: 'Bình · Cái em thấy', dig: 'Sâm · Tìm hiểu thê
 export const didiPages = [
   { key: 'open', presenter: 'Bình', chapter: chapter.see, kicker: 'Study trip IOTE 2026 · 24–28/08/2026 · Bình & Sâm', title: 'Một cuốc xe Didi ở Thẩm Quyến — và những gì đằng sau nó', sourceIds: ['didi-sam-deck'] },
   { key: 'scale', presenter: 'Bình', chapter: chapter.see, kicker: 'Didi · Quy mô · Quý II/2026', title: 'Didi — nền tảng gọi xe lớn nhất Trung Quốc', sourceIds: ['didi-q2-2026', 'didi-h1-2026-caixin', 'vn-ridehail-q1-2026'], source: 'Nguồn: Báo cáo quý II/2026 của Didi, công bố 14/8/2026 · Mordor Intelligence, Q1/2026' },
-  { key: 'tiers', presenter: 'Bình', chapter: chapter.see, kicker: 'Didi · Chọn xe · Huaqiangbei → Dongmen', title: 'Cùng một chuyến 4,8km — mười hạng xe để chọn', sourceIds: ['didi-sam-deck'], source: 'Ảnh chụp màn hình app Didi ngày 23/9/2026, đặt lại đúng tuyến đoàn đã đi · giá niêm yết bằng CNY', reveal: true },
-  { key: 'screens', presenter: 'Bình', chapter: chapter.see, kicker: 'Didi · Trước và sau chuyến xe', title: 'App nói trước khi mình kịp hỏi', sourceIds: ['didi-sam-deck'], source: 'Ảnh chụp màn hình app Didi của đoàn trong chuyến đi, 08/2026' },
-  { key: 'traffic', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Đèn đỏ', title: 'Làm sao app biết tài xế đang kẹt đèn đỏ?', sourceIds: ['amap-light-xinhua', 'amap-light-ithome-2026', 'amap-light-taibo'], cite: true, reveal: true },
+  { key: 'tiers', presenter: 'Bình', chapter: chapter.see, kicker: 'Didi · Chọn xe · Huaqiangbei → Dongmen', title: 'Cùng một chuyến 4,8km — mười hạng xe để chọn', sourceIds: ['didi-sam-deck'], source: 'Nguồn: ảnh chụp màn hình app Didi, 23/09/2026 · giá niêm yết bằng CNY', reveal: true },
+  { key: 'screens', presenter: 'Bình', chapter: chapter.see, kicker: 'Didi · Trước và sau chuyến xe', title: 'App nói trước khi mình kịp hỏi', sourceIds: ['didi-sam-deck'], source: 'Nguồn: ảnh chụp màn hình app Didi, 08/2026' },
+  { key: 'traffic', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Đèn đỏ', title: 'Làm sao app biết tài xế đang kẹt đèn đỏ?', sourceIds: ['amap-light-xinhua', 'amap-light-ithome-2026', 'amap-light-taibo', 'amap-light-yantai', 'amap-light-police-2023'], cite: true, reveal: true },
   { key: 'driver', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Phía tài xế', title: 'Với khách rõ ràng vậy — còn với tài xế?', sourceIds: ['didi-driver-bill-workercn', 'didi-commission-ithome', 'vn-driver-transparency-thuonggia'], cite: true, reveal: true },
-  { key: 'carbon', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Carbon', title: '1.430 gram carbon — là gì vậy?', sourceIds: ['sh-carbon-credit', 'didi-carbon-21jingji', 'sz-lowcarbon-planet-gov', 'vn-qd42-chinhphu', 'vn-qd42-2026'], cite: true, reveal: true },
-  { key: 'ev', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Xe điện', title: 'Xe điện — cuộc chơi quyết ở thời gian nạp', sourceIds: ['sz-charging-gov', 'sz-taxi-sznews-2019', 'hn-lez-nq57', 'hn-lez-qd3273-tuoitre', 'vgreen-swap-ktck', 'vinfast-swap-free-tuoitre', 'selex-swap-ndt'], cite: true },
+  { key: 'carbon', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Carbon', title: '1.430 gram carbon — là gì vậy?', sourceIds: ['sh-carbon-credit', 'didi-carbon-21jingji', 'didi-carbon-wuhan', 'didi-carbon-beijing', 'sz-lowcarbon-planet-gov', 'sz-lowcarbon-planet-tencent', 'vn-qd42-chinhphu', 'vn-qd42-2026', 'vn-nd06-2022', 'vn-toe-factor', 'vn-nd119-2025'], cite: true, reveal: true },
+  { key: 'ev', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Xe điện', title: 'Xe điện — cuộc chơi quyết ở thời gian nạp', sourceIds: ['sz-charging-gov', 'sz-taxi-sznews-2019', 'sz-ridehail-ev-2023', 'hn-lez-nq57', 'hn-lez-qd3273-tuoitre', 'hn-lez-bnews', 'hn-lez-vanhoa-shipper', 'selex-camel2', 'vgreen-swap-ktck', 'vinfast-swap-free-tuoitre', 'selex-swap-ndt', 'ahamove-selex-2025'], cite: true },
   { key: 'robotaxi', presenter: 'Bình', chapter: chapter.close, kicker: 'Chốt bài · Robotaxi & bốn xu hướng', title: 'Không chỉ ở Trung Quốc — đây là cuộc đua toàn cầu', sourceIds: ['pony-sz-permit', 'didi-r2-uniteai', 'europe-robotaxi-euronews'], source: 'Nguồn: PR Newswire 31/10/2025 · Unite.AI · Euronews 18/9/2026' },
 ] as const satisfies readonly { key: string; presenter: Presenter; chapter: string; kicker: string; title: string; sourceIds: readonly string[]; source?: string; cite?: boolean; reveal?: boolean }[]
 export type DidiPage = typeof didiPages[number]['key']
@@ -45,7 +45,7 @@ export const didiOpen = {
     { value: '11', label: 'chuyến Didi' },
     { value: '0', label: 'người biết tiếng Trung' },
   ],
-  caption: 'Khu đón xe công nghệ, sân bay Bảo An · 8:06 sáng 24/08/2026 · ảnh của đoàn',
+  caption: 'Khu đón xe công nghệ, sân bay Bảo An · 8:06 sáng 24/08/2026',
 }
 
 export const didiScale = {
@@ -127,15 +127,15 @@ export const didiTraffic = {
   question: 'Theo mọi người, app lấy dữ liệu đèn giao thông ở đâu? Kết nối với sở giao thông?',
   evidence: {
     crop: { x: 0.41, y: 0.36, w: 0.59, h: 0.122 },
-    caption: 'Ảnh của đoàn: bản đồ đếm ngược đèn đỏ còn 51 giây ngay cạnh xe tài xế, kèm dòng “Waiting for a traffic light”',
+    caption: 'Đèn đỏ còn 51 giây ngay cạnh xe tài xế — app báo “Waiting for a traffic light”',
   },
-  no: { label: 'Phần lớn không phải', body: 'Kết nối với đèn tín hiệu của sở giao thông', note: 'Chỉ một số thành phố có chia sẻ thêm dữ liệu đèn', cite: ['amap-light-taibo'] as Cite },
+  no: { label: 'Phần lớn không phải', body: 'Kết nối với đèn tín hiệu của sở giao thông', note: 'Chỉ một số nơi cảnh sát giao thông gửi thẳng dữ liệu đèn: đầu tiên là Yên Đài (235 nút giao, 12/2019), sau có Tây An, Lan Châu, Tuyền Châu, Tế Ninh, Bắc Kinh Diệc Trang', cite: ['amap-light-yantai', 'amap-light-police-2023'] as Cite },
   yes: { label: 'Mà chủ yếu là', body: 'Nhìn vệt GPS của chính các xe đang chạy app: ở mỗi nút giao, xe dừng rồi đi theo một nhịp đều → từ đó suy ra chu kỳ đèn', cite: ['amap-light-taibo'] as Cite },
   steps: ['Nhiều xe cùng dừng ở nút giao', 'Hệ thống thấy nhịp lặp lại', 'Suy ra chu kỳ đèn'],
   stats: [
-    { value: '~500.000', label: 'nút giao hiện nay · lúc ra mắt 2022 là 80.000', cite: ['amap-light-ithome-2026', 'amap-light-xinhua'] as Cite },
-    { value: '~5 giây', label: 'nhắc bằng giọng nói khi đèn đỏ sắp hết', cite: ['amap-light-xinhua'] as Cite },
-    { value: 'Số nhịp', label: 'đèn phải chờ, khi nút giao quá đông', cite: ['amap-light-xinhua'] as Cite },
+    { value: '~500.000', label: 'nút giao có đếm ngược (05/2026) · lúc ra mắt 08/2022: 80.000 nút, gần 240 thành phố', cite: ['amap-light-ithome-2026', 'amap-light-xinhua'] as Cite },
+    { value: '~5 giây', label: 'trước khi hết đèn đỏ, app nhắc bằng giọng nói để tài xế chuẩn bị chạy', cite: ['amap-light-xinhua'] as Cite },
+    { value: 'Số vòng đỏ', label: 'nút giao quá đông, một lượt xanh không qua kịp thì app báo còn phải chờ mấy vòng', cite: ['amap-light-xinhua'] as Cite },
   ],
   punch: 'Không cần đi xin dữ liệu — phần lớn là dùng lại dữ liệu mình đã có.',
 }
@@ -143,10 +143,12 @@ export const didiTraffic = {
 export const didiDriver = {
   question: 'Tài xế có biết cả tháng nền tảng lấy trung bình bao nhiêu phần trăm không?',
   answer: 'Có.',
+  /** Ai đứng ra: nói rõ để khỏi hiểu nhầm là Didi tự nguyện. */
+  deal: { text: 'Cuối 2025, Didi ký «Thoả thuận về thuật toán và quy tắc lao động» — Công đoàn TP Bắc Kinh cùng nhiều sở ngành thúc đẩy, Tổng Công đoàn chỉ đạo chung, 7 đại diện tài xế ngồi vào bàn thương lượng.', cite: ['didi-driver-bill-workercn'] as Cite },
   boxes: [
-    { head: 'Xem được hoa hồng trung bình', body: 'Trang thu nhập có mục hoa hồng trung bình 7 ngày và của tháng trước — khỏi tự cộng từng cuốc. Từng cuốc thì đã hiện thu nhập, thưởng và tỷ lệ hoa hồng.', cite: ['didi-driver-bill-workercn'] as Cite },
-    { head: 'Trần hoa hồng 27% mỗi cuốc', body: 'Hạ từ 29%. Chạy từ 50 cuốc/tháng thì trung bình cả tháng không quá 25% — phần vượt được hoàn lại.', cite: ['didi-driver-bill-workercn', 'didi-commission-ithome'] as Cite },
-    { head: 'Khiếu nại về hoa hồng ở Bắc Kinh giảm 68%', body: 'Tính đến đầu 01/2026, trên 154.000 tài xế, so với trước khi thương lượng.', by: 'Số giám sát của Ủy ban Giao thông Bắc Kinh', cite: ['didi-driver-bill-workercn'] as Cite },
+    { head: 'Xem được hoa hồng trung bình', body: 'Trang thu nhập có mục hoa hồng trung bình 7 ngày và của tháng trước — khỏi tự cộng từng cuốc. Hoá đơn tài xế bản mới đang thí điểm ở 21 thành phố.', cite: ['didi-driver-bill-workercn'] as Cite },
+    { head: 'Trần hoa hồng 27% mỗi cuốc', body: 'Hạ từ 29%. Chạy từ 50 cuốc/tháng thì trung bình cả tháng không quá 25% — phần lấy vượt tự động trả lại vào tài khoản tài xế ngay tháng sau.', cite: ['didi-driver-bill-workercn', 'didi-commission-ithome'] as Cite },
+    { head: 'Khiếu nại về hoa hồng ở Bắc Kinh giảm 68%', body: 'Đo trên 154.000 tài xế Didi ở Bắc Kinh, tính đến đầu 01/2026, so với trước khi thương lượng.', by: 'Số giám sát của Ủy ban Giao thông Bắc Kinh', cite: ['didi-driver-bill-workercn'] as Cite },
   ],
   /** Ghi nhận thẳng để phòng khỏi phản biện "ở mình cũng minh bạch mà". */
   vietnam: { text: 'Ở Việt Nam, app tài xế cũng đã ghi phí từng cuốc. Cái khác là con số trung bình cả tháng và một mức trần có cam kết.', cite: ['vn-driver-transparency-thuonggia'] as Cite },
@@ -157,31 +159,33 @@ export const didiDriver = {
       { label: 'Tài xế nhận', value: '≥ 73%' },
       { label: 'Nền tảng giữ', value: '≤ 27%', accent: true },
     ],
-    note: 'Hình tự vẽ theo mức trần 27% mỗi cuốc, không phải ảnh chụp app tài xế.',
   },
-  punch: 'Tài xế tự xem được số thì bớt gọi lên hỏi — minh bạch cũng là cách giảm việc cho vận hành',
+  punch: 'Tài xế tự xem được số thì bớt gọi lên hỏi — minh bạch với tài xế cũng là hai bên cùng lợi',
 }
 
 export const didiCarbon = {
   crop: { x: 0, y: 0.285, w: 1, h: 0.45 },
   ring: { x: 0.045, y: 0.585, w: 0.4, h: 0.055 },
-  caption: 'Dòng trên hoá đơn: 本单获得1430g碳元气 — “chuyến này bạn nhận 1.430g 碳元气”, tức lượng CO₂ Didi ước tính chuyến đi giảm được',
+  caption: 'Dòng trên hoá đơn: 本单获得1430g碳元气 — “chuyến này bạn nhận 1.430g 碳元气”: lượng CO₂ Didi ước tính chuyến đi giảm được, không phải lượng thải ra',
   points: [
-    { head: '碳普惠 — “phổ cập carbon”', body: 'Nhiều tỉnh, thành Trung Quốc đang chạy: đi lại ít phát thải thì được cộng điểm, đổi được ưu đãi thật. Ở Thượng Hải, điểm có hạn 2 năm.', cite: ['sh-carbon-credit'] as Cite },
-    { head: 'Didi có hẳn sản phẩm riêng: 碳元气', body: 'Đang chạy ở 298 thành phố. 1.430g là lượng CO₂ ước tính giảm được, không phải lượng thải ra.', cite: ['didi-carbon-21jingji'] as Cite },
-    { head: 'Thẩm Quyến có nền tảng riêng: 低碳星球', body: 'Ra mắt 12/2021 cùng Tencent: đi xe buýt điện, tàu điện ngầm là được cộng điểm.', cite: ['sz-lowcarbon-planet-gov'] as Cite },
+    { head: '碳普惠 — “phổ cập carbon”', body: 'Cơ chế do từng tỉnh, thành tự chạy. Ví dụ Thượng Hải: mỗi lượt xe buýt giảm 422g CO₂, giảm 1g = 1 điểm; điểm đổi được lì xì nhân dân tệ số, thẻ hội viên xem phim, phiếu giảm giá — hạn 2 năm.', cite: ['sh-carbon-credit'] as Cite },
+    { head: 'Didi có hẳn sản phẩm riêng: 碳元气', body: 'Chạy ở 298 thành phố: đi chung xe, đi xe điện là được cộng điểm; ở Vũ Hán, điểm đổi được phiếu giảm giá gọi xe của chính Didi. Phần giảm phát thải được xác nhận thì Didi bán trên sàn carbon để bù tiền thưởng.', cite: ['didi-carbon-21jingji', 'didi-carbon-wuhan', 'didi-carbon-beijing'] as Cite },
+    { head: 'Thẩm Quyến có nền tảng riêng: 低碳星球', body: 'Mini program trên WeChat, ra mắt 12/2021 — Sở Sinh thái Môi trường, Sở Giao dịch quyền phát thải Thẩm Quyến, Tencent và Quang Minh Nhật báo cùng làm. Đi xe buýt điện, tàu điện ngầm được cộng điểm, đổi quà; cuối 2022 đã hơn 1 triệu người dùng.', cite: ['sz-lowcarbon-planet-gov', 'sz-lowcarbon-planet-tencent'] as Cite },
   ],
   loop: ['Đi lại ít phát thải', 'Đo được ngay', 'Thưởng ngay trong app'],
   /** Khối Việt Nam ẩn tới đúng câu "không xa đâu" trong lời nói — câu hỏi tu từ, không chờ phòng trả lời. */
-  teaser: { label: 'Còn ở Việt Nam', question: 'Chuyện này ở Việt Nam còn xa không?', hint: 'Bấm hoặc nhấn → để xem' },
+  teaser: { label: 'Còn ở Việt Nam', question: 'Chuyện này ở Việt Nam còn xa không?' },
   vietnam: {
     head: 'Còn ở Việt Nam',
     decree: { lead: 'Quyết định', number: '42/2026/QĐ-TTg', cite: ['vn-qd42-chinhphu'] as Cite },
     dates: 'Ban hành 10/8/2026 · có hiệu lực từ 25/9/2026',
+    lead: 'Danh sách cơ sở bắt buộc phải đo và báo cáo mình thải ra bao nhiêu khí nhà kính',
     items: [
       { value: '2.441', label: 'cơ sở phải kiểm kê khí nhà kính', note: 'nhiều hơn danh mục 2024 là 275 cơ sở', cite: ['vn-qd42-2026'] as Cite },
-      { value: 'Giao thông vận tải', label: 'có tên trong danh mục', cite: ['vn-qd42-2026'] as Cite },
+      { value: '53', label: 'cơ sở giao thông vận tải', note: 'chủ yếu hãng bay, nhà xe khách, vận tải thuỷ', cite: ['vn-qd42-2026'] as Cite },
+      { value: '≥ 1.000 TOE', label: 'nhiên liệu/năm là công ty vận tải hàng hoá phải vào danh sách', note: '≈ 1,1 triệu lít dầu diesel mỗi năm', cite: ['vn-nd06-2022', 'vn-toe-factor'] as Cite },
     ],
+    duty: { text: 'Vào danh sách: 2 năm nộp báo cáo kiểm kê một lần; từ 2027 thêm báo cáo giảm phát thải hằng năm. Mới tính phần phát thải trong hoạt động của chính cơ sở.', cite: ['vn-nd119-2025', 'vn-nd06-2022'] as Cite },
   },
 }
 
@@ -191,30 +195,29 @@ export const didiEv = {
     stats: [
       { value: '1.057', label: 'trạm siêu sạc (giữa 2025)', cite: ['sz-charging-gov'] as Cite },
       { value: '487.000+', label: 'trụ sạc', cite: ['sz-charging-gov'] as Cite },
-      { value: '600 kW', label: 'trụ sạc nhanh nhất', cite: ['sz-charging-gov'] as Cite },
       { value: '21.689', label: 'taxi, đã chạy điện toàn bộ (2019)', cite: ['sz-taxi-sznews-2019'] as Cite },
+      { value: '96.000', label: 'xe công nghệ chạy điện toàn bộ (11/2023) — đầu tiên thế giới', cite: ['sz-ridehail-ev-2023'] as Cite },
     ],
     first: { text: 'Đi đầu Trung Quốc: từ 03/2024, số trạm siêu sạc đã nhiều hơn số trạm xăng', cite: ['sz-charging-gov'] as Cite },
-    punch: 'Làm hạ tầng trước, rồi mới cấm xe xăng',
+    punch: 'Nạp điện nhanh gần bằng đổ xăng — lúc đó đội xe dịch vụ mới chuyển được',
   },
   hanoi: {
     head: 'Hà Nội — vùng phát thải thấp',
     stages: [
-      { date: '1/7/2026', status: 'thí điểm', scope: '9 phường vành đai 1 · bước đầu ở Hoàn Kiếm', cite: ['hn-lez-nq57', 'hn-lez-qd3273-tuoitre'] as Cite },
-      { date: '1/1/2028', scope: '14 phường: vành đai 1 và một phần vành đai 2', cite: ['hn-lez-nq57'] as Cite },
-      { date: '1/1/2030', scope: 'Tới vành đai 3 — 36 phường, xã', cite: ['hn-lez-nq57'] as Cite },
+      { date: '1/7/2026', status: 'thí điểm', scope: 'Phường Hoàn Kiếm — khu vực 1: 12 phố quanh Hồ Gươm, cấm mọi xe 19h–24h T6–CN · khu vực 2: phố cổ', cite: ['hn-lez-qd3273-tuoitre', 'hn-lez-bnews'] as Cite },
+      { date: '1/1/2028', scope: 'Thêm 5 phường vành đai 2', cite: ['hn-lez-nq57'] as Cite },
+      { date: '1/1/2030', scope: 'Vành đai 3 — 36 phường, xã', cite: ['hn-lez-nq57'] as Cite },
     ],
-    rule: { text: 'Xe máy xăng nói chung: cấm theo khung giờ', cite: ['hn-lez-nq57'] as Cite },
-    /** Câu chốt của slide: dòng liên quan trực tiếp tới Ahamove. Nguyên văn nghị quyết chỉ nói xe máy dùng nhiên liệu hoá thạch. */
-    key: { text: 'Xe máy xăng chạy dịch vụ qua app: cấm hẳn trong vùng từ 1/1/2027', note: 'Nửa cuối 2026 mới khuyến khích hạn chế · xe máy điện không thuộc lệnh cấm', cite: ['hn-lez-nq57', 'hn-lez-qd3273-tuoitre'] as Cite },
-    diagramNote: 'Sơ đồ minh hoạ, không theo tỉ lệ',
+    /** Câu chốt của slide: dòng liên quan trực tiếp tới Ahamove. Chỉ áp cho khu vực 1, 2, 3 thuộc Hoàn Kiếm và Cửa Nam — không phải toàn vùng. */
+    key: { text: 'Từ 1/1/2027: xe máy xăng chạy app không được vào khu vực 1, 2, 3 thuộc Hoàn Kiếm và Cửa Nam', note: 'Nửa cuối 2026 chỉ khuyến khích hạn chế · báo chí hiểu gồm cả shipper · xe máy điện không bị cấm', cite: ['hn-lez-qd3273-tuoitre', 'hn-lez-vanhoa-shipper'] as Cite },
   },
   swap: {
     head: 'Đổi pin ở Việt Nam',
     items: [
-      { value: '~4.500 trạm', label: 'V-Green đã lắp, mục tiêu 45.000', cite: ['vgreen-swap-ktck'] as Cite },
-      { value: '9.000đ/lần', label: 'VinFast · miễn phí tới 30/6/2028: 20 lần/tháng, tài xế Xanh SM không giới hạn', cite: ['vgreen-swap-ktck', 'vinfast-swap-free-tuoitre'] as Cite },
-      { value: '14.000đ/lần', label: 'Selex · xe lắp 3 pin chạy được khoảng 150km', cite: ['selex-swap-ndt'] as Cite },
+      { value: '2 phút', label: 'đổi pin ở trạm — sạc đầy ở nhà mất 5–8 tiếng (Selex Camel 2)', cite: ['selex-camel2'] as Cite },
+      { value: '~4.500 điểm', label: 'đổi pin V-Green (01/2026) · 9.000đ/lần, miễn phí 20 lần/tháng tới 30/6/2028', cite: ['vgreen-swap-ktck', 'vinfast-swap-free-tuoitre'] as Cite },
+      { value: '14.000đ/lần', label: 'Selex, làm cho tài xế và shipper · 3 pin chạy khoảng 150km', cite: ['selex-swap-ndt'] as Cite },
+      { value: '1.000 xe', label: 'Ahamove × Selex: xe máy điện giao hàng, đợt đầu 300 xe (06/2025)', cite: ['ahamove-selex-2025'] as Cite },
     ],
   },
 }
@@ -222,7 +225,7 @@ export const didiEv = {
 export const didiRobotaxi = {
   /** Clip tự chạy và lặp khi trình chiếu: không tiếng, không nút bấm, không cần thao tác giữa lúc nói. */
   clip: { src: '/media/didi/robotaxi.mp4', poster: '/media/didi/robotaxi-poster.jpg', width: 1280, height: 720, label: 'Xe không người lái chạy trên phố Thẩm Quyến ban đêm, quay từ trong xe của đoàn' },
-  caption: 'Xe không người lái · Thẩm Quyến, ban đêm · clip của đoàn',
+  caption: 'Xe không người lái · Thẩm Quyến, ban đêm',
   milestones: [
     { date: 'Thẩm Quyến · 31/10/2025', body: 'Pony.ai được phép chạy robotaxi không người lái, có thu tiền, trên toàn thành phố. Khu chạy đầu tiên là Nanshan', note: 'đúng khu đoàn mình đã tới' },
     { date: '31/8/2026', body: 'Didi bắt đầu chở khách thử bằng robotaxi R2 hoàn toàn không người lái, đặt ngay trong app Didi, ở Bắc Kinh và Quảng Châu' },
@@ -232,11 +235,11 @@ export const didiRobotaxi = {
     tally: ['11 chuyến xe', '5 ngày', '4 xu hướng'],
     /** Mỗi xu hướng trỏ về đúng nhóm slide đã kể, để người nghe tự nối lại được. */
     trends: [
-      { name: 'Nói trước khi khách hỏi', from: 'giá chốt trước · báo đèn đỏ · hoá đơn rõ ràng' },
-      { name: 'Dùng lại dữ liệu sẵn có', from: 'từ vệt GPS ra nhịp đèn · hoá đơn rõ cho tài xế' },
-      { name: 'Chuyển sang xe điện', from: 'điểm carbon · trạm sạc · đổi pin' },
+      { name: 'Nói trước khi khách hỏi', from: 'giá chốt trước · báo đèn đỏ từ vệt GPS · hoá đơn rõ ràng' },
+      { name: 'Hai bên cùng lợi', from: 'tick nhiều hạng · đi bộ 39m · hoá đơn rõ cho tài xế' },
+      { name: 'Đi lại xanh hơn', from: 'điểm carbon · trạm sạc · đổi pin' },
       { name: 'Xe tự lái', from: 'robotaxi đặt ngay trong app' },
     ],
-    line: 'Cả bốn đã bắt đầu ở Việt Nam — chỉ là mình chưa gọi tên',
+    line: 'Ba điều đầu đã bắt đầu ở Việt Nam — điều thứ tư đang tới nhanh hơn mình nghĩ',
   },
 }
