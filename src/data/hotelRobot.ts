@@ -7,10 +7,12 @@ export const hotelRobotPages = [
   { key: 'origin', kicker: 'Robot khách sạn · Ra đời từ đâu', title: 'Ra đời ở Mỹ. Nhân rộng ở Trung Quốc.' },
   { key: 'shenzhen', kicker: 'Robot khách sạn · Vì sao là Thâm Quyến', title: 'Vì sao lại là Thâm Quyến.' },
   { key: 'journey', kicker: 'Robot khách sạn · Từ đơn hàng tới cửa phòng', title: 'Sáu bước. Một lần giao tận phòng.' },
-  { key: 'navigation', kicker: 'Robot khách sạn · Định vị', title: 'Biết đúng phòng. Không cần nhận diện món.' },
-  { key: 'elevator', kicker: 'Robot khách sạn · Điểm tích hợp khó nhất', title: 'Lên đúng tầng nhờ kết nối thang máy.' },
-  { key: 'dispatch', kicker: 'Robot khách sạn · Hệ thống phía sau', title: 'Một đội robot cần một bộ điều phối.' },
-  { key: 'infrastructure', kicker: 'Robot khách sạn · Điều kiện triển khai', title: 'Khách sạn phải sẵn sàng trước.' },
+  // Ba trang sau đi theo đúng chiều của một đơn hàng; `steps` là bước được soi kỹ trên thanh 6 bước.
+  { key: 'dispatch', kicker: 'Bước 02 · Tạo tác vụ', title: 'Đơn hàng thành nhiệm vụ cho cả đội robot.', steps: [2] },
+  { key: 'core', kicker: 'Bước 03–04 · Công nghệ lõi của robot', title: 'Đôi mắt LiDAR. Bộ não SLAM.', steps: [3, 4] },
+  { key: 'navigation', kicker: 'Bước 03–04 · Tìm đúng phòng', title: 'Biết đúng phòng. Không cần nhận diện món.', steps: [3, 4] },
+  { key: 'elevator', kicker: 'Bước 04 · Lên đúng tầng', title: 'Chỗ khó nhất: nói chuyện với thang máy.', steps: [4] },
+  { key: 'infrastructure', kicker: 'Cả sáu bước · Điều kiện triển khai', title: 'Mỗi bước cần một thứ khách sạn phải có.', steps: [1, 2, 3, 4, 5, 6] },
   { key: 'video', kicker: 'Robot khách sạn · Trải nghiệm của đoàn tại Rezen', title: 'Xem một lượt giao thật.' },
 ] as const
 export type HotelRobotPage = typeof hotelRobotPages[number]['key']
@@ -79,13 +81,25 @@ export const hotelRobotVideo = {
   caption: 'Video của đoàn · Rezen Dong Hotel, 08/2026 · 36 giây, không tiếng',
 }
 
+// Mục 4.1 của tài liệu nguồn: LiDAR là đôi mắt, SLAM là bộ não định vị; cảm biến tầm gần lo an toàn.
+export const hotelRobotCore = {
+  eyes: { name: 'LiDAR', role: 'Đôi mắt', question: 'Xung quanh mình có gì, cách bao xa?',
+    how: [['Quét laser 360°', 'Một đầu laser quay liên tục, bắn tia ra mọi hướng.'], ['Đo tia dội lại', 'Tia chạm tường, cột, người rồi dội về; thời gian đi–về cho ra khoảng cách.'], ['Ra “đám mây điểm”', 'Hàng nghìn điểm vẽ nên hình dạng hành lang quanh robot, nhiều lần mỗi giây.']],
+    note: 'Thấy được cả khi thiếu sáng. Không đọc chữ, không nhận ra món ăn.' },
+  brain: { name: 'SLAM', role: 'Bộ não', question: 'Mình đang đứng ở đâu, đi đường nào tới phòng 1205?',
+    how: [['Lập bản đồ một lần', 'Lúc lắp đặt, robot chạy khảo sát cả toà; kỹ thuật viên gắn nhãn phòng, thang máy, trạm sạc.'], ['Tự định vị liên tục', 'So “đám mây điểm” đang thấy với bản đồ để biết chính xác mình đang ở đâu.'], ['Tìm đường tới đích', 'Tính đường tới toạ độ phòng, đi lại khi gặp vật cản.']],
+    note: 'Vừa lập bản đồ vừa định vị: Simultaneous Localization and Mapping.' },
+  support: 'Camera, cảm biến siêu âm, hồng ngoại và va chạm lo tầm gần: dừng hoặc né kịp khi có người, hành lý, xe đẩy. Máy gộp mọi nguồn lại (sensor fusion) để không bị “lạc”.',
+} as const
+
+/** Mỗi điều kiện gắn với bước của đơn hàng cần đến nó, theo thứ tự 6 bước. */
 export const hotelInfrastructure = [
-  { icon: 'task', title: 'Đơn & số phòng', detail: 'Kết nối PMS/POS hoặc nhập tác vụ thủ công.' },
-  { icon: 'map', title: 'Bản đồ đã gắn nhãn', detail: 'Phòng, thang máy, điểm lấy hàng và trạm sạc.' },
-  { icon: 'elevator', title: 'Thang máy tương thích', detail: 'Khảo sát bộ điều khiển, API hoặc module tích hợp.' },
-  { icon: 'wifi', title: 'Kết nối ổn định', detail: 'Wi-Fi / 4G xuyên sảnh, hành lang và khu vực thang.' },
-  { icon: 'battery', title: 'Sạc & đường đi', detail: 'Trạm sạc, lối đủ rộng, sàn phẳng và ngưỡng thấp.' },
-  { icon: 'human', title: 'Người xử lý ngoại lệ', detail: 'Nạp đồ, hỗ trợ khách và tiếp quản khi có sự cố.' },
+  { icon: 'task', steps: 'Bước 01–02', title: 'Đơn & số phòng', detail: 'Hệ thống khách sạn (PMS/POS) chuyển đơn thành tác vụ, hoặc nhân viên nhập tay.' },
+  { icon: 'human', steps: 'Bước 03 · 06', title: 'Người ở hai đầu', detail: 'Nạp đồ, gán phòng, đỡ khách lúc nhận và tiếp quản khi có sự cố.' },
+  { icon: 'map', steps: 'Bước 03–04', title: 'Bản đồ đã gắn nhãn', detail: 'Phòng, thang máy, điểm lấy hàng và trạm sạc đều có toạ độ.' },
+  { icon: 'elevator', steps: 'Bước 04', title: 'Thang máy kết nối được', detail: 'Bộ điều khiển thang nhận lệnh điện tử, toà cũ phải lắp thêm module.' },
+  { icon: 'battery', steps: 'Bước 04', title: 'Lối đi & trạm sạc', detail: 'Hành lang đủ rộng, sàn phẳng, ngưỡng cửa thấp, có chỗ về sạc.' },
+  { icon: 'wifi', steps: 'Bước 04–05', title: 'Sóng phủ khắp', detail: 'Wi-Fi / 4G từ sảnh tới hành lang và trong thang, để robot gọi thang và báo khách.' },
 ] as const
 
 export const hotelRobotData: TopicData = {

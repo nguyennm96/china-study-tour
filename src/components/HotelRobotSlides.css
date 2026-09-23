@@ -37,6 +37,41 @@
 .hotel-origin-drivers svg { color: var(--brand); }
 .hotel-origin-drivers h3 { margin: 10px 0 6px; font-size: 20px; font-weight: 600; letter-spacing: -.035em; }
 .hotel-origin-drivers p { margin: 0; color: var(--mist); font-size: 14px; line-height: 1.45; }
+.hotel-stepped { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 18px; min-height: 0; }
+.hotel-stepped > :last-child { min-height: 0; }
+.hotel-trail { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
+.hotel-trail li { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 8px; background: #f3eee5; color: #a99b8b; font-size: 12px; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hotel-trail li span { font-weight: 600; letter-spacing: -.02em; }
+.hotel-trail li.is-active { background: var(--brand); color: #fffaf2; }
+.hotel-infrastructure .hotel-step-top small { color: #a99b8b; font-size: 12px; letter-spacing: .02em; }
+.hotel-algo-question { margin: 0; font-size: 19px; font-weight: 600; line-height: 1.35; letter-spacing: -.02em; }
+.hotel-algo-where { margin: 0; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.hotel-core { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; gap: 12px 14px; min-height: 0; }
+.hotel-core-link { display: grid; justify-items: center; align-content: center; gap: 4px; color: var(--brand); }
+.hotel-core-link small { color: var(--muted); font-size: 11px; }
+.hotel-core-support { grid-column: 1 / -1; margin: 0; padding: 10px 16px; border-left: 3px solid var(--brand); background: #fff3e3; color: var(--paper); font-size: 14px; line-height: 1.45; }
+.hotel-core-card { display: flex; flex-direction: column; gap: 10px; min-height: 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.hotel-core-card:first-child { background: #15364d; border-color: #15364d; color: #fffaf2; }
+.hotel-core-card header { display: flex; align-items: center; gap: 12px; }
+.hotel-core-card header svg { color: var(--brand); }
+.hotel-core-card header small { display: block; color: var(--brand); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.hotel-core-card h3 { margin: 0; font-size: 30px; font-weight: 600; letter-spacing: -.04em; line-height: 1.05; }
+.hotel-algo-question { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -.02em; }
+.hotel-core-card ol { display: grid; flex: 1; grid-auto-rows: minmax(0, 1fr); gap: 7px; min-height: 0; margin: 0; padding: 0; list-style: none; }
+.hotel-core-card ol li { display: grid; grid-template-columns: 28px 1fr; align-items: center; gap: 10px; min-height: 0; padding: 7px 12px; border-radius: 10px; background: #f7f3ec; }
+.hotel-core-card ol li > span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--brand); color: #fffaf2; font-size: 14px; font-weight: 600; }
+.hotel-core-card ol strong { display: block; font-size: 15px; letter-spacing: -.02em; }
+.hotel-core-card ol p { margin: 1px 0 0; color: var(--mist); font-size: 13px; line-height: 1.35; }
+.hotel-core-card:first-child ol li { background: rgba(255,255,255,.07); }
+.hotel-core-card:first-child ol p { color: #cedbe3; }
+.hotel-algo-where { margin: 0; padding-top: 8px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.hotel-core-card:first-child .hotel-algo-where { color: #cedbe3; border-color: rgba(255,255,255,.18); }
+.hotel-lidar { display: block; width: 100%; height: 92px; }
+.hotel-lidar .wall { fill: rgba(255,255,255,.04); stroke: #cedbe3; stroke-width: 1.5; }
+.hotel-lidar .ray { stroke: #f08a4b; stroke-width: .7; opacity: .55; }
+.hotel-lidar .hit { fill: #ffb27d; }
+.hotel-lidar .robot { fill: var(--brand); stroke: #fffaf2; stroke-width: 2; }
+.hotel-lidar .person { fill: none; stroke: #fffaf2; stroke-width: 1.5; }
 .hotel-routing { display: flex; align-items: center; gap: 20px; color: var(--brand); }
 .hotel-routing > div { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; flex: 1; padding: 18px 22px; background: #f3eee5; border-radius: 14px; }
 .hotel-routing small { color: var(--muted); font-size: 10px; letter-spacing: .13em; }
@@ -105,3 +140,17 @@
 .is-compact .hotel-origin-drivers h3 { margin: 6px 0 4px; font-size: 17px; }
 .is-compact .hotel-origin-drivers p { font-size: 12px; }
 .is-compact .hotel-shenzhen-cluster { font-size: 11px; }
+.is-compact .hotel-stepped { gap: 10px; }
+.is-compact .hotel-trail li { padding: 5px 8px; font-size: 10px; }
+.is-compact .is-compact .is-compact .is-compact .hotel-algo-question { font-size: 16px; }
+.is-compact .is-compact .is-compact .is-compact .is-compact .is-compact .hotel-algo-where, .is-compact .is-compact .hotel-core { gap: 8px 10px; }
+.is-compact .hotel-core-card { gap: 6px; padding: 10px 14px; }
+.is-compact .hotel-core-card h3 { font-size: 22px; }
+.is-compact .hotel-algo-question { font-size: 14px; }
+.is-compact .hotel-core-card ol { gap: 5px; }
+.is-compact .hotel-core-card ol li { padding: 4px 8px; grid-template-columns: 22px 1fr; gap: 8px; }
+.is-compact .hotel-core-card ol li > span { width: 22px; height: 22px; font-size: 12px; }
+.is-compact .hotel-core-card ol strong { font-size: 13px; }
+.is-compact .hotel-core-card ol p { font-size: 11px; }
+.is-compact .hotel-lidar { height: 66px; }
+.is-compact .hotel-core-support { padding: 6px 12px; font-size: 11px; }
