@@ -4,10 +4,12 @@
 
 > **Cập nhật 23/09/2026 khi dựng slide:** (1) ô “51” cạnh đèn đỏ trên ảnh `04a` là **đếm ngược đèn đỏ** — Sâm xác nhận; slide 5 dùng ảnh này thay cho ảnh Amap phải tìm thêm. (2) Mẹo tra địa chỉ: “pinyin” → **tên tiếng Trung (chữ Hán)**. (3) Slide 3: “chỗ nào cũng ghi Upfront Fare” → **“hầu hết các hạng”** — Taxi và Comfort Taxi ghi “Est.”. (4) Hai ảnh `03a`/`03b` có metadata **23/09/2026 09:21**: là màn hình đặt lại đúng tuyến sau chuyến đi, không phải chụp trong chuyến — lời nói slide 3 đã sửa cho khớp.
 
+> **Cập nhật 23/09/2026 (lần 2), theo deck mới của Bình:** (1) **Đổi người trình bày** — Bình mở và chốt bài (slide 1–4, 9), Sâm nói phần "tìm hiểu thêm" (slide 5–8). Mọi câu chuyển người trong lời nói đã đảo tên. (2) Slide 3 chỉ còn **một ý chính**: tick nhiều hạng cùng lúc. (3) Slide 8 bỏ dải thị phần và danh sách 9 phường; câu *"xe nền tảng không được hoạt động"* thành câu chốt. (4) Slide 9 dùng **clip** của đoàn thay ảnh, và chốt bằng **bốn xu hướng** trỏ về đúng các slide đã kể. (5) Slide 7: bỏ câu *"đúng tuần này"* để lời nói đúng dù trình bày vào ngày nào; khối "Còn ở Việt Nam" **ẩn sau nút bấm**, lật đúng câu *"không xa đâu"*. (6) Chữ trên cả 9 slide viết lại cho tự nhiên, gần văn nói hơn — số liệu giữ nguyên.
+
 | | |
 |---|---|
-| **Người trình bày** | SamNTT (slide 1–4, 9) · BinhNT (slide 5–8) |
-| **Thời lượng** | **20 phút — đã bao gồm Q&A** (nói ~16'45, Q&A ~3'15) |
+| **Người trình bày** | BinhNT (slide 1–4, 9) · SamNTT (slide 5–8) |
+| **Thời lượng** | **20 phút — đã bao gồm Q&A** (nói ~15'45, Q&A ~4'15) |
 | **Khán giả** | **Toàn thể nhân viên Ahamove** |
 | **Chuyến đi** | 24–28/08/2026 · 5 ngày · Thẩm Quyến · 6 người · 11 chuyến Didi |
 | **Xưng hô** | "em" với phòng · "mình" với công ty/đoàn |
@@ -46,15 +48,15 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 ---
 
-# PHẦN A — SÂM · "Cái em thấy"
+# PHẦN A — BÌNH · "Cái em thấy"
 
 ---
 
 ## SLIDE 1 · Mở đầu — 45 giây
 
 🖥️ **TRÊN SLIDE**
-- Tiêu đề lớn: **Một cuốc xe Didi ở Thẩm Quyến — và những gì nó hé lộ**
-- Dòng phụ: Study trip IOTE 2026 · 24–28/08/2026 · Sâm & Bình
+- Tiêu đề lớn: **Một cuốc xe Didi ở Thẩm Quyến — và những gì đằng sau nó**
+- Dòng phụ: Study trip IOTE 2026 · 24–28/08/2026 · Bình & Sâm
 - Bốn ô số: **5 ngày** · **6 người** · **11 chuyến** Didi · **0** người biết tiếng Trung
 
 🖼️ **HÌNH / VIDEO**
@@ -64,7 +66,7 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 🎙️ **LỜI NÓI**
 
-> *"Chào mọi người. Hôm nay em với Bình chia sẻ về phần đặt xe — app Didi, cái mà đoàn mình dùng suốt 5 ngày ở Thẩm Quyến, từ 24 tới 28 tháng 8.*
+> *"Chào mọi người. Hôm nay em với anh Sâm chia sẻ về phần đặt xe — app Didi, cái mà đoàn mình dùng suốt 5 ngày ở Thẩm Quyến, từ 24 tới 28 tháng 8.*
 >
 > **✋ *«Hỏi nhanh cả phòng cho vui: ở đây có ai từng đi nước ngoài mà không nói được một chữ tiếng bản địa, vẫn phải tự đi lại không ạ? Giơ tay em xem.»*** *(đếm tay, cười, đi tiếp ngay)*
 >
@@ -85,6 +87,7 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 - 滴滴出行 · *Dīdī Chūxíng*
 - Ba ô số (quý II/2026): **> 55 triệu** cuốc/ngày · **5,05 tỷ** đơn một quý (+13,2%) · **133,9 tỷ NDT** giá trị giao dịch (+22,2%)
 - Ô so sánh: *Cả thị trường gọi xe 4 bánh Việt Nam một quý ≈ **153 triệu chuyến*** → Didi chạy hết chừng đó trong **chưa tới 3 ngày**
+- Dòng dưới ô so sánh: *Nhưng nửa đầu 2026 vẫn lỗ — lãi trong nước, lỗ vì đốt tiền giành khách ở Brazil, Mexico* — để phòng có chỗ nhìn khi nói câu "nghe quen không"
 - Chân slide: *Nguồn: Báo cáo quý II/2026 của Didi, công bố 14/8/2026 · Mordor Intelligence, Q1/2026*
 
 🖼️ **HÌNH / VIDEO**
@@ -107,37 +110,26 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 ---
 
-## SLIDE 3 · Mười hạng xe cho cùng một chuyến — 2 phút 45
+## SLIDE 3 · Mười hạng xe cho cùng một chuyến — 2 phút
 
-> ✅ **SLIDE NÀY VỪA ĐƯỢC VIẾT LẠI** nhờ hai ảnh anh Sâm gửi. Ảnh thật cho thấy con số mạnh hơn nhiều so với tài liệu tôi tra được trước đó — xem ghi chú đính chính bên dưới.
+> ✅ **Đã rút về một ý** theo deck mới của Bình: slide không còn 7 chú thích đánh số, chỉ khoanh **3 ô tick** và **dải giá ở nút xác nhận**. "Upfront Fare" và "3 giây" chỉ nhắc một câu, không có khoanh trên ảnh.
 
 🖥️ **TRÊN SLIDE**
-- Tiêu đề: **Cùng một chuyến 4,8km — mười hạng xe để chọn**
-- Ảnh chụp màn hình thật chiếm **60% diện tích**, bên cạnh là các chú thích có mũi tên trỏ vào:
-
-| Chú thích | Trỏ vào chi tiết nào trên ảnh |
-|---|---|
-| **Giá chốt trước, không phải giá ước tính** | Chữ **"Upfront Fare"** ở các hạng xe |
-| **Rẻ nhất 12,8 tệ — đắt nhất 88,3 tệ. Chênh 7 lần, cùng một quãng đường** | Economy 12,8 CNY ↔ Luxe 88,3 CNY |
-| **Thời gian ghép tài xế tính bằng GIÂY** | "3 sec" · "4 sec" · "5 sec" dưới tên mỗi hạng |
-| **Tick được nhiều hạng cùng lúc — hạng nào có xe trước thì đi hạng đó** | 3 ô tick xanh ở Economy · Taxi · Comfort Taxi, và dải giá **"Est. 12–21.9 CNY"** ở nút Confirm |
-| **Bán riêng cả "đỡ phải chờ" và "xe không mùi"** | Priority: *"Shorter waiting time"* · Comfort: *"Roomy B-class, odor-free"* |
-| **Giảm giá hiện ngay từng hạng** | −2.4 CNY và −4.6 CNY màu đỏ |
-| **Trả online hoặc tiền mặt · đặt hẹn giờ · đặt hộ người khác** | Thanh dưới cùng: Pay Online · Schedule · For Others |
-
-- Ô mẹo riêng, nổi bật: **Didi chạy nền bản đồ Amap (高德地图) → tra tên tiếng Trung (chữ Hán) của địa chỉ rồi dán vào, chọn đúng điểm dễ hơn nhiều so với gõ tiếng Anh**
+- Tiêu đề trước khi lật: **Cùng một chuyến 4,8km — có mấy hạng xe để chọn?** · sau khi lật: **… mười hạng xe để chọn**
+- Trái: số **10** to + ảnh nhỏ bản đồ tuyến (Huaqiangbei → Dongmen · 4,8km · 14 phút)
+- Giữa: ảnh chụp màn hình đủ 10 hạng, khoanh **3 ô tick** và dải **"Est. 12–21.9 CNY"** ở nút Confirm
+- Phải: bảng 10 hạng **đúng thứ tự trên màn hình**, mỗi hạng một dòng "bán cái gì" + giá; ba hạng đã tick tô xanh
+- Ô nhấn: **Tick cùng lúc nhiều hạng — hạng nào có xe trước thì đi hạng đó**
+- Ô mẹo: **Didi chạy nền bản đồ Amap (高德地图) → tra tên tiếng Trung (chữ Hán) của địa chỉ rồi dán vào**
 
 🖼️ **HÌNH / VIDEO**
-- ✅ **Đã có — chủ lực:** `03b_Man-hinh-Chon-xe-day-du-10-hang.png` *(thấy đủ 10 hạng — dùng làm ảnh chính)*
-- ✅ **Đã có — phụ:** `03a_Man-hinh-Chon-xe-co-ban-do-tuyen.png` *(có bản đồ tuyến 4,8km · 14 phút và điểm kẹt — dùng ảnh nhỏ ở góc để người xem biết đây là chuyến thật, đi từ đâu tới đâu)*
-- ✅ **Tuỳ chọn:** `AI_Broll/AI_Gap_DatXe_BaoGia.mp4` làm nền mờ. **Khuyến nghị: đừng dùng** — ảnh thật đã quá mạnh, thêm b-roll AI chỉ làm loãng.
-- 🔍 **Không cần tìm thêm gì.**
+- ✅ **Đã có:** `03b` (đủ 10 hạng, ảnh chính) và `03a` (bản đồ tuyến, ảnh phụ). Không cần tìm thêm.
 
 🎙️ **LỜI NÓI**
 
 > *"Giờ em cho mọi người xem một cái màn hình.*
 >
-> *Đây là màn hình đặt xe cho đúng tuyến tụi em hay đi: từ khách sạn ở Huaqiangbei ra phố đi bộ Dongmen. Tuyến này 4,8 cây số, 14 phút.*
+> *Đây là màn hình đặt xe cho đúng tuyến tụi em hay đi: từ khách sạn ở Huaqiangbei ra phố đi bộ Dongmen. 4,8 cây số, 14 phút.*
 >
 > **🔢 *«Em hỏi trước: app mình hay dùng ở nhà, một chuyến 4 chỗ như vậy có mấy mức giá để chọn ạ?»*** *(chờ — sẽ có người nói 2, 3)*
 >
@@ -145,39 +137,32 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 >
 > *(bấm hiện ảnh) **Mười.***
 >
-> *Mọi người nhìn: Economy 12,8 tệ. Standard 16,2. Priority 17,9. Comfort 18,2. Taxi 21,9. Premium 32,1. Premium XL 43,6. Luxe 88,3. Cùng một quãng đường 4,8 cây số — **rẻ nhất với đắt nhất chênh nhau 7 lần**.*
+> *Rẻ nhất Economy 12,8 tệ, đắt nhất Luxe 88,3 tệ — **cùng một quãng đường mà chênh nhau 7 lần**. Giá nào cũng chốt trước, và thời gian ghép tài xế họ ghi bằng **giây** chứ không phải phút.*
 >
-> *Nhưng cái làm em chú ý không phải là mười hạng. Là **ba chi tiết nhỏ** trên màn hình này.*
+> *Nhưng cái em thấy hay nhất là cái này — mọi người nhìn **ba ô tích xanh**. Em **tick cùng lúc ba hạng**: Economy, Taxi, Comfort Taxi. Dưới nút xác nhận nó hiện «**Est. 12 tới 21,9 tệ**». Tức là hạng nào có xe tới trước thì em đi hạng đó, trong khoảng giá em đã đồng ý.*
 >
-> ***Thứ nhất*** *— hầu hết các hạng đều ghi «**Upfront Fare**», nghĩa là giá chốt trước. Không phải giá ước tính rồi đi xong mới biết. Mình bấm là biết đúng số tiền đó.*
+> *Chọn một hạng thì chỉ tài xế hạng đó nhận được đơn. Tick ba hạng thì tài xế của cả ba hạng đều nhận được. Em thì có xe nhanh hơn, còn họ thì ghép được đơn nhanh hơn. **Hai bên cùng lợi.***
 >
-> ***Thứ hai*** *— nhìn dưới tên mỗi hạng: **3 giây, 4 giây, 5 giây**. Đó là thời gian ghép được tài xế. Họ không đếm bằng phút, họ đếm bằng giây.*
->
-> ***Thứ ba, cái này em thấy hay nhất*** *— mọi người nhìn ba ô tích xanh. Em **tick cùng lúc ba hạng**: Economy, Taxi, Comfort Taxi. Rồi dưới nút xác nhận nó hiện «**Est. 12 tới 21,9 tệ**». Tức là hạng nào có xe tới trước thì em đi hạng đó, trong khoảng giá em đã đồng ý.*
->
-> *Em thì được đi nhanh hơn. Còn họ thì ghép được nhiều xe hơn cho cùng một khách. **Hai bên cùng lợi.***
->
-> *À và họ bán cả những thứ mình ít nghĩ tới: hạng «Priority» là bán riêng chuyện **đỡ phải chờ**. Hạng «Comfort» ghi thẳng là **xe rộng, không mùi**.*
->
-> *Cuối cùng một mẹo thực tế cho ai sắp đi Trung Quốc: **Didi chạy nền bản đồ Amap**. Gõ địa chỉ tiếng Anh nhiều khi ra không đúng chỗ. Tra trước **tên tiếng Trung** của địa chỉ rồi dán vào thì chọn đúng điểm dễ hơn hẳn. Cái này tụi em mò mấy chuyến mới ra."*
+> *Một mẹo nhỏ cho ai sắp đi Trung Quốc: **Didi chạy nền bản đồ Amap**. Gõ địa chỉ tiếng Anh nhiều khi ra sai chỗ — tra trước **tên tiếng Trung** rồi dán vào thì dễ hơn hẳn. Cái này tụi em mò mấy chuyến mới ra."*
 
 🎬 **GHI CHÚ SÂN KHẤU**
-- **Đây là slide có bằng chứng mạnh nhất cả bài.** Để ảnh thật thật to. Nói chậm, chỉ tay lên màn hình theo từng chú thích.
 - Con số **"Mười"** ẩn sau nút bấm, lật ra sau khi phòng đoán.
-- Nếu cháy giờ: bỏ đoạn "Priority / Comfort", giữ ba chi tiết chính.
+- Nói đoạn tick ba hạng thì **chỉ tay vào ba ô tick trên ảnh** rồi xuống dải giá ở nút xác nhận.
+- Đừng đọc hết 10 dòng giá — bảng đã có trên slide. Chỉ đọc rẻ nhất và đắt nhất.
+- Nếu cháy giờ: bỏ mẹo Amap.
 
-> ⚠️ **ĐÍNH CHÍNH so với bản trước:** các bản outline trước tôi viết Didi có "5–6 tầng giá" — số đó lấy từ tài liệu tiếng Trung mô tả các dòng xe chính. **Ảnh chụp màn hình thật cho thấy 10 hạng.** Dùng số 10 và dùng ảnh làm bằng chứng. Bảng giá chi tiết theo tài liệu Trung Quốc [6][7] giữ lại ở cuối file, chỉ dùng nếu bị hỏi về cách tính cước.
+> ⚠️ **ĐÍNH CHÍNH so với các bản cũ:** Didi có **10 hạng** (theo ảnh thật), không phải "5–6 tầng giá". Bảng giá chi tiết theo tài liệu Trung Quốc [6][7] giữ ở cuối file, chỉ dùng nếu bị hỏi về cách tính cước.
 
 ---
 
-## SLIDE 4 · App tự nói trước khi mình kịp hỏi — 2 phút 30
+## SLIDE 4 · App nói trước khi mình kịp hỏi — 2 phút 30
 
 🖥️ **TRÊN SLIDE**
-- Tiêu đề: **App tự nói trước khi mình kịp hỏi**
+- Tiêu đề: **App nói trước khi mình kịp hỏi**
 - Hai cột, mỗi cột một ảnh chụp màn hình thật:
   - **Trái — Lúc đứng chờ:** *"Walk 39m and save 1min"* · *"Waiting for a traffic light — cách 0,4km, 3 phút"* · Fang, 5.0★ · AION S Plus (xe điện)
-  - **Phải — Lúc xuống xe:** Talent Park → SEG Plaza Tower A · **77,80 CNY** · tiết kiệm 19,50 CNY · 32 phút · **1.430g carbon** *(khoanh tròn dòng này)*
-- Dòng chốt: **Cả hai màn hình đều là app trả lời trước khi khách kịp hỏi**
+  - **Phải — Lúc xuống xe:** Talent Park → SEG Plaza Tower A · **77,80 CNY** · tiết kiệm 19,50 CNY · 32 phút · **Nhận 1.430g carbon** *(khoanh tròn dòng này — ghi "nhận" để không ai hiểu là chuyến xe thải ra 1,43kg)*
+- Dòng chốt: **Cả hai lần, app trả lời trước khi mình kịp hỏi**
 
 🖼️ **HÌNH / VIDEO**
 - ✅ **Đã có:** `04a_Man-hinh-Cho-tai-xe-Walk39m-WaitingTrafficLight.jpg` và `04b_Man-hinh-Hoa-don-77.80CNY-1430g-carbon.jpg`
@@ -205,13 +190,13 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 >
 > *Hoá đơn: 77 tệ 8, tiết kiệm 19 tệ rưỡi, 32 phút. Tới đây thì bình thường.*
 >
-> *Nhưng có một dòng ở trên: **«1.430 gram carbon».***
+> *Nhưng có một dòng ở trên: chuyến này **«nhận 1.430 gram carbon».***
 >
-> *Lúc đó em tưởng app ghi cho vui. **Hoá ra không phải.** Cái này lát Bình sẽ kể, và em nghĩ đó là phần bất ngờ nhất của cả bài.*
+> *Lúc đó em tưởng app ghi cho vui. **Hoá ra không phải.** Cái này lát anh Sâm sẽ kể, và em nghĩ đó là phần bất ngờ nhất của cả bài.*
 >
 > *Tóm lại hai màn hình này chung một điểm: **app nói trước khi mình kịp hỏi.***
 >
-> *Đó là mấy thứ em thấy trong 5 ngày. Còn **vì sao họ làm được** thì Bình có đi tìm hiểu thêm — em mời Bình."*
+> *Đó là mấy thứ em thấy trong 5 ngày. Còn **vì sao họ làm được** thì anh Sâm có đi tìm hiểu thêm — em mời anh Sâm."*
 
 🎬 **GHI CHÚ SÂN KHẤU**
 - **Tuyệt đối không giải thích 1.430g ở đây.** Treo đúng như script. Giải thích ở đây thì slide 7 mất hết sức nặng.
@@ -222,7 +207,7 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 ---
 
-# PHẦN B — BÌNH · "Cái tụi em tìm hiểu thêm"
+# PHẦN B — SÂM · "Cái tụi em tìm hiểu thêm"
 
 ---
 
@@ -233,13 +218,13 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 - Hai ô đối nhau:
   - ❌ **Không phải:** đấu nối dữ liệu với hệ thống đèn tín hiệu của sở giao thông
   - ✅ **Mà là:** nhìn vệt di chuyển GPS của chính những xe đang chạy app dừng ở nút giao đó → thấy dừng rồi đi theo chu kỳ đều đặn → **suy ngược ra nhịp đèn**
-- Ba số: phủ **hơn 80.000 nút giao** khi công bố · nhắc trước **~5 giây** khi sắp xanh · nút quá đông thì báo **phải chờ mấy nhịp đèn**
-- Ô nhấn màu: **Họ không xin dữ liệu của ai. Họ dùng lại dữ liệu vốn đã có.**
+- Ba số: phủ **hơn 80.000 nút giao** khi công bố **(2022)** · nhắc trước **~5 giây** khi sắp xanh · nút quá đông thì báo **phải chờ mấy nhịp đèn**
+- Ô nhấn màu: **Không xin dữ liệu của ai — chỉ dùng lại dữ liệu mình đã có.**
 - Chân slide: *Nguồn: Tân Hoa Xã (công bố tính năng) · phân tích cơ chế: Taibo*
 
 🖼️ **HÌNH / VIDEO**
-- ✅ **Đã có:** crop phóng to đúng dòng *"Waiting for a traffic light"* từ `04a_...jpg` — đặt ở góc trên trái để nối mạch trực tiếp với phần anh Sâm vừa kể.
-- ✅ **Đã có:** `05_Amap-Chi-duong-thuc-te.png` — màn hình Amap chỉ đường thật của đoàn, dùng làm ảnh phụ chứng minh "đây là bản đồ họ dùng".
+- ✅ **Đã có:** crop phóng to đúng dòng *"Waiting for a traffic light"* và ô đếm ngược **51 giây** từ `04a_...jpg` — nối mạch trực tiếp với phần Bình vừa kể.
+- ❌ **Đã bỏ khỏi slide:** `05_Amap-Chi-duong-thuc-te.png` — ảnh này là tuyến tàu điện ngầm từ sân bay, không liên quan tới đèn đỏ.
 - 🔍 **Nên tìm thêm (1 ảnh):** ảnh chụp giao diện Amap đang hiện **vòng đếm ngược đèn đỏ** (hình tròn có số giây trên bản đồ).
   - Từ khoá tìm: **`高德地图 红绿灯读秒 截图`** hoặc **`高德 红绿灯倒计时 界面`**
   - Có sẵn trong bài của Tân Hoa Xã [8] và bài phân tích của Taibo [9] — lấy ảnh từ đó và ghi nguồn dưới ảnh.
@@ -247,9 +232,9 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 🎙️ **LỜI NÓI**
 
-> *"Dạ em chào mọi người. Phần của em khác anh Sâm một chút, em nói rõ trước: **mấy cái em sắp kể tụi em không trải nghiệm trực tiếp** — là về nhà tò mò quá nên đi tra thêm. Em sẽ nói rõ cái nào là cái nào.*
+> *"Dạ em chào mọi người. Phần của em khác Bình một chút, em nói rõ trước: **mấy cái em sắp kể tụi em không trải nghiệm trực tiếp** — là về nhà tò mò quá nên đi tra thêm. Em sẽ nói rõ cái nào là cái nào.*
 >
-> *Bắt đầu từ đúng cái màn hình anh Sâm vừa chiếu. Dòng **«Waiting for a traffic light»** đó — em nhìn xong em thắc mắc:*
+> *Bắt đầu từ đúng cái màn hình Bình vừa chiếu. Dòng **«Waiting for a traffic light»** đó — em nhìn xong em thắc mắc:*
 >
 > ***Làm sao cái app biết ông tài xế đó đang dừng ở đèn đỏ?***
 >
@@ -259,7 +244,7 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 >
 > *Cách họ làm thế này: bản đồ Amap nhìn **vệt di chuyển của chính những chiếc xe đang chạy app** đi qua nút giao đó. Thấy một đám xe dừng lại, rồi đi, rồi lại dừng — đều đặn theo một chu kỳ. Từ cái nhịp đó họ **suy ngược ra chu kỳ đèn**. [9]*
 >
-> *Và không phải làm vài chỗ cho vui — lúc công bố, tính năng này đã phủ **hơn 80.000 nút giao** trên toàn Trung Quốc. [8] Nó còn nhắc trước khoảng 5 giây khi sắp xanh.*
+> *Và không phải làm vài chỗ cho vui — lúc công bố năm 2022, tính năng này đã phủ **hơn 80.000 nút giao** trên toàn Trung Quốc. [8] Nó còn nhắc trước khoảng 5 giây khi sắp xanh.*
 >
 > *Chỗ này em dừng một chút, vì em nghĩ nó liên quan tới mình.*
 >
@@ -280,12 +265,12 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 ## SLIDE 6 · Phía tài xế thì sao? — 1 phút 15
 
 🖥️ **TRÊN SLIDE**
-- Tiêu đề: **Phía khách minh bạch vậy — còn phía tài xế?**
+- Tiêu đề: **Với khách rõ ràng vậy — còn với tài xế?**
 - Ba ô:
   1. **Hoá đơn minh bạch trong app tài xế** — mỗi cuốc hiện rõ thu nhập · thưởng · **tỷ lệ hoa hồng**; tra được hoa hồng bình quân 7 ngày và tháng trước
   2. **Trần hoa hồng: 29% → 27%** *(Didi công bố 5/2026)*
   3. **Khiếu nại liên quan hoa hồng giảm 68%** tại Bắc Kinh — ⚠️ *số do Didi tự công bố, không phải kiểm toán độc lập*
-- Ô chốt: **Minh bạch ở đây được dùng như một cách giảm tải vận hành**
+- Ô chốt: **Tài xế tự xem được số thì bớt gọi lên hỏi — minh bạch cũng là cách giảm việc cho vận hành**
 
 🖼️ **HÌNH / VIDEO**
 - ❌ **Không có ảnh thật** — mình là khách, không phải tài xế. **Không được lấy ảnh trên mạng rồi để như ảnh mình chụp.**
@@ -298,7 +283,7 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 > *"Cái thứ hai em đi tra, xuất phát từ một chuyện hơi lạ.*
 >
-> ***Phía khách thì Didi minh bạch kinh khủng*** *— giá chốt trước khi bấm, xuống xe hoá đơn tách từng khoản. Như mấy cái màn hình anh Sâm vừa chiếu.*
+> ***Phía khách thì Didi minh bạch kinh khủng*** *— giá chốt trước khi bấm, xuống xe hoá đơn tách từng khoản. Như mấy cái màn hình Bình vừa chiếu.*
 >
 > *Em mới nghĩ: **phía khách rõ vậy, thế còn phía tài xế thì sao? Tài xế có biết nền tảng lấy bao nhiêu phần trăm trên cuốc của họ không?***
 >
@@ -320,17 +305,17 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 ## SLIDE 7 · 1.430 gram carbon — trả nợ câu hỏi treo — 2 phút 15
 
 🖥️ **TRÊN SLIDE**
-- Tiêu đề: **1.430 gram carbon — nó là cái gì?**
+- Tiêu đề: **1.430 gram carbon — là gì vậy?**
 - Trái: ảnh hoá đơn, **khoanh tròn đúng dòng 1.430g**
 - Phải, ba ý:
   - **碳普惠 — "phổ cập carbon"**: cơ chế cấp quốc gia. Hành vi ít phát thải → **điểm carbon** → đổi được ưu đãi thật · hạn dùng 2 năm
   - Didi có sản phẩm carbon riêng, đã chạy ở **298 thành phố**
   - Thẩm Quyến có nền tảng riêng — vì **giao thông là nguồn phát thải lớn nhất thành phố**
-- Dải ngang: **Làm hành vi tốt → đo được ngay → thưởng ngay trong app**
-- Khối riêng, màu nhấn — **Còn ở Việt Nam:**
-  - **Quyết định 42/2026/QĐ-TTg** — ban hành 10/8/2026, **hiệu lực 25/9/2026**
-  - **2.441 cơ sở** phải kiểm kê khí nhà kính *(tăng 275 so với danh mục 2024)*
-  - **Giao thông vận tải nằm trong danh mục**
+- Dải ngang: **Đi lại ít phát thải → đo được ngay → thưởng ngay trong app**
+- Khối riêng, màu nhấn — **Còn ở Việt Nam** · 🔒 **ẩn lúc đầu**, chỗ đó chỉ hiện ô *"Chuyện này ở Việt Nam còn xa không?"*. Bấm → mới hiện:
+  - **Quyết định 42/2026/QĐ-TTg** — ban hành 10/8/2026, **có hiệu lực từ 25/9/2026**
+  - **2.441 cơ sở** phải kiểm kê khí nhà kính *(nhiều hơn danh mục 2024 là 275 cơ sở)*
+  - **Giao thông vận tải có tên trong danh mục**
 - Chân slide: *Nguồn: 21世纪经济报道 6/2026 · Quyết định 42/2026/QĐ-TTg*
 
 🖼️ **HÌNH / VIDEO**
@@ -343,7 +328,7 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 🎙️ **LỜI NÓI**
 
-> *"Giờ em trả nợ cái câu anh Sâm treo. Dòng **1.430 gram carbon**.*
+> *"Giờ em trả nợ cái câu Bình treo. Dòng **1.430 gram carbon**.*
 >
 > *Nó không phải app ghi cho vui. **Nó nằm trong cả một chính sách cấp quốc gia.***
 >
@@ -351,33 +336,35 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 >
 > *Didi có hẳn sản phẩm carbon riêng, hiện chạy ở **298 thành phố**. [12] Riêng Thẩm Quyến có nền tảng riêng của thành phố — họ đẩy mạnh vì **giao thông là nguồn phát thải lớn nhất** của họ. [13]*
 >
-> *Cái hay là **khách không cần hiểu gì về carbon hết.** Mình chỉ thấy đi chuyến này mình được thêm một thứ. Vòng lặp rất gọn: **làm hành vi tốt, đo được ngay, thưởng ngay trong app.** Không báo cáo, không thủ tục.*
+> *Cái hay là **khách không cần hiểu gì về carbon hết.** Mình chỉ thấy đi chuyến này mình được thêm một thứ. Vòng lặp rất gọn: **đi lại ít phát thải, đo được ngay, thưởng ngay trong app.** Không báo cáo, không thủ tục.*
 >
-> *(chậm lại, đổi giọng) **Tới đây thì em nghĩ chuyện này ở Việt Nam còn xa. Nhưng em tra lại thì không xa đâu.***
+> *(chậm lại, đổi giọng) **Tới đây thì em nghĩ chuyện này ở Việt Nam còn xa. Nhưng em tra lại thì — (bấm lật) — không xa đâu.***
 >
-> ***Ngày 25 tháng 9 — tức là đúng tuần này*** *— có một quyết định mới của Thủ tướng bắt đầu có hiệu lực. Nó mở rộng danh sách cơ sở **bắt buộc phải kiểm kê khí nhà kính lên hơn 2.400 cơ sở**, tăng gần 300 so với trước. Và **giao thông vận tải nằm trong danh mục đó**. [14]*
+> ***Từ ngày 25 tháng 9 năm nay*** *— một quyết định mới của Thủ tướng đã có hiệu lực. Nó mở rộng danh sách cơ sở **bắt buộc phải kiểm kê khí nhà kính lên hơn 2.400 cơ sở**, tăng gần 300 so với trước. Và **giao thông vận tải nằm trong danh mục đó**. [14]*
 >
 > *Mà một doanh nghiệp đã phải kiểm kê thì họ không chỉ tính phần họ tự đốt xăng. **Họ phải tính cả phần thuê ngoài.** Vận chuyển thuê ngoài — là nằm ở chỗ mình.*
 >
 > ***Em không có đề xuất gì chi tiết ở đây cả*** *— em chỉ nghĩ đây là thứ **thời gian tới mình nên nhìn tới**. Vì dữ liệu để tính ra con số đó thì mình đang có sẵn: quãng đường, loại xe, thời gian."*
 
 🎬 **GHI CHÚ SÂN KHẤU**
-- Đoạn *"em nghĩ chuyện này còn xa — nhưng không xa đâu"* là **chỗ lật của slide**. Chậm lại, đổi giọng.
+- Đoạn *"em nghĩ chuyện này còn xa — nhưng không xa đâu"* là **chỗ lật của slide**. Chậm lại, đổi giọng, **bấm → đúng chữ "không xa đâu"** để khối Việt Nam hiện ra.
+- Ô *"Chuyện này ở Việt Nam còn xa không?"* là **câu hỏi tu từ** — không chờ phòng trả lời, không tính là điểm tương tác.
+- **Đừng bấm sớm.** Nói xong hết ba ý bên Trung Quốc và vòng "đo ngay, thưởng ngay" rồi mới lật.
 - Câu **"em không có đề xuất gì chi tiết"** phải nói, để không thành hứa thay bộ phận khác. Nói xong dừng, đừng sa đà vào cách làm.
 
 ---
 
-## SLIDE 8 · Xe điện: cuộc chơi quyết ở thời gian nạp — 2 phút 30
+## SLIDE 8 · Xe điện: cuộc chơi quyết ở thời gian nạp — 2 phút 15
 
 🖥️ **TRÊN SLIDE**
 - Tiêu đề: **Xe điện — cuộc chơi quyết ở thời gian nạp**
-- **Dải mốc chữ nhỏ trên cùng:** Thị phần taxi công nghệ VN Q1/2026 — Green SM 54,51% · Grab 40,92% · Be 4,57%. Giao hàng 2 bánh 6/2026: ba bên chênh nhau chưa tới 1 điểm %
+- ❌ **Đã bỏ dải thị phần.** Số thị phần (Green SM 54,51% · Grab 40,92% · Be 4,57% Q1/2026 [3]; giao hàng 2 bánh 6/2026 ba bên chênh nhau chưa tới 1 điểm % [5]) chỉ dùng nếu bị hỏi.
 - **Khối 1 — Thẩm Quyến:**
   - Hơn **1.000 trạm siêu sạc** · hơn **487.000 trụ sạc**
   - **Thành phố đầu tiên trên thế giới có số trạm sạc vượt số trạm xăng**
   - Trụ nhanh nhất **600 kW** — *"một giây một kilômét"*
   - Trên nền đó: **~99% trong 21.689 taxi** của thành phố là xe điện
-  - 👉 **Hạ tầng trước, lệnh cấm sau**
+  - 👉 **Làm hạ tầng trước, rồi mới cấm xe xăng**
 - **Khối 2 — Hà Nội, đã hiệu lực:**
 
 | Mốc | Phạm vi vùng phát thải thấp |
@@ -386,7 +373,9 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 | **1/1/2028** | Toàn vành đai 1 + một phần vành đai 2 |
 | **1/1/2030** | Vào vành đai 3 — tổng **36 phường/xã** |
 
-  - Trong vùng: xe máy xăng hạn chế **theo khung giờ và khu vực**; **xe hành nghề trên nền tảng ứng dụng không được phép hoạt động**
+  - Trong vùng: xe máy xăng bị hạn chế **theo giờ và theo khu vực**
+  - **Câu chốt, chữ to nhất trong khối:** *Trong vùng này, xe hành nghề qua nền tảng ứng dụng không được phép hoạt động*
+  - Tên 9 phường **không ghi trên slide** nữa (đã có sơ đồ vòng) — chỉ đọc vài tên trong lời nói
 - **Khối 3 — Đổi pin ở VN:** V-Green đã lắp **4.500 trạm**, mục tiêu **45.000 tủ** · VinFast **9.000đ/lần** *(miễn phí tối đa 20 lần/tháng tới giữa 2028)* · Selex **14.000đ/lần**, xe lắp 3 pin đi ~150km
 - Chân slide: *Nguồn: Cổng TTĐT TP Thẩm Quyến · Nhân Dân Nhật Báo · Nghị quyết vùng phát thải thấp Hà Nội · tổng hợp báo VN 2026*
 
@@ -401,11 +390,7 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 🎙️ **LỜI NÓI**
 
-> *"Slide này em nói trước một câu: **phần thị phần thì nhiều anh chị ở đây nắm rõ hơn em.** Em để một dòng làm mốc rồi đi tiếp.*
->
-> *(chỉ lên dải mốc, nói nhanh) Quý I năm nay Green SM 54,5%, Grab gần 41%, Be 4,5%. [3] Mảng giao hàng 2 bánh tháng 6 thì ba bên gần như ngang nhau. [5] Hết phần đó.*
->
-> ***Cái em muốn nói là thứ đứng sau con số đó.***
+> *"Slide cuối của em là xe điện.*
 >
 > *Ở Thẩm Quyến, ra đường là thấy xe điện — như tấm ảnh này tụi em chụp. Lúc đầu tụi em nghĩ do nhà nước cấm xe xăng. Nhưng tra kỹ thì không hẳn.*
 >
@@ -427,34 +412,38 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 >
 > ***Đổi pin mất khoảng 2 phút. Sạc mất vài tiếng.*** *Với một người chạy ăn theo đơn thì khác biệt đó không nằm ở tiền điện — nó nằm ở **số đơn chạy được trong một ca**.*
 >
-> *Phần em tới đây thôi. Em gửi lại anh Sâm ạ."*
+> *Phần em tới đây thôi. Em gửi lại Bình."*
 
 🎬 **GHI CHÚ SÂN KHẤU**
-- **Câu mở đầu thừa nhận là bắt buộc.** Kể thị phần như phát hiện mới thì mất phòng ngay.
-- Dải mốc thị phần: nói trong **10 giây**, không dừng, không giải thích.
+- **Không nói thị phần trên slide này.** Nếu bị hỏi, dùng số ở trên và mở đầu bằng *"phần này nhiều anh chị nắm rõ hơn em"*.
+- Câu *"xe hành nghề trên nền tảng ứng dụng không được phép hoạt động"* là câu nặng nhất slide — nói chậm, chỉ tay vào ô khoanh.
 - **Đã bỏ** hai câu hỏi dành riêng cho Vận hành so với bản trước — **chuyển xuống Q&A** để dùng khi phòng im.
 
 ---
 
-# PHẦN C — SÂM · Chốt bài
+# PHẦN C — BÌNH · Chốt bài
 
 ---
 
 ## SLIDE 9 · Robotaxi và ba xu hướng — 1 phút 30 + Q&A 3 phút 15
 
 🖥️ **TRÊN SLIDE**
-- Tiêu đề: **Không chỉ ở Trung Quốc — đây là cuộc đua toàn cầu**
+- Tiêu đề: **Không chỉ ở Trung Quốc — đây là cuộc đua toàn cầu** · kicker: *Robotaxi & bốn xu hướng*
 - Ba mốc:
   - **Thẩm Quyến, 31/10/2025** — Pony.ai được cấp **giấy phép robotaxi không người lái thương mại trên toàn thành phố**, triển khai đầu ở **Nanshan** *(đúng khu đoàn mình tới)*
   - **31/8/2026** — Didi mở **thử nghiệm chở khách hoàn toàn không người lái** với robotaxi R2, đặt ngay trong app Didi, tại Bắc Kinh và Quảng Châu
   - **10/9/2026, cùng một ngày** — WeRide lấy giấy phép L4 đầu tiên của Tây Ban Nha *(Madrid, với Uber)* · Pony.ai chạy chuyến không người lái có khách **đầu tiên của châu Âu** *(Zagreb, với Verne)*
-- Khối chốt chữ to: **11 chuyến xe · 5 ngày · 3 xu hướng — cá nhân hoá · điện khí hoá · tự động hoá**
-- Dòng cuối: *Cả ba đang diễn ra ở Việt Nam rồi — chỉ là mình chưa gọi tên*
+- Khối chốt: **11 chuyến xe · 5 ngày · 4 xu hướng**, mỗi xu hướng có một dòng nhỏ trỏ về slide đã kể:
+  - **Nói trước khi khách hỏi** — giá chốt trước · báo đèn đỏ · hoá đơn rõ ràng *(slide 3–4)*
+  - **Dùng lại dữ liệu sẵn có** — từ vệt GPS ra nhịp đèn · hoá đơn rõ cho tài xế *(slide 5–6)*
+  - **Chuyển sang xe điện** — điểm carbon · trạm sạc · đổi pin *(slide 7–8)*
+  - **Xe tự lái** — robotaxi đặt ngay trong app *(slide 9)*
+- Dòng cuối: *Cả bốn đã bắt đầu ở Việt Nam — chỉ là mình chưa gọi tên*
 - Chân slide: *Nguồn: PR Newswire 31/10/2025 · Unite.AI · Euronews 18/9/2026*
 
 🖼️ **HÌNH / VIDEO**
-- ✅ **Đã có:** `09_Robotaxi-ban-dem-so-hieu-4484.jpg` — ảnh thật của đoàn, để lớn.
-- ✅ **Đã có:** video robotaxi trên Drive (link ở đầu file) — **chỉ chiếu nếu còn dư giờ**, vì Q&A nằm trong 20 phút.
+- ✅ **Đang dùng:** `robotaxi.mp4` — clip của đoàn quay ban đêm, xe không người lái chạy ngay cạnh xe đoàn. Tự chạy, lặp lại, không tiếng — không cần bấm gì giữa lúc nói.
+- Ảnh `09_Robotaxi-ban-dem-so-hieu-4484.jpg` không dùng nữa.
 - 🔍 **Nên tìm (1 ảnh):** ảnh robotaxi Pony.ai hoặc Didi R2 nhìn rõ cụm cảm biến trên nóc.
   - Từ khoá: **`Pony.ai robotaxi Shenzhen`** · **`DiDi GAC Aion R2 robotaxi`**
   - Bộ ảnh báo chí trong thông cáo của Pony.ai [21] và bài Gasgoo [23] dùng được, có ghi nguồn.
@@ -462,9 +451,9 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 🎙️ **LỜI NÓI**
 
-> *"Cảm ơn Bình. Em chốt bằng một chuyện cuối.*
+> *"Cảm ơn anh Sâm. Em chốt bằng một chuyện cuối.*
 >
-> *Tấm ảnh này tụi em chụp buổi tối ở Thẩm Quyến — chiếc xe có cụm cảm biến trên gương, nhìn dáng là robotaxi.*
+> *Clip này tụi em quay buổi tối ở Thẩm Quyến — chiếc xe chạy ngay cạnh xe của đoàn là xe không người lái.*
 >
 > **✋ *«Em hỏi cả phòng câu cuối cho vui: ngay bây giờ dưới sảnh có một chiếc xe không người lái, đi miễn phí. Ai dám lên giơ tay ạ?»*** *(đếm tay, cười)*
 >
@@ -478,9 +467,17 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 >
 > *(dừng, chuyển giọng chốt)*
 >
-> ***11 chuyến xe trong 5 ngày, mà đụng vào đúng ba thứ đang thay đổi cả ngành:*** *trải nghiệm ngày càng **cá nhân hoá** — app nói trước khi mình kịp hỏi. Đội xe ngày càng **chạy điện**. Vận hành ngày càng **tự động**.*
+> ***11 chuyến xe trong 5 ngày, mà đụng vào đúng bốn thứ đang thay đổi cả ngành:***
 >
-> ***Cả ba đang diễn ra ở Việt Nam rồi. Chỉ là mình chưa gọi tên thôi.***
+> *Một — app **nói trước khi khách kịp hỏi**: giá chốt trước, tài xế đang kẹt đèn, hoá đơn tách từng dòng.*
+>
+> *Hai — **dùng lại dữ liệu mình đã có**: từ vệt GPS ra nhịp đèn, từ số liệu cuốc xe ra hoá đơn minh bạch cho tài xế.*
+>
+> *Ba — **chuyển sang xe điện**: từ điểm carbon trên từng cuốc tới trạm sạc, trạm đổi pin.*
+>
+> *Bốn — **xe tự lái**: robotaxi đặt ngay trong cái app mình vẫn dùng.*
+>
+> ***Cả bốn đã bắt đầu ở Việt Nam rồi. Chỉ là mình chưa gọi tên thôi.***
 >
 > *Tụi em xin dừng ở đây. Mọi người có câu hỏi gì không ạ?"*
 
@@ -509,22 +506,22 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 | Slide | Người | Thời lượng |
 |---|---|---|
-| 1 · Mở đầu | Sâm | 0'45 |
-| 2 · Didi lớn cỡ nào | Sâm | 1'00 |
-| 3 · Mười hạng xe | Sâm | 2'45 |
-| 4 · App nói trước | Sâm | 2'30 |
-| 5 · Đèn đỏ | Bình | 2'15 |
-| 6 · Phía tài xế | Bình | 1'15 |
-| 7 · Carbon | Bình | 2'15 |
-| 8 · Xe điện | Bình | 2'30 |
-| 9 · Robotaxi + chốt | Sâm | 1'30 |
-| **Tổng nói** | | **16'45** |
-| **Q&A** | | **3'15** |
+| 1 · Mở đầu | Bình | 0'45 |
+| 2 · Didi lớn cỡ nào | Bình | 1'00 |
+| 3 · Mười hạng xe | Bình | 2'00 |
+| 4 · App nói trước | Bình | 2'30 |
+| 5 · Đèn đỏ | Sâm | 2'15 |
+| 6 · Phía tài xế | Sâm | 1'15 |
+| 7 · Carbon | Sâm | 2'15 |
+| 8 · Xe điện | Sâm | 2'15 |
+| 9 · Robotaxi + chốt | Bình | 1'30 |
+| **Tổng nói** | | **15'45** |
+| **Q&A** | | **4'15** |
 | **TỔNG** | | **20'00** |
 
-**Chia việc:** Sâm ~8'30 · Bình ~8'15 — gần như cân nhau.
+**Chia việc:** Bình ~7'45 · Sâm ~8'00 — gần như cân nhau. *(Số ước tính, cần bấm giờ lại khi tập.)*
 
-**Nếu đang chạy trễ, cắt theo thứ tự này:** ① đoạn Madrid/Zagreb ở slide 9 · ② đoạn 29→27% ở slide 6 · ③ đoạn "Priority / Comfort" ở slide 3 · ④ mẹo tra địa chỉ ở slide 3.
+**Nếu đang chạy trễ, cắt theo thứ tự này:** ① đoạn Madrid/Zagreb ở slide 9 · ② đoạn 29→27% ở slide 6 · ③ đoạn đổi pin ở slide 8 · ④ mẹo tra địa chỉ ở slide 3.
 **Giữ bằng mọi giá:** slide 3 (ảnh 10 hạng xe) · slide 4 (hai màn hình) · slide 5 (dữ liệu sẵn có) · khối Hà Nội ở slide 8 · câu chốt slide 9.
 
 ## 4 điểm tương tác — đừng thêm nữa
@@ -536,6 +533,8 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 | 5 | App lấy dữ liệu đèn đỏ từ đâu? | 20 giây |
 | 9 | Ai dám lên xe không người lái? *(chỉ đếm tay)* | 15 giây |
 
+*Slide 7 có một ô "Chuyện này ở Việt Nam còn xa không?" — đó là câu hỏi tu từ để lật, không chờ phòng trả lời, nên không nằm trong bảng này.*
+
 **Mẹo:** chờ đúng **3 giây**. Quá 5 giây không ai nói thì tự trả lời rồi đi tiếp. Gọi tên cụ thể hiệu quả hơn hỏi cả phòng.
 
 ## Việc cần làm với deck
@@ -544,15 +543,15 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 |---|---|---|
 | 1 | Dựng lại còn **9 slide**; ghi tên người trình bày ở góc mỗi slide | toàn bộ |
 | 2 | **Xoá** slide "Một chuyến đi, năm bước" | – |
-| 3 | **Viết lại slide 3** quanh ảnh `03b` — 10 hạng xe, đầy đủ chú thích có mũi tên | 3 |
+| 3 | **Viết lại slide 3** quanh ảnh `03b` — 10 hạng xe · *(đã đổi: bảng 10 hạng, chỉ khoanh chỗ tick nhiều hạng)* | 3 |
 | 4 | Gộp slide chờ xe + slide carbon cũ thành slide 4, **2 ảnh cạnh nhau**, khoanh 3 dòng chữ cần chú ý | 4 |
-| 5 | Thêm 3 slide mới phần Bình: đèn đỏ · hoá đơn tài xế · carbon | 5–7 |
+| 5 | Thêm 3 slide mới phần "tìm hiểu thêm": đèn đỏ · hoá đơn tài xế · carbon | 5–7 |
 | 6 | Viết lại slide xe điện: thị phần rút còn dải mốc chữ nhỏ; nội dung chính là hạ tầng sạc + vùng phát thải thấp Hà Nội + đổi pin | 8 |
 | 7 | Thay "550tr user / 400 thành phố" → "hơn 55 triệu cuốc/ngày" | 2 |
 | 8 | Cập nhật thị phần sang số Q1/2026 | 8 |
 | 9 | Sửa "cả hai qua Uber" → Madrid = Uber, Zagreb = Verne; mốc Didi R2 = 31/8/2026 | 9 |
 | 10 | **Thống nhất "5 ngày · 24–28/08"** — bìa deck đang ghi "4 ngày · 24–27.08" | bìa |
-| 11 | **Ẩn 3 con số sau nút bấm:** "Mười" (hạng xe) · "không đấu nối" · "Có" (hoá đơn tài xế) | 3, 5, 6 |
+| 11 | **Ẩn sau nút bấm:** "Mười" (hạng xe) · "không đấu nối" · "Có" (hoá đơn tài xế) · khối "Còn ở Việt Nam" | 3, 5, 6, 7 |
 | 12 | Ghi nguồn chữ nhỏ ở chân **mỗi** slide có số liệu | 2,3,5,6,7,8,9 |
 
 ## Chuẩn bị cho câu hỏi khó

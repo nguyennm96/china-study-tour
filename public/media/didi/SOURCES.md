@@ -10,7 +10,7 @@
 | `tiers-full.png` | `03b_Man-hinh-Chon-xe-day-du-10-hang.png` | Màn chọn xe cuộn hết, đủ 10 hạng xe. Metadata: chụp 23/09/2026 09:21, sau chuyến đi | 3 |
 | `waiting.jpg` | `04a_Man-hinh-Cho-tai-xe-Walk39m-WaitingTrafficLight.jpg` | Màn chờ tài xế: “Walk 39m and save 1min”, đèn đỏ đếm ngược còn 51 giây (Sâm xác nhận 23/09), “Waiting for a traffic light” | 4, 5 (cắt) |
 | `trip-summary.jpg` | `04b_Man-hinh-Hoa-don-77.80CNY-1430g-carbon.jpg` | Hoá đơn Talent Park → SEG Plaza, 77,80 CNY, 本单获得1430g碳元气 | 4, 7 (cắt) |
-| `amap-route.png` | `05_Amap-Chi-duong-thuc-te.png` | Amap chỉ đường, chụp 26/08/2026 | 5 |
+| `amap-route.png` | `05_Amap-Chi-duong-thuc-te.png` | Amap chỉ đường, chụp 26/08/2026 | không dùng nữa · slide 5 đã bỏ ảnh này (không liên quan tới đèn đỏ) |
 | `ev-street.jpg` | `08_Duong-pho-Tham-Quyen-toan-xe-dien.jpg` | Trục đường Thẩm Quyến, phần lớn là xe điện | 8 |
 | `ev-interior.jpg` | `08b_Noi-that-xe-dien-man-hinh-dieu-khien.jpg` | Nội thất xe điện, màn hình điều khiển | 8 |
 | `robotaxi.mp4` | clip của đoàn | Xe không người lái chạy trên phố Thẩm Quyến ban đêm, quay từ trong xe của đoàn. Clip tự chạy và lặp khi trình chiếu, không tiếng | 9 |

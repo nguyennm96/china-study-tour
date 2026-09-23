@@ -1,11 +1,12 @@
 import { useEffect, useState, type CSSProperties, type ReactNode } from 'react'
 import {
-  ArrowRight, BatteryCharging, CheckCircle, CheckSquare, ChargingStation, HandTap, Lightbulb, Microphone, Warning, XCircle,
+  ArrowRight, BatteryCharging, CheckCircle, CheckSquare, ChargingStation, HandTap, Info, Lightbulb, Microphone, XCircle,
 } from '@phosphor-icons/react'
 import {
   didiCarbon, didiDriver, didiEv, didiOpen, didiPages, didiPhotos, didiRobotaxi, didiScale, didiScreens,
-  didiTiers, didiTraffic, type DidiPage, type Photo, type Rect,
+  didiTiers, didiTraffic, type Cite, type DidiPage, type Photo, type Rect,
 } from '../data/didi'
+import { source } from '../data/sources'
 import { holdNextStep } from './slideSteps'
 import './DidiSlides.css'
 
@@ -32,12 +33,21 @@ function useReveal() {
   return [shown, () => setShown(true)] as const
 }
 
-function Ask({ question, onReveal }: { question: string; onReveal: () => void }) {
+function Ask({ question, onReveal, label = 'Hỏi cả phòng', hint = 'Bấm hoặc nhấn → để lật đáp án' }: {
+  question: string; onReveal: () => void; label?: string; hint?: string
+}) {
   return <button type="button" className="didi-ask" onClick={onReveal}>
-    <span className="didi-ask-label">Hỏi cả phòng</span>
+    <span className="didi-ask-label">{label}</span>
     <strong>{question}</strong>
-    <span className="didi-ask-hint"><HandTap size={16} aria-hidden="true" />Bấm hoặc nhấn → để lật đáp án</span>
+    <span className="didi-ask-hint"><HandTap size={16} aria-hidden="true" />{hint}</span>
   </button>
+}
+
+/** Số trích dẫn [n], đánh theo thứ tự `sourceIds` của trang để khớp danh sách ở chân slide. */
+function Ref({ page, ids }: { page: DidiPage; ids: Cite }) {
+  const order: readonly string[] = didiPages.find(item => item.key === page)!.sourceIds
+  const numbers = ids.map(id => order.indexOf(id) + 1).sort((a, b) => a - b)
+  return <sup className="didi-cite">[{numbers.join(', ')}]</sup>
 }
 
 function Page({ page, children }: { page: DidiPage; children: ReactNode }) {
@@ -45,7 +55,12 @@ function Page({ page, children }: { page: DidiPage; children: ReactNode }) {
   return <div className={`didi-page didi-${page}`}>
     <p className="didi-presenter"><Microphone size={14} weight="fill" aria-hidden="true" /><span>Trình bày</span>{meta.presenter}</p>
     <div className="didi-body">{children}</div>
-    {'source' in meta && <p className="didi-source">{meta.source}</p>}
+    {'cite' in meta
+      ? <ol className="didi-source didi-refs">{meta.sourceIds.map((id, index) => {
+          const item = source(id)
+          return <li key={id}><b>[{index + 1}]</b>{item.publisher} · {item.date}</li>
+        })}</ol>
+      : 'source' in meta && <p className="didi-source">{meta.source}</p>}
   </div>
 }
 
@@ -77,6 +92,7 @@ function ScaleSlide() {
       <p>{didiScale.compare.lead}</p>
       <strong>{didiScale.compare.value}</strong>
       <p className="didi-compare-punch"><ArrowRight size={22} aria-hidden="true" />{didiScale.compare.punch}</p>
+      <p className="didi-compare-loss">{didiScale.loss}</p>
     </div>
   </div>
 }
@@ -127,7 +143,7 @@ function ScreensSlide() {
   const { waiting, receipt } = didiScreens
   return <div className="didi-screens-layout">
     <section className="didi-screen">
-      <Shot photo={didiPhotos.waiting} rings={waiting.highlights.map((item, index) => ({ rect: item.ring, label: index + 1 }))} className="didi-phone" />
+      <Shot photo={didiPhotos.waiting} crop={didiScreens.crop} rings={waiting.highlights.map((item, index) => ({ rect: item.ring, label: index + 1 }))} className="didi-phone" />
       <div className="didi-screen-copy">
         <h4>{waiting.label}</h4>
         <ol className="didi-quotes">{waiting.highlights.map((item, index) => <li key={item.quote}>
@@ -137,7 +153,7 @@ function ScreensSlide() {
       </div>
     </section>
     <section className="didi-screen">
-      <Shot photo={didiPhotos.receipt} rings={[{ rect: receipt.carbon.ring, label: 3 }]} className="didi-phone" />
+      <Shot photo={didiPhotos.receipt} crop={didiScreens.crop} rings={[{ rect: receipt.carbon.ring, label: 3 }]} className="didi-phone" />
       <div className="didi-screen-copy">
         <h4>{receipt.label}</h4>
         <p className="didi-screen-route">{receipt.route}</p>
@@ -178,23 +194,19 @@ function TrafficSlide() {
         <Shot photo={didiPhotos.waiting} crop={didiTraffic.evidence.crop} />
         <figcaption>{didiTraffic.evidence.caption}</figcaption>
       </figure>
-      <figure className="didi-amap">
-        <Shot photo={didiPhotos.amap} crop={{ x: 0, y: 0, w: 1, h: 0.66 }} />
-        <figcaption>{didiTraffic.amapCaption}</figcaption>
-      </figure>
     </aside>
     <div className="didi-traffic-main">
       {shown
         ? <div className="didi-verdict">
-            <section className="is-no didi-pop"><h4><XCircle size={22} weight="fill" aria-hidden="true" />{didiTraffic.no.label}</h4><p>{didiTraffic.no.body}</p></section>
-            <section className="is-yes didi-pop" style={stagger(1)}><h4><CheckCircle size={22} weight="fill" aria-hidden="true" />{didiTraffic.yes.label}</h4><p>{didiTraffic.yes.body}</p></section>
+            <section className="is-no didi-pop"><h4><XCircle size={22} weight="fill" aria-hidden="true" />{didiTraffic.no.label}</h4><p>{didiTraffic.no.body}<Ref page="traffic" ids={didiTraffic.no.cite} /></p></section>
+            <section className="is-yes didi-pop" style={stagger(1)}><h4><CheckCircle size={22} weight="fill" aria-hidden="true" />{didiTraffic.yes.label}</h4><p>{didiTraffic.yes.body}<Ref page="traffic" ids={didiTraffic.yes.cite} /></p></section>
           </div>
         : <Ask question={didiTraffic.question} onReveal={reveal} />}
       <ol className="didi-flow">{didiTraffic.steps.map((step, index) => <li key={step} className="didi-rise" style={stagger(index + 2)}>
         <TrafficStep index={index} /><span><b>0{index + 1}</b>{step}</span>
       </li>)}</ol>
       <div className="didi-traffic-foot didi-rise" style={stagger(5)}>
-        <ul className="didi-mini-stats">{didiTraffic.stats.map(stat => <li key={stat.label}><strong>{stat.value}</strong><span>{stat.label}</span></li>)}</ul>
+        <ul className="didi-mini-stats">{didiTraffic.stats.map(stat => <li key={stat.label}><strong>{stat.value}</strong><span>{stat.label}<Ref page="traffic" ids={stat.cite} /></span></li>)}</ul>
         <p className="didi-accent">{didiTraffic.punch}</p>
       </div>
     </div>
@@ -212,10 +224,11 @@ function DriverSlide() {
       <ol className="didi-boxes">{didiDriver.boxes.map((box, index) => <li key={box.head} className="didi-rise" style={stagger(index + 1)}>
         <b aria-hidden="true">0{index + 1}</b>
         <h4>{box.head}</h4>
-        <p>{box.body}</p>
-        {'caveat' in box && <p className="didi-caveat-flag"><Warning size={16} weight="fill" aria-hidden="true" />{box.caveat}</p>}
+        <p>{box.body}<Ref page="driver" ids={box.cite} /></p>
+        {'by' in box && <p className="didi-by"><Info size={16} weight="fill" aria-hidden="true" />{box.by}</p>}
       </li>)}</ol>
-      <p className="didi-accent didi-rise" style={stagger(4)}>{didiDriver.punch}</p>
+      <p className="didi-vn-note didi-rise" style={stagger(4)}>{didiDriver.vietnam.text}<Ref page="driver" ids={didiDriver.vietnam.cite} /></p>
+      <p className="didi-accent didi-rise" style={stagger(5)}>{didiDriver.punch}</p>
     </div>
     <figure className="didi-bill didi-rise" style={stagger(2)}>
       <p className="didi-bill-title">{bill.title}</p>
@@ -227,22 +240,25 @@ function DriverSlide() {
 }
 
 function CarbonSlide() {
-  const { vietnam } = didiCarbon
-  return <div className="didi-carbon-layout">
+  const [shown, reveal] = useReveal()
+  const { vietnam, teaser } = didiCarbon
+  return <div className={`didi-carbon-layout ${shown ? 'is-shown' : ''}`}>
     <figure className="didi-carbon-shot">
       <Shot photo={didiPhotos.receipt} crop={didiCarbon.crop} rings={[{ rect: didiCarbon.ring }]} />
       <figcaption>{didiCarbon.caption}</figcaption>
     </figure>
     <div className="didi-carbon-china">
-      <ul className="didi-points">{didiCarbon.points.map(point => <li key={point.head}><h4>{point.head}</h4><p>{point.body}</p></li>)}</ul>
+      <ul className="didi-points">{didiCarbon.points.map(point => <li key={point.head}><h4>{point.head}</h4><p>{point.body}<Ref page="carbon" ids={point.cite} /></p></li>)}</ul>
       <ol className="didi-loop">{didiCarbon.loop.map((step, index) => <li key={step}>{index > 0 && <ArrowRight size={16} aria-hidden="true" />}<span>{step}</span></li>)}</ol>
     </div>
-    <section className="didi-vietnam">
-      <h4>{vietnam.head}</h4>
-      <p className="didi-decree">{vietnam.decree}</p>
-      <p className="didi-decree-dates">{vietnam.dates}</p>
-      <ul>{vietnam.items.map(item => <li key={item.value}><strong>{item.value}</strong><span>{item.label}</span>{'note' in item && <small>{item.note}</small>}</li>)}</ul>
-    </section>
+    {shown
+      ? <section className="didi-vietnam didi-pop">
+          <h4>{vietnam.head}</h4>
+          <p className="didi-decree">{vietnam.decree.lead} <span>{vietnam.decree.number}</span><Ref page="carbon" ids={vietnam.decree.cite} /></p>
+          <p className="didi-decree-dates">{vietnam.dates}</p>
+          <ul>{vietnam.items.map(item => <li key={item.value}><strong>{item.value}</strong><span>{item.label}<Ref page="carbon" ids={item.cite} /></span>{'note' in item && <small>{item.note}</small>}</li>)}</ul>
+        </section>
+      : <Ask label={teaser.label} question={teaser.question} hint={teaser.hint} onReveal={reveal} />}
   </div>
 }
 
@@ -264,15 +280,14 @@ function RingDiagram() {
 function EvSlide() {
   const { shenzhen, hanoi, swap } = didiEv
   return <div className="didi-ev-layout">
-    <p className="didi-market">{didiEv.market.join('  ·  ')}</p>
     <section className="didi-ev-block is-shenzhen">
       <h4><ChargingStation size={20} aria-hidden="true" />{shenzhen.head}</h4>
       <div className="didi-ev-photos">
         <img src={didiPhotos.street.src} alt={didiPhotos.street.alt} />
         <img src={didiPhotos.interior.src} alt={didiPhotos.interior.alt} />
       </div>
-      <ul className="didi-ev-stats">{shenzhen.stats.map(stat => <li key={stat.label}><strong>{stat.value}</strong><span>{stat.label}</span></li>)}</ul>
-      <p className="didi-ev-first">{shenzhen.first}</p>
+      <ul className="didi-ev-stats">{shenzhen.stats.map(stat => <li key={stat.label}><strong>{stat.value}</strong><span>{stat.label}<Ref page="ev" ids={stat.cite} /></span></li>)}</ul>
+      <p className="didi-ev-first">{shenzhen.first.text}<Ref page="ev" ids={shenzhen.first.cite} /></p>
       <p className="didi-accent">{shenzhen.punch}</p>
     </section>
     <section className="didi-ev-block is-hanoi">
@@ -280,15 +295,15 @@ function EvSlide() {
       <div className="didi-hanoi">
         <figure><RingDiagram /><figcaption>{hanoi.diagramNote}</figcaption></figure>
         <ol className="didi-stages">{hanoi.stages.map((stage, index) => <li key={stage.date} data-stage={index}>
-          <strong>{stage.date}</strong>{'status' in stage && <em>{stage.status}</em>}<span>{stage.scope}</span>
+          <strong>{stage.date}</strong>{'status' in stage && <em>{stage.status}</em>}<span>{stage.scope}<Ref page="ev" ids={stage.cite} /></span>
         </li>)}</ol>
       </div>
-      <p className="didi-wards">{hanoi.wards}</p>
-      <ul className="didi-rules">{hanoi.rules.map((rule, index) => <li key={rule} className={index === 1 ? 'is-key' : ''}>{rule}</li>)}</ul>
+      <p className="didi-rule">{hanoi.rule.text}<Ref page="ev" ids={hanoi.rule.cite} /></p>
+      <div className="didi-ev-key"><p>{hanoi.key.text}<Ref page="ev" ids={hanoi.key.cite} /></p><small>{hanoi.key.note}</small></div>
     </section>
     <section className="didi-ev-block is-swap">
       <h4><BatteryCharging size={20} aria-hidden="true" />{swap.head}</h4>
-      <ul>{swap.items.map(item => <li key={item.value}><strong>{item.value}</strong><span>{item.label}</span></li>)}</ul>
+      <ul>{swap.items.map(item => <li key={item.value}><strong>{item.value}</strong><span>{item.label}<Ref page="ev" ids={item.cite} /></span></li>)}</ul>
     </section>
   </div>
 }
@@ -308,8 +323,8 @@ function RobotaxiSlide() {
       <strong>{item.date}</strong><p>{item.body}{'note' in item && <em> — {item.note}</em>}</p>
     </li>)}</ol>
     <section className="didi-close">
-      <p className="didi-tally">{close.tally}</p>
-      <ul>{close.trends.map(trend => <li key={trend}>{trend}</li>)}</ul>
+      <p className="didi-tally">{close.tally.map((part, index) => <span key={part}>{index > 0 && ' · '}<span className="didi-nowrap">{part}</span></span>)}</p>
+      <ul>{close.trends.map(trend => <li key={trend.name}><strong>{trend.name}</strong><span>{trend.from}</span></li>)}</ul>
       <p className="didi-close-line">{close.line}</p>
     </section>
   </div>

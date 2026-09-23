@@ -26,15 +26,28 @@ test('bài Didi đúng 9 slide theo thứ tự và người trình bày của sc
   assert.ok(slides.every(slide => slide.kind === 'didi' && slide.subjectId === 'didi'), 'mọi slide Didi phải gắn vào ghim didi')
 })
 
-test('ba slide có đáp án ẩn sau nút bấm', () => {
-  assert.deepEqual(didi.didiPages.filter(page => page.reveal).map(page => page.key), ['tiers', 'traffic', 'driver'])
+test('bốn slide có phần ẩn sau nút bấm', () => {
+  assert.deepEqual(didi.didiPages.filter(page => page.reveal).map(page => page.key), ['tiers', 'traffic', 'driver', 'carbon'])
   assert.ok(!/mười/i.test(didi.didiTiers.titleBefore), 'tiêu đề trước khi lật không được lộ đáp án')
 })
 
 test('mọi slide có số liệu ghi nguồn ở chân và nguồn phân giải được', () => {
   for (const page of didi.didiPages) {
     for (const id of page.sourceIds) assert.doesNotThrow(() => source(id), `${page.key}: thiếu nguồn "${id}"`)
-    if (page.key !== 'open') assert.ok(page.source && page.source.length > 20, `${page.key} thiếu dòng nguồn ở chân slide`)
+    if (page.key !== 'open') assert.ok((page.source && page.source.length > 20) || (page.cite && page.sourceIds.length > 0), `${page.key} thiếu dòng nguồn ở chân slide`)
+  }
+})
+
+test('trích dẫn [n] trên slide của Sâm trỏ đúng nguồn của trang, và nguồn nào cũng được trích', () => {
+  const data = { traffic: didi.didiTraffic, driver: didi.didiDriver, carbon: didi.didiCarbon, ev: didi.didiEv }
+  const collect = value => Array.isArray(value) ? value.flatMap(collect)
+    : value && typeof value === 'object' ? Object.entries(value).flatMap(([key, inner]) => key === 'cite' ? inner : collect(inner)) : []
+  for (const [key, block] of Object.entries(data)) {
+    const page = didi.didiPages.find(item => item.key === key)
+    assert.ok(page.cite, `${key} phải dùng trích dẫn đánh số`)
+    const cited = new Set(collect(block))
+    for (const id of cited) assert.ok(page.sourceIds.includes(id), `${key}: trích "${id}" nhưng không có trong sourceIds`)
+    for (const id of page.sourceIds) assert.ok(cited.has(id), `${key}: nguồn "${id}" ở chân slide nhưng không ý nào trích`)
   }
 })
 
