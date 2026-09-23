@@ -178,7 +178,8 @@ test('bài chia sẻ là một dãy slide phẳng: mở đầu, ba chủ đề, 
     const references = own.filter(slide => slide.kind === 'ahamove' || (slide.kind === 'hotel-robot' && slide.page === 'ahamove'))
     assert.equal(references.length, 1, `${subject.id} cần đúng một slide liên hệ Ahamove`)
     assert.equal(own.at(-1), references[0], `${subject.id} phải kết bằng liên hệ Ahamove`)
-    assert.match(references[0].title, /Ahamove/)
+    // Drone kết bằng câu hỏi về Việt Nam; hai chủ đề còn lại nêu thẳng Ahamove trong tiêu đề.
+    assert.match(references[0].title, subject.id === 'drone' ? /Việt Nam/ : /Ahamove/)
     if (subject.id === 'robots') {
       assert.deepEqual(own.slice(1).map(slide => slide.page), ['journey', 'navigation', 'elevator', 'dispatch', 'infrastructure', 'market', 'ahamove'])
       assert.ok(own.slice(1).every(slide => slide.kind === 'hotel-robot'))

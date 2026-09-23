@@ -24,8 +24,16 @@ const allSlides = [...buildPresentation(), ...didiSlides(), ...placeSlides()]
 type Page = { kind: 'slide'; slide: Slide }
 
 /** Chỉ hiện slide đã biên tập; ghi chép thô trong sheet không lên màn hình. */
-const pagesFor = (stop: Stop): Page[] =>
-  (stop.embeddedSubjectIds ?? []).flatMap(id => allSlides.filter(slide => slide.subjectId === id).map(slide => ({ kind: 'slide' as const, slide })))
+const pagesFor = (stop: Stop): Page[] => {
+  const pages = (stop.embeddedSubjectIds ?? []).flatMap(id => allSlides.filter(slide => slide.subjectId === id).map(slide => ({ kind: 'slide' as const, slide })))
+  // Talent Park kể theo trải nghiệm: địa điểm → đoàn đặt thử → phía sau cái tủ → quy mô → Việt Nam.
+  // Bỏ trang tiêu đề drone vì câu của nó đã thành tiêu đề trang trải nghiệm.
+  if (stop.id === 'talent-park') {
+    const order: Slide['kind'][] = ['place', 'experience', 'mechanism', 'data-summary', 'ahamove']
+    return pages.filter(item => item.slide.kind !== 'title').sort((a, b) => order.indexOf(a.slide.kind) - order.indexOf(b.slide.kind))
+  }
+  return pages
+}
 
 /** MapLibre tự quy đổi toạ độ chuột và touch theo CSS scale của khung trình chiếu. */
 export function ItineraryMap() {
@@ -38,6 +46,7 @@ export function ItineraryMap() {
   const [openId, setOpenId] = useState<string | null>(null)
   const [page, setPage] = useState(0)
   const [scale, setScale] = useState(0)
+  const [pageHeight, setPageHeight] = useState(PAGE_HEIGHT)
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
   const openRef = useRef<(id: string) => void>(() => {})
   openRef.current = id => {
@@ -93,10 +102,20 @@ export function ItineraryMap() {
     const timeout = window.setTimeout(() => setStatus('error'), 12000)
     map.on('load', () => {
       window.clearTimeout(timeout)
+      // Tăng tương phản nền bản đồ cho màn chiếu, giữ ghim là điểm nhấn chính.
       for (const [id, property, color] of [
         ['background', 'background-color', '#f7f6f0'],
-        ['water', 'fill-color', '#cfe0e7'],
-        ['park', 'fill-color', '#e4ece2'],
+        ['water', 'fill-color', '#b3d4e4'],
+        ['waterway', 'line-color', '#96bfd2'],
+        ['park', 'fill-color', '#d7e5d5'],
+        ['landcover_wood', 'fill-color', '#cbdcc9'],
+        ['highway_minor', 'line-color', '#bdc8ce'],
+        ['highway_major_casing', 'line-color', '#9daeb8'],
+        ['highway_major_subtle', 'line-color', '#b0bfc7'],
+        ['highway_motorway_casing', 'line-color', '#9daeb8'],
+        ['highway_motorway_subtle', 'line-color', '#b0bfc7'],
+        ['highway_motorway_bridge_casing', 'line-color', '#9daeb8'],
+        ['tunnel_motorway_casing', 'line-color', '#9daeb8'],
       ] as const) {
         if (map.getLayer(id)) map.setPaintProperty(id, property, color)
       }
@@ -108,7 +127,9 @@ export function ItineraryMap() {
           continue
         }
         map.setLayoutProperty(layer.id, 'text-field', ['coalesce', ['get', 'name:latin'], ['get', 'name:en'], ['get', 'name']])
-        map.setPaintProperty(layer.id, 'text-color', '#778b94')
+        map.setPaintProperty(layer.id, 'text-color', '#435b6c')
+        map.setPaintProperty(layer.id, 'text-halo-color', '#fffdf9')
+        map.setPaintProperty(layer.id, 'text-halo-width', 1)
       }
       map.fitBounds(bounds, { padding: FIT_PADDING, animate: false })
       setStatus('ready')
@@ -138,7 +159,12 @@ export function ItineraryMap() {
     // sau biến đổi và sẽ thu nhỏ slide thêm một lần nữa. clientWidth/Height là pixel bố cục.
     const fit = () => {
       const { clientWidth: width, clientHeight: height } = body
-      if (width && height) setScale(Math.min(width / PAGE_WIDTH, height / PAGE_HEIGHT))
+      if (width && height) {
+        // Khung slide cao theo tỷ lệ modal, tránh dải trống trên dưới của khung 16:9 cố định.
+        const nextHeight = Math.max(PAGE_HEIGHT, Math.min(1024, Math.round(PAGE_WIDTH * height / width)))
+        setPageHeight(nextHeight)
+        setScale(Math.min(width / PAGE_WIDTH, height / nextHeight))
+      }
     }
     const observer = new ResizeObserver(fit)
     observer.observe(body)
@@ -201,9 +227,9 @@ export function ItineraryMap() {
       <div className="itinerary-map-canvas" ref={hostRef} aria-label="Bản đồ tám điểm dừng của chuyến đi" />
       <header className="itinerary-intro">
         <p className="deck-kicker">SHENZHEN · 24–28.08.2026</p>
-        <h3>Một thành phố.<br /><span>Tám điểm chạm.</span></h3>
-        <p>Kéo để khám phá. Cuộn để zoom.<br />Chọn một ghim để mở câu chuyện của đoàn.</p>
-        <span className="itinerary-count"><MapPin size={14} weight="fill" aria-hidden="true" />8 điểm dừng<span />6 người kể chuyện</span>
+        <h3>Hành trình Thâm Quyến.<br /><span>Tám điểm dừng.</span></h3>
+        <p>Kéo để di chuyển. Cuộn để thu phóng.<br />Chọn một địa điểm để xem nội dung chia sẻ.</p>
+        <span className="itinerary-count"><MapPin size={14} weight="fill" aria-hidden="true" />8 điểm dừng<span />6 thành viên</span>
       </header>
       {status !== 'ready' && <p className="itinerary-map-status" role={status === 'error' ? 'alert' : 'status'}>
         {status === 'loading' ? 'Đang tải bản đồ…' : 'Nền bản đồ chưa tải được. Bạn vẫn có thể mở nội dung từ các ghim.'}
@@ -214,7 +240,6 @@ export function ItineraryMap() {
       <article className="itinerary-modal" ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="itinerary-modal-title" onClick={event => event.stopPropagation()}>
         <header className="itinerary-modal-head">
           <div>
-            <p className="itinerary-modal-place">Điểm {String(stop.order).padStart(2, '0')} / 08 · {stop.district}</p>
             {stop.approximate && <p className="itinerary-modal-place"><em>Vị trí gần đúng theo địa chỉ công bố</em></p>}
             <h4 id="itinerary-modal-title">{stop.name}{embeddedTitle && <span className="itinerary-modal-subject"> — {embeddedTitle}</span>}</h4>
           </div>
@@ -222,7 +247,7 @@ export function ItineraryMap() {
         </header>
 
         <div className="itinerary-modal-body" ref={bodyRef}>
-          <div className="itinerary-page" style={{ width: PAGE_WIDTH, height: PAGE_HEIGHT, transform: `translate(-50%, -50%) scale(${scale})`, visibility: scale ? 'visible' : 'hidden' }}>
+          <div className={`itinerary-page ${stop.id === 'talent-park' ? 'is-talent-park' : ''}`} style={{ width: PAGE_WIDTH, height: pageHeight, transform: `translate(-50%, -50%) scale(${scale})`, visibility: scale ? 'visible' : 'hidden' }}>
             <div className={`deck-canvas ${slideOwnsHeading(current.slide) ? 'is-bare' : ''}`} key={`${stop.id}-${page}`}>
               {!slideOwnsHeading(current.slide) && <header className="deck-slide-head">
                 <p className="deck-kicker">{current.slide.kicker}</p>

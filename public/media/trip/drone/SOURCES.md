@@ -51,3 +51,13 @@ Người dùng cung cấp `Video đặt Drone.mp4` và yêu cầu thay stage 1
 ```text
 264a968182c473e14c86ae5a1d4f2b7540956ed55e2345ab5bfa4d1dd0f589a0  drone-order.mp4
 ```
+
+## Cập nhật 23/09/2026 — video drone hạ cánh
+
+Người dùng cung cấp `Untitled2.mov` và yêu cầu thay video ở bước **Drone giao hàng đến trạm** (slide Trải nghiệm tại Talent Park). File gốc HEVC 1920×1080, 60 fps, cờ xoay −90°, không có âm thanh, dài 26.728333 giây; được chuyển mã thành `drone-landing.mp4` (H.264 High, 1080×1920, 30 fps, CRF 24, faststart) để trình duyệt phát được. Nội dung khung hình không cắt, không chỉnh. `drone-landing-poster.jpg` trích tại giây 12, lúc drone mang hộp hàng tiến tới nóc trạm. `landing.mp4` cũ giữ nguyên, vẫn dùng ở slide v3.
+
+## Cập nhật 23/09/2026 — video nhận hàng từ tủ
+
+Người dùng cung cấp `Untitled.mp4` và yêu cầu thay ảnh `locker.jpg` ở bước **Nhận đồ ăn từ tủ**. File gốc H.264 1080×1920, 30 fps, không có âm thanh, dài 63.867 giây, 45.7 MB; được chuyển mã thành `drone-locker.mp4` (H.264 High, 720×1280, 30 fps, CRF 25, faststart, 14.9 MB) cho nhẹ khi trình chiếu. Nội dung khung hình không cắt, không chỉnh. `drone-locker-poster.jpg` trích tại giây 28, lúc tay kéo hộp Meituan 无人机 ra khỏi khoang. `locker.jpg` giữ nguyên làm tư liệu lưu trữ.
+
+Cùng ngày, bài V3 (`/v3`) được gỡ khỏi website; `landing.mp4`, `landing-poster.jpg` và `locker.jpg` không còn slide nào dùng nhưng giữ lại cùng mã SHA-256 ở trên.

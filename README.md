@@ -13,15 +13,15 @@ Mở http://127.0.0.1:4173/. Build bản tĩnh bằng `npm run build`; output n�
 
 ## Deploy Netlify
 
-Website công khai: https://sprightly-frangipane-406bde.netlify.app/ — đã claim vào tài khoản Netlify, gói Free, ngày 22/09/2026. Trang quản lý: https://app.netlify.com/projects/sprightly-frangipane-406bde/overview.
+Website công khai: https://sprightly-frangipane-406bde.netlify.app/ — đã claim vào tài khoản Netlify, gói Free, ngày 22/09/2026. Trang quản lý: https://app.netlify.com/projects/sprightly-frangipane-406bde/overview. Cập nhật production ngày 23/09/2026 từ bản sạch của commit `878a523` trên `origin/main`; biên bản ở [docs/netlify-deployment.json](docs/netlify-deployment.json).
 
 `netlify.toml` cấu hình build bằng `npm run build` và xuất bản thư mục `dist`. Với Netlify Drop, build tại máy rồi tải gói `outputs/china-study-tour-netlify.zip` lên; `index.html` nằm ngay ở gốc ZIP. Gói deploy chứa bản build cùng tài sản tĩnh, không cần tải cả repository hay `node_modules`.
 
 Để cập nhật site hiện tại, tải bản build mới vào vùng deploy của project trên Netlify; không tạo một Netlify Drop mới. Đây là deploy thủ công, chưa tự động đồng bộ khi sửa source.
 
-Điều hướng dùng hash (`#1` … `#28`), nên link trực tiếp tới từng slide vẫn dùng được trên hosting tĩnh.
+Điều hướng dùng hash, nên link trực tiếp như `/#3` vẫn dùng được trên hosting tĩnh.
 
-Bản V2 hiện có gói `outputs/china-study-tour-v2-netlify.zip`, chưa tải lên Netlify.
+Các đường dẫn `/`, `/v2/` và `/didi/` đã được triển khai trong gói `outputs/china-study-tour-netlify-878a523.zip`. Mở [V2 trên Netlify](https://sprightly-frangipane-406bde.netlify.app/v2/).
 
 ## Version 2 · Live-map
 

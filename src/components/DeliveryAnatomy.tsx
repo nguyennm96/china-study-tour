@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
-import { ArrowCounterClockwise, Pause, Play } from '@phosphor-icons/react'
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js'
 import { deliverySteps, type DeliveryStage } from '../data/deliveryAnatomy'
@@ -100,11 +99,9 @@ function makeDeliveryModel(scene: THREE.Object3D) {
 
 export function DeliveryAnatomy({ step, autoPlay = false }: { step: number; autoPlay?: boolean }) {
   const hostRef = useRef<HTMLDivElement>(null)
-  const explanationRef = useRef<HTMLElement>(null)
-  const controllerRef = useRef<{ show: (step: number) => void; setPlaying: (playing: boolean) => void; restart: () => void } | null>(null)
+  const controllerRef = useRef<{ show: (step: number) => void } | null>(null)
   const [failed, setFailed] = useState(false)
   const [activeStep, setActiveStep] = useState(step)
-  const [playback, setPlayback] = useState<'playing' | 'paused' | 'ended'>('playing')
   const copy = deliverySteps[autoPlay ? activeStep : step]
 
   useEffect(() => {
@@ -135,24 +132,22 @@ export function DeliveryAnatomy({ step, autoPlay = false }: { step: number; auto
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
     let reduced = motion.matches, currentStep = step, elapsed = 0, duration = 0, previous = 0, frame = 0, disposed = false
     let width = 1, height = 1, rotorAngle = 0
-    let autoElapsed = 0, playing = true, workerReady = false, lastReportedStep = -1, reportedEnd = false
+    let autoElapsed = 0, workerReady = false, lastReportedStep = -1
     let journeyTime: number = journeyCheckpoints[Math.min(step, 8)], fromTime = journeyTime, targetTime = journeyTime
     const current: DeliveryPose = deliveryStepPose(step)
-    const projected = new THREE.Vector3()
     const render = (time: number) => {
       if (disposed) return
       frame = 0
       const dt = previous ? Math.min((time - previous) / 1000, .05) : 0; previous = time
       if (document.hidden) return
       elapsed = reduced ? duration : Math.min(duration, elapsed + dt)
-      if (autoPlay && playing && workerReady) autoElapsed = Math.min(DELIVERY_AUTOPLAY_SECONDS, autoElapsed + dt * AUTOPLAY_RATE)
+      if (autoPlay && workerReady) autoElapsed = Math.min(DELIVERY_AUTOPLAY_SECONDS, autoElapsed + dt * AUTOPLAY_RATE)
       const autoplayFrame = autoPlay ? deliveryAutoplayFrame(autoElapsed) : null
       const complete = autoplayFrame ? autoplayFrame.complete : elapsed >= duration
       if (autoplayFrame) {
         currentStep = autoplayFrame.step
         journeyTime = autoplayFrame.journeyTime
         if (currentStep !== lastReportedStep) { lastReportedStep = currentStep; setActiveStep(currentStep) }
-        if (complete && !reportedEnd) { reportedEnd = true; setPlayback('ended') }
       } else journeyTime = THREE.MathUtils.lerp(fromTime, targetTime, duration ? elapsed / duration : 1)
       const target = autoplayFrame ? (reduced ? deliveryStepPose(currentStep) : autoplayFrame.pose) : deliveryStepPose(currentStep, journeyTime)
       const blend = autoPlay || complete ? 1 : 1 - Math.exp(-dt * 12)
@@ -165,43 +160,22 @@ export function DeliveryAnatomy({ step, autoPlay = false }: { step: number; auto
       const viewHeight = Math.max(current.viewHeight, current.viewWidth / Math.max(.4, aspect))
       camera.left = -viewHeight * aspect / 2; camera.right = -camera.left
       camera.top = viewHeight / 2; camera.bottom = -camera.top
-      const roomForNotes = width > 760 ? .7 : 0
-      camera.position.set(current.focusX + roomForNotes + 5.9 + overview * 2, current.focusY + 3.35 + overview * 2, current.focusZ - roomForNotes * .65 + 8.5 + overview * 2.5)
-      camera.lookAt(current.focusX + roomForNotes, current.focusY, current.focusZ - roomForNotes * .65)
+      camera.position.set(current.focusX + 5.9 + overview * 2, current.focusY + 3.35 + overview * 2, current.focusZ + 8.5 + overview * 2.5)
+      camera.lookAt(current.focusX, current.focusY, current.focusZ)
       camera.updateProjectionMatrix()
-      if (!reduced && !complete && (!autoPlay || playing)) rotorAngle += dt * 15 * current.rotors
+      if (!reduced && !complete) rotorAngle += dt * 15 * current.rotors
       model.apply(current, deliveryStepStage(currentStep), rotorAngle)
       renderer.render(scene, camera)
 
-      const anchor = deliverySteps[currentStep].anchor
-      if (anchor === 'worker') {
-        projected.set(current.workerX + .12, 2.23, .7); city.root.localToWorld(projected)
-      } else {
-        if (anchor === 'cargo') projected.set(current.cargoX, current.cargoY + .2, current.cargoZ)
-        else if (anchor === 'drone') projected.set(current.droneX, current.droneY + .15, current.droneZ)
-        else if (anchor === 'roof') projected.set(1, 2.55 + current.shell * .47, .3)
-        else if (anchor === 'screen') projected.set(.2, 1.95, .66)
-        else projected.set(.8, 1.4, .65)
-        deliveryRoot.localToWorld(projected)
-      }
-      projected.project(camera)
-      const explanation = explanationRef.current
-      if (explanation) {
-        const anchorX = (projected.x * .5 + .5) * width, anchorY = (-projected.y * .5 + .5) * height
-        const x = Math.max(24, width - explanation.offsetWidth - 36)
-        const y = Math.max(106, Math.min(height - explanation.offsetHeight - 98, anchorY - explanation.offsetHeight / 2))
-        explanation.style.transform = `translate(${x}px,${y}px)`
-        explanation.style.setProperty('--leader-width',`${Math.max(14,Math.min(100,x-anchorX-12))}px`)
-      }
       host.dataset.step = String(currentStep)
-      host.dataset.motion = autoPlay ? (complete ? 'ended' : playing ? 'running' : 'paused') : complete ? 'settled' : 'running'
+      host.dataset.motion = complete ? (autoPlay ? 'ended' : 'settled') : 'running'
       if (autoPlay) host.dataset.playbackTime = autoElapsed.toFixed(3)
       host.dataset.journeyTime = journeyTime.toFixed(3)
       host.dataset.workerX = current.workerX.toFixed(3)
       host.dataset.cargoPosition = [current.cargoX, current.cargoY, current.cargoZ].map(n => n.toFixed(3)).join(',')
       host.dataset.roofOpen = current.roof.toFixed(3); host.dataset.doorOpen = current.door.toFixed(3)
       host.dataset.shellOpen = current.shell.toFixed(3)
-      if (!complete && (!autoPlay || playing && workerReady)) frame = requestAnimationFrame(render)
+      if (!complete && (!autoPlay || workerReady)) frame = requestAnimationFrame(render)
     }
     const wake = () => { if (!disposed && !frame) { previous = 0; frame = requestAnimationFrame(render) } }
     city.loadWorker().then(() => { if (!disposed) { workerReady = true; host.dataset.workerModel = 'quaternius'; wake() } }).catch(() => { if (!disposed) setFailed(true) })
@@ -217,8 +191,6 @@ export function DeliveryAnatomy({ step, autoPlay = false }: { step: number; auto
     motion.addEventListener('change', onMotion); document.addEventListener('visibilitychange', onVisibility)
     const observer = new ResizeObserver(resize); observer.observe(host); resize()
     controllerRef.current = {
-      setPlaying: (value) => { playing = value; setPlayback(value ? 'playing' : 'paused'); wake() },
-      restart: () => { autoElapsed = 0; playing = true; reportedEnd = false; setPlayback('playing'); wake() },
       show: (next) => {
       const wasJourney = currentStep <= 8
       fromTime = journeyTime; targetTime = journeyCheckpoints[Math.min(next, 8)]
@@ -243,18 +215,11 @@ export function DeliveryAnatomy({ step, autoPlay = false }: { step: number; auto
   return <figure className={`anatomy-scene ${failed ? 'is-fallback' : ''}`} aria-label={autoPlay ? "Mô phỏng tự động quy trình giao hàng bằng drone" : "Mô phỏng giao hàng và khám phá tủ nhận, điều khiển từng hành động"}>
     <div className="anatomy-canvas" ref={hostRef} aria-hidden="true" />
     {failed && <img className="delivery-fallback-image" src="/media/research/bay-park-drone.jpg" alt="Drone và tủ nhận tại Bay Park · Shenzhen Daily / Nanshan Government" />}
-    <article ref={explanationRef} className="delivery-explanation" aria-live={autoPlay ? "off" : "polite"} aria-atomic="true">
+    <article className="delivery-explanation" aria-live={autoPlay ? "off" : "polite"} aria-atomic="true">
       <div key={autoPlay ? activeStep : step} className="delivery-explanation-content">
         <h2>{copy.title}</h2>
       </div>
     </article>
-    {autoPlay && !failed && <div className="anatomy-playback" role="group" aria-label="Điều khiển mô phỏng tự động">
-      <span>{String(activeStep + 1).padStart(2, '0')} / {deliverySteps.length}</span>
-      <button className="tour-button tour-secondary" onClick={() => playback === 'ended' ? controllerRef.current?.restart() : controllerRef.current?.setPlaying(playback !== 'playing')}>
-        {playback === 'playing' ? <Pause size={16} /> : <Play size={16} />}{playback === 'ended' ? 'Chạy lại' : playback === 'playing' ? 'Tạm dừng' : 'Tiếp tục'}
-      </button>
-      <button className="tour-button tour-secondary anatomy-restart" aria-label="Chạy lại từ đầu" title="Chạy lại từ đầu" onClick={() => controllerRef.current?.restart()}><ArrowCounterClockwise size={17} /></button>
-    </div>}
     {failed && <figcaption>Ảnh tham khảo · 3D chưa khả dụng trên thiết bị này</figcaption>}
   </figure>
 }

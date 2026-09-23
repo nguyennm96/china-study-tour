@@ -15,14 +15,64 @@ export type Source = {
 
 export const sources: Source[] = [
   {
-    id: 'talent-park-gov', publisher: 'UBND quận Nam Sơn · Thâm Quyến', title: 'Trang giới thiệu Công viên Nhân tài Thâm Quyến', date: '2026', tier: 'primary',
+    id: 'vnpost-uav-2026', publisher: 'Tổng công ty Bưu điện Việt Nam', title: 'Ứng dụng UAV giao hàng: từ y tế đô thị đến logistics tuyến biển', date: '22/02/2026', tier: 'primary',
+    url: 'https://vnpost.vn/vi/hoat-dong-nganh/ung-dung-uav-giao-hang-tu-y-te-do-thi-den-logistics-tuyen-bien',
+    scope: 'Vai trò của Vietnam Post trên tuyến Cần Giờ – Vũng Tàu (thiết kế dịch vụ, nhận – giao, tracking, POD) và mức kỳ vọng giảm 80–90% thời gian chặng so với đường bộ. Mức giảm là kỳ vọng do chính Vietnam Post nêu, chưa phải số đo vận hành.',
+  },
+  {
+    id: 'uav-decree-288-summary', publisher: 'Báo Điện tử Chính phủ', title: 'Quy định mới về điều kiện đăng ký, khai thác sử dụng phương tiện bay không người lái', date: '07/11/2025', tier: 'primary',
+    url: 'https://baochinhphu.vn/quy-dinh-moi-ve-dieu-kien-dang-ky-khai-thac-su-dung-phuong-tien-bay-khong-nguoi-lai-102251107151800489.htm',
+    scope: 'Tóm tắt Nghị định 288/2025: giấy phép điều khiển theo khối lượng và cách quan sát, cấp phép bay trong khu vực cấm chỉ cho hoạt động công vụ. Dùng làm bằng chứng về điều kiện hiện hành, không suy ra thời gian xử lý hồ sơ.',
+  },
+  {
+    id: 'hcm-uav-sandbox', publisher: 'VnExpress', title: 'TP HCM ưu tiên thử nghiệm drone, UAV tại Củ Chi, Cần Giờ', date: '23/09/2026', tier: 'secondary',
+    url: 'https://vnexpress.net/tp-hcm-uu-tien-thu-nghiem-drone-uav-tai-cu-chi-can-gio-5123676.html',
+    scope: 'UBND TP.HCM chấp thuận chủ trương không gian thử nghiệm UAV năm 2026, ưu tiên Cần Giờ, Củ Chi và khu đô thị khoa học công nghệ phía Bắc; Bộ Tư lệnh TP chủ trì.',
+  },
+  {
+    id: 'talent-park-rules', publisher: 'Shenzhen Bendibao', title: 'Công viên Nhân tài có cho đi xe đạp không', date: '28/04/2022', tier: 'secondary',
+    url: 'https://m.wenda.bendibao.com/tour/101530.shtm',
+    scope: 'Quy định vào cổng: cấm xe đạp và thú cưng; xe cơ giới chưa được phép không được vào công viên.',
+  },
+  {
+    id: 'talent-park-gov', publisher: 'UBND quận Nam Sơn · Thâm Quyến', title: 'Trang giới thiệu Công viên Nhân tài Thâm Quyến', date: '12/01/2026', tier: 'primary',
     url: 'https://www.szns.gov.cn/mlns/stns/lc/csgy/content/post_12595660.html',
-    scope: 'Diện tích, diện tích mặt nước, ngày mở cửa và vị thế công viên chủ đề nhân tài đầu tiên cả nước.',
+    scope: 'Công viên tại Hậu Hải, quận Nam Sơn, kết nối dải công viên ven Vịnh Thâm Quyến và cạnh khu trụ sở Shenzhen Bay. Tổng diện tích 77 ha, mặt nước 30 ha, mở cửa 01/11/2017. Công viên chủ đề nhân tài đầu tiên của Trung Quốc, với hơn 20 không gian cảnh quan theo chủ đề nhân tài.',
+  },
+  {
+    id: 'houhai-tech-headquarters', publisher: 'Sở Công nghiệp và Công nghệ thông tin Thâm Quyến', title: 'Giới thiệu Khu công nghiệp phần mềm Thâm Quyến', date: '29/11/2024', tier: 'primary',
+    url: 'https://gxj.sz.gov.cn/xxgk/xxgkml/qt/gzdt/content/post_11833144.html',
+    scope: 'Khu công nghiệp phần mềm nằm tại điểm giao giữa khu công nghệ cao phía Nam và khu trụ sở Hậu Hải. Khu vực lân cận có trụ sở hoặc trụ sở khu vực của Tencent, Alibaba, Baidu và Kingdee; không hàm ý tất cả đều nằm sát Talent Park.',
+  },
+  {
+    id: 'mad-culture-square', publisher: 'MAD Architects', title: 'Shenzhen Bay Culture Square — kiến trúc và không gian công cộng ven vịnh', date: '04/08/2026', tier: 'primary',
+    url: 'https://www.i-mad.com/zh/articles/shenzhen-bay-culture-square-completion-cn',
+    scope: 'Đơn vị thiết kế mô tả cụm công trình văn hóa liền kề Talent Park, với các khối nhà ốp đá granite trắng, mái phủ xanh và lối đi bộ nối với công viên. Đây là Shenzhen Bay Culture Square, không phải trụ sở doanh nghiệp công nghệ.',
   },
   {
     id: 'mt-drone-econ', publisher: '21 Thế kỷ Kinh tế Đạo báo', title: 'Không chỉ giao đồ ăn: drone Meituan muốn có lãi trong hai ba năm', date: '25/05/2026', tier: 'secondary',
     url: 'https://www.21jingji.com/article/20260525/herald/388a82619d8a8b1bd08cef8892f34852.html',
     scope: 'Phỏng vấn lãnh đạo mảng drone của Meituan: tỷ lệ người trên drone, đà giảm chi phí mỗi đơn, sản lượng một điểm cất cánh và tình hình lãi lỗ. Đây là số do Meituan tự nêu trong phỏng vấn, không phải số trong báo cáo tài chính đã kiểm toán.',
+  },
+  {
+    id: 'talent-park-coffee', publisher: 'Shenzhen Special Zone Daily · Shenzhen Government Online', title: 'Robot AI² Robotics pha cà phê tại Talent Park', date: '23/02/2026', tier: 'secondary',
+    url: 'https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_12650660.html',
+    scope: 'Ảnh và chú thích xác nhận robot của AI² Robotics pha cà phê cho khách tại Talent Park. Không suy ra model phần cứng, sản lượng, giờ mở cửa hoặc mức tự động hóa từ ảnh.',
+  },
+  {
+    id: 'ai2-alphabot-cube', publisher: 'AI² Robotics', title: 'AlphaBot Cube — mô hình pha chế, bán lẻ và tương tác', date: 'Truy cập 23/09/2026', tier: 'primary',
+    url: 'https://ai2robotics.com/en/about/',
+    scope: 'Nhà sản xuất mô tả AlphaBot Cube tích hợp pha chế đồ uống, bán lẻ và tương tác trong không gian thương mại, du lịch. Nguồn này giải thích mô hình; bằng chứng có robot tại Talent Park nằm ở talent-park-coffee.',
+  },
+  {
+    id: 'talent-park-pm01', publisher: 'Shenzhen Daily · Nanshan Government Online', title: 'EngineAI PM01 chạy ngoài trời tại Talent Park', date: '12/03/2025', tier: 'secondary',
+    url: 'https://www.szns.gov.cn/english/news/content/post_12073776.html',
+    scope: 'Bài và ảnh ghi nhận PM01 chạy ngoài trời lần đầu tại Talent Park trong video do EngineAI công bố. Chỉ xác nhận hoạt động trình diễn, không khẳng định robot trực thường xuyên hay cung cấp dịch vụ trong công viên.',
+  },
+  {
+    id: 'talent-park-tech-education', publisher: 'Phòng Giáo dục Nam Sơn · Shenzhen Government Online', title: 'Khu thực hành công nghệ cho thanh thiếu niên tại Talent Park', date: '01/06/2023', tier: 'primary',
+    url: 'https://www.sz.gov.cn/ztfw/jyly/wyk/content/post_10623389.html',
+    scope: 'Đơn vị tổ chức công bố khu thực hành khoảng 170 m² trong Talent Park có drone, RoboMaster, robot lập trình và hoạt động với cánh tay robot Dobot (越疆). Không xác nhận đời máy cụ thể hoặc lịch hoạt động hiện tại.',
   },
   {
     id: 'mt-talent-route', publisher: 'Meituan', title: 'Tuyến drone Công viên Nhân tài Thâm Quyến khai trương tháng 9', date: '04/09/2023', tier: 'primary',
@@ -118,6 +168,31 @@ export const sources: Source[] = [
     id: 'mixc-nanshan-gov', publisher: 'UBND quận Nam Sơn · Thâm Quyến', title: 'Trang giới thiệu Vạn Tượng Thiên Địa', date: '2026', tier: 'primary',
     url: 'https://www.szns.gov.cn/mlns/nsgk_113865/lg/content/post_9364223.html',
     scope: 'Mô hình bố trí, số toà flagship, số cửa hàng và thương hiệu là số của chính quyền quận. Riêng tổng diện tích sàn ~230.000 m² lấy từ nguồn thứ cấp vì trang này không nêu.',
+  },
+  {
+    id: 'mixc-winshang', publisher: 'Winshang · Doanh Thương Võng', title: 'Vạn Tượng Thiên Địa: mô hình “MALL + phố” đầu tiên', date: '09/03/2018', tier: 'secondary',
+    url: 'https://m.winshang.com/news635181.html',
+    scope: 'Ngày khai trương 27/09/2017 và tổng diện tích sàn 23 vạn m². Bài ghi 12 toà flagship độc lập, trang của quận ghi 10; slide theo số của quận. Wikipedia tiếng Trung ghi 260.000 m², chưa rõ vì sao chênh.',
+  },
+  {
+    id: 'mixc-elephant-hypebeast', publisher: 'Hypebeast', title: 'Florentijn Hofman x AllRightsReserved: Bubblecoat Elephant tại Vạn Tượng Thiên Địa', date: '07/09/2017', tier: 'secondary',
+    url: 'https://hypebeast.cn/2017/9/florentijn-hofman-x-allrightsreserved-bubblecoat-elephant',
+    scope: 'Kích thước voi (dài 12 m, cao 7,5 m, vòi ~24 m), nặng 30 tấn, phun nước định kỳ, mô hình kỷ niệm bán từ 27/09/2017 và tiền đợt đầu góp cho Orbis. Số do đơn vị tổ chức công bố trước khai trương.',
+  },
+  {
+    id: 'huawei-flagship-21jingji', publisher: '21 Thế kỷ Kinh tế Đạo báo', title: 'Cửa hàng flagship đầu tiên của Huawei ra mắt', date: '30/09/2019', tier: 'secondary',
+    url: 'https://m.21jingji.com/article/20190930/herald/b863a1fefb34e9921ee32e624bf40706.html',
+    scope: 'Ngày mở 28/09/2019, khoảng 1.300 m² và phủ sóng 5G. Việc xe điện được trưng bày trong cửa hàng là quan sát của đoàn tháng 08/2026, không có trong bài.',
+  },
+  {
+    id: 'haus-nowhere-winshang', publisher: 'Winshang · Doanh Thương Võng', title: 'HAUS NOWHERE lớn nhất thế giới đến Thâm Quyến', date: '05/09/2024', tier: 'secondary',
+    url: 'https://m.winshang.com/news727349.html',
+    scope: 'Ngày mở 05/09/2024, thứ ba sau Seoul và Thượng Hải, 6.914 m² trên ba tầng, 21 thương hiệu dạng cửa hàng trong cửa hàng; tượng người khổng lồ ở lối vào và bò rừng ở tầng 3.',
+  },
+  {
+    id: 'mixc-disney-2026', publisher: 'Trung Nhiếp Tại Tuyến', title: 'Triển lãm chủ đề Disney ở Vạn Tượng Thiên Địa hút khách dịp hè', date: '15/08/2026', tier: 'secondary',
+    url: 'https://m.mp.oeeee.com/n/video/BAAFRD0000202608151644283',
+    scope: 'Khu trưng bày chủ đề Disney Hong Kong ở quảng trường flagship: Woody, Buzz Lightyear, lâu đài xếp khối. Bài không ghi ngày kết thúc triển lãm.',
   },
   {
     id: 'didi-sam-deck', publisher: 'Nguyễn Trương Tấn Sâm · Ahamove',
@@ -338,6 +413,31 @@ export const sources: Source[] = [
     scope: 'Thông cáo kết quả kinh doanh. Số tài chính là số hợp nhất cả tập đoàn, không tách riêng Thâm Quyến.',
   },
   {
+    id: 'mt-fy2023-eeo', publisher: 'Kinh tế Quan sát Võng', title: 'Báo cáo năm 2023 của Meituan: drone giao hơn 22 vạn đơn', date: '22/03/2024', tier: 'secondary',
+    url: 'https://www.eeo.com.cn/2024/0322/646672.shtml',
+    scope: 'Dẫn báo cáo năm 2023 của Meituan: tính đến cuối 2023 drone luỹ kế hơn 220.000 đơn, phủ văn phòng, khu dân cư, trường học, khu tham quan, công viên và y tế.',
+  },
+  {
+    id: 'mt-fy2024', publisher: 'Meituan', title: 'Meituan công bố báo cáo năm 2024', date: '21/03/2025', tier: 'primary',
+    url: 'https://www.meituan.com/news/NN250321082001991',
+    scope: 'Tính đến cuối 2024, drone luỹ kế 450.000 đơn và xe tự hành 4,91 triệu đơn. Số tròn đúng, không có chữ “hơn”; Meituan tự công bố.',
+  },
+  {
+    id: 'mt-q2-2025', publisher: 'Meituan', title: 'Báo cáo Q2 2025', date: '27/08/2025', tier: 'primary',
+    url: 'https://www.meituan.com/news/NN250827125003917',
+    scope: 'Tính đến cuối 06/2025, drone mở 64 tuyến ở Thâm Quyến, Bắc Kinh, Thượng Hải, Quảng Châu, Hong Kong, Dubai và luỹ kế hơn 600.000 đơn. Dùng làm mốc cùng kỳ để suy ra mức tăng tới 06/2026.',
+  },
+  {
+    id: 'mt-q1-2026', publisher: 'Meituan', title: 'Báo cáo Q1 2026', date: '01/06/2026', tier: 'primary',
+    url: 'https://www.meituan.com/news/NN260601238004976',
+    scope: 'Drone giao thường xuyên ở Bắc Kinh, Thượng Hải, Thâm Quyến, Hong Kong, Dubai; luỹ kế hơn 900.000 đơn thương mại. Câu “đứng thứ hai thế giới” là Meituan tự xếp hạng, không nêu phương pháp nên không đưa lên slide.',
+  },
+  {
+    id: 'sz-gov-lowalt-2024', publisher: 'Cổng thông tin Chính quyền TP Thâm Quyến', title: 'Kinh tế tầm thấp Thâm Quyến năm 2024', date: '17/01/2025', tier: 'primary',
+    url: 'https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_11964163.html',
+    scope: 'Năm 2024: 776.000 chuyến drone chở hàng (tăng 27%), 250 tuyến drone, 483 cơ sở cất hạ cánh, hơn 1.700 doanh nghiệp trong chuỗi. “Cơ sở cất hạ cánh” có thể khác định nghĩa “điểm” ở các nguồn năm sau.',
+  },
+  {
     id: 'mt-q3-2025', publisher: 'Meituan', title: 'Báo cáo Q3 2025', date: '28/11/2025', tier: 'primary',
     url: 'https://www.meituan.com/news/NN251128093005515',
     scope: 'Người dùng giao dịch là số luỹ kế 12 tháng, không phải người dùng hoạt động hằng tháng.',
@@ -401,6 +501,11 @@ export const sources: Source[] = [
     id: 'trip-sheet', publisher: 'Đoàn Ahamove', title: 'Outline_Sharing_Shenzhen_Trip', date: '24–28/08/2026', tier: 'trip',
     url: 'https://docs.google.com/spreadsheets/d/1kU_8BZwFz49gIsoyGRuZT7ivJnuTg7NM_SwKiKhi7CE/edit?gid=1775856938#gid=1775856938',
     scope: 'Ghi chép và media của đoàn. Là quan sát một lần, không phải phép đo có lặp lại.',
+  },
+  {
+    id: 'trip-talent-station', publisher: 'Đoàn Ahamove', title: 'Ảnh trạm nhận hàng drone tại Talent Park', date: 'Chuyến đi 08/2026', tier: 'trip',
+    url: 'https://drive.google.com/file/d/1JBcPcaP6QibrUfM1igZ224EPp2ayLBv4/view',
+    scope: 'Ảnh do người dùng cung cấp trong thư viện chuyến đi, liên kết tại F9 của Outline Sharing. Ảnh cho thấy trạm Meituan tại Talent Park; tháng 08/2026 là mốc chuyến đi, không phải ngày chụp xác minh bằng EXIF.',
   },
 ]
 

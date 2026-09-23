@@ -30,16 +30,14 @@ export const droneMedia = {
     url: 'https://drive.google.com/file/d/1JBcPcaP6QibrUfM1igZ224EPp2ayLBv4/view',
   },
   locker: {
-    kind: 'image', src: `${tripMedia}locker.jpg`, objectPosition: '50% 55%',
-    alt: 'Người nhận lấy hộp đồ ăn từ khoang tủ Meituan đang mở; bên cạnh là hướng dẫn chạm NFC.',
-    caption: 'Lấy hàng từ khoang tủ',
-    url: 'https://drive.google.com/file/d/1jwMSVMX2B8VMO-WCv_synn86xyiMcibO/view',
+    kind: 'video', src: `${tripMedia}drone-locker.mp4`, poster: `${tripMedia}drone-locker-poster.jpg`, objectPosition: '50% 70%',
+    alt: 'Video người dùng cung cấp: mở khoang tủ Meituan, lấy hộp hàng drone, lấy đồ ăn ra và trả hộp vào thùng thu hồi.',
+    caption: 'Lấy hàng từ khoang tủ', url: '',
   },
   landing: {
-    kind: 'video', src: `${tripMedia}landing.mp4`, poster: `${tripMedia}landing-poster.jpg`,
-    alt: 'Video của đoàn: drone mang hộp hàng hạ xuống nóc trạm tại Talent Park.',
-    caption: 'Drone hạ cánh · Talent Park',
-    url: 'https://drive.google.com/file/d/1__4EUDrAzgLo0apI189OE-YOLWHfS6FM/view',
+    kind: 'video', src: `${tripMedia}drone-landing.mp4`, poster: `${tripMedia}drone-landing-poster.jpg`, objectPosition: '50% 30%',
+    alt: 'Video người dùng cung cấp: drone Meituan mang hộp hàng bay tới và hạ xuống nóc trạm tại Talent Park.',
+    caption: 'Drone hạ cánh · Talent Park', url: '',
   },
   rider: {
     kind: 'image', src: `${tripMedia}rider.jpg`, objectPosition: '50% 45%',

@@ -3,11 +3,13 @@ import { droneData, meituanData, robotData, type TopicData } from './topicData'
 import { meituanFlow, robotFlow, type FlowSpec } from './mechanisms'
 import type { ExperienceSpec } from '../components/DronePresentationContent'
 
-// Sáu thành viên do người dùng cung cấp ngày 22/09/2026; số 01–06 theo đúng thứ tự họ đưa.
+// Năm chủ đề của buổi chia sẻ; một thành viên có thể tham gia nhiều chủ đề.
 export const teamGroups = [
-  { topic: 'Drone giao hàng', illustration: 'drone', members: [{ number: '01', name: 'Phạm Minh Quân' }, { number: '02', name: 'Nguyễn Minh Nguyên' }] },
-  { topic: 'Robot giao tận phòng với Meituan', illustration: 'robots', members: [{ number: '03', name: 'Nguyễn Khánh Công' }, { number: '04', name: 'Thiều Vĩnh Tiến' }] },
-  { topic: 'Đặt xe trên DiDi', illustration: 'didi', members: [{ number: '05', name: 'Nguyễn Trương Tấn Sâm' }, { number: '06', name: 'Nguyễn Thanh Bình' }] },
+  { topic: 'Drone', headline: 'Từ đặt món đến nhận hàng tại trạm.', illustration: 'drone', members: ['Phạm Minh Quân', 'Nguyễn Minh Nguyên'] },
+  { topic: 'Robot', headline: 'Giao đồ đến cửa phòng khách sạn.', illustration: 'robots', members: ['Nguyễn Khánh Công', 'Thiều Vĩnh Tiến'] },
+  { topic: 'Didi', headline: 'Trải nghiệm gọi xe và câu chuyện phía sau ứng dụng.', illustration: 'didi', members: ['Nguyễn Trương Tấn Sâm', 'Nguyễn Thanh Bình'] },
+  { topic: 'IOTE', headline: 'Công nghệ và sản phẩm qua góc nhìn của đoàn.', illustration: 'iote', members: ['Nguyễn Trương Tấn Sâm', 'Nguyễn Thanh Bình', 'Thiều Vĩnh Tiến'] },
+  { topic: 'Tips & Tricks', headline: 'Mẹo đi lại, thanh toán và dùng ứng dụng tại Trung Quốc.', illustration: 'tips', members: ['Phạm Minh Quân', 'Nguyễn Minh Nguyên', 'Nguyễn Khánh Công'] },
 ] as const
 
 export type Subject = {
@@ -29,18 +31,18 @@ export type Subject = {
 export const subjects: Subject[] = [
   {
     id: 'drone', title: 'Drone giao hàng', label: 'Meituan · Talent Park', duration: '8 phút',
-    headline: 'Đặt KFC. Nhận từ bầu trời.',
-    description: 'Đoàn đặt qua mini-program Meituan, tới trạm trong công viên, xem drone hạ cánh rồi lấy đồ ăn từ tủ. Sau trải nghiệm đó là một mạng bay đã chạy thương mại từ 2021.',
+    headline: 'Đặt món qua Meituan, nhận hàng tại trạm drone.',
+    description: 'Tại Talent Park, đoàn đặt món qua mini-program Meituan, quan sát drone giao hàng đến trạm và nhận đồ ăn từ tủ. Meituan đã triển khai dịch vụ giao hàng bằng drone từ năm 2021.',
     cover: droneMedia.station.src, caption: 'Trạm Meituan tại Talent Park · Ảnh của đoàn, 08/2026.',
     source: { label: 'Tư liệu chuyến đi', url: droneMedia.station.url },
     experience: {
       eyebrow: 'Trải nghiệm tại Talent Park',
-      headline: 'Một đơn hàng,', highlight: 'ba bước.',
+      headline: 'Đặt món qua Meituan.', highlight: 'Nhận hàng tại trạm drone.',
       note: 'Ba bước trình bày: gộp tới trạm và quét QR vào bước mở đầu, theo lựa chọn biên tập của đoàn.',
       moments: [
-        { title: 'Tới trạm và Scan QR Meituan', media: droneMedia.droneOrder },
-        { title: 'Drone hạ cánh', media: droneMedia.landing, featured: true },
-        { title: 'Lấy hàng', media: droneMedia.locker },
+        { title: 'Quét mã QR Meituan tại trạm', media: droneMedia.droneOrder },
+        { title: 'Drone giao hàng đến trạm', media: droneMedia.landing, featured: true },
+        { title: 'Nhận đồ ăn từ tủ', media: droneMedia.locker },
       ],
     },
     data: droneData,

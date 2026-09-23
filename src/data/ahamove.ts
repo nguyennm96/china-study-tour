@@ -1,9 +1,20 @@
 // Liên hệ từ nội dung từng chủ đề; đây là gợi ý thảo luận, không phải kế hoạch đã chốt.
 export const ahamoveReferences = {
   drone: {
-    title: 'Drone & Ahamove: câu chuyện tương lai.',
-    labels: { connection: 'Thách thức · cơ sở pháp lý', trial: 'Thách thức · cơ sở hạ tầng', metrics: 'Điều kiện để tiến tới', conclusion: 'Hướng phát triển trong tương lai' },
-    sourceIds: ['aha-warehouse', 'aha-delivery-process', 'hcm-uav-delivery-2026', 'vn-uav-decree-288'],
+    title: 'Vậy theo bạn, ở Việt Nam đã có mô hình drone giao hàng chưa?',
+    sourceIds: ['aha-warehouse', 'aha-delivery-process', 'hcm-uav-delivery-2026', 'vn-uav-decree-288', 'vnpost-uav-2026', 'uav-decree-288-summary', 'hcm-uav-sandbox', 'mt-gen4'],
+    // Dẫn chứng thay cho ô bài học: Việt Nam đã có tuyến UAV chạy thật.
+    vietnam: {
+      photo: {
+        src: '/media/research/cangio-uav-pad.jpg',
+        alt: 'UAV của CT UAV mang hộp hàng Vietnam Post đậu trên bãi đáp chữ H tại bến phà Cần Giờ, đoàn đại biểu đứng phía sau',
+        credit: 'Sở Khoa học và Công nghệ TP.HCM · 12/02/2026',
+        focus: '15% center',
+      },
+      eyebrow: 'Việt Nam cũng đã có · 12/02/2026',
+      title: 'Tuyến UAV Cần Giờ – Vũng Tàu',
+      stats: [{ value: '12 km', label: 'vượt biển' }, { value: '15 phút', label: 'thời gian bay' }],
+    },
     lesson: 'Điểm nhận là một phần của dịch vụ.',
     observation: 'Trạm cố định giúp thống nhất vị trí, mã nhận hàng và thao tác bàn giao.',
     fieldNotes: {
@@ -14,9 +25,12 @@ export const ahamoveReferences = {
         { label: 'Nhận hàng đơn giản', text: 'Nhập mã → lấy đơn → trả vỏ hộp vào tủ thu hồi.' },
       ],
     },
-    connection: 'Việt Nam đã có tuyến UAV được cấp phép, nhưng triển khai rộng còn phụ thuộc điều kiện vùng bay, cấp phép theo tuyến và trách nhiệm vận hành.',
-    trial: 'Cần điểm cất/hạ cánh, trạm nhận hàng, hệ thống giám sát và phương án khi không thể bay. Với Ahamove, đây là hạ tầng cần chuẩn bị trước khi triển khai.',
-    metrics: 'Pháp lý phù hợp · Hạ tầng sẵn sàng · Vận hành an toàn · Hiệu quả chi phí',
+    // Hai thách thức, đặt Việt Nam cạnh mô hình Meituan ở Trung Quốc để so trực tiếp.
+    challenges: [
+      { label: 'Cơ sở pháp lý', vietnam: { value: 'Mỗi tuyến', detail: 'phải xin phép quân đội' }, china: { value: '1 giấy phép', detail: 'cho cả nước · Meituan' } },
+      { label: 'Cơ sở hạ tầng', vietnam: { value: '2 bãi đáp', detail: 'tại Cần Giờ' }, china: { value: '1.200+ điểm', detail: 'tại Thâm Quyến' } },
+    ],
+    conditions: ['Pháp lý phù hợp', 'Hạ tầng sẵn sàng', 'Vận hành an toàn', 'Hiệu quả chi phí'],
     question: 'Ahamove có thể cân nhắc triển khai trong tương lai, khi đủ điều kiện.',
   },
   meituan: {

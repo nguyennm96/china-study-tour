@@ -13,4 +13,11 @@ Prompt đầy đủ: [generation.json](./generation.json). Bản gốc do Imageg
 
 Theo yêu cầu người dùng, không hiển thị nhãn “Minh hoạ”; mô tả alt và nguồn vẫn giữ.
 
+## Bổ sung cho 5 chủ đề · 23/09/2026
+
+- `iote.png`: gian triển lãm IoT, chip và cảm biến kết nối; thay hình xe robot ở mục IOTE.
+- `tips-tricks.png`: điện thoại thanh toán, bản đồ và thẻ hành lý; thay hình đặt đồ ăn ở mục Tips & Tricks.
+
+Hai hình được tạo bằng Imagegen tích hợp, sao chép nguyên bản PNG với alpha vào dự án. Đây là minh hoạ AI, không phải ảnh triển lãm hay giao diện ứng dụng thực tế. Prompt đầy đủ: [agenda-generation.json](./agenda-generation.json).
+
 - `didi.png`: xe đặt qua ứng dụng cùng điện thoại hiển thị lộ trình, tạo bằng công cụ Imagegen tích hợp ngày 22/09/2026; dùng drone.png làm tham chiếu nét vẽ, giữ PNG alpha. Dùng cho cặp 03 trong slide thành viên. Đây là minh hoạ, không phải xe hoặc giao diện DiDi thực tế. Prompt: `didi-generation.txt`.

@@ -40,7 +40,7 @@ function subjectSlides(subject: Subject): Slide[] {
   const slides: Slide[] = [
     { kind: 'title', chapter, subjectId: subject.id, kicker: subject.label, title: subject.title },
     { kind: 'experience', chapter, subjectId: subject.id, kicker: subject.experience.eyebrow, title: `${subject.experience.headline} ${subject.experience.highlight}` },
-    { kind: 'data-summary', chartIndex: subject.id === 'drone' ? 0 : 1, chapter, subjectId: subject.id, kicker: subject.id === 'drone' ? 'Drone · Số liệu gom một trang' : 'Số liệu tổng hợp · Quy mô', title: subject.id === 'drone' ? 'Mạng bay của thành phố, cách vận hành của Meituan.' : '150 triệu đơn — trong một ngày đạt đỉnh.' },
+    { kind: 'data-summary', chartIndex: subject.id === 'drone' ? 0 : 1, chapter, subjectId: subject.id, kicker: subject.id === 'drone' ? 'Drone · Quy mô' : 'Số liệu tổng hợp · Quy mô', title: subject.id === 'drone' ? 'Ở Thâm Quyến, đây không phải trò trình diễn.' : '150 triệu đơn — trong một ngày đạt đỉnh.' },
   ]
   // Drone chỉ trình bày số liệu Thâm Quyến; bỏ trang thông số theo lựa chọn biên tập.
   if (subject.id !== 'drone') {
@@ -64,8 +64,8 @@ export function buildPresentation(): Slide[] {
     // Ba slide mở đầu mang ba nhãn chương khác nhau: deckRail gom theo slide liên tiếp cùng
     // chương, nên đặt tên riêng là cách duy nhất để "Hành trình" có nhãn mà không sinh hai
     // nhóm "Mở đầu" rời nhau khi bản đồ chen vào giữa.
-    { kind: 'team', chapter: 'Mở đầu', kicker: 'Ahamove Study Tour · Shenzhen', title: 'Sáu người. Ba chủ đề. Một hành trình.' },
-    { kind: 'roster', chapter: 'Thành viên', kicker: 'Những người kể chuyện', title: 'Ba cặp, ba chủ đề.' },
+    { kind: 'team', chapter: 'Mở đầu', kicker: 'Ahamove Study Tour · Shenzhen', title: 'Sáu người. Năm chủ đề. Một hành trình.' },
+    { kind: 'roster', chapter: 'Chủ đề', kicker: 'Nội dung buổi chia sẻ', title: 'Năm chủ đề từ chuyến đi Thâm Quyến.' },
     { kind: 'itinerary', chapter: 'Hành trình', kicker: 'Hành trình 24–28/08/2026', title: 'Tám điểm dừng ở Thâm Quyến.' },
     ...subjects.flatMap(subjectSlides),
     ...takeaways.map((takeaway, takeawayIndex) => ({
@@ -91,14 +91,18 @@ export function classicDeck(): Slide[] {
 
 /** Năm điểm dừng còn lại: mỗi nơi một slide số liệu, chỉ hiện trong ghim tương ứng. */
 export function placeSlides(): Slide[] {
-  return places.flatMap(place => [
-    { kind: 'place' as const, placeId: place.id, page: 'overview' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: place.kicker, title: place.headline },
-    { kind: 'place' as const, placeId: place.id, page: 'features' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Đặc điểm`, title: place.featuresTitle },
-    // Ghim IOTE đi sâu thêm Hall 9: hai trang NFC và RFID ngay sau trang bốn hall.
-    ...(place.id === 'place-iote' ? hall9Pages.map(page => ({ kind: 'hall9' as const, page: page.key, chapter: 'Điểm dừng', subjectId: place.id, kicker: page.kicker, title: page.title })) : []),
-    ...(place.gallery ? [{ kind: 'place' as const, placeId: place.id, page: 'gallery' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Ảnh của đoàn`, title: place.gallery.title }] : []),
-    ...(place.visit ? [{ kind: 'place' as const, placeId: place.id, page: 'visit' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Gợi ý ghé thăm`, title: place.visit.title }] : []),
-  ])
+  return places.flatMap(place => {
+    const gallery: Slide[] = place.gallery ? [{ kind: 'place', placeId: place.id, page: 'gallery', chapter: 'Điểm dừng', subjectId: place.id, kicker: place.gallery.kicker ?? `${place.kicker.split(' · ')[0]} · Ảnh của đoàn`, title: place.gallery.title }] : []
+    return [
+      { kind: 'place' as const, placeId: place.id, page: 'overview' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: place.kicker, title: place.headline },
+      ...(place.gallery?.afterOverview ? gallery : []),
+      ...(place.features.length ? [{ kind: 'place' as const, placeId: place.id, page: 'features' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Đặc điểm`, title: place.featuresTitle }] : []),
+      // Ghim IOTE đi sâu thêm Hall 9: hai trang NFC và RFID ngay sau trang bốn hall.
+      ...(place.id === 'place-iote' ? hall9Pages.map(page => ({ kind: 'hall9' as const, page: page.key, chapter: 'Điểm dừng', subjectId: place.id, kicker: page.kicker, title: page.title })) : []),
+      ...(!place.gallery?.afterOverview ? gallery : []),
+      ...(place.visit ? [{ kind: 'place' as const, placeId: place.id, page: 'visit' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Gợi ý ghé thăm`, title: place.visit.title }] : []),
+    ]
+  })
 }
 
 /** Bài Didi của Sâm & Bình là phần chia sẻ rời, không nằm trong mạch ba chủ đề chính nên không gọi

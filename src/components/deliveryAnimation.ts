@@ -59,9 +59,9 @@ export function deliveryPose(stage: DeliveryStage, time: number) {
     const journey = rooftopJourney(time)
     const wide = easeWindow(time, 3.75, 4.65), arrival = easeWindow(time, 7.1, 8.3)
     Object.assign(pose, {
-      focusX: mix(mix(-2.1, .1, wide), 2.85, arrival),
+      focusX: mix(mix(-2.1, 0, wide), OVERVIEW_ORIGIN[0] + .8 * OVERVIEW_SCALE, arrival),
       focusY: mix(mix(1.75, 1.55, wide), 1.05, arrival),
-      focusZ: mix(mix(.6, .2, wide), 1.1, arrival),
+      focusZ: mix(mix(.6, .2, wide), OVERVIEW_ORIGIN[2] + .18 * OVERVIEW_SCALE, arrival),
       viewWidth: mix(mix(5.8, 10.8, wide), 4.6, arrival),
       viewHeight: mix(mix(4.6, 7.6, wide), 3.8, arrival),
       droneX: (journey.drone.x - OVERVIEW_ORIGIN[0]) / OVERVIEW_SCALE,
@@ -105,13 +105,13 @@ export function deliveryStepStage(step: number): DeliveryStage {
 export function deliveryStepPose(step: number, time: number = journeyCheckpoints[Math.min(step, 8)]) {
   if (step < journeyCheckpoints.length) {
     const pose = deliveryPose('system', time)
-    if (step === 0) Object.assign(pose, { focusX: .1, focusY: 1.55, focusZ: .2, viewWidth: 12.5, viewHeight: 8.3 })
+    if (step === 0) Object.assign(pose, { focusX: 0, focusY: 1.55, focusZ: .2, viewWidth: 12.5, viewHeight: 8.3 })
     return pose
   }
   const pose = deliveryPose(deliveryStepStage(step), 0)
   pose.droneX = -1.65; pose.droneY = 3.8; pose.droneZ = 0
   pose.workerX = -3.2
-  Object.assign(pose, { focusX: .35, focusY: 1.4, focusZ: .1, viewWidth: step === 10 ? 6.3 : 5.8, viewHeight: step === 10 ? 4.8 : 4.6 })
+  Object.assign(pose, { focusX: .8, focusY: 1.4, focusZ: .18, viewWidth: step === 10 ? 6.3 : 5.8, viewHeight: step === 10 ? 4.8 : 4.6 })
   if (step === 9) Object.assign(pose, { cargoX: .8, cargoY: 1.35, cargoZ: 0 })
   if (step === 11) Object.assign(pose, { door: 0, tray: 0, cargoZ: 0 })
   return pose

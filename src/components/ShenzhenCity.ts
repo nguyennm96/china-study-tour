@@ -2,16 +2,15 @@ import * as THREE from 'three'
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
 import { makeDeliveryWorker } from './DeliveryWorker'
 
-// Architectural silhouettes, arranged as a presentation diorama, not a geographic model.
+// A park delivery diorama inspired by Talent Park, not a geographic model.
 export function makeShenzhenCity() {
   const root = new THREE.Group()
-  root.name = 'Shenzhen architectural overview'
+  root.name = 'Talent Park delivery overview'
   const material = (color: string, metalness = .3, roughness = .42) => new THREE.MeshStandardMaterial({ color, metalness, roughness })
   const stone = material('#d3dfe2', .08, .6), glass = material('#40758a', .55, .23)
-  const silver = material('#bcd2d9', .5, .28), land = material('#93aeb0', .03, .86)
-  const road = material('#405766', .04, .8), lawn = material('#568f76', .02, .95)
+  const silver = material('#bcd2d9', .5, .28), land = material('#91b47c', .03, .86)
+  const road = material('#746858', .04, .8), lawn = material('#568f76', .02, .95)
   const water = material('#246879', .3, .27), orange = material('#ff7f32', .08, .45)
-  const blue = material('#296799', .4), red = material('#b95235', .2), gold = material('#e6ad3e', .2)
   const lines = new THREE.LineBasicMaterial({ color: '#9ac4d5', transparent: true, opacity: .62 })
   const warmLines = new THREE.LineBasicMaterial({ color: '#ffb77b', transparent: true, opacity: .8 })
   const mesh = (parent: THREE.Object3D, geometry: THREE.BufferGeometry, mat: THREE.Material, x = 0, y = 0, z = 0) => {
@@ -27,41 +26,19 @@ export function makeShenzhenCity() {
   mesh(root, new RoundedBoxGeometry(9.3, .16, 6.2, 5, .075), water, 0, -.035, .2)
   mesh(root, new RoundedBoxGeometry(8.95, .16, 4.82, 4, .075), land, 0, .075, -.43)
   mesh(root, new RoundedBoxGeometry(8.8, .045, .5, 3, .022), stone, 0, .166, 1.76)
-  for (const z of [-2, -.2]) box(root, 0, .17, z, 8.8, .018, .25, road)
-  for (const x of [-3.35, .5, 3.4]) box(root, x, .174, -.35, .25, .02, 4.35, road)
-  const roadMarks: number[] = []
-  for (const z of [-2, -.2]) for (let x = -4.15; x < 4.2; x += .4) roadMarks.push(x, .185, z, x + .15, .185, z)
-  lineSegments(root, roadMarks)
-  const promenadeLight = material('#ddede6', .2, .35)
-  box(root, 0, .192, 1.99, 8.7, .012, .016, promenadeLight)
-
-  const pingAn = new THREE.Group(); pingAn.name = 'Ping An Finance Centre'; pingAn.position.set(-2.25, .17, -.85); root.add(pingAn)
-  box(pingAn, 0, .12, 0, 1.7, .24, 1.4, stone)
-  const octagon = [[-.7, -1], [.7, -1], [1, -.7], [1, .7], [.7, 1], [-.7, 1], [-1, .7], [-1, -.7]]
-  const levels = [[.24, .55], [.75, .53], [3.75, .46], [4.55, .36], [5.15, .18], [5.42, .035]]
-  const vertices: number[] = [], indices: number[] = [], facade: number[] = []
-  levels.forEach(([y, radius], level) => octagon.forEach(([x, z], corner) => {
-    vertices.push(x * radius, y, z * radius)
-    if (level < levels.length - 1) {
-      const a = level * 8 + corner, b = level * 8 + (corner + 1) % 8
-      indices.push(a, a + 8, b, b, a + 8, b + 8)
-      const [nextY, nextRadius] = levels[level + 1]
-      facade.push(x * radius, y, z * radius, x * nextRadius, nextY, z * nextRadius)
-    }
-  }))
-  const tower = new THREE.BufferGeometry(); tower.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3)); tower.setIndex(indices); tower.computeVertexNormals()
-  const pingAnGlass = glass.clone(); pingAnGlass.flatShading = true
-  mesh(pingAn, tower, pingAnGlass)
-  for (let y = .4; y < 4.6; y += .105) {
-    const next = levels.findIndex(level => level[0] >= y), [ay, ar] = levels[next - 1], [by, br] = levels[next]
-    const r = THREE.MathUtils.lerp(ar, br, (y - ay) / (by - ay)) + .002
-    octagon.forEach(([x, z], index) => { const [nx, nz] = octagon[(index + 1) % 8]; facade.push(x * r, y, z * r, nx * r, y, nz * r) })
-  }
-  lineSegments(pingAn, facade)
-  for (const [x, z] of octagon) {
-    const rib = new THREE.CatmullRomCurve3(levels.map(([y, r]) => new THREE.Vector3(x * r, y, z * r)), false, 'centripetal')
-    mesh(pingAn, new THREE.TubeGeometry(rib, 20, .018, 5, false), silver)
-  }
+  // A lake and continuous walking loop replace the street grid.
+  const lakeOutline = new THREE.Shape()
+  lakeOutline.moveTo(-.15, -.85)
+  lakeOutline.bezierCurveTo(.65, -1.2, 2.3, -1.15, 3.25, -.65)
+  lakeOutline.bezierCurveTo(3.85, -.15, 3.4, .5, 2.25, .6)
+  lakeOutline.bezierCurveTo(1.45, .48, 1.15, 1.02, .35, .85)
+  lakeOutline.bezierCurveTo(-.55, .75, -.65, -.35, -.15, -.85)
+  const lake = mesh(root, new THREE.ShapeGeometry(lakeOutline, 48), material('#69b8c4', .18, .3), 0, .174, 0)
+  lake.rotation.x = -Math.PI / 2; lake.name = 'Talent Park lake'
+  const shore = lakeOutline.getPoints(80).map(point => new THREE.Vector3(point.x, .185, -point.y))
+  const walkingLoop = mesh(root, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(shore, true), 120, .072, 6, true), stone)
+  walkingLoop.name = 'Lakeside walking loop'
+  box(root, 0, .192, 1.99, 8.7, .012, .016, material('#ddede6', .2, .35))
 
   const bamboo = new THREE.Group(); bamboo.name = 'China Resources Headquarters'; bamboo.position.set(2, .17, -.95); root.add(bamboo)
   box(bamboo, 0, .1, 0, 1.6, .2, 1.45, stone)
@@ -86,31 +63,8 @@ export function makeShenzhenCity() {
   }
   lineSegments(bamboo, bambooLines); lineSegments(bamboo, diagonals, warmLines)
 
-  const civic = new THREE.Group(); civic.name = 'Shenzhen Civic Center'; civic.position.set(-.75, .17, .8); root.add(civic)
-  box(civic, 0, .06, .15, 2.65, .12, 1.12, stone)
-  for (const x of [-.85, .85]) box(civic, x, .3, 0, .86, .43, .68, glass)
-  box(civic, -.6, .52, -.05, .35, .88, .38, red)
-  box(civic, .62, .52, -.05, .35, .88, .38, gold)
-  const roofVertices: number[] = [], roofIndices: number[] = []
-  for (let step = 0; step <= 32; step++) {
-    const x = -1.42 + step / 32 * 2.84
-    const y = .63 + Math.pow(Math.abs(x / 1.42), 1.7) * .3 + .07 * Math.cos(x * 3)
-    roofVertices.push(x, y, -.5, x, y, .55)
-    if (step < 32) { const a = step * 2; roofIndices.push(a, a + 1, a + 2, a + 1, a + 3, a + 2) }
-  }
-  const roofGeometry = new THREE.BufferGeometry(); roofGeometry.setAttribute('position', new THREE.Float32BufferAttribute(roofVertices, 3)); roofGeometry.setIndex(roofIndices); roofGeometry.computeVertexNormals()
-  const roofMaterial = blue.clone(); roofMaterial.side = THREE.DoubleSide; mesh(civic, roofGeometry, roofMaterial)
-  const civicLines: number[] = []
-  for (let step = 0; step < 32; step++) civicLines.push(...roofVertices.slice(step * 6 + 3, step * 6 + 6), ...roofVertices.slice((step + 1) * 6 + 3, (step + 1) * 6 + 6))
-  lineSegments(civic, civicLines)
-
-  // A modest, instanced context layer keeps attention on the three named landmarks.
-  const blocks = [
-    [-3.85,-1.2,.8],[-3.85,-.65,1.1],[-3.85,.4,.65],[-3.7,1.1,.5],
-    [-2.6,-2.5,.85],[-1.7,-2.5,1.25],[-.8,-2.5,.75],[.05,-2.5,1.15],
-    [.05,-1.25,1.5],[.05,-.7,.95],[1,-2.5,1.1],[1.85,-2.5,.6],[2.65,-2.5,1.35],
-    [3.95,-1.3,.95],[3.95,-.6,.6],[3.95,.45,.75],[-2.75,.75,.48],
-  ]
+  // A small skyline stays behind the park, clear of the delivery route.
+  const blocks = [[-1.25,-2.45,.95],[-.45,-2.45,1.2],[.35,-2.45,.8]]
   const context = new THREE.InstancedMesh(new RoundedBoxGeometry(.45, 1, .43, 2, .025), material('#638b9b', .5, .3), blocks.length)
   const matrix = new THREE.Object3D()
   blocks.forEach(([x, z, h], index) => {
@@ -124,30 +78,32 @@ export function makeShenzhenCity() {
     for (const offset of [-.13, .13]) box(root, x + offset, .17 + h / 2, z + .22, .016, h, .016, silver)
   })
   context.castShadow = true; context.receiveShadow = true; root.add(context)
-  const planting = [[-3.7,1.68],[-2.65,1.68],[-1.6,1.68],[-.55,1.68],[.55,1.68],[1.5,1.68],[3.9,1.65],
-    [-4.12,-1.6],[-4.12,-.55],[3.55,-2.4],[3.65,-1.7],[3.65,-.7],[3.7,.28],[1.15,.6],[1.8,.55]]
-  const crowns = new THREE.InstancedMesh(new THREE.SphereGeometry(.15, 14, 10), lawn, planting.length * 3)
-  const trunks = new THREE.InstancedMesh(new THREE.CylinderGeometry(.018,.025,.27,8), material('#746858', 0, .9), planting.length)
+  const planting = [
+    [-4,1.78],[-3.35,1.78],[-2.65,1.78],[-1.95,1.78],[-1.25,1.78],[-.55,1.78],[.15,1.78],[.85,1.78],[1.55,1.78],
+    [-4.12,-1.8],[-3.55,-1.85],[-2.9,-1.8],[-2.25,-1.75],[-1.6,-1.7],[-.95,-1.65],[-.3,-1.7],[.4,-1.75],[1.1,-1.75],
+    [-4.1,-2.5],[-3.4,-2.45],[-2.7,-2.5],[-2,-2.4],[3.1,-2.3],[3.75,-2.35],[4.05,-1.75],
+    [4.05,-1.05],[4.05,-.35],[4.05,.35],[4.05,1.05],[3.95,1.75],[2.2,1.78],
+    [-.2,-1.05],[.5,-1.2],[1.25,-1.1],
+  ]
+  const crowns = new THREE.InstancedMesh(new THREE.SphereGeometry(.23, 14, 10), lawn, planting.length * 3)
+  const trunks = new THREE.InstancedMesh(new THREE.CylinderGeometry(.025,.035,.39,8), material('#746858', 0, .9), planting.length)
   const greens = ['#79ab83','#53977a','#91b99a']
   planting.forEach(([x,z], i) => {
     const size = .85 + (i % 4) * .1
-    mesh(root, new RoundedBoxGeometry(.5,.05,.3,3,.022), stone, x,.197,z)
-    mesh(root, new RoundedBoxGeometry(.46,.018,.26,3,.008), lawn, x,.23,z)
-    matrix.position.set(x,.35,z); matrix.scale.set(1,size,1); matrix.updateMatrix(); trunks.setMatrixAt(i,matrix.matrix)
+    matrix.position.set(x,.37,z); matrix.scale.set(1,size,1); matrix.updateMatrix(); trunks.setMatrixAt(i,matrix.matrix)
     for (let part = 0; part < 3; part++) {
-      matrix.position.set(x + (part - 1) * .075, .48 + (part === 1 ? .09 : 0), z + (part % 2 ? -.045 : .025))
+      matrix.position.set(x + (part - 1) * .105, .63 + (part === 1 ? .13 : 0), z + (part % 2 ? -.045 : .025))
       matrix.scale.set(size * .8, size * (part === 1 ? 1.15 : .85), size * .8); matrix.updateMatrix()
       crowns.setMatrixAt(i * 3 + part,matrix.matrix); crowns.setColorAt(i * 3 + part,new THREE.Color(greens[(i+part)%3]))
     }
     if (i < 6) { box(root,x+.32,.255,z,.21,.025,.12,material('#a88967',0,.8)); for(const dx of [-.08,.08]) box(root,x+.32+dx,.21,z,.014,.08,.08,road) }
   })
+  crowns.name = 'Park tree canopies'; trunks.name = 'Park tree trunks'
   crowns.castShadow = true; crowns.receiveShadow = true; trunks.castShadow = true; root.add(crowns,trunks)
   mesh(root,new RoundedBoxGeometry(1.45,.065,1.12,3,.03),stone,2.95,.19,1.05)
 
-  // The city is scenery for a delivery, with a purpose-built, fictional rooftop station.
-  pingAn.scale.setScalar(.7); pingAn.position.set(-2.25, .17, -1.8)
-  bamboo.scale.setScalar(.7); bamboo.position.set(2, .17, -1.65)
-  civic.scale.setScalar(.7); civic.position.set(.7, .17, -.75)
+  // Keep the nearby China Resources silhouette and the fictional dispatch roof.
+  bamboo.scale.setScalar(.6); bamboo.position.set(2, .17, -2.05)
   const station = new THREE.Group(); station.name = 'Illustrative rooftop dispatch station'; root.add(station)
   mesh(station,new RoundedBoxGeometry(3.45,1.45,1.8,3,.05),glass,-2.2,.905,.65)
   for (const y of [.2,.56,.92,1.28,1.63]) mesh(station,new RoundedBoxGeometry(3.58,.065,1.91,3,.028),stone,-2.2,y,.65)
@@ -175,7 +131,7 @@ export function makeShenzhenCity() {
   function darkMaterial() { return material('#152632', .1) }
   const worker = makeDeliveryWorker(); root.add(worker.root)
 
-  const landmarkGroups = [pingAn, bamboo, civic]
+  const landmarkGroups = [bamboo]
   const materials = new Map<THREE.Material, number>()
   root.traverse(object => { if (object instanceof THREE.Mesh || object instanceof THREE.LineSegments) {
     for (const mat of Array.isArray(object.material) ? object.material : [object.material]) materials.set(mat, mat.opacity)

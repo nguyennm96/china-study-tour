@@ -23,6 +23,8 @@ export type ChartSpec = {
   question: string
   axisLabel: string
   points: ChartPoint[]
+  /** So sánh cùng kỳ đặt dưới biểu đồ, thay cho câu đọc; tách riêng để cột chỉ mang một đại lượng. */
+  comparisons?: { period: string; value: string; delta: string; base: string }[]
   total?: { value: number; display: string; label: string }
   reading: string
   sourceIds: string[]
@@ -47,7 +49,7 @@ export const droneData: TopicData = {
     note: 'Trang công nghệ của Meituan cũng ghi “hơn 1 triệu đơn” ở mốc 07/2026.',
   },
   metrics: [
-    { value: '1 : 50', label: 'Một phi công giám sát hơn 50 drone', asOf: '05/2026', sourceId: 'mt-drone-econ', note: 'Thời kỳ đầu cần hai người cho một drone. Mô hình thị giác trên đám mây là thứ đổi được tỷ lệ này.' },
+    { value: '1 : 50', label: 'Một người giám sát hơn 50 drone', asOf: '05/2026', sourceId: 'mt-drone-econ', note: 'Thời kỳ đầu cần hai người cho một drone. Mô hình thị giác trên đám mây là thứ đổi được tỷ lệ này.' },
     { value: '40–50%', unit: 'mỗi năm', label: 'Mức giảm chi phí vận hành một đơn', asOf: '3–5 năm tới 2026', sourceId: 'mt-drone-econ', note: 'Meituan nói mảng y tế đã có lãi, còn mảng giao đồ ăn chưa đạt quy mô kỳ vọng; họ đặt mục tiêu có lãi ở quy mô trong hai đến ba năm.' },
     { value: '400+', unit: 'đơn/ngày', label: 'Điểm cất cánh đông nhất, từ mức 10 đơn', asOf: '05/2026', sourceId: 'mt-drone-econ' },
     { value: '21', unit: 'phút', label: 'Từ lúc đặt tới lúc nhận, một lần đo', asOf: '21/05/2026', sourceId: 'mt-drone-test', note: 'Chỉ 6 trong 21 phút là drone bay. Phần còn lại là làm món và thao tác ở hai đầu — nơi thời gian thật sự trôi đi.' },
@@ -57,7 +59,7 @@ export const droneData: TopicData = {
     caption: 'Toàn thành phố, gồm nhiều đơn vị vận hành.',
     metrics: [
       { value: '310', unit: 'tuyến', label: 'Tuyến bay logistics tầm thấp đã mở', asOf: '31/12/2025', sourceId: 'sz-xinhua' },
-      { value: '1.000.000+', unit: 'chuyến', label: 'Chở hàng trong năm 2025 · tăng 29%', asOf: '2025', sourceId: 'sz-xinhua', note: 'Bài báo xếp quy mô này thứ nhất trong các thành phố Trung Quốc.' },
+      { value: '1.000.000+', unit: 'chuyến', label: 'Chuyến drone chở hàng năm 2025 · tăng 29%', asOf: '2025', sourceId: 'sz-xinhua', note: 'Bài báo xếp quy mô này thứ nhất trong các thành phố Trung Quốc. Năm 2024 thành phố ghi 776.000 chuyến (sz-gov-lowalt-2024).' },
       { value: '1.200+', unit: 'điểm', label: 'Điểm cất, hạ cánh tầm thấp đã xây dựng', asOf: '2025', sourceId: 'sz-xinhua' },
       { value: '736.000', unit: 'chuyến bay', label: 'Tám tháng đầu 2026 · tăng 30,4%', asOf: '01–08/2026', sourceId: 'sz-21jingji', note: 'Đếm cả chuyến chở hàng lẫn chuyến bay khác trong không phận tầm thấp của thành phố.' },
     ],
@@ -65,17 +67,22 @@ export const droneData: TopicData = {
   charts: [
     {
       id: 'drone-cumulative', kind: 'column',
-      title: 'Đơn drone thương mại luỹ kế',
+      title: 'Đơn drone thương mại của Meituan, luỹ kế',
       question: 'Đường cong này đang dốc lên hay đi ngang?',
       axisLabel: 'nghìn đơn (luỹ kế)',
       points: [
-        { label: '30/09/2025', value: 670, display: '670' },
-        { label: '31/12/2025', value: 780, display: '780' },
-        { label: '30/06/2026', value: 1000, display: '1.000', emphasis: true },
+        { label: '12/2023', value: 220, display: '220' },
+        { label: '12/2024', value: 450, display: '450' },
+        { label: '12/2025', value: 780, display: '780' },
+        { label: '06/2026', value: 1000, display: '1.000', emphasis: true },
       ],
-      reading: 'Chín tháng cuối thêm ~330.000 đơn — bằng một phần ba toàn bộ số luỹ kế từ 2021.',
-      sourceIds: ['mt-q3-2025', 'mt-fy2025', 'sz-21jingji'],
-      caveat: 'Ba mốc đến từ ba bản công bố khác nhau nên đều là số làm tròn dạng “hơn”. Cột cuối là ngưỡng 1 triệu, không phải con số chính xác tại ngày 30/06/2026.',
+      comparisons: [
+        { period: 'Đơn mới năm 2025', value: '330 nghìn', delta: '+43%', base: 'so với 230 nghìn năm 2024' },
+        { period: 'Đơn mới nửa đầu 2026', value: '220 nghìn', delta: '+47%', base: 'so với 150 nghìn nửa đầu 2025' },
+      ],
+      reading: 'Năm 2025 thêm 330 nghìn đơn, nhiều hơn mức 230 nghìn của năm 2024. Riêng nửa đầu 2026 đã thêm 220 nghìn.',
+      sourceIds: ['mt-fy2023-eeo', 'mt-fy2024', 'mt-fy2025', 'mt-q2-2025', 'sz-21jingji'],
+      caveat: 'Các mốc đến từ các bản công bố khác nhau; trừ mốc cuối 2024 (đúng 450.000), đều là số làm tròn dạng “hơn”. Đơn mới trong kỳ là suy ra từ hiệu hai mốc luỹ kế; nửa đầu 2025 lấy hơn 600.000 (06/2025) trừ 450.000, nên các mức % chỉ gần đúng. Cột cuối là ngưỡng 1 triệu, không phải con số chính xác.',
     },
     {
       id: 'drone-time', kind: 'bar',

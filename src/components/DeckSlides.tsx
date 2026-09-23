@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react'
-import { Cpu, PersonSimpleWalk, Robot } from '@phosphor-icons/react'
+import { lazy, Suspense, type ReactNode } from 'react'
+import { ArrowUpRight, Cpu, Drone, Package, Path, PersonSimpleWalk, Robot, Star, UserFocus } from '@phosphor-icons/react'
 import type { Metric, TopicData } from '../data/topicData'
 import type { Actor, FlowSpec } from '../data/mechanisms'
 import { subjects, takeaways, teamGroups, type Subject } from '../data/presentation'
@@ -11,6 +11,7 @@ import { HotelRobotSlides } from './HotelRobotSlides'
 import { DidiSlides } from './DidiSlides'
 import { IoteSlides } from './IoteSlides'
 import { Hall9Slides } from './Hall9Slides'
+import { DroneQuizSlide } from './DroneQuizSlide'
 import { PlaceSlide } from './PlaceSlides'
 import { ahamoveReferences, type AhamoveSubject } from '../data/ahamove'
 
@@ -24,6 +25,8 @@ const subjectArt: Record<string, { src: string; alt: string }> = {
   didi: { src: '/media/illustrations/subjects-2d/didi.png', alt: 'Minh hoạ xe đặt qua DiDi' },
   drone: { src: '/media/illustrations/subjects-2d/drone.png', alt: 'Minh hoạ 2D: drone mang hộp đồ ăn' },
   robots: { src: '/media/illustrations/subjects-2d/hotel-robot.png', alt: 'Minh hoạ 2D: robot giao hàng tận phòng khách sạn' },
+  iote: { src: '/media/illustrations/subjects-2d/iote.png', alt: 'Minh hoạ AI: gian triển lãm IoT với chip và cảm biến kết nối' },
+  tips: { src: '/media/illustrations/subjects-2d/tips-tricks.png', alt: 'Minh hoạ AI: điện thoại thanh toán, bản đồ và hành lý du lịch' },
   meituan: { src: '/media/illustrations/subjects-2d/order.png', alt: 'Minh hoạ 2D: điện thoại đặt món và túi đồ ăn' },
 }
 
@@ -46,8 +49,9 @@ function valueSize(metric: Metric, wide: boolean) {
   return wide ? Math.round(base * 1.16) : base
 }
 
-function MetricTile({ metric, wide = false, dense = false }: { metric: Metric; wide?: boolean; dense?: boolean }) {
+function MetricTile({ metric, wide = false, dense = false, icon }: { metric: Metric; wide?: boolean; dense?: boolean; icon?: ReactNode }) {
   return <li className="metric-tile">
+    {icon && <span className="metric-icon" aria-hidden="true">{icon}</span>}
     <p className="metric-value" style={{ fontSize: Math.round(valueSize(metric, wide) * (dense ? .78 : 1)) }}>{metric.value}{metric.unit && <> <small>{metric.unit}</small></>}</p>
     <p className="metric-label">{metric.label}</p>
     <MetricMeta metric={metric} />
@@ -58,8 +62,10 @@ function TitleSlide({ subject }: { subject: Subject }) {
   const chapter = subjects.indexOf(subject) + 1
   return <div className="deck-title-layout">
     <div className="deck-title-copy">
-      <p className="deck-chapter-index"><strong>0{chapter}</strong><span>CHỦ ĐỀ<br />SHENZHEN STUDY TOUR</span></p>
-      <p className="deck-title-eyebrow">{subject.label}</p>
+      {subject.id !== 'drone' && <>
+        <p className="deck-chapter-index"><strong>0{chapter}</strong><span>CHỦ ĐỀ<br />SHENZHEN STUDY TOUR</span></p>
+        <p className="deck-title-eyebrow">{subject.label}</p>
+      </>}
       <h3 className="deck-title-name">{subject.title}</h3>
       <p className="deck-title-headline">{subject.headline}</p>
       <p className="deck-title-lead">{subject.description}</p>
@@ -76,17 +82,28 @@ function TitleSlide({ subject }: { subject: Subject }) {
 
 function DataSummarySlide({ subject, chartIndex, context = false }: { subject: Subject; chartIndex: number; context?: boolean }) {
   const data = subject.data
-  // Drone gom hết số liệu vào một trang, chia hai nhóm vì hai phạm vi đo khác nhau:
-  // hạ tầng cả thành phố bên trái, cách vận hành của riêng Meituan bên phải.
+  // Drone: đường đơn luỹ kế của Meituan bên trái, bốn con số cho thấy mạng bay đang dày lên bên phải.
   if (subject.id === 'drone' && data.context) {
-    return <div className="deck-drone-figures">
-      {([[data.context.title, data.context.caption, data.context.metrics],
-         ['Meituan: mạng bay của riêng họ', 'Số Meituan tự nêu, không phải số toàn thành phố.', data.metrics]] as const).map(([title, caption, metrics]) =>
-        <section key={title} aria-label={title}>
-          <h3>{title}</h3>
-          <p className="city-summary-scope">{caption}</p>
-          <ul className="summary-metrics">{metrics.map(metric => <MetricTile key={metric.label} metric={metric} dense />)}</ul>
-        </section>)}
+    const growth = data.charts[chartIndex]
+    return <div className="deck-city-summary">
+      <p className="city-summary-scope">Số Meituan và TP Thâm Quyến công bố. Meituan đã giao drone thường xuyên ở Bắc Kinh, Thượng Hải, Thâm Quyến, Hong Kong và Dubai.</p>
+      <div className="drone-growth">
+        <section className="summary-chart">
+          <h3>{growth.title}</h3>
+          <ChartPlot chart={growth} />
+          {growth.comparisons ? <dl className="growth-compare">{growth.comparisons.map(item => <div key={item.period}>
+            <dt>{item.period}</dt>
+            <dd><strong>{item.value}</strong><span className="growth-delta"><ArrowUpRight size={14} weight="bold" aria-hidden="true" />{item.delta}</span></dd>
+            <dd className="growth-base">{item.base}</dd>
+          </div>)}</dl> : <p className="summary-reading">{growth.reading}</p>}
+        </section>
+        <ul className="summary-metrics">
+          {[data.context.metrics[1], data.context.metrics[0], data.metrics[2], data.metrics[0]].map((metric, index) => {
+            const Icon = [Drone, Path, Package, UserFocus][index]
+            return <MetricTile key={metric.label} metric={metric} icon={<Icon size={22} />} />
+          })}
+        </ul>
+      </div>
     </div>
   }
   const chart = data.charts[chartIndex]
@@ -109,22 +126,21 @@ function DataSummarySlide({ subject, chartIndex, context = false }: { subject: S
   </div>
 }
 
-function AhamoveSlide({ subjectId }: { subjectId: AhamoveSubject }) {
+/** Drone có slide riêng (DroneQuizSlide); các chủ đề còn lại dùng bố cục bài học → gợi ý. */
+function AhamoveSlide({ subjectId }: { subjectId: Exclude<AhamoveSubject, 'drone'> }) {
   const reference = ahamoveReferences[subjectId]
-  const showLesson = subjectId !== 'drone'
-  const labels = 'labels' in reference ? reference.labels : { connection: 'Liên hệ với Ahamove', trial: 'Có thể thử ở phạm vi nhỏ', metrics: 'Đo hiệu quả', conclusion: 'Để cùng thảo luận' }
-  return <div className={`deck-subject-reference ${showLesson ? '' : 'is-application-only'}`}>
-    {showLesson && <aside className="reference-lesson">
+  return <div className="deck-subject-reference">
+    <aside className="reference-lesson">
       <SubjectIllustration id={subjectId} />
       <p className="reference-eyebrow">Bài học từ chủ đề</p>
       <h3>{reference.lesson}</h3>
       <p className="reference-observation">{reference.observation}</p>
-    </aside>}
+    </aside>
     <div className="reference-application">
-      <section><h3>{labels.connection}</h3><p>{reference.connection}</p></section>
-      <section><h3>{labels.trial}</h3><p>{reference.trial}</p></section>
-      <section className="reference-metrics"><h3>{labels.metrics}</h3><p>{reference.metrics}</p></section>
-      <p className="reference-question"><span>{labels.conclusion}</span><strong>{reference.question}</strong></p>
+      <section><h3>Liên hệ với Ahamove</h3><p>{reference.connection}</p></section>
+      <section><h3>Có thể thử ở phạm vi nhỏ</h3><p>{reference.trial}</p></section>
+      <section className="reference-metrics"><h3>Đo hiệu quả</h3><p>{reference.metrics}</p></section>
+      <p className="reference-question"><span>Để cùng thảo luận</span><strong>{reference.question}</strong></p>
     </div>
   </div>
 }
@@ -184,11 +200,12 @@ function TeamSlide() {
 }
 
 function RosterSlide() {
-  return <div className="deck-roster-layout">{teamGroups.map((group, index) => <article className="team-group" key={group.topic}>
-    <div className="team-group-visual"><span className="team-group-index" aria-hidden="true">0{index + 1}</span><SubjectIllustration id={group.illustration} /></div>
-    <div className="team-group-heading"><h4>{group.topic}</h4><span>Cặp 0{index + 1}</span></div>
-    <ul>{group.members.map(member => <li key={member.number}><span className="team-member-number" aria-hidden="true">{member.number}</span><span>{member.name}</span></li>)}</ul>
-  </article>)}</div>
+  return <ol className="deck-topic-agenda">{teamGroups.map((group, index) => <li className="topic-agenda-item" key={group.topic}>
+    <span className="topic-agenda-index" aria-hidden="true">0{index + 1}</span>
+    <div className="topic-agenda-art" aria-hidden="true"><SubjectIllustration id={group.illustration} /></div>
+    <div className="topic-agenda-copy"><h3>{group.topic}</h3><p>{group.headline}</p></div>
+    <ul className="topic-agenda-presenters" aria-label={`Người trình bày ${group.topic}`}>{group.members.map(name => <li key={name}>{name}{name === 'Phạm Minh Quân' && <span className="topic-agenda-leader" role="img" aria-label="Trưởng đoàn" title="Trưởng đoàn"><Star size={17} weight="fill" aria-hidden="true" /></span>}</li>)}</ul>
+  </li>)}</ol>
 }
 
 function TakeawaySlide({ index }: { index: number }) {
@@ -230,7 +247,7 @@ export function SlideBody({ slide }: { slide: Slide }) {
     case 'iote': return <IoteSlides page={slide.page} />
     case 'hall9': return <Hall9Slides page={slide.page} />
     case 'place': return <PlaceSlide placeId={slide.placeId} page={slide.page} />
-    case 'ahamove': return <AhamoveSlide subjectId={slide.subjectId} />
+    case 'ahamove': return slide.subjectId === 'drone' ? <DroneQuizSlide /> : <AhamoveSlide subjectId={slide.subjectId} />
   }
   if (!subject) return null
   switch (slide.kind) {
@@ -250,6 +267,8 @@ export function SlideBody({ slide }: { slide: Slide }) {
 
 /** Slide mở đầu và slide trải nghiệm tự lo phần tiêu đề của mình. */
 export const slideOwnsHeading = (slide: Slide) => slide.kind === 'title' || slide.kind === 'experience' || slide.kind === 'team' || slide.kind === 'itinerary'
+  || (slide.kind === 'ahamove' && slide.subjectId === 'drone')
+  || (slide.kind === 'place' && slide.placeId === 'place-talent-park' && slide.page === 'overview')
   // Trang mở đầu Didi tự dựng tiêu đề; trang mười hạng xe đổi tiêu đề sau khi lật đáp án.
   || (slide.kind === 'didi' && (slide.page === 'open' || slide.page === 'tiers'))
   || (slide.kind === 'iote' && slide.page === 'open')

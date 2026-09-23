@@ -1,0 +1,85 @@
+.drone-quiz { display: grid; grid-template-rows: minmax(0, 1fr); min-height: 0; height: 100%; }
+.drone-quiz-audio-error { margin: 0; color: #9d341f; font-size: 15px; }
+.drone-quiz-question { display: flex; flex-direction: column; justify-content: center; gap: 34px; min-height: 0; width: 100%; max-width: 1080px; margin: 0 auto; }
+.drone-quiz-heading { max-width: 1000px; margin: 0; color: var(--paper); font-size: 60px; font-weight: 600; line-height: 1.16; letter-spacing: -.045em; text-wrap: balance; }
+.drone-quiz-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.drone-quiz-choice { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr); grid-template-rows: 1fr auto; align-items: center; gap: 12px 20px; min-height: 196px; padding: 26px 30px; color: var(--paper); text-align: left; background: #fffdf9; border: 2px solid #b6c4cd; border-radius: 22px; transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+.drone-quiz-choice-letter { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid currentColor; border-radius: 50%; font-size: 18px; }
+.drone-quiz-choice strong { font-size: 68px; font-weight: 600; line-height: 1; letter-spacing: -.05em; }
+.drone-quiz-choice-result { display: flex; grid-column: 2; align-items: center; gap: 8px; min-height: 24px; font-size: 17px; font-weight: 500; }
+.drone-quiz-choice:not([aria-disabled="true"]):hover { background: #fff1e4; border-color: var(--brand); transform: translateY(-4px); }
+.drone-quiz-choice:not([aria-disabled="true"]):active { transform: translateY(0); }
+.drone-quiz-choice[aria-disabled="true"] { cursor: default; }
+.drone-quiz-choice.is-correct { color: #196347; background: #e8f4ed; border-color: #32805d; }
+.drone-quiz-choice.is-incorrect { color: #a53c30; background: #fcece7; border-color: #c06854; }
+.drone-quiz-choice.is-unselected { color: #758592; background: #f0f2f1; border-color: #d6dde1; }
+.drone-quiz-feedback { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 96px; }
+.drone-quiz-hint { margin: 0; color: var(--mist); font-size: 22px; }
+.drone-quiz-verdict { margin: 0 0 8px; font-size: 35px; line-height: 1.2; letter-spacing: -.035em; font-weight: 600; }
+.drone-quiz-verdict.is-correct { color: #196347; }
+.drone-quiz-verdict.is-incorrect { color: #a53c30; }
+.drone-quiz-explanation { margin: 0; color: var(--mist); font-size: 19px; }
+.drone-quiz-reveal { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 14px; min-height: 58px; padding: 16px 22px; color: #fffdf9; background: #15364d; border: 1px solid #15364d; border-radius: 12px; font-size: 18px; font-weight: 500; }
+.drone-quiz-reveal:hover { background: #244e68; }
+.drone-quiz button:focus-visible { outline: 3px solid #2869a0; outline-offset: 5px; }
+.drone-quiz-evidence { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 24px; min-height: 0; }
+.drone-quiz-evidence-title { margin: 0; font-size: 38px; font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
+/* Dẫn chứng: tuyến Việt Nam bên trái; so với Trung Quốc, điều kiện và hướng đi đọc từ trên xuống bên phải. */
+.drone-evidence { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 28px; min-height: 0; }
+.drone-evidence-case { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; margin: 0; overflow: hidden; border-radius: 20px; background: #f3eee5; }
+.drone-evidence-photo { position: relative; min-height: 0; }
+.drone-evidence-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.drone-evidence-photo small { position: absolute; left: 14px; bottom: 12px; padding: 4px 10px; border-radius: 999px; background: #172b3dcc; color: #fffdf9; font-size: 11px; }
+.drone-evidence-case figcaption { padding: 22px 26px 24px; }
+.drone-evidence-eyebrow { margin: 0 0 8px; color: var(--brand); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.drone-evidence-case h3 { margin: 0; font-size: 30px; font-weight: 600; line-height: 1.18; letter-spacing: -.04em; text-wrap: balance; }
+.drone-evidence-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 18px 0 0; }
+.drone-evidence-stats div { padding: 12px 16px; border-radius: 12px; background: #fffdf9; }
+.drone-evidence-stats dd { margin: 0; color: var(--brand); font-size: 34px; font-weight: 600; line-height: 1.1; letter-spacing: -.04em; }
+.drone-evidence-stats dt { margin-top: 4px; color: var(--mist); font-size: 14px; }
+.drone-evidence-analysis { display: grid; grid-template-rows: minmax(0, 1fr) auto auto; gap: 16px; min-width: 0; min-height: 0; }
+/* Bỏ đường kẻ giữa các section mà modal bản đồ thêm vào; ô đã có viền riêng. */
+.drone-evidence-analysis > .drone-evidence-conditions { margin-top: 0; padding-top: 0; border-top: 0; }
+.drone-evidence-label { margin: 0 0 12px; color: var(--brand); font-size: 12px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; }
+.drone-evidence-compare { display: flex; flex-direction: column; min-height: 0; padding: 20px 22px; border: 1px solid var(--line); border-radius: 20px; background: #fff; }
+.drone-evidence-compare table { width: calc(100% + 16px); margin: auto -8px; border-collapse: separate; border-spacing: 8px; table-layout: fixed; }
+.drone-evidence-compare thead td { width: 128px; }
+.drone-evidence-compare thead th { padding: 0 16px; color: var(--mist); font-size: 13px; font-weight: 600; text-align: left; }
+.drone-evidence-compare thead th.is-vietnam { color: var(--brand); }
+.drone-evidence-compare tbody th { color: var(--paper); font-size: 16px; font-weight: 600; line-height: 1.3; text-align: left; }
+.drone-evidence-compare tbody td { padding: 12px 16px; border-radius: 12px; background: var(--surface); vertical-align: top; }
+.drone-evidence-compare tbody td.is-vietnam { background: #fff3e3; }
+.drone-evidence-compare strong { display: block; color: var(--paper); font-size: 26px; font-weight: 600; line-height: 1.15; letter-spacing: -.035em; }
+.drone-evidence-compare td.is-vietnam strong { color: var(--brand); }
+.drone-evidence-compare td span { display: block; margin-top: 4px; color: var(--mist); font-size: 14px; line-height: 1.4; }
+.drone-evidence-conditions ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+/* Icon nằm cạnh chữ: bản xếp dọc cao quá, đẩy bảng so sánh tràn đè lên nhãn phía dưới. */
+.drone-evidence-conditions li { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 14px; background: #fff; color: var(--paper); font-size: 15px; font-weight: 500; line-height: 1.3; }
+.drone-evidence-icon { display: grid; flex: none; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #fff1e4; color: var(--brand); }
+.drone-evidence-direction { display: grid; gap: 6px; margin: 0; padding: 18px 22px; border-radius: 16px; background: #15364d; }
+.drone-evidence-direction span { color: #cad8e2; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; }
+.drone-evidence-direction strong { color: #ffae60; font-size: 21px; font-weight: 500; line-height: 1.4; }
+.is-compact .drone-quiz-question { gap: 24px; }
+.is-compact .drone-quiz-heading { font-size: 50px; }
+.is-compact .drone-quiz-choice { min-height: 158px; padding: 18px 26px; }
+.is-compact .drone-quiz-choice strong { font-size: 60px; }
+.is-compact .drone-quiz-feedback { min-height: 80px; }
+.is-compact .drone-evidence-case figcaption { padding: 16px 22px 18px; }
+.is-compact .drone-evidence-case h3 { font-size: 26px; }
+.is-compact .drone-evidence-stats { margin-top: 12px; }
+.is-compact .drone-evidence-stats dd { font-size: 28px; }
+.is-compact .drone-evidence-compare { padding: 16px 20px; }
+.is-compact .drone-evidence-compare tbody td { padding: 12px 14px; }
+.is-compact .drone-evidence-compare strong { font-size: 27px; }
+.is-compact .drone-evidence-conditions li { flex-direction: row; align-items: center; padding: 10px 12px; }
+.is-compact .drone-evidence-icon { flex: none; width: 34px; height: 34px; }
+.is-compact .drone-evidence-direction { padding: 13px 18px; }
+.is-compact .drone-evidence-direction strong { font-size: 18px; }
+@media (prefers-reduced-motion: no-preference) {
+  .drone-quiz-choice.is-correct { animation: drone-quiz-correct .45s ease-out; }
+  .drone-quiz-choice.is-incorrect { animation: drone-quiz-incorrect .35s ease-out; }
+  .drone-quiz-verdict, .drone-quiz-evidence { animation: deck-slide-in .25s ease-out both; }
+}
+@media (prefers-reduced-motion: reduce) { .drone-quiz-choice { transition: none; } }
+@keyframes drone-quiz-correct { 50% { transform: translateY(-6px); } }
+@keyframes drone-quiz-incorrect { 25%, 75% { transform: translateX(-5px); } 50% { transform: translateX(5px); } }

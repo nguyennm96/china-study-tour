@@ -1,25 +1,18 @@
 .deck-anatomy { height: 100%; background: radial-gradient(ellipse at 40% 38%,#b9d8e265,transparent 72%),linear-gradient(155deg,#edf5f7,#fffdf9 78%); }
 .deck-anatomy .deck-chapter { display: none; }
 .anatomy-scene { position: absolute; inset: 0; margin: 0; }
-.anatomy-canvas { position: absolute; inset: 0; }
+.anatomy-canvas { position: absolute; inset: 0 0 88px; }
 .anatomy-canvas canvas { display: block; width: 100%; height: 100%; }
-.delivery-explanation { position: absolute; top: 0; left: 0; z-index: 1; width: min(280px,calc(100% - 48px)); padding: 18px 20px; border-left: 2px solid var(--brand); border-radius: 0 12px 12px 0; background: #fffdf9f2; box-shadow: 0 12px 40px #17364a1f; backdrop-filter: blur(14px); transform: translate(24px,120px); }
-.delivery-explanation::before { content: ''; position: absolute; top: 50%; right: 100%; height: 1px; width: var(--leader-width,14px); background: linear-gradient(90deg,transparent,var(--brand)); }
+.delivery-explanation { position: absolute; bottom: 22px; left: 50%; z-index: 1; width: max-content; max-width: calc(100% - 440px); padding: 14px 24px; border-radius: 12px; background: #fffdf9f2; box-shadow: 0 8px 28px #17364a12; text-align: center; transform: translateX(-50%); }
 .delivery-explanation h2 { font-size: clamp(22px,1.9vw,27px); line-height: 1.25; letter-spacing: -.035em; margin: 0; text-wrap: balance; }
 .delivery-explanation-content { animation: explanation-in 320ms ease-out both; }
 .anatomy-scene figcaption { position: absolute; left: 32px; bottom: 33px; max-width: calc(100% - 200px); color: var(--muted); font-size: 10px; line-height: 1.7; }
 .delivery-fallback-image { width: 100%; height: 100%; object-fit: contain; opacity: .55; }
-.is-fallback .delivery-explanation { transform: translate(40px,120px) !important; }
 @keyframes explanation-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 760px) {
-  .anatomy-canvas { bottom: 235px; }
-  .delivery-explanation { top: auto; bottom: 90px; left: 22px; width: calc(100% - 44px); transform: none !important; padding: 17px 20px; }
+  .anatomy-canvas { bottom: 175px; }
+  .delivery-explanation { bottom: 78px; width: calc(100% - 44px); max-width: none; padding: 17px 20px; }
   .delivery-explanation h2 { font-size: 23px; }
-  .delivery-explanation::before { display: none; }
   .anatomy-scene figcaption { left: 22px; bottom: 25px; max-width: calc(100% - 155px); font-size: 9px; }
 }
 @media (prefers-reduced-motion: reduce) { .delivery-explanation-content { animation: none; } }
-.anatomy-playback { position: absolute; z-index: 3; right: 30px; bottom: 22px; display: flex; align-items: center; gap: 8px; }
-.anatomy-playback > span { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; margin-right: 8px; }
-.anatomy-playback .tour-button { min-height: 36px; padding: 7px 12px; gap: 7px; background: #fffdf9ed; font-size: 11px; }
-.anatomy-playback .anatomy-restart { width: 36px; padding: 7px; }

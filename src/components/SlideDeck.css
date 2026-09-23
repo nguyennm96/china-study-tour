@@ -29,6 +29,8 @@
 .deck-slide-head { max-width: 88ch; }
 .deck-kicker { margin: 0 0 10px; color: var(--brand); font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; }
 .deck-slide-heading { margin: 0; font-size: 46px; font-weight: 600; letter-spacing: -.042em; line-height: 1.12; text-wrap: balance; }
+.deck-canvas:has(.deck-anatomy) { grid-template-rows: minmax(0, 1fr); }
+.deck-canvas:has(.deck-anatomy) > .deck-slide-head { display: none; }
 .deck-caption { margin: 0 0 16px; max-width: 86ch; color: var(--muted); font-size: 15px; line-height: 1.6; }
 .deck-subhead { margin: 0 0 8px; font-size: 19px; font-weight: 600; letter-spacing: -.025em; }
 
@@ -163,15 +165,19 @@
 .deck-team-layout .team-art { position: absolute; inset: 0; display: block; margin: 0; }
 .deck-team-layout .team-art img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; border-radius: 0; }
 
-/* Slide danh sách thành viên */
-.deck-roster-layout { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-content: center; gap: 24px; height: 100%; padding-bottom: 20px; }
-.deck-roster-layout .team-group { min-width: 0; padding: 22px; border: 1px solid #e7e3dc; border-radius: 20px; background: #fff; box-shadow: 0 8px 28px #172b3d04; }
-.deck-roster-layout .team-group-heading { min-height: 70px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-.deck-roster-layout .team-group-heading h4 { margin: 0; line-height: 1.4; color: var(--paper); font-size: 18px; font-weight: 600; letter-spacing: -.025em; }
-.deck-roster-layout .team-group-heading span { color: var(--muted); font-size: 11px; white-space: nowrap; }
-.deck-roster-layout .team-group ul { display: grid; gap: 18px; margin: 24px 0 0; padding: 0; list-style: none; }
-.deck-roster-layout .team-group li { display: flex; align-items: center; gap: 12px; font-size: 17px; font-weight: 500; letter-spacing: -.02em; line-height: 1.3; }
-.deck-roster-layout .team-member-number { display: grid; place-items: center; flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; background: #f5e9df; color: var(--brand); font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; }
+/* Chương trình chia sẻ: năm chủ đề, mỗi hàng có nội dung và người trình bày. */
+.deck-topic-agenda { display: grid; grid-template-rows: repeat(5, minmax(0, 1fr)); height: 100%; min-height: 0; margin: 0; padding: 0; list-style: none; }
+.topic-agenda-item { display: grid; grid-template-columns: 36px 72px minmax(0, 1fr) 280px; align-items: center; gap: 22px; min-height: 0; padding: 10px 0; border-top: 1px solid var(--line); }
+.topic-agenda-index { color: var(--brand); font-size: 18px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.topic-agenda-art .deck-illustration { width: 64px; height: 64px; margin: 0; }
+.topic-agenda-art .deck-illustration img { width: 100%; height: 100%; object-fit: contain; }
+.topic-agenda-copy { min-width: 0; }
+.topic-agenda-copy h3 { margin: 0 0 6px; font-size: 24px; font-weight: 600; line-height: 1.2; letter-spacing: -.025em; }
+.topic-agenda-copy p { margin: 0; color: var(--mist); font-size: 16px; line-height: 1.4; }
+.topic-agenda-presenters { display: grid; gap: 3px; margin: 0; padding: 0 0 0 24px; border-left: 1px solid var(--line); list-style: none; }
+.topic-agenda-presenters li { display: flex; align-items: center; gap: 7px; color: var(--mist); font-size: 16px; line-height: 1.35; }
+.topic-agenda-leader { display: inline-flex; flex: none; color: #e8ab0d; filter: drop-shadow(0 1px 0 #b77c12); }
+
 
 /* Slide mang về */
 .deck-takeaway-layout { display: grid; grid-template-columns: 1.32fr .68fr; gap: 52px; height: 100%; align-items: center; }
@@ -231,8 +237,6 @@
 .is-compact .deck-title-art { width: 146px; height: 146px; }
 .is-compact .deck-title-art img { height: 100%; }
 .is-compact .team-group-visual { height: 166px; margin-bottom: 14px; }
-.is-compact .deck-roster-layout .team-group-heading { padding-top: 15px; }
-.is-compact .deck-roster-layout .team-group ul { gap: 14px; margin-top: 18px; }
 .is-compact .data-hero { grid-template-columns: minmax(0, 1fr) 154px; padding: 16px 28px; }
 .is-compact .data-hero-value { font-size: 82px; }
 .is-compact .data-hero-label { font-size: 19px; }
@@ -264,8 +268,6 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .deck-title-art, .team-group-visual .deck-illustration { animation: illustration-enter .6s cubic-bezier(.16, 1, .3, 1) both; }
-  .deck-roster-layout .team-group:nth-child(2) .deck-illustration { animation-delay: .07s; }
-  .deck-roster-layout .team-group:nth-child(3) .deck-illustration { animation-delay: .14s; }
   .deck-chart-layout .viz-column-mark { transform-origin: bottom; animation: column-enter .55s cubic-bezier(.16, 1, .3, 1) both; }
 }
 @keyframes illustration-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
@@ -308,6 +310,30 @@
 .deck-city-summary .summary-metrics .metric-value small { font-size: 17px; }
 .deck-city-summary .summary-metrics .metric-label { max-width: 30ch; font-size: 18px; line-height: 1.5; }
 .deck-city-summary .summary-metrics .metric-meta { margin-top: 12px; font-size: 12px; }
+/* Drone: biểu đồ đơn luỹ kế bên trái, bốn con số tăng trưởng bên phải. */
+.drone-growth { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 40px; min-height: 0; }
+/* Bốn con số dạng thẻ: icon tròn, số, nhãn, mốc thời gian; thẻ đầu tô nền như thẻ số liệu điểm dừng. */
+.drone-growth .summary-metrics { grid-auto-rows: minmax(0, 1fr); gap: 16px; }
+.drone-growth .summary-metrics .metric-tile { justify-content: center; min-height: 0; padding: 16px 20px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+.drone-growth .summary-metrics .metric-tile:first-child { border-color: #ead6b9; background: #fff3e3; }
+.drone-growth .summary-metrics .metric-value { font-size: 32px !important; }
+.drone-growth .summary-metrics .metric-label { font-size: 15px; }
+.metric-icon { display: grid; flex: none; place-items: center; width: 38px; height: 38px; margin-bottom: 12px; border-radius: 50%; background: #fff1e4; color: var(--brand); }
+.metric-tile:first-child .metric-icon { background: #fffdf9; }
+.drone-growth .viz-table-toggle { display: none; }
+/* Cột mảnh; nhãn số đặt tuyệt đối trên đỉnh cột để cột cao không bị co lại vì nhãn chiếm chỗ. */
+.drone-growth .viz-columns { margin-top: 36px; }
+.drone-growth .viz-column-list { gap: 22px; height: 220px; }
+.drone-growth .viz-column-mark { flex-shrink: 0; max-width: 28px; }
+.drone-growth .viz-column-value { position: absolute; bottom: calc(var(--column-height) + 8px); margin: 0; font-size: 22px; }
+/* Hai ô so cùng kỳ dưới biểu đồ: số đơn mới, mức tăng, mốc so sánh. */
+.growth-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 22px 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.growth-compare dt { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.growth-compare dd { margin: 0; }
+.growth-compare dd:first-of-type { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.growth-compare strong { font-size: 28px; font-weight: 600; letter-spacing: -.04em; line-height: 1; }
+.growth-delta { display: inline-flex; align-items: center; gap: 3px; padding: 3px 8px; border-radius: 999px; background: #e6f4ed; color: #0b6e4b; font-size: 13px; font-weight: 600; }
+.growth-compare .growth-base { margin-top: 6px; color: var(--mist); font-size: 13px; line-height: 1.4; }
 
 /* Kết từng chương: một bài học, một liên hệ cụ thể với Ahamove. */
 .deck-canvas:has(.deck-subject-reference, .hotel-ahamove) .deck-slide-head { max-width: none; }
@@ -318,11 +344,6 @@
 .reference-lesson h3 { margin: 0; font-size: 34px; font-weight: 600; line-height: 1.18; letter-spacing: -.045em; text-wrap: balance; }
 .reference-lesson > .reference-observation { margin: 14px 0 0; color: var(--mist); font-size: 16px; line-height: 1.55; }
 .reference-application { display: flex; flex-direction: column; justify-content: center; gap: 23px; min-width: 0; }
-.deck-subject-reference.is-application-only { grid-template-columns: minmax(0, 1fr); }
-.is-application-only .reference-application { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; align-content: center; }
-.is-application-only .reference-application > section { margin-top: 0; }
-.is-application-only .reference-application > section:nth-child(2) { padding-top: 0; border-top: 0; }
-.is-application-only .reference-metrics, .is-application-only .reference-question { grid-column: 1 / -1; }
 .reference-application section h3 { margin: 0 0 8px; color: var(--brand); font-size: 12px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; }
 .reference-application section p { margin: 0; font-size: 21px; line-height: 1.5; letter-spacing: -.02em; }
 .reference-application .reference-metrics { padding-top: 17px; border-top: 1px solid var(--line); }
@@ -459,14 +480,32 @@ body.has-stop-modal .deck-foot { transform: translateY(calc(100% + 14px)); opaci
 .itinerary-intro > p:not(.deck-kicker) { margin: 12px 0 16px; color: var(--muted); font-size: 11px; }
 .itinerary-count { display: flex; align-items: center; gap: 7px; color: var(--mist); font-size: 10px; }
 .itinerary-count > span { height: 3px; width: 3px; margin: 0 4px; border-radius: 50%; background: #8b989e; }
-.itinerary-close { display: grid; place-items: center; flex-shrink: 0; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; background: #fff; color: var(--muted); }
+.itinerary-close { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--muted); cursor: pointer; transition: background .15s ease, color .15s ease; }
 .itinerary-close:hover { background: var(--surface); color: var(--paper); }
+.itinerary-close:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 .itinerary-pager > span small { color: var(--muted); font-size: 12px; }
 .itinerary-pager button:last-child:not(:disabled) { background: var(--paper); border-color: var(--paper); color: #fff; }
 @media (prefers-reduced-motion: reduce) { .itinerary-scrim { animation: none; } .deck-foot, .deck-chapter { transition: none; } }
 
 .itinerary-intro > p:not(.deck-kicker) { line-height: 1.7; }
 .itinerary-page .deck-canvas { padding-bottom: 4px; }
+.itinerary-page.is-talent-park > .deck-canvas { padding: 32px 36px 24px; gap: 24px; }
+.is-talent-park:has(.place-layout) > .deck-canvas > .deck-slide-head .deck-kicker { display: none; }
+.is-talent-park:has(.place-layout) > .deck-canvas > .deck-slide-head { max-width: none; }
+.is-talent-park .deck-title-copy { min-width: 0; }
+.is-talent-park .deck-title-name { font-size: 86px; line-height: 1.06; }
+.is-talent-park .deck-title-headline { font-size: 34px; }
+.is-talent-park .deck-title-lead { font-size: 22px; line-height: 1.5; }
+.is-talent-park .deck-kind-experience .drone-film { gap: 20px; }
+.is-talent-park .drone-filmstrip { --film-gap: 20px; }
+.is-talent-park .drone-moment { grid-template-rows: minmax(0, 1fr) 84px; }
+.is-talent-park .drone-moment-image { height: 100%; translate: none; }
+.is-talent-park .drone-filmstrip::before { bottom: 55px; }
+@media (max-height: 800px) {
+  .is-talent-park .deck-title-name { font-size: 76px; }
+  .is-talent-park .deck-title-headline { font-size: 30px; }
+  .is-talent-park .deck-title-lead { font-size: 20px; }
+}
 
 /* Sao vàng cho các điểm chủ đề chính và IOTE Expo. Chuyển động ở icon, không ở marker. */
 .stop-pin.is-featured { border-color: #dfb74e; background: #fffaf0; box-shadow: 0 3px 14px #97702024; }
@@ -483,11 +522,3 @@ body.has-stop-modal .deck-foot { transform: translateY(calc(100% + 14px)); opaci
 @keyframes topic-glow { 0%, 100% { filter: drop-shadow(0 1px 0 #b77c12); } 50% { filter: drop-shadow(0 0 5px #f5c53d); } }
 @keyframes topic-sparkle { 0%, 100% { opacity: .3; transform: scale(.65); } 50% { opacity: 1; transform: scale(1.12); } }
 
-/* Trang số liệu drone: hai nhóm cạnh nhau, mỗi nhóm một phạm vi đo. */
-.deck-drone-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px; min-height: 0; align-items: stretch; }
-.deck-drone-figures > section { display: grid; grid-template-rows: auto auto minmax(0, 1fr); min-height: 0; }
-/* Quy tắc "section + section" của khung modal vốn viết cho trang ghi chép; chặn nó ở đây. */
-.deck-drone-figures > section + section { margin-top: 0; padding-top: 0; border-top: 0; }
-.deck-drone-figures h3 { margin: 0 0 6px; font-size: 20px; font-weight: 600; letter-spacing: -.03em; }
-.deck-drone-figures + * { margin-top: 0; }
-.deck-drone-figures .summary-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); min-height: 0; }

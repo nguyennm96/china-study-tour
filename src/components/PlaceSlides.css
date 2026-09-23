@@ -1,5 +1,7 @@
 /* Ba cột: ảnh · diễn giải · số liệu. Ảnh phủ kín cột nên cao thấp của ba cột luôn bằng nhau. */
 .place-layout { display: grid; grid-template-columns: .82fr 1fr .92fr; gap: 30px; align-items: stretch; min-height: 0; }
+.place-layout:not(:has(.place-metrics)) { grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: 40px; }
+.place-layout:not(:has(.place-metrics)) .place-lead { font-size: 22px; }
 .place-photo { position: relative; display: block; min-height: 0; margin: 0; overflow: hidden; border-radius: 18px; background: var(--surface); }
 .place-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .place-photo figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 22px 16px 10px; color: #fffdf9; font-size: 10px; letter-spacing: .04em; line-height: 1.4; background: linear-gradient(transparent, #0f2130cc); }
@@ -7,6 +9,16 @@
 .place-lead { margin: 0; color: var(--paper); font-size: 19px; line-height: 1.6; }
 .place-note { margin: 0; padding: 18px 22px; border-left: 3px solid var(--brand); background: #fff3e3; color: var(--paper); font-size: 16px; line-height: 1.6; }
 .place-sources { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .04em; }
+
+/* Phần giới thiệu công viên: ảnh bên trái, ý nghĩa tên gọi và vị trí bên phải. */
+.place-layout.has-overview-facts { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; }
+.has-overview-facts .place-copy { gap: 28px; }
+.place-overview-facts { display: grid; gap: 36px; margin: 0; }
+.place-overview-facts dt { margin: 0 0 10px; color: var(--brand); font-size: 19px; font-weight: 500; }
+.place-overview-facts dd { margin: 0; color: var(--paper); font-size: 27px; line-height: 1.45; }
+.is-compact .place-overview-facts { gap: 28px; }
+.is-compact .place-overview-facts dd { font-size: 24px; }
+.is-compact .has-overview-facts .place-copy { gap: 20px; }
 
 .place-metrics { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin: 0; padding: 0; list-style: none; min-height: 0; }
 .place-metrics > li { display: flex; flex-direction: column; justify-content: center; min-height: 0; padding: 14px 20px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
@@ -16,15 +28,34 @@
 .place-label { margin: 8px 0 0; color: var(--paper); font-size: 15px; line-height: 1.45; }
 .place-asof { margin: 6px 0 0; color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 
-/* Trang đặc điểm: ảnh nằm dọc bên trái, bốn đặc điểm xếp dọc bên phải. */
+/* Trang đặc điểm: ảnh nằm dọc bên trái, các đặc điểm chia đều chiều cao bên phải. */
 .place-features { display: grid; grid-template-columns: .58fr 1fr; gap: 34px; align-items: stretch; min-height: 0; }
 .place-photo.is-wide { border-radius: 18px; }
-.place-feature-list { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; min-height: 0; }
-.place-feature-list > li { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 18px; min-height: 0; padding: 16px 22px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.place-feature-list { display: grid; grid-auto-rows: minmax(0, 1fr); gap: 12px; margin: 0; padding: 0; list-style: none; min-height: 0; }
+.place-feature-list > li { display: grid; grid-template-columns: auto 1fr; align-items: start; align-content: center; gap: 18px; min-height: 0; padding: 16px 22px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
 .place-feature-list > li:nth-child(odd) { background: #fff3e3; border-color: #ead6b9; }
 .place-feature-index { color: var(--brand); font-size: 22px; letter-spacing: -.06em; line-height: 1.3; }
 .place-feature-list h4 { margin: 0 0 6px; font-size: 19px; font-weight: 600; letter-spacing: -.03em; line-height: 1.2; }
 .place-feature-list p { margin: 0; color: var(--mist); font-size: 15px; line-height: 1.5; }
+.place-feature-list .place-feature-context { margin-top: 8px; color: var(--muted); font-size: 12px; }
+.place-feature-context a { margin-left: 8px; color: var(--brand); text-underline-offset: 3px; }
+.place-feature-context a:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+
+/* Công nghệ ở Talent Park: ảnh là nội dung chính; số thẻ quyết định số hàng. */
+.place-feature-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); gap: 24px; min-height: 0; margin: 0; padding: 0; list-style: none; }
+.place-feature-gallery > li { min-width: 0; min-height: 0; }
+/* Mỗi thẻ: ảnh dọc bên trái phủ kín chiều cao, chữ bên phải. */
+.place-feature-gallery figure { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); height: 100%; min-height: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: #fff; }
+.place-feature-gallery img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; background: var(--surface); }
+.place-feature-gallery figcaption { display: flex; flex-direction: column; min-width: 0; padding: 30px 28px 24px; }
+.place-feature-gallery h4 { margin: 12px 0 0; color: var(--paper); font-size: 28px; font-weight: 600; line-height: 1.2; letter-spacing: -.03em; text-wrap: balance; }
+.place-feature-detail { margin: 14px 0 0; color: var(--mist); font-size: 17px; line-height: 1.5; }
+/* Bốn thẻ: xếp thành một hàng, ảnh trên chữ dưới để ảnh dọc không bị cắt mất chủ thể. */
+.place-feature-gallery:has(> li:nth-child(4)) { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.place-feature-gallery:has(> li:nth-child(4)) figure { grid-template-columns: minmax(0, 1fr); grid-template-rows: 52% minmax(0, 1fr); }
+.place-feature-gallery:has(> li:nth-child(4)) figcaption { padding: 18px 20px 22px; }
+.place-feature-gallery:has(> li:nth-child(4)) h4 { margin-top: 8px; font-size: 21px; }
+.place-feature-gallery:has(> li:nth-child(4)) .place-feature-detail { margin-top: 10px; font-size: 14.5px; }
 
 /* Trang ảnh của đoàn: ba ảnh dọc cạnh nhau, chú thích ngắn dưới mỗi ảnh. */
 .place-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: minmax(0, 1fr) auto auto; gap: 10px 18px; min-height: 0; }
@@ -33,6 +64,9 @@
 .place-gallery-item img { width: 100%; height: 100%; min-height: 0; object-fit: cover; border-radius: 16px; background: var(--surface); }
 .place-gallery-item figcaption { color: var(--paper); font-size: 15px; line-height: 1.45; }
 .place-gallery-credit { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.place-gallery.has-description { grid-template-rows: auto minmax(0, 1fr) auto auto; gap: 16px 24px; }
+.place-gallery-description { grid-column: 1 / -1; margin: 0; color: var(--mist); font-size: 25px; line-height: 1.45; }
+.place-gallery.has-description .place-gallery-item figcaption { font-size: 22px; }
 /* Có video: cột video dọc bên trái, lưới ảnh bên phải; chú thích đè lên ảnh để tiết kiệm chỗ. */
 .place-gallery.has-video { grid-template-columns: auto minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; }
 .place-gallery-video { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; min-height: 0; margin: 0; }

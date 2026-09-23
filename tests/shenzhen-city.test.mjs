@@ -14,7 +14,7 @@ const workerUrl = `data:text/javascript;base64,${Buffer.from(workerJs).toString(
 const js = compile('ShenzhenCity').replace("from './DeliveryWorker'", `from '${workerUrl}'`)
 const { makeShenzhenCity } = await import(`data:text/javascript;base64,${Buffer.from(js).toString('base64')}`)
 
-test('the overview has three distinct volumetric landmarks and can recover after a detail transition', () => {
+test('the park overview keeps its skyline, greenery and delivery route through detail transitions', () => {
   const city = makeShenzhenCity()
   city.update(1, -3.55, 0, 1)
   const heights = city.landmarkGroups.map(group => {
@@ -23,8 +23,11 @@ test('the overview has three distinct volumetric landmarks and can recover after
     assert.ok(size.x > .5 && size.y > .5 && size.z > .5, `${group.name} must be a 3D volume`)
     return size.y
   })
-  assert.equal(heights.length, 3)
-  assert.ok(heights[0] > heights[1] && heights[1] > heights[2])
+  assert.equal(heights.length, 1)
+  assert.equal(city.landmarkGroups[0].name, 'China Resources Headquarters')
+  assert.ok(city.root.getObjectByName('Talent Park lake'))
+  assert.ok(city.root.getObjectByName('Lakeside walking loop'))
+  assert.ok(city.root.getObjectByName('Park tree trunks').count >= 30)
   city.root.traverse(object => {
     if (!object.geometry) return
     for (const value of object.geometry.attributes.position.array) assert.ok(Number.isFinite(value), `${object.name} has invalid geometry`)

@@ -1,16 +1,68 @@
 {
   "provider": "Netlify",
-  "date": "2026-09-22",
+  "date": "2026-09-23",
   "siteName": "sprightly-frangipane-406bde",
   "url": "https://sprightly-frangipane-406bde.netlify.app/",
   "dashboardUrl": "https://app.netlify.com/projects/sprightly-frangipane-406bde/overview",
-  "deploymentId": "6ab23881835b0311910c32bd",
+  "deploymentId": "6ab37bda85b621c01a87833a",
   "plan": "Free",
   "monthlyPriceUsd": 0,
   "access": "public",
   "claimed": true,
   "method": "manual static ZIP upload",
-  "archive": "outputs/china-study-tour-netlify.zip",
-  "archiveSha256": "83c57441e1bcd3b5b6bde835b013f875ef67fb734f846e416450999741e4dba3",
-  "slides": 28
+  "archive": "outputs/china-study-tour-netlify-878a523.zip",
+  "archiveSha256": "7e3bf654d4284adba83d9650143bcd79f3c5b0dd467e2e82df41ae54da30040a",
+  "deploymentUrl": "https://app.netlify.com/projects/sprightly-frangipane-406bde/deploys/6ab37bda85b621c01a87833a",
+  "previousDeploymentId": "6ab36d05c48beb8bdaa5f305",
+  "sourceCommit": "878a5238c5f3a56bee4e72c80cd7ac6e877503f1",
+  "sourceBranch": "main",
+  "pullResult": "Fetched origin/main; still 878a523 with no new commits. Verified all 393 tracked snapshot files against origin/main and rebuilt clean snapshot. Local main and overlapping V3 edits preserved.",
+  "status": "Published",
+  "archiveBytes": 190847742,
+  "fileCount": 191,
+  "entrypoints": [
+    "/",
+    "/v2/",
+    "/didi/"
+  ],
+  "entryScript": "/assets/index-DL2qb7Q_.js",
+  "verification": {
+    "build": "passed",
+    "sourceIntegrity": "393 tracked snapshot files match origin/main git blob hashes",
+    "archiveIntegrity": "All 191 archive files match fresh build by SHA-256",
+    "unitTests": {
+      "status": "not rerun",
+      "reason": "Same source commit and identical built assets as prior validated deployment",
+      "previousRunSourceCommit": "878a5238c5f3a56bee4e72c80cd7ac6e877503f1",
+      "previousRun": {
+        "command": "node --test tests/*.test.mjs",
+        "passed": 43,
+        "failed": 3,
+        "newDidiTestsPassed": 6,
+        "failures": [
+          {
+            "file": "tests/atlas.test.mjs",
+            "reason": "Expected old robot chapter count (8); latest chapter has 9 slides."
+          },
+          {
+            "file": "tests/topic-data.test.mjs",
+            "reason": "Expected old total and hotel chapter structure; latest source adds origin, Shenzhen and video pages."
+          },
+          {
+            "file": "tests/shenzhen-city.test.mjs",
+            "reason": "Worker loading foot movement 0.042 exceeds 0.026 world units; test, worker code, animation and model are unchanged from previous deployed commit."
+          }
+        ]
+      }
+    },
+    "productionBrowser": [
+      "Published status confirmed on Netlify",
+      "Main map loaded eight stops",
+      "Direct /didi/ route loaded nine-slide Didi deck",
+      "Didi airport image loaded",
+      "Both entry scripts match rebuilt snapshot"
+    ],
+    "consoleErrorsObserved": 0
+  },
+  "sourceSnapshot": "outputs/deploy-src-878a523"
 }
