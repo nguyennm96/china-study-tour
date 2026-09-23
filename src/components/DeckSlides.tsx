@@ -9,6 +9,7 @@ import { ExperienceScene } from './DronePresentationContent'
 import { teamArt } from './TourSections'
 import { HotelRobotSlides } from './HotelRobotSlides'
 import { DidiSlides } from './DidiSlides'
+import { IoteSlides } from './IoteSlides'
 import { PlaceSlide } from './PlaceSlides'
 import { ahamoveReferences, type AhamoveSubject } from '../data/ahamove'
 
@@ -225,6 +226,7 @@ export function SlideBody({ slide }: { slide: Slide }) {
     case 'takeaways': return <TakeawayGridSlide />
     case 'hotel-robot': return <HotelRobotSlides page={slide.page} />
     case 'didi': return <DidiSlides page={slide.page} />
+    case 'iote': return <IoteSlides page={slide.page} />
     case 'place': return <PlaceSlide placeId={slide.placeId} page={slide.page} />
     case 'ahamove': return <AhamoveSlide subjectId={slide.subjectId} />
   }
@@ -248,3 +250,4 @@ export function SlideBody({ slide }: { slide: Slide }) {
 export const slideOwnsHeading = (slide: Slide) => slide.kind === 'title' || slide.kind === 'experience' || slide.kind === 'team' || slide.kind === 'itinerary'
   // Trang mở đầu Didi tự dựng tiêu đề; trang mười hạng xe đổi tiêu đề sau khi lật đáp án.
   || (slide.kind === 'didi' && (slide.page === 'open' || slide.page === 'tiers'))
+  || (slide.kind === 'iote' && slide.page === 'open')

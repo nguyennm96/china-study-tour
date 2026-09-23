@@ -4,6 +4,7 @@ import { subjects, takeaways, type Subject } from './presentation'
 import { hotelRobotPages, type HotelRobotPage } from './hotelRobot'
 import { ahamoveReferences, type AhamoveSubject } from './ahamove'
 import { didiPages, type DidiPage } from './didi'
+import { iotePages, type IotePage } from './iote'
 import { places } from './places'
 
 export type Slide = { chapter: string; kicker: string; title: string; subjectId?: string } & (
@@ -21,6 +22,7 @@ export type Slide = { chapter: string; kicker: string; title: string; subjectId?
   | { kind: 'hotel-robot'; page: HotelRobotPage }
   | { kind: 'ahamove'; subjectId: AhamoveSubject }
   | { kind: 'didi'; page: DidiPage }
+  | { kind: 'iote'; page: IotePage }
   | { kind: 'place'; placeId: string; page: 'overview' | 'features' | 'gallery' | 'visit' }
 )
 
@@ -101,6 +103,15 @@ export function placeSlides(): Slide[] {
 export function didiSlides(): Slide[] {
   return didiPages.map(page => ({
     kind: 'didi' as const, page: page.key, chapter: page.chapter, subjectId: 'didi',
+    kicker: page.kicker, title: page.title,
+  }))
+}
+
+/** Bài IOTE của Tiến (5 slide, 5–10 phút) cũng là phần chia sẻ rời: chạy thành deck riêng ở /iote/.
+ *  Ghim IOTE trên bản đồ vẫn giữ bốn trang điểm dừng `place-iote`. */
+export function ioteSlides(): Slide[] {
+  return iotePages.map(page => ({
+    kind: 'iote' as const, page: page.key, chapter: page.chapter, subjectId: 'iote',
     kicker: page.kicker, title: page.title,
   }))
 }

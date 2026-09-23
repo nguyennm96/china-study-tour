@@ -174,7 +174,7 @@ export const places: Place[] = [
     lead: 'Kỳ thứ 25 của triển lãm IoT quốc tế, mở 26–28/08/2026 tại Trung tâm Hội chợ Quốc tế Thâm Quyến ở Bảo An — một trong những trung tâm hội chợ lớn nhất thế giới. Bốn hall của IOTE chỉ là bốn trong mười chín hall ở đó. Đoàn đi trọn ngày thứ ba của chuyến.',
     photo: {
       src: '/media/places/iote.jpg',
-      alt: 'Trung tâm Hội chợ Quốc tế Thâm Quyến nhìn từ trên cao, dãy hall trải dọc hành lang trung tâm',
+      alt: 'Hành lang có mái che chạy dọc các hall của Trung tâm Hội chợ Quốc tế Thâm Quyến, bên trái là lối vào hall số 8',
       credit: 'Dinkun Chen · CC BY-SA 4.0 · Wikimedia Commons',
     },
     photoAlt: {
@@ -185,7 +185,7 @@ export const places: Place[] = [
     metrics: [
       { value: '80.000', unit: 'm²', label: 'Diện tích IOTE 2026 chiếm dụng', asOf: '08/2026' },
       { value: '400.000', unit: 'm²', label: 'Trưng bày trong nhà của cả trung tâm, giai đoạn 1', asOf: '2026' },
-      { value: '1.000', unit: 'gian hàng', label: 'Doanh nghiệp tham gia trưng bày', asOf: '08/2026' },
+      { value: '1.000+', unit: 'doanh nghiệp', label: 'Tham gia trưng bày, số ban tổ chức công bố', asOf: '08/2026' },
       { value: '100.000', unit: 'lượt', label: 'Khách chuyên ngành, số ban tổ chức công bố', asOf: '08/2026' },
     ],
     featuresTitle: 'Bốn hall, bốn chủ đề',
