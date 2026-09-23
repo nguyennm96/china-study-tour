@@ -1,6 +1,6 @@
 import { useEffect, useState, type CSSProperties, type ReactNode } from 'react'
 import {
-  ArrowRight, BatteryCharging, CheckCircle, ChargingStation, HandTap, Lightbulb, Microphone, Warning, XCircle,
+  ArrowRight, BatteryCharging, CheckCircle, CheckSquare, ChargingStation, HandTap, Lightbulb, Microphone, Warning, XCircle,
 } from '@phosphor-icons/react'
 import {
   didiCarbon, didiDriver, didiEv, didiOpen, didiPages, didiPhotos, didiRobotaxi, didiScale, didiScreens,
@@ -84,7 +84,7 @@ function ScaleSlide() {
 function TiersSlide() {
   const [shown, reveal] = useReveal()
   const meta = didiPages[2]
-  const rings = didiTiers.callouts.flatMap((callout, index) => callout.rings.map(rect => ({ rect, label: index + 1 })))
+  const rings = didiTiers.pick.rings.map(rect => ({ rect }))
   return <div className={`didi-tiers-layout ${shown ? 'is-shown' : ''}`}>
     <header className="deck-slide-head">
       <p className="deck-kicker">{meta.kicker}</p>
@@ -101,12 +101,24 @@ function TiersSlide() {
       <figure className="didi-tiers-phone">
         <Shot photo={didiPhotos.tiers} rings={shown ? rings : []} className={shown ? '' : 'is-veiled'} />
       </figure>
-      {shown ? <ol className="didi-callouts">
-        {didiTiers.callouts.map((callout, index) => <li key={callout.head} className="didi-rise" style={stagger(index)}>
-          <b aria-hidden="true">{index + 1}</b><strong>{callout.head}</strong><span>{callout.detail}</span>
-        </li>)}
-        <li className="didi-tip didi-rise" style={stagger(7)}><Lightbulb size={20} weight="fill" aria-hidden="true" /><p>{didiTiers.tip.body}</p></li>
-      </ol> : <Ask question={didiTiers.question} onReveal={reveal} />}
+      {shown ? <div className="didi-lineup">
+        <div className="didi-lineup-groups">
+          {didiTiers.lineup.map((block, blockIndex) => <section key={block.group} className="didi-rise" style={stagger(blockIndex)}>
+            <h4>{block.group}</h4>
+            <ul>{block.tiers.map(tier => <li key={tier.name} className={tier.picked ? 'is-picked' : ''}>
+              {tier.picked && <CheckSquare size={15} weight="fill" aria-hidden="true" />}
+              <strong>{tier.name}</strong><span>{tier.sells}</span><em>{tier.price}</em>
+            </li>)}</ul>
+          </section>)}
+        </div>
+        <p className="didi-pick didi-rise" style={stagger(2)}>
+          <CheckSquare size={22} weight="fill" aria-hidden="true" />
+          <strong>{didiTiers.pick.head}</strong>
+          <span>{didiTiers.pick.detail}</span>
+          <em>{didiTiers.pick.note}</em>
+        </p>
+        <p className="didi-tip didi-rise" style={stagger(3)}><Lightbulb size={20} weight="fill" aria-hidden="true" /><span>{didiTiers.tip.body}</span></p>
+      </div> : <Ask question={didiTiers.question} onReveal={reveal} />}
     </div>
   </div>
 }
@@ -284,8 +296,12 @@ function EvSlide() {
 function RobotaxiSlide() {
   const { close } = didiRobotaxi
   return <div className="didi-robotaxi-layout">
-    <figure className="didi-robotaxi-photo">
-      <img src={didiPhotos.robotaxi.src} alt={didiPhotos.robotaxi.alt} />
+    <figure className="didi-robotaxi-clip">
+      <video
+        src={didiRobotaxi.clip.src} poster={didiRobotaxi.clip.poster}
+        width={didiRobotaxi.clip.width} height={didiRobotaxi.clip.height}
+        autoPlay loop muted playsInline preload="auto" aria-label={didiRobotaxi.clip.label}
+      />
       <figcaption>{didiRobotaxi.caption}</figcaption>
     </figure>
     <ol className="didi-timeline">{didiRobotaxi.milestones.map(item => <li key={item.date}>

@@ -7,18 +7,18 @@ export type Presenter = 'Sâm' | 'Bình'
 export type Rect = { x: number; y: number; w: number; h: number }
 export type Photo = { src: string; alt: string; width: number; height: number }
 
-const chapter = { sam: 'Sâm · Cái em thấy', binh: 'Bình · Tìm hiểu thêm', close: 'Sâm · Chốt bài' }
+const chapter = { see: 'Bình · Cái em thấy', dig: 'Sâm · Tìm hiểu thêm', close: 'Bình · Chốt bài' }
 
 export const didiPages = [
-  { key: 'open', presenter: 'Sâm', chapter: chapter.sam, kicker: 'Study trip IOTE 2026 · 24–28/08/2026 · Sâm & Bình', title: 'Một cuốc xe Didi ở Thẩm Quyến — và những gì nó hé lộ', sourceIds: ['didi-sam-deck'] },
-  { key: 'scale', presenter: 'Sâm', chapter: chapter.sam, kicker: 'Didi · Quy mô · Quý II/2026', title: 'Didi — nền tảng gọi xe lớn nhất Trung Quốc', sourceIds: ['didi-q2-2026', 'didi-h1-2026-caixin', 'vn-ridehail-q1-2026'], source: 'Nguồn: Báo cáo quý II/2026 của Didi, công bố 14/8/2026 · Mordor Intelligence, Q1/2026' },
-  { key: 'tiers', presenter: 'Sâm', chapter: chapter.sam, kicker: 'Didi · Chọn xe · Huaqiangbei → Dongmen', title: 'Cùng một chuyến 4,8km — mười hạng xe để chọn', sourceIds: ['didi-sam-deck'], source: 'Ảnh chụp màn hình app Didi ngày 23/9/2026, đặt lại đúng tuyến đoàn đã đi · giá niêm yết bằng CNY', reveal: true },
-  { key: 'screens', presenter: 'Sâm', chapter: chapter.sam, kicker: 'Didi · Trước và sau chuyến xe', title: 'App tự nói trước khi mình kịp hỏi', sourceIds: ['didi-sam-deck'], source: 'Ảnh chụp màn hình app Didi của đoàn trong chuyến đi, 08/2026' },
-  { key: 'traffic', presenter: 'Bình', chapter: chapter.binh, kicker: 'Tìm hiểu thêm · Đèn đỏ', title: 'Làm sao app biết tài xế đang kẹt đèn đỏ?', sourceIds: ['amap-light-xinhua', 'amap-light-taibo', 'didi-sam-deck'], source: 'Nguồn: Tân Hoa Xã, 15/8/2022 (công bố tính năng) · phân tích cơ chế: 泰伯网 (Taibo)', reveal: true },
-  { key: 'driver', presenter: 'Bình', chapter: chapter.binh, kicker: 'Tìm hiểu thêm · Phía tài xế', title: 'Phía khách minh bạch vậy — còn phía tài xế?', sourceIds: ['didi-commission-ithome', 'didi-driver-bill-acftu'], source: 'Nguồn: IT之家, 5/2026 · Báo Công đoàn Trung Quốc (Nhân Dân), 6/2026', reveal: true },
-  { key: 'carbon', presenter: 'Bình', chapter: chapter.binh, kicker: 'Tìm hiểu thêm · Carbon', title: '1.430 gram carbon — nó là cái gì?', sourceIds: ['didi-carbon-21jingji', 'sz-carbon-inclusion-ccn', 'vn-qd42-2026'], source: 'Nguồn: 21世纪经济报道, 6/2026 · 碳中和网 · Quyết định 42/2026/QĐ-TTg (qua VnEconomy)' },
-  { key: 'ev', presenter: 'Bình', chapter: chapter.binh, kicker: 'Tìm hiểu thêm · Điện khí hoá', title: 'Xe điện — cuộc chơi quyết ở thời gian nạp', sourceIds: ['vn-ridehail-q1-2026', 'vn-delivery-2w-062026', 'sz-charging-gov', 'sz-charging-people', 'sz-taxi-szbus', 'hn-lez-vnexpress', 'vgreen-swap-ktck', 'selex-swap-ndt'], source: 'Nguồn: Cổng TTĐT TP Thẩm Quyến · Nhân Dân Nhật Báo · Shenzhen Bus Group · Nghị quyết vùng phát thải thấp Hà Nội (qua VnExpress) · tổng hợp báo VN 2026' },
-  { key: 'robotaxi', presenter: 'Sâm', chapter: chapter.close, kicker: 'Chốt bài · Robotaxi & ba xu hướng', title: 'Không chỉ ở Trung Quốc — đây là cuộc đua toàn cầu', sourceIds: ['pony-sz-permit', 'didi-r2-uniteai', 'europe-robotaxi-euronews'], source: 'Nguồn: PR Newswire 31/10/2025 · Unite.AI · Euronews 18/9/2026' },
+  { key: 'open', presenter: 'Bình', chapter: chapter.see, kicker: 'Study trip IOTE 2026 · 24–28/08/2026 · Bình & Sâm', title: 'Một cuốc xe Didi ở Thẩm Quyến — và những gì nó hé lộ', sourceIds: ['didi-sam-deck'] },
+  { key: 'scale', presenter: 'Bình', chapter: chapter.see, kicker: 'Didi · Quy mô · Quý II/2026', title: 'Didi — nền tảng gọi xe lớn nhất Trung Quốc', sourceIds: ['didi-q2-2026', 'didi-h1-2026-caixin', 'vn-ridehail-q1-2026'], source: 'Nguồn: Báo cáo quý II/2026 của Didi, công bố 14/8/2026 · Mordor Intelligence, Q1/2026' },
+  { key: 'tiers', presenter: 'Bình', chapter: chapter.see, kicker: 'Didi · Chọn xe · Huaqiangbei → Dongmen', title: 'Cùng một chuyến 4,8km — mười hạng xe để chọn', sourceIds: ['didi-sam-deck'], source: 'Ảnh chụp màn hình app Didi ngày 23/9/2026, đặt lại đúng tuyến đoàn đã đi · giá niêm yết bằng CNY', reveal: true },
+  { key: 'screens', presenter: 'Bình', chapter: chapter.see, kicker: 'Didi · Trước và sau chuyến xe', title: 'App tự nói trước khi mình kịp hỏi', sourceIds: ['didi-sam-deck'], source: 'Ảnh chụp màn hình app Didi của đoàn trong chuyến đi, 08/2026' },
+  { key: 'traffic', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Đèn đỏ', title: 'Làm sao app biết tài xế đang kẹt đèn đỏ?', sourceIds: ['amap-light-xinhua', 'amap-light-taibo', 'didi-sam-deck'], source: 'Nguồn: Tân Hoa Xã, 15/8/2022 (công bố tính năng) · phân tích cơ chế: 泰伯网 (Taibo)', reveal: true },
+  { key: 'driver', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Phía tài xế', title: 'Phía khách minh bạch vậy — còn phía tài xế?', sourceIds: ['didi-commission-ithome', 'didi-driver-bill-acftu'], source: 'Nguồn: IT之家, 5/2026 · Báo Công đoàn Trung Quốc (Nhân Dân), 6/2026', reveal: true },
+  { key: 'carbon', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Carbon', title: '1.430 gram carbon — nó là cái gì?', sourceIds: ['didi-carbon-21jingji', 'sz-carbon-inclusion-ccn', 'vn-qd42-2026'], source: 'Nguồn: 21世纪经济报道, 6/2026 · 碳中和网 · Quyết định 42/2026/QĐ-TTg (qua VnEconomy)' },
+  { key: 'ev', presenter: 'Sâm', chapter: chapter.dig, kicker: 'Tìm hiểu thêm · Điện khí hoá', title: 'Xe điện — cuộc chơi quyết ở thời gian nạp', sourceIds: ['vn-ridehail-q1-2026', 'vn-delivery-2w-062026', 'sz-charging-gov', 'sz-charging-people', 'sz-taxi-szbus', 'hn-lez-vnexpress', 'vgreen-swap-ktck', 'selex-swap-ndt'], source: 'Nguồn: Cổng TTĐT TP Thẩm Quyến · Nhân Dân Nhật Báo · Shenzhen Bus Group · Nghị quyết vùng phát thải thấp Hà Nội (qua VnExpress) · tổng hợp báo VN 2026' },
+  { key: 'robotaxi', presenter: 'Bình', chapter: chapter.close, kicker: 'Chốt bài · Robotaxi & ba xu hướng', title: 'Không chỉ ở Trung Quốc — đây là cuộc đua toàn cầu', sourceIds: ['pony-sz-permit', 'didi-r2-uniteai', 'europe-robotaxi-euronews'], source: 'Nguồn: PR Newswire 31/10/2025 · Unite.AI · Euronews 18/9/2026' },
 ] as const satisfies readonly { key: string; presenter: Presenter; chapter: string; kicker: string; title: string; sourceIds: readonly string[]; source?: string; reveal?: boolean }[]
 export type DidiPage = typeof didiPages[number]['key']
 
@@ -34,7 +34,7 @@ export const didiPhotos = {
   amap: { src: '/media/didi/amap-route.png', width: 1206, height: 2622, alt: 'Màn hình Amap chỉ đường bằng tàu điện ngầm từ sân bay, chụp ngày 26/08/2026' },
   street: { src: '/media/didi/ev-street.jpg', width: 900, height: 1600, alt: 'Một trục đường lớn ở Thẩm Quyến, phần lớn ô tô đang lưu thông là xe điện biển xanh' },
   interior: { src: '/media/didi/ev-interior.jpg', width: 1440, height: 1440, alt: 'Nội thất một xe điện gọi qua Didi, màn hình điều khiển lớn giữa táp-lô' },
-  robotaxi: { src: '/media/didi/robotaxi.jpg', width: 900, height: 1200, alt: 'Xe dáng robotaxi số hiệu 4484 trên phố Thẩm Quyến ban đêm, có cụm cảm biến trên gương' },
+
 } satisfies Record<string, Photo>
 
 export const didiOpen = {
@@ -68,15 +68,30 @@ export const didiTiers = {
   answer: '10',
   answerLabel: 'hạng xe cho cùng một chuyến',
   route: { text: 'Huaqiangbei → phố đi bộ Dongmen', meta: '4,8km · 14 phút · tuyến đoàn đã đi', crop: { x: 0, y: 0.04, w: 1, h: 0.29 } },
-  callouts: [
-    { head: 'Giá chốt trước, không phải giá ước tính', detail: '“Upfront Fare”', rings: [{ x: 0.605, y: 0.184, w: 0.15, h: 0.022 }] },
-    { head: 'Rẻ nhất 12,8 tệ — đắt nhất 88,3 tệ', detail: 'Chênh 7 lần, cùng một quãng đường', rings: [{ x: 0.745, y: 0.249, w: 0.125, h: 0.034 }, { x: 0.74, y: 0.8, w: 0.13, h: 0.03 }] },
-    { head: 'Ghép tài xế tính bằng GIÂY', detail: '“3 sec · 4 sec · 5 sec”', rings: [{ x: 0.162, y: 0.201, w: 0.078, h: 0.018 }] },
-    { head: 'Tick nhiều hạng cùng lúc — hạng nào có xe trước thì đi', detail: '3 ô tick · “Est. 12–21.9 CNY”', rings: [{ x: 0.882, y: 0.258, w: 0.06, h: 0.162 }, { x: 0.06, y: 0.922, w: 0.6, h: 0.046 }] },
-    { head: 'Bán riêng “đỡ phải chờ” và “xe không mùi”', detail: 'Priority · Comfort', rings: [{ x: 0.162, y: 0.537, w: 0.235, h: 0.018 }, { x: 0.162, y: 0.61, w: 0.298, h: 0.018 }] },
-    { head: 'Giảm giá hiện ngay từng hạng', detail: '−2,4 và −4,6 CNY', rings: [{ x: 0.734, y: 0.621, w: 0.141, h: 0.019 }] },
-    { head: 'Trả online hoặc tiền mặt · hẹn giờ · đặt hộ', detail: 'Pay Online · Schedule · For Others', rings: [{ x: 0.07, y: 0.882, w: 0.86, h: 0.026 }] },
-  ] satisfies { head: string; detail: string; rings: Rect[] }[],
+  /** Mười hạng giữ đúng thứ tự trên màn hình để người xem dò theo ảnh được. Giá niêm yết CNY. */
+  lineup: [
+    { group: 'Better vehicles & service', tiers: [
+      { name: 'Premium', sells: 'Xe sang, tài xế top', price: '32,1' },
+      { name: 'Economy', sells: 'Rẻ nhất', price: '12,8', picked: true },
+      { name: 'Taxi', sells: 'Taxi truyền thống', price: '21,9', picked: true },
+      { name: 'Comfort Taxi', sells: 'Taxi xe rộng hơn', price: '21,9', picked: true },
+      { name: 'Standard', sells: 'Đi hằng ngày', price: '16,2' },
+      { name: 'Priority', sells: 'Chờ ít hơn', price: '17,9' },
+      { name: 'Comfort', sells: 'Xe rộng, không mùi', price: '18,2' },
+    ] },
+    { group: 'More Trip Types', tiers: [
+      { name: 'Premium XL', sells: '6 chỗ, nhiều hành lý', price: '43,6' },
+      { name: 'Luxe', sells: 'Hạng sang', price: '88,3' },
+      { name: 'Luxe XL', sells: 'Hạng sang 6 chỗ', price: '—' },
+    ] },
+  ] satisfies { group: string; tiers: { name: string; sells: string; price: string; picked?: boolean }[] }[],
+  /** Trọng tâm slide: tick nhiều hạng cùng lúc. Khoanh 3 ô tick và dải giá ở nút xác nhận. */
+  pick: {
+    head: 'Tick cùng lúc nhiều hạng — hạng nào có xe trước thì đi hạng đó',
+    detail: 'Economy · Taxi · Comfort Taxi → nút xác nhận hiện “Est. 12–21.9 CNY”',
+    note: 'Chọn một hạng thì chỉ tài xế hạng đó nhận được đơn. Tick ba hạng là tập tài xế rộng ra gấp ba.',
+    rings: [{ x: 0.882, y: 0.258, w: 0.06, h: 0.162 }, { x: 0.06, y: 0.922, w: 0.6, h: 0.046 }] satisfies Rect[],
+  },
   tip: { head: 'Mẹo', body: 'Didi chạy nền bản đồ Amap (高德地图) → tra tên tiếng Trung (chữ Hán) của địa chỉ rồi dán vào, chọn đúng điểm dễ hơn nhiều so với gõ tiếng Anh.' },
 }
 
@@ -202,7 +217,9 @@ export const didiEv = {
 }
 
 export const didiRobotaxi = {
-  caption: 'Xe dáng robotaxi, số hiệu 4484 · Thẩm Quyến, ban đêm · ảnh của đoàn',
+  /** Clip tự chạy và lặp khi trình chiếu: không tiếng, không nút bấm, không cần thao tác giữa lúc nói. */
+  clip: { src: '/media/didi/robotaxi.mp4', poster: '/media/didi/robotaxi-poster.jpg', width: 1280, height: 720, label: 'Xe không người lái chạy trên phố Thẩm Quyến ban đêm, quay từ trong xe của đoàn' },
+  caption: 'Xe không người lái · Thẩm Quyến, ban đêm · clip của đoàn',
   milestones: [
     { date: 'Thẩm Quyến · 31/10/2025', body: 'Pony.ai được cấp giấy phép robotaxi không người lái thương mại trên toàn thành phố, triển khai đầu ở Nanshan', note: 'đúng khu đoàn mình tới' },
     { date: '31/8/2026', body: 'Didi mở thử nghiệm chở khách hoàn toàn không người lái với robotaxi R2, đặt ngay trong app Didi — Bắc Kinh và Quảng Châu' },

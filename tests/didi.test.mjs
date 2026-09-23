@@ -20,7 +20,7 @@ const didi = await import(load('didi'))
 
 test('bài Didi đúng 9 slide theo thứ tự và người trình bày của script v5', () => {
   assert.deepEqual(didi.didiPages.map(page => page.key), ['open', 'scale', 'tiers', 'screens', 'traffic', 'driver', 'carbon', 'ev', 'robotaxi'])
-  assert.deepEqual(didi.didiPages.map(page => page.presenter).join(''), 'SâmSâmSâmSâmBìnhBìnhBìnhBìnhSâm')
+  assert.deepEqual(didi.didiPages.map(page => page.presenter).join(''), 'BìnhBìnhBìnhBìnhSâmSâmSâmSâmBình')
   const slides = didiSlides()
   assert.equal(slides.length, 9)
   assert.ok(slides.every(slide => slide.kind === 'didi' && slide.subjectId === 'didi'), 'mọi slide Didi phải gắn vào ghim didi')
@@ -45,7 +45,7 @@ test('ảnh dùng trong bài Didi đều có trong public/', () => {
 
 test('vòng khoanh và vùng cắt nằm trong ảnh', () => {
   const rects = [
-    ...didi.didiTiers.callouts.flatMap(callout => callout.rings), didi.didiTiers.route.crop,
+    ...didi.didiTiers.pick.rings, didi.didiTiers.route.crop,
     ...didi.didiScreens.waiting.highlights.map(item => item.ring), didi.didiScreens.receipt.carbon.ring,
     didi.didiTraffic.evidence.crop, didi.didiCarbon.crop, didi.didiCarbon.ring,
   ]

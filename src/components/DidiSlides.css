@@ -88,14 +88,26 @@
 .didi-route figcaption strong { color: var(--paper); font-size: 14px; font-weight: 600; }
 .didi-tiers-phone { display: flex; justify-content: center; min-height: 0; height: 100%; margin: 0; }
 .didi-tiers-phone .didi-shot { height: 100%; width: auto; box-shadow: 0 10px 30px #172b3d1f; }
-.didi-callouts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); gap: 10px; margin: 0; padding: 0; list-style: none; min-height: 0; }
-.didi-callouts li { display: grid; grid-template-columns: 26px minmax(0, 1fr); align-content: center; column-gap: 10px; row-gap: 3px; padding: 10px 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
-.didi-callouts b { grid-row: 1 / 3; display: grid; place-items: center; width: 26px; height: 26px; color: #fff; font-size: 13px; background: var(--brand); border-radius: 50%; }
-.didi-callouts strong { font-size: 15px; font-weight: 600; letter-spacing: -.015em; line-height: 1.3; }
-.didi-callouts span { color: var(--muted); font-size: 12.5px; line-height: 1.35; }
-.didi-callouts .didi-tip { background: #15364d; border-color: #15364d; color: #fffaf2; }
-.didi-tip svg { grid-row: 1 / 3; color: #f2b183; }
-.didi-tip p { margin: 0; font-size: 13px; line-height: 1.45; }
+.didi-lineup { display: grid; grid-template-rows: minmax(0, 1fr) auto auto; gap: 10px; min-height: 0; }
+.didi-lineup-groups { display: grid; grid-template-rows: minmax(0, 7fr) minmax(0, 3fr); gap: 10px; min-height: 0; }
+.didi-lineup-groups section { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 6px; min-height: 0; padding: 10px 12px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.didi-lineup-groups h4 { margin: 0; color: var(--muted); font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.didi-lineup-groups ul { display: grid; grid-auto-rows: minmax(0, 1fr); gap: 2px; margin: 0; padding: 0; list-style: none; min-height: 0; }
+.didi-lineup-groups li { display: grid; grid-template-columns: 15px minmax(0, auto) minmax(0, 1fr) auto; align-items: center; column-gap: 8px; padding: 2px 6px; border-radius: 7px; }
+.didi-lineup-groups li strong { grid-column: 2; font-size: 14px; font-weight: 600; letter-spacing: -.015em; }
+.didi-lineup-groups li span { grid-column: 3; color: var(--muted); font-size: 12px; }
+.didi-lineup-groups li em { grid-column: 4; font-size: 13.5px; font-weight: 600; font-style: normal; font-variant-numeric: tabular-nums; }
+.didi-lineup-groups li svg { grid-column: 1; color: var(--brand); }
+.didi-lineup-groups li.is-picked { background: #eaf3fb; }
+.didi-lineup-groups li.is-picked strong, .didi-lineup-groups li.is-picked em { color: var(--brand); }
+.didi-pick { display: grid; grid-template-columns: 22px minmax(0, 1fr); align-items: start; column-gap: 10px; row-gap: 3px; margin: 0; padding: 12px 14px; background: #fff; border: 2px solid var(--brand); border-radius: 12px; }
+.didi-pick svg { grid-row: 1 / 4; margin-top: 1px; color: var(--brand); }
+.didi-pick strong { font-size: 16px; font-weight: 600; letter-spacing: -.02em; line-height: 1.25; }
+.didi-pick span { color: var(--paper); font-size: 13px; line-height: 1.35; }
+.didi-pick em { color: var(--muted); font-size: 12.5px; font-style: normal; line-height: 1.35; }
+.didi-tip { display: grid; grid-template-columns: 20px minmax(0, 1fr); align-items: start; column-gap: 10px; margin: 0; padding: 10px 14px; color: #fffaf2; background: #15364d; border-radius: 12px; }
+.didi-tip svg { margin-top: 1px; color: #f2b183; }
+.didi-tip span, .didi-tip p { margin: 0; font-size: 12.5px; line-height: 1.4; }
 
 /* 04 · Hai màn hình */
 .didi-screens-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: minmax(0, 1fr) auto; gap: 16px 28px; min-height: 0; }
@@ -228,10 +240,10 @@
 .didi-ev-block.is-swap span { color: var(--mist); font-size: 12.5px; line-height: 1.35; }
 
 /* 09 · Robotaxi & chốt */
-.didi-robotaxi-layout { display: grid; grid-template-columns: auto minmax(0, 1fr) 360px; gap: 28px; min-height: 0; }
-.didi-robotaxi-photo { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 8px; min-height: 0; height: 100%; margin: 0; }
-.didi-robotaxi-photo img { height: 100%; min-height: 0; width: auto; max-width: 340px; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 18px; }
-.didi-robotaxi-photo figcaption { max-width: 300px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.didi-robotaxi-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) 360px; gap: 28px; min-height: 0; }
+.didi-robotaxi-clip { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 8px; min-height: 0; height: 100%; margin: 0; }
+.didi-robotaxi-clip video { width: 100%; height: 100%; min-height: 0; aspect-ratio: 16 / 9; object-fit: cover; background: #0c1b27; border-radius: 18px; }
+.didi-robotaxi-clip figcaption { color: var(--muted); font-size: 12px; line-height: 1.4; }
 .didi-timeline { display: grid; grid-auto-rows: minmax(0, 1fr); gap: 12px; margin: 0; padding: 0; list-style: none; min-height: 0; }
 .didi-timeline li { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 12px 0 12px 20px; border-left: 3px solid var(--brand); }
 .didi-timeline strong { color: var(--brand); font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
