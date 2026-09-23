@@ -198,7 +198,7 @@ function TrafficSlide() {
     <div className="didi-traffic-main">
       {shown
         ? <div className="didi-verdict">
-            <section className="is-no didi-pop"><h4><XCircle size={22} weight="fill" aria-hidden="true" />{didiTraffic.no.label}</h4><p>{didiTraffic.no.body}<Ref page="traffic" ids={didiTraffic.no.cite} /></p></section>
+            <section className="is-no didi-pop"><h4><XCircle size={22} weight="fill" aria-hidden="true" />{didiTraffic.no.label}</h4><p>{didiTraffic.no.body}</p><small>{didiTraffic.no.note}<Ref page="traffic" ids={didiTraffic.no.cite} /></small></section>
             <section className="is-yes didi-pop" style={stagger(1)}><h4><CheckCircle size={22} weight="fill" aria-hidden="true" />{didiTraffic.yes.label}</h4><p>{didiTraffic.yes.body}<Ref page="traffic" ids={didiTraffic.yes.cite} /></p></section>
           </div>
         : <Ask question={didiTraffic.question} onReveal={reveal} />}

@@ -4,12 +4,12 @@
 
 > **Cập nhật 23/09/2026 khi dựng slide:** (1) ô “51” cạnh đèn đỏ trên ảnh `04a` là **đếm ngược đèn đỏ** — Sâm xác nhận; slide 5 dùng ảnh này thay cho ảnh Amap phải tìm thêm. (2) Mẹo tra địa chỉ: “pinyin” → **tên tiếng Trung (chữ Hán)**. (3) Slide 3: “chỗ nào cũng ghi Upfront Fare” → **“hầu hết các hạng”** — Taxi và Comfort Taxi ghi “Est.”. (4) Hai ảnh `03a`/`03b` có metadata **23/09/2026 09:21**: là màn hình đặt lại đúng tuyến sau chuyến đi, không phải chụp trong chuyến — lời nói slide 3 đã sửa cho khớp.
 
-> **Cập nhật 23/09/2026 (lần 2), theo deck mới của Bình:** (1) **Đổi người trình bày** — Bình mở và chốt bài (slide 1–4, 9), Sâm nói phần "tìm hiểu thêm" (slide 5–8). Mọi câu chuyển người trong lời nói đã đảo tên. (2) Slide 3 chỉ còn **một ý chính**: tick nhiều hạng cùng lúc. (3) Slide 8 bỏ dải thị phần và danh sách 9 phường; câu *"xe nền tảng không được hoạt động"* thành câu chốt. (4) Slide 9 dùng **clip** của đoàn thay ảnh, và chốt bằng **bốn xu hướng** trỏ về đúng các slide đã kể. (5) Slide 7: bỏ câu *"đúng tuần này"* để lời nói đúng dù trình bày vào ngày nào; khối "Còn ở Việt Nam" **ẩn sau nút bấm**, lật đúng câu *"không xa đâu"*. (6) Chữ trên cả 9 slide viết lại cho tự nhiên, gần văn nói hơn — số liệu giữ nguyên.
+> **Cập nhật 23/09/2026 (lần 2), theo deck mới của Bình:** (1) **Đổi người trình bày** — Bình mở và chốt bài (slide 1–4, 9), Sâm nói phần "tìm hiểu thêm" (slide 5–8). Mọi câu chuyển người trong lời nói đã đảo tên. (2) Slide 3 chỉ còn **một ý chính**: tick nhiều hạng cùng lúc. (3) Slide 8 bỏ dải thị phần và danh sách 9 phường; câu *"xe nền tảng không được hoạt động"* thành câu chốt. (4) Slide 9 dùng **clip** của đoàn thay ảnh, và chốt bằng **bốn xu hướng** trỏ về đúng các slide đã kể. (5) Slide 7: bỏ câu *"đúng tuần này"* để lời nói đúng dù trình bày vào ngày nào; khối "Còn ở Việt Nam" **ẩn sau nút bấm**, lật đúng câu *"không xa đâu"*. (6) Chữ trên cả 9 slide viết lại cho tự nhiên, gần văn nói hơn — số liệu giữ nguyên. (7) **Phần của Sâm (slide 5–8) đã kiểm lại từng số với nguồn gốc**, sửa các chỗ sai và gắn trích dẫn [n] vào từng ý trên slide — xem ô 🔎 ở đầu mỗi slide.
 
 | | |
 |---|---|
 | **Người trình bày** | BinhNT (slide 1–4, 9) · SamNTT (slide 5–8) |
-| **Thời lượng** | **20 phút — đã bao gồm Q&A** (nói ~15'45, Q&A ~4'15) |
+| **Thời lượng** | **20 phút — đã bao gồm Q&A** (nói ~16'00, Q&A ~4'00) |
 | **Khán giả** | **Toàn thể nhân viên Ahamove** |
 | **Chuyến đi** | 24–28/08/2026 · 5 ngày · Thẩm Quyến · 6 người · 11 chuyến Didi |
 | **Xưng hô** | "em" với phòng · "mình" với công ty/đoàn |
@@ -213,180 +213,161 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 
 ## SLIDE 5 · Làm sao app biết tài xế đang kẹt đèn đỏ? — 2 phút 15
 
-🖥️ **TRÊN SLIDE**
+> 🔎 **Đã kiểm nguồn 23/09/2026.** Sửa quan trọng: bản cũ nói *"không đấu nối gì hết"* — **sai**. Amap chủ yếu suy chu kỳ đèn từ quỹ đạo xe, nhưng **một số thành phố (ví dụ Yên Đài) có chia sẻ thêm dữ liệu đèn** từ cảnh sát giao thông [9]. Số phủ mới: **gần 500.000 nút giao (05/2026)** [8b].
+
+🖥️ **TRÊN SLIDE** *(số [n] trên slide đánh theo danh sách ở chân slide đó)*
 - Tiêu đề: **Làm sao app biết tài xế đang kẹt đèn đỏ?**
 - Hai ô đối nhau:
-  - ❌ **Không phải:** đấu nối dữ liệu với hệ thống đèn tín hiệu của sở giao thông
-  - ✅ **Mà là:** nhìn vệt di chuyển GPS của chính những xe đang chạy app dừng ở nút giao đó → thấy dừng rồi đi theo chu kỳ đều đặn → **suy ngược ra nhịp đèn**
-- Ba số: phủ **hơn 80.000 nút giao** khi công bố **(2022)** · nhắc trước **~5 giây** khi sắp xanh · nút quá đông thì báo **phải chờ mấy nhịp đèn**
-- Ô nhấn màu: **Không xin dữ liệu của ai — chỉ dùng lại dữ liệu mình đã có.**
-- Chân slide: *Nguồn: Tân Hoa Xã (công bố tính năng) · phân tích cơ chế: Taibo*
+  - ❌ **Phần lớn không phải:** ~~kết nối với đèn tín hiệu của sở giao thông~~ · dòng nhỏ không gạch: *chỉ một số thành phố có chia sẻ thêm dữ liệu đèn* [9]
+  - ✅ **Mà chủ yếu là:** nhìn vệt GPS của chính các xe đang chạy app dừng rồi đi theo một nhịp đều → **suy ra chu kỳ đèn** [9]
+- Ba số: **~500.000 nút giao** hiện nay, lúc ra mắt 2022 là 80.000 [8][8b] · **nhắc bằng giọng nói khi đèn đỏ còn ~5 giây** [8] · nút giao quá đông thì báo **số nhịp đèn phải chờ** [8]
+- Ô nhấn màu: **Không cần đi xin dữ liệu — phần lớn là dùng lại dữ liệu mình đã có.**
+- Chân slide: danh sách nguồn đánh số — Tân Hoa Xã 15/08/2022 · IT之家 20/05/2026 · 泰伯网 08/03/2023
 
 🖼️ **HÌNH / VIDEO**
-- ✅ **Đã có:** crop phóng to đúng dòng *"Waiting for a traffic light"* và ô đếm ngược **51 giây** từ `04a_...jpg` — nối mạch trực tiếp với phần Bình vừa kể.
-- ❌ **Đã bỏ khỏi slide:** `05_Amap-Chi-duong-thuc-te.png` — ảnh này là tuyến tàu điện ngầm từ sân bay, không liên quan tới đèn đỏ.
-- 🔍 **Nên tìm thêm (1 ảnh):** ảnh chụp giao diện Amap đang hiện **vòng đếm ngược đèn đỏ** (hình tròn có số giây trên bản đồ).
-  - Từ khoá tìm: **`高德地图 红绿灯读秒 截图`** hoặc **`高德 红绿灯倒计时 界面`**
-  - Có sẵn trong bài của Tân Hoa Xã [8] và bài phân tích của Taibo [9] — lấy ảnh từ đó và ghi nguồn dưới ảnh.
-  - Nếu không tìm được: vẽ sơ đồ 3 bước thay thế — *nhiều xe dừng ở nút giao → hệ thống thấy nhịp lặp lại → suy ra chu kỳ đèn*. Sơ đồ vẽ tay kiểu này thậm chí dễ hiểu hơn ảnh chụp.
+- ✅ **Đã có:** crop phóng to dòng *"Waiting for a traffic light"* và ô đếm ngược **51 giây** từ `04a_...jpg` — nối mạch với phần Bình vừa kể.
+- ✅ Sơ đồ 3 bước tự vẽ: *nhiều xe dừng ở nút giao → hệ thống thấy nhịp lặp lại → suy ra chu kỳ đèn*.
 
 🎙️ **LỜI NÓI**
 
-> *"Dạ em chào mọi người. Phần của em khác Bình một chút, em nói rõ trước: **mấy cái em sắp kể tụi em không trải nghiệm trực tiếp** — là về nhà tò mò quá nên đi tra thêm. Em sẽ nói rõ cái nào là cái nào.*
+> *"Dạ em chào mọi người. Phần của em khác Bình một chút, em nói rõ trước: **mấy cái em sắp kể tụi em không trải nghiệm trực tiếp** — là về nhà tò mò quá nên đi tra thêm. Nguồn em ghi ở chân từng slide.*
 >
 > *Bắt đầu từ đúng cái màn hình Bình vừa chiếu. Dòng **«Waiting for a traffic light»** đó — em nhìn xong em thắc mắc:*
 >
 > ***Làm sao cái app biết ông tài xế đó đang dừng ở đèn đỏ?***
 >
-> **🔢 *«Em hỏi thử: theo mọi người, họ lấy dữ liệu đèn giao thông từ đâu? Đấu nối với sở giao thông à?»*** *(chờ 3 giây)*
+> **🔢 *«Em hỏi thử: theo mọi người, app lấy dữ liệu đèn giao thông ở đâu? Kết nối với sở giao thông?»*** *(chờ 3 giây)*
 >
-> *(bấm lật) **Không. Không đấu nối gì hết.***
+> *(bấm lật) **Phần lớn là không.***
 >
-> *Cách họ làm thế này: bản đồ Amap nhìn **vệt di chuyển của chính những chiếc xe đang chạy app** đi qua nút giao đó. Thấy một đám xe dừng lại, rồi đi, rồi lại dừng — đều đặn theo một chu kỳ. Từ cái nhịp đó họ **suy ngược ra chu kỳ đèn**. [9]*
+> *Cách họ làm thế này: bản đồ Amap nhìn **vệt di chuyển của chính những chiếc xe đang chạy app** qua nút giao đó. Thấy một đám xe dừng lại, rồi đi, rồi lại dừng — đều đặn theo một chu kỳ. Từ cái nhịp đó họ **suy ra chu kỳ đèn**. Chỉ một số thành phố có chia sẻ thêm dữ liệu đèn cho họ, còn lại là tự tính. [9]*
 >
-> *Và không phải làm vài chỗ cho vui — lúc công bố năm 2022, tính năng này đã phủ **hơn 80.000 nút giao** trên toàn Trung Quốc. [8] Nó còn nhắc trước khoảng 5 giây khi sắp xanh.*
+> *Và không phải làm vài chỗ cho vui — lúc ra mắt năm 2022 đã có **80.000 nút giao** [8], giờ là **gần 500.000** [8b]. Khi đèn đỏ còn khoảng 5 giây, app còn nhắc bằng giọng nói. [8]*
 >
 > *Chỗ này em dừng một chút, vì em nghĩ nó liên quan tới mình.*
 >
-> ***Họ không đi xin dữ liệu của ai hết. Họ lấy đúng cái dữ liệu GPS mà app vốn đã có sẵn, rồi nặn ra một tính năng mới.***
+> ***Họ không cần đi xin dữ liệu của ai. Phần lớn là lấy đúng dữ liệu GPS app vốn đã có, rồi nặn ra một tính năng mới.***
 >
-> *Mỗi ngày tài xế mình để lại bao nhiêu vệt di chuyển trên bản đồ? Chỗ đó mình đang có sẵn rồi, không phải mua của ai. Ví dụ từ mấy vệt đó mình có thể biết được: **toà nhà nào hay phải chờ lâu, đoạn nào hay kẹt vào giờ nào.***
+> *Mỗi ngày tài xế mình để lại bao nhiêu vệt di chuyển trên bản đồ? Chỗ đó mình đang có sẵn rồi. Ví dụ từ mấy vệt đó mình có thể biết: **toà nhà nào hay phải chờ lâu, đoạn nào hay kẹt vào giờ nào.***
 >
 > *Cái đó không cần công nghệ mới. Chỉ cần chịu nhìn lại thứ mình đang có."*
 
 🎬 **GHI CHÚ SÂN KHẤU**
-- Câu mở đầu về ranh giới *"không trải nghiệm trực tiếp"* — **nói một lần ở đây là đủ cho cả phần B**, khỏi rào đón ở từng slide sau.
-- Đây là **điểm bất ngờ nhất cả bài**. Nói chậm đoạn "Không. Không đấu nối gì hết", im 1 giây rồi mới giải thích.
+- Câu mở đầu về ranh giới *"không trải nghiệm trực tiếp"* — **nói một lần ở đây là đủ cho cả phần B**.
+- Nói chậm *"Phần lớn là không"*, im 1 giây rồi mới giải thích. **Đừng nói "không đấu nối gì hết"** — sai với nguồn.
 - Đáp án ẩn sau nút bấm.
-- **Đã bỏ** câu hỏi mở cuối slide so với bản trước, chuyển thành câu khẳng định — để dồn thời gian cho Q&A.
 
 ---
 
-## SLIDE 6 · Phía tài xế thì sao? — 1 phút 15
+## SLIDE 6 · Phía tài xế thì sao? — 1 phút 30
+
+> 🔎 **Đã kiểm nguồn 23/09/2026.** Ba sửa quan trọng: (1) Con số **giảm 68% là số giám sát của Ủy ban Giao thông Bắc Kinh**, không phải Didi tự công bố như bản cũ ghi [11]. (2) Hoa hồng từng cuốc thì Didi đã cho xem **từ 2022**; cái mới là **hoa hồng trung bình 7 ngày / tháng trước** và **mức trần có cam kết** [11]. (3) Ở Việt Nam app tài xế **cũng đã ghi phí từng cuốc** [11b] — phải nói thẳng điều này, vì trong phòng có người bên Vận hành. Nguồn cũ (acftu.people.com.cn) không mở được; đã thay bằng bài gốc trên 中工网.
 
 🖥️ **TRÊN SLIDE**
 - Tiêu đề: **Với khách rõ ràng vậy — còn với tài xế?**
+- Câu hỏi trước khi lật: *"Tài xế có biết **cả tháng** nền tảng lấy trung bình bao nhiêu phần trăm không?"* → lật: **Có.**
 - Ba ô:
-  1. **Hoá đơn minh bạch trong app tài xế** — mỗi cuốc hiện rõ thu nhập · thưởng · **tỷ lệ hoa hồng**; tra được hoa hồng bình quân 7 ngày và tháng trước
-  2. **Trần hoa hồng: 29% → 27%** *(Didi công bố 5/2026)*
-  3. **Khiếu nại liên quan hoa hồng giảm 68%** tại Bắc Kinh — ⚠️ *số do Didi tự công bố, không phải kiểm toán độc lập*
+  1. **Xem được hoa hồng trung bình** — trang thu nhập có mục hoa hồng trung bình 7 ngày và của tháng trước; từng cuốc thì đã hiện thu nhập, thưởng, tỷ lệ hoa hồng [11]
+  2. **Trần hoa hồng 27% mỗi cuốc** — hạ từ 29%; chạy từ 50 cuốc/tháng thì trung bình cả tháng ≤ 25%, phần vượt được hoàn lại [10][11]
+  3. **Khiếu nại về hoa hồng ở Bắc Kinh giảm 68%** — tính đến đầu 01/2026, trên 154.000 tài xế · *số giám sát của Ủy ban Giao thông Bắc Kinh* [11]
+- Dải ghi nhận: *Ở Việt Nam, app tài xế cũng đã ghi phí từng cuốc. Cái khác là con số trung bình cả tháng và một mức trần có cam kết.* [11b]
 - Ô chốt: **Tài xế tự xem được số thì bớt gọi lên hỏi — minh bạch cũng là cách giảm việc cho vận hành**
-
-🖼️ **HÌNH / VIDEO**
-- ❌ **Không có ảnh thật** — mình là khách, không phải tài xế. **Không được lấy ảnh trên mạng rồi để như ảnh mình chụp.**
-- 🔍 **Nên tìm (1 ảnh):** ảnh chụp màn hình tính năng hoá đơn minh bạch trong app tài xế Didi.
-  - Từ khoá: **`滴滴司机端 透明账单 截图`** hoặc **`滴滴 司机 抽成 明细 界面`**
-  - Bài của IT之家 [10] và bài Báo Công đoàn [11] đều có ảnh minh hoạ — lấy từ đó, **ghi rõ nguồn dưới ảnh**.
-- ✅ **Phương án thay thế (khuyến nghị nếu không tìm được ảnh rõ):** tự vẽ một hoá đơn cách điệu tách 3 dòng — **Cước khách trả · Tài xế nhận · Nền tảng giữ (27%)**. Đồ hoạ tự vẽ vừa sạch, vừa không phải lo bản quyền, vừa đúng tinh thần "đây là thứ tụi em đọc được chứ không chụp được".
+- Bên phải: hoá đơn tự vẽ 100% / ≥ 73% / ≤ 27%, ghi rõ là hình tự vẽ theo mức trần
 
 🎙️ **LỜI NÓI**
 
 > *"Cái thứ hai em đi tra, xuất phát từ một chuyện hơi lạ.*
 >
-> ***Phía khách thì Didi minh bạch kinh khủng*** *— giá chốt trước khi bấm, xuống xe hoá đơn tách từng khoản. Như mấy cái màn hình Bình vừa chiếu.*
+> ***Phía khách thì Didi rõ ràng kinh khủng*** *— giá chốt trước khi bấm, xuống xe hoá đơn tách từng khoản. Như mấy cái màn hình Bình vừa chiếu.*
 >
-> *Em mới nghĩ: **phía khách rõ vậy, thế còn phía tài xế thì sao? Tài xế có biết nền tảng lấy bao nhiêu phần trăm trên cuốc của họ không?***
+> *Em mới nghĩ: **phía tài xế thì sao?** Nói cho công bằng — **ở mình, app tài xế cũng đã ghi phí từng cuốc rồi.** [11b] Nên em hỏi câu khó hơn: **tài xế có biết cả tháng, nền tảng lấy trung bình bao nhiêu phần trăm không?***
 >
-> *(bấm) **Có.** Trong app tài xế của họ có tính năng gọi là «hoá đơn minh bạch»: mỗi cuốc hiện rõ thu nhập bao nhiêu, thưởng bao nhiêu, nền tảng lấy bao nhiêu phần trăm. Tài xế còn tra được **hoa hồng bình quân 7 ngày gần nhất** và **của tháng trước**. [11]*
+> *(bấm) **Có.** Trang thu nhập trong app tài xế Didi có mục **hoa hồng trung bình 7 ngày gần nhất** và **của tháng trước** — tài xế khỏi phải tự cộng từng cuốc. [11]*
 >
-> *Tháng 5 vừa rồi họ công bố **hạ trần hoa hồng từ 29% xuống 27%**. [10] Và con số họ đưa ra là: khiếu nại liên quan tới hoa hồng ở Bắc Kinh **giảm 68%**. [11]*
+> *Rồi họ có thêm **một mức trần**: tối đa **27% mỗi cuốc**, hạ từ 29%. Ai chạy từ 50 cuốc một tháng thì trung bình cả tháng không quá 25% — lấy quá thì hoàn lại. [10][11] Mức trần này không phải Didi tự nghĩ ra: nó nằm trong một thoả thuận ký cuối năm 2025 do Tổng Công đoàn Trung Quốc đứng ra thương lượng. [11]*
 >
-> ***Em nói rõ luôn: con số 68% là Didi tự công bố, không phải số kiểm toán độc lập. Em không dám khẳng định nó chính xác.*** *Nhưng cái hướng thì đáng chú ý — và nó không phải chuyện đạo đức.*
+> *Kết quả: **Ủy ban Giao thông Bắc Kinh** theo dõi và thấy khiếu nại liên quan tới hoa hồng **giảm 68%**, trên hơn 150.000 tài xế. [11]*
 >
-> ***Minh bạch ở đây họ dùng như một cách giảm việc cho chính họ.*** *Tài xế nhìn đủ số trên app thì bớt gọi lên hỏi. Mà bớt người gọi lên hỏi thì bớt người phải ngồi trả lời."*
+> ***Tức là: ghi phí từng cuốc thì mình cũng có. Cái làm khiếu nại giảm là cho tài xế thấy con số cả tháng, và cam kết một mức trần.***
+>
+> *Mà bớt người gọi lên hỏi thì bớt người phải ngồi trả lời — **minh bạch ở đây cũng là cách giảm việc cho vận hành.**"*
 
 🎬 **GHI CHÚ SÂN KHẤU**
-- Câu **"em nói rõ luôn, con số này họ tự công bố"** là câu giữ uy tín cho cả bài — **không được bỏ**.
-- Đây là slide **rút gọn nhiều nhất** so với bản trước: đã bỏ câu hỏi giơ tay và bỏ câu hỏi dành riêng cho CS/Vận hành *(đã chuyển xuống Q&A)*.
-- Nếu cháy giờ, đây là slide cắt được: bỏ đoạn 29→27%, giữ ý chính.
+- Câu **"ở mình app tài xế cũng đã ghi phí từng cuốc rồi"** là câu giữ uy tín — **không được bỏ**. Kể như thể Việt Nam chưa làm thì người bên Vận hành sẽ phản biện ngay.
+- **Đừng nói "68% là số Didi tự công bố"** — bản cũ ghi sai; đây là số của Ủy ban Giao thông Bắc Kinh. Nếu bị hỏi độ tin: nói rõ là số giám sát của cơ quan quản lý, đăng trên báo Công nhân Trung Quốc; chưa có đánh giá độc lập.
+- Đừng khẳng định tài xế Didi thấy **khách trả bao nhiêu** — không nguồn nào xác nhận.
+- Nếu cháy giờ: bỏ câu về Tổng Công đoàn.
 
 ---
 
 ## SLIDE 7 · 1.430 gram carbon — trả nợ câu hỏi treo — 2 phút 15
 
+> 🔎 **Đã kiểm nguồn 23/09/2026.** Ba sửa quan trọng: (1) 碳普惠 **không phải một văn bản cấp quốc gia** — là cơ chế từng tỉnh, thành tự ban hành; hạn 2 năm là quy định của **Thượng Hải** [13]. (2) Câu *"giao thông là nguồn phát thải lớn nhất Thẩm Quyến"* **không tìm được nguồn** — đã bỏ. (3) Câu *"doanh nghiệp phải tính cả phần thuê ngoài"* **sai với quy định hiện hành**: kiểm kê cấp cơ sở bắt buộc phát thải trực tiếp và điện năng; vận chuyển thuê ngoài **chưa bắt buộc** [14b].
+
 🖥️ **TRÊN SLIDE**
 - Tiêu đề: **1.430 gram carbon — là gì vậy?**
-- Trái: ảnh hoá đơn, **khoanh tròn đúng dòng 1.430g**
-- Phải, ba ý:
-  - **碳普惠 — "phổ cập carbon"**: cơ chế cấp quốc gia. Hành vi ít phát thải → **điểm carbon** → đổi được ưu đãi thật · hạn dùng 2 năm
-  - Didi có sản phẩm carbon riêng, đã chạy ở **298 thành phố**
-  - Thẩm Quyến có nền tảng riêng — vì **giao thông là nguồn phát thải lớn nhất thành phố**
+- Trái: ảnh hoá đơn, khoanh dòng 本单获得1430g碳元气 · chú thích: *lượng CO₂ Didi ước tính chuyến đi giảm được*
+- Giữa, ba ý:
+  - **碳普惠 — "phổ cập carbon"**: nhiều tỉnh, thành Trung Quốc đang chạy — đi lại ít phát thải thì được cộng điểm, đổi được ưu đãi thật; ở Thượng Hải điểm có hạn 2 năm [13]
+  - **Didi có hẳn sản phẩm riêng: 碳元气** — đang chạy ở **298 thành phố**; 1.430g là lượng CO₂ ước tính giảm được, không phải lượng thải ra [12]
+  - **Thẩm Quyến có nền tảng riêng: 低碳星球** — ra mắt 12/2021 cùng Tencent; đi xe buýt điện, tàu điện ngầm là được cộng điểm [13b]
 - Dải ngang: **Đi lại ít phát thải → đo được ngay → thưởng ngay trong app**
-- Khối riêng, màu nhấn — **Còn ở Việt Nam** · 🔒 **ẩn lúc đầu**, chỗ đó chỉ hiện ô *"Chuyện này ở Việt Nam còn xa không?"*. Bấm → mới hiện:
-  - **Quyết định 42/2026/QĐ-TTg** — ban hành 10/8/2026, **có hiệu lực từ 25/9/2026**
-  - **2.441 cơ sở** phải kiểm kê khí nhà kính *(nhiều hơn danh mục 2024 là 275 cơ sở)*
-  - **Giao thông vận tải có tên trong danh mục**
-- Chân slide: *Nguồn: 21世纪经济报道 6/2026 · Quyết định 42/2026/QĐ-TTg*
-
-🖼️ **HÌNH / VIDEO**
-- ✅ **Đã có:** `04b_Man-hinh-Hoa-don-77.80CNY-1430g-carbon.jpg` — crop phần trên, khoanh dòng carbon.
-- 🔍 **Nên tìm (1–2 ảnh):**
-  1. Giao diện tích điểm carbon trong app Didi — từ khoá **`滴滴 碳元气 截图`** hoặc **`滴滴 碳积分 界面`**
-  2. Ảnh/logo nền tảng **低碳星球** của Thẩm Quyến — từ khoá **`深圳 低碳星球 小程序`**
-  3. Cho phần Việt Nam: ảnh chụp đầu trang **Quyết định 42/2026/QĐ-TTg** trên Cổng TTĐT Chính phủ (chinhphu.vn / vanban.chinhphu.vn) — một ảnh văn bản gốc nhìn rất "chắc", tăng độ tin cho phần này.
-- ❌ **Đừng dùng** ảnh stock kiểu "trái đất xanh, lá cây, tay cầm mầm non" — làm cả slide mất nghiêm túc ngay.
+- Khối **Còn ở Việt Nam** · 🔒 **ẩn lúc đầu** (ô *"Chuyện này ở Việt Nam còn xa không?"*), bấm → mới hiện:
+  - **Quyết định 42/2026/QĐ-TTg** [14] — ban hành 10/8/2026, có hiệu lực từ 25/9/2026
+  - **2.441 cơ sở** phải kiểm kê khí nhà kính, nhiều hơn danh mục 2024 là 275 [14b]
+  - **Giao thông vận tải có tên trong danh mục** [14b]
 
 🎙️ **LỜI NÓI**
 
 > *"Giờ em trả nợ cái câu Bình treo. Dòng **1.430 gram carbon**.*
 >
-> *Nó không phải app ghi cho vui. **Nó nằm trong cả một chính sách cấp quốc gia.***
+> *Nó không phải app ghi cho vui. Nó là **lượng CO₂ mà Didi ước tính chuyến đi đó giảm được**. [12]*
 >
-> *Bên Trung Quốc có cơ chế tên là **碳普惠** — đại ý là «phổ cập carbon». Nguyên tắc đơn giản: người dân làm hành vi ít phát thải thì được quy đổi thành **điểm carbon**. Điểm đó đổi được ưu đãi thật, hạn dùng 2 năm. [12][13]*
+> *Bên Trung Quốc có cơ chế tên là **碳普惠** — đại ý là «phổ cập carbon». Nhiều tỉnh, thành đang chạy: người dân đi lại ít phát thải thì được cộng **điểm carbon**, rồi đổi điểm lấy ưu đãi thật. Ví dụ ở Thượng Hải, điểm có hạn 2 năm. [13]*
 >
-> *Didi có hẳn sản phẩm carbon riêng, hiện chạy ở **298 thành phố**. [12] Riêng Thẩm Quyến có nền tảng riêng của thành phố — họ đẩy mạnh vì **giao thông là nguồn phát thải lớn nhất** của họ. [13]*
+> *Didi có hẳn sản phẩm riêng tên là **碳元气**, đang chạy ở **298 thành phố**. [12] Thẩm Quyến cũng có nền tảng riêng tên «低碳星球», làm cùng Tencent — đi xe buýt điện, tàu điện ngầm là được cộng điểm. [13b]*
 >
-> *Cái hay là **khách không cần hiểu gì về carbon hết.** Mình chỉ thấy đi chuyến này mình được thêm một thứ. Vòng lặp rất gọn: **đi lại ít phát thải, đo được ngay, thưởng ngay trong app.** Không báo cáo, không thủ tục.*
+> *Cái hay là **khách không cần hiểu gì về carbon hết.** Mình chỉ thấy đi chuyến này mình được thêm một thứ. Vòng lặp rất gọn: **đi lại ít phát thải, đo được ngay, thưởng ngay trong app.***
 >
 > *(chậm lại, đổi giọng) **Tới đây thì em nghĩ chuyện này ở Việt Nam còn xa. Nhưng em tra lại thì — (bấm lật) — không xa đâu.***
 >
-> ***Từ ngày 25 tháng 9 năm nay*** *— một quyết định mới của Thủ tướng đã có hiệu lực. Nó mở rộng danh sách cơ sở **bắt buộc phải kiểm kê khí nhà kính lên hơn 2.400 cơ sở**, tăng gần 300 so với trước. Và **giao thông vận tải nằm trong danh mục đó**. [14]*
+> ***Từ ngày 25 tháng 9 năm nay*** *— một quyết định mới của Thủ tướng có hiệu lực [14]. Danh sách cơ sở **bắt buộc phải kiểm kê khí nhà kính** lên **2.441 cơ sở**, nhiều hơn trước 275. Và **giao thông vận tải có tên trong danh mục**. [14b]*
 >
-> *Mà một doanh nghiệp đã phải kiểm kê thì họ không chỉ tính phần họ tự đốt xăng. **Họ phải tính cả phần thuê ngoài.** Vận chuyển thuê ngoài — là nằm ở chỗ mình.*
+> *Hiện luật mới bắt buộc tính phần họ tự thải ra và điện họ dùng. **Phần vận chuyển thuê ngoài — chỗ của mình — thì chưa bắt buộc.** [14b] Nhưng một khi doanh nghiệp đã phải ngồi đếm phần của mình, thì câu hỏi tiếp theo thường là phần đi thuê.*
 >
 > ***Em không có đề xuất gì chi tiết ở đây cả*** *— em chỉ nghĩ đây là thứ **thời gian tới mình nên nhìn tới**. Vì dữ liệu để tính ra con số đó thì mình đang có sẵn: quãng đường, loại xe, thời gian."*
 
 🎬 **GHI CHÚ SÂN KHẤU**
-- Đoạn *"em nghĩ chuyện này còn xa — nhưng không xa đâu"* là **chỗ lật của slide**. Chậm lại, đổi giọng, **bấm → đúng chữ "không xa đâu"** để khối Việt Nam hiện ra.
-- Ô *"Chuyện này ở Việt Nam còn xa không?"* là **câu hỏi tu từ** — không chờ phòng trả lời, không tính là điểm tương tác.
-- **Đừng bấm sớm.** Nói xong hết ba ý bên Trung Quốc và vòng "đo ngay, thưởng ngay" rồi mới lật.
-- Câu **"em không có đề xuất gì chi tiết"** phải nói, để không thành hứa thay bộ phận khác. Nói xong dừng, đừng sa đà vào cách làm.
+- **Bấm → đúng chữ "không xa đâu"** để khối Việt Nam hiện ra. Ô *"Chuyện này ở Việt Nam còn xa không?"* là câu hỏi tu từ, không chờ phòng trả lời. **Đừng bấm sớm.**
+- **Đừng nói** "cơ chế cấp quốc gia", "giao thông là nguồn phát thải lớn nhất Thẩm Quyến", hay "doanh nghiệp bắt buộc phải tính phần thuê ngoài" — cả ba đều không đúng với nguồn.
+- Câu **"em không có đề xuất gì chi tiết"** phải nói, để không thành hứa thay bộ phận khác.
 
 ---
 
 ## SLIDE 8 · Xe điện: cuộc chơi quyết ở thời gian nạp — 2 phút 15
 
+> 🔎 **Đã kiểm nguồn 23/09/2026.** Sửa quan trọng nhất cả bài: bản cũ nói *"xe hành nghề trên nền tảng ứng dụng không được hoạt động"* — **nói quá**. Nguyên văn Nghị quyết 57/2025/NQ-HĐND chỉ cấm **xe máy dùng nhiên liệu hoá thạch** kinh doanh qua app [18]. Theo Quyết định 3273 của UBND TP, từ 1/7/2026 mới áp dụng ở **hai khu vực thuộc phường Hoàn Kiếm**; nửa cuối 2026 chỉ **khuyến khích hạn chế**, **cấm hẳn từ 1/1/2027** [18b]. Các sửa khác: "đầu tiên trên thế giới" → nguồn chính thức chỉ nói **đi đầu**, và là **trạm siêu sạc** vượt trạm xăng [15]; "một giây một km" gắn với trụ **từ 480 kW**, không phải 600 kW [16]; số 21.689 taxi là **số năm 2019** [17].
+
 🖥️ **TRÊN SLIDE**
 - Tiêu đề: **Xe điện — cuộc chơi quyết ở thời gian nạp**
-- ❌ **Đã bỏ dải thị phần.** Số thị phần (Green SM 54,51% · Grab 40,92% · Be 4,57% Q1/2026 [3]; giao hàng 2 bánh 6/2026 ba bên chênh nhau chưa tới 1 điểm % [5]) chỉ dùng nếu bị hỏi.
-- **Khối 1 — Thẩm Quyến:**
-  - Hơn **1.000 trạm siêu sạc** · hơn **487.000 trụ sạc**
-  - **Thành phố đầu tiên trên thế giới có số trạm sạc vượt số trạm xăng**
-  - Trụ nhanh nhất **600 kW** — *"một giây một kilômét"*
-  - Trên nền đó: **~99% trong 21.689 taxi** của thành phố là xe điện
+- **Khối 1 — Thẩm Quyến:** **1.057** trạm siêu sạc (giữa 2025) · **487.000+** trụ sạc · trụ nhanh nhất **600 kW** [15] · **21.689** taxi đã chạy điện toàn bộ (2019) [17]
+  - *Đi đầu Trung Quốc: từ 03/2024, số trạm siêu sạc đã nhiều hơn số trạm xăng* [15]
   - 👉 **Làm hạ tầng trước, rồi mới cấm xe xăng**
-- **Khối 2 — Hà Nội, đã hiệu lực:**
+- **Khối 2 — Hà Nội, vùng phát thải thấp** (Nghị quyết 57/2025 [18]):
 
-| Mốc | Phạm vi vùng phát thải thấp |
+| Mốc | Phạm vi |
 |---|---|
-| **1/7/2026** *(đang áp dụng)* | **9 phường** vành đai 1: Hoàn Kiếm · Ba Đình · Cửa Nam · Hai Bà Trưng · Ô Chợ Dừa · Văn Miếu–Quốc Tử Giám · Giảng Võ · Ngọc Hà · Tây Hồ |
-| **1/1/2028** | Toàn vành đai 1 + một phần vành đai 2 |
-| **1/1/2030** | Vào vành đai 3 — tổng **36 phường/xã** |
+| **1/7/2026** *(thí điểm)* | 9 phường vành đai 1 · bước đầu ở Hoàn Kiếm [18][18b] |
+| **1/1/2028** | 14 phường: vành đai 1 và một phần vành đai 2 [18] |
+| **1/1/2030** | Tới vành đai 3 — 36 phường, xã [18] |
 
-  - Trong vùng: xe máy xăng bị hạn chế **theo giờ và theo khu vực**
-  - **Câu chốt, chữ to nhất trong khối:** *Trong vùng này, xe hành nghề qua nền tảng ứng dụng không được phép hoạt động*
-  - Tên 9 phường **không ghi trên slide** nữa (đã có sơ đồ vòng) — chỉ đọc vài tên trong lời nói
-- **Khối 3 — Đổi pin ở VN:** V-Green đã lắp **4.500 trạm**, mục tiêu **45.000 tủ** · VinFast **9.000đ/lần** *(miễn phí tối đa 20 lần/tháng tới giữa 2028)* · Selex **14.000đ/lần**, xe lắp 3 pin đi ~150km
-- Chân slide: *Nguồn: Cổng TTĐT TP Thẩm Quyến · Nhân Dân Nhật Báo · Nghị quyết vùng phát thải thấp Hà Nội · tổng hợp báo VN 2026*
+  - Xe máy xăng nói chung: cấm theo khung giờ [18]
+  - **Câu chốt:** *Xe máy xăng chạy dịch vụ qua app: cấm hẳn trong vùng từ 1/1/2027* · dòng nhỏ: *nửa cuối 2026 mới khuyến khích hạn chế · xe máy điện không thuộc lệnh cấm* [18][18b]
+- **Khối 3 — Đổi pin ở VN:** V-Green **~4.500 trạm**, mục tiêu 45.000 [19] · VinFast **9.000đ/lần**, miễn phí tới 30/6/2028: 20 lần/tháng, **tài xế Xanh SM không giới hạn** [19][19b] · Selex **14.000đ/lần**, xe lắp 3 pin chạy ~150km [20]
 
 🖼️ **HÌNH / VIDEO**
-- ✅ **Đã có:** `08_Duong-pho-Tham-Quyen-toan-xe-dien.jpg` — làm nền khối 1. Đây là ảnh thật của đoàn, rất hợp vì nó chứng minh đúng luận điểm bằng mắt thường.
-- ✅ **Đã có (phụ):** `08b_Noi-that-xe-dien-man-hinh-dieu-khien.jpg`
-- 🔍 **Nên tìm (2–3 ảnh, đây là slide thiếu ảnh nhiều nhất):**
-  1. **Trạm siêu sạc ở Thẩm Quyến** — từ khoá tiếng Trung **`深圳 超充站`**, hoặc tiếng Anh **`Shenzhen supercharging station Huawei liquid-cooled`**. Ảnh từ bài của Nhân Dân Nhật Báo [16] hoặc Cổng TTĐT TP Thẩm Quyến [15] là chuẩn nhất, có ghi nguồn được.
-  2. **Bản đồ 9 phường vùng phát thải thấp Hà Nội** — nhiều báo Việt Nam đã làm infographic. Từ khoá: **`bản đồ vùng phát thải thấp Hà Nội vành đai 1`** hoặc **`infographic 9 phường vùng phát thải thấp`**. Xem bài VnExpress [18] và VietnamNet. **Ảnh này quan trọng** — một tấm bản đồ làm cả phòng hiểu ngay phạm vi, hơn hẳn đọc tên 9 phường.
-  3. **Trạm đổi pin xe máy điện** — từ khoá **`trạm đổi pin V-Green`** hoặc **`trạm đổi pin Selex Motors shipper`**. Ưu tiên ảnh có shipper đang thao tác đổi pin, vì nó minh hoạ đúng ý "2 phút vs vài tiếng".
-- ⚠️ B-roll `AI_Gap_DatXe_CaoDiem/ThapDiem.mp4` **không hợp slide này** *(chúng minh hoạ giá động, không phải sạc điện)* — đừng dùng.
+- ✅ `08_Duong-pho-Tham-Quyen-toan-xe-dien.jpg` và `08b_Noi-that-xe-dien-man-hinh-dieu-khien.jpg` — ảnh của đoàn.
+- ✅ Sơ đồ vòng vành đai tự vẽ, ghi rõ "không theo tỉ lệ".
 
 🎙️ **LỜI NÓI**
 
@@ -394,30 +375,29 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 >
 > *Ở Thẩm Quyến, ra đường là thấy xe điện — như tấm ảnh này tụi em chụp. Lúc đầu tụi em nghĩ do nhà nước cấm xe xăng. Nhưng tra kỹ thì không hẳn.*
 >
-> *Thành phố đó có **hơn 1.000 trạm siêu sạc và hơn 487.000 trụ sạc**. Và đây mới là con số làm em dừng lại: **Thẩm Quyến là thành phố đầu tiên trên thế giới có số trạm sạc nhiều hơn số trạm xăng.** [15][16] Trụ nhanh nhất là 600 kW — họ quảng cáo là **«một giây một kilômét»**. [16]*
+> *Tới giữa năm ngoái, thành phố đó có **hơn 1.000 trạm siêu sạc và 487.000 trụ sạc**. Và cái làm em dừng lại: **từ đầu năm 2024, số trạm siêu sạc ở Thẩm Quyến đã nhiều hơn số trạm xăng.** Trụ nhanh nhất là 600 kW. [15] Loại từ 480 kW trở lên thì họ quảng cáo là **«một giây một kilômét»**. [16]*
 >
-> *Trên cái nền đó thì gần như **toàn bộ hơn 21.000 taxi** của thành phố mới chạy điện được. [17]*
+> *Trên cái nền đó, từ năm 2019 **toàn bộ gần 22.000 taxi** của thành phố đã chạy điện. [17]*
 >
 > ***Ý em là: chính sách chỉ ép người ta mua xe điện thôi. Còn một đội xe chạy dịch vụ chỉ thật sự vận hành được khi nạp điện nhanh gần bằng đổ xăng.*** *Họ làm hạ tầng trước rồi mới cấm, không phải ngược lại.*
 >
 > *(chuyển) **Giờ nói về mình.***
 >
-> *Cái này không còn là chuyện bên Trung Quốc nữa. **Từ mùng 1 tháng 7 năm nay, Hà Nội đã áp dụng vùng phát thải thấp** ở 9 phường trong vành đai 1 — Hoàn Kiếm, Ba Đình, Hai Bà Trưng, Tây Hồ, mấy phường trung tâm. [18]*
+> *Hà Nội đã có nghị quyết về **vùng phát thải thấp**. [18] Từ 1/7 năm nay bắt đầu thí điểm — bước đầu ở Hoàn Kiếm. [18b] Lộ trình: 2028 ra 14 phường, 2030 tới vành đai 3, 36 phường xã. [18]*
 >
-> *Trong vùng đó xe máy xăng bị hạn chế theo khung giờ và khu vực. Và có một dòng liên quan trực tiếp tới mình: **xe hành nghề trên nền tảng ứng dụng thì không được phép hoạt động.** [18]*
+> *Và có một dòng liên quan trực tiếp tới mình: **xe máy chạy xăng làm dịch vụ qua app sẽ bị cấm hẳn trong vùng, từ 1/1/2027.** Nửa cuối năm nay mới là khuyến khích hạn chế. Xe máy điện thì không bị cấm. [18][18b]*
 >
-> *Lộ trình còn tiếp: **2028** mở rộng ra cả vành đai 1 và một phần vành đai 2. **2030** vào tới vành đai 3, tổng 36 phường xã. [18]*
+> *Song song đó mạng đổi pin cũng khác trước nhiều rồi — V-Green đã có khoảng 4.500 trạm [19]. VinFast miễn phí đổi pin tới giữa 2028, và **tài xế Xanh SM thì đổi không giới hạn**. [19b] Selex làm riêng cho shipper, xe lắp 3 viên pin chạy khoảng 150 km. [20]*
 >
-> *Song song đó mạng đổi pin cũng khác trước nhiều rồi — V-Green lắp xong 4.500 trạm đầu tiên [19], Selex thì làm riêng cho nhóm shipper, xe lắp 3 viên pin đi được khoảng 150 km [20].*
->
-> ***Đổi pin mất khoảng 2 phút. Sạc mất vài tiếng.*** *Với một người chạy ăn theo đơn thì khác biệt đó không nằm ở tiền điện — nó nằm ở **số đơn chạy được trong một ca**.*
+> ***Đổi pin chỉ mất vài phút. Sạc đầy thì mất vài tiếng.*** *Với một người chạy ăn theo đơn thì khác biệt đó không nằm ở tiền điện — nó nằm ở **số đơn chạy được trong một ca**.*
 >
 > *Phần em tới đây thôi. Em gửi lại Bình."*
 
 🎬 **GHI CHÚ SÂN KHẤU**
-- **Không nói thị phần trên slide này.** Nếu bị hỏi, dùng số ở trên và mở đầu bằng *"phần này nhiều anh chị nắm rõ hơn em"*.
-- Câu *"xe hành nghề trên nền tảng ứng dụng không được phép hoạt động"* là câu nặng nhất slide — nói chậm, chỉ tay vào ô khoanh.
-- **Đã bỏ** hai câu hỏi dành riêng cho Vận hành so với bản trước — **chuyển xuống Q&A** để dùng khi phòng im.
+- **Nói đúng chữ "xe máy chạy xăng"** — đừng nói "xe chạy app bị cấm". Nói sai câu này là sai cả phạm vi áp dụng với Ahamove.
+- Câu *"tài xế Xanh SM đổi pin không giới hạn"* là chi tiết cạnh tranh — nói bình thản, không bình luận thêm.
+- Câu *"đổi pin vài phút, sạc vài tiếng"* là hiểu biết chung, không có nguồn riêng — nói như nhận xét, đừng đưa số cụ thể.
+- **Không nói thị phần trên slide này.** Nếu bị hỏi: Green SM 54,51% · Grab 40,92% · Be 4,57% (Q1/2026) [3]; giao hàng 2 bánh 6/2026 ba bên chênh nhau chưa tới 1 điểm % [5] — mở đầu bằng *"phần này nhiều anh chị nắm rõ hơn em"*.
 
 ---
 
@@ -511,15 +491,15 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 | 3 · Mười hạng xe | Bình | 2'00 |
 | 4 · App nói trước | Bình | 2'30 |
 | 5 · Đèn đỏ | Sâm | 2'15 |
-| 6 · Phía tài xế | Sâm | 1'15 |
+| 6 · Phía tài xế | Sâm | 1'30 |
 | 7 · Carbon | Sâm | 2'15 |
 | 8 · Xe điện | Sâm | 2'15 |
 | 9 · Robotaxi + chốt | Bình | 1'30 |
-| **Tổng nói** | | **15'45** |
-| **Q&A** | | **4'15** |
+| **Tổng nói** | | **16'00** |
+| **Q&A** | | **4'00** |
 | **TỔNG** | | **20'00** |
 
-**Chia việc:** Bình ~7'45 · Sâm ~8'00 — gần như cân nhau. *(Số ước tính, cần bấm giờ lại khi tập.)*
+**Chia việc:** Bình ~7'45 · Sâm ~8'15 — gần như cân nhau. *(Số ước tính, cần bấm giờ lại khi tập.)*
 
 **Nếu đang chạy trễ, cắt theo thứ tự này:** ① đoạn Madrid/Zagreb ở slide 9 · ② đoạn 29→27% ở slide 6 · ③ đoạn đổi pin ở slide 8 · ④ mẹo tra địa chỉ ở slide 3.
 **Giữ bằng mọi giá:** slide 3 (ảnh 10 hạng xe) · slide 4 (hai màn hình) · slide 5 (dữ liệu sẵn có) · khối Hà Nội ở slide 8 · câu chốt slide 9.
@@ -551,16 +531,19 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 | 8 | Cập nhật thị phần sang số Q1/2026 | 8 |
 | 9 | Sửa "cả hai qua Uber" → Madrid = Uber, Zagreb = Verne; mốc Didi R2 = 31/8/2026 | 9 |
 | 10 | **Thống nhất "5 ngày · 24–28/08"** — bìa deck đang ghi "4 ngày · 24–27.08" | bìa |
-| 11 | **Ẩn sau nút bấm:** "Mười" (hạng xe) · "không đấu nối" · "Có" (hoá đơn tài xế) · khối "Còn ở Việt Nam" | 3, 5, 6, 7 |
+| 11 | **Ẩn sau nút bấm:** "Mười" (hạng xe) · "phần lớn là không" · "Có" (hoá đơn tài xế) · khối "Còn ở Việt Nam" | 3, 5, 6, 7 |
 | 12 | Ghi nguồn chữ nhỏ ở chân **mỗi** slide có số liệu | 2,3,5,6,7,8,9 |
 
 ## Chuẩn bị cho câu hỏi khó
 
 | Nếu bị hỏi | Trả lời |
 |---|---|
-| "Thị phần thì bọn anh biết rồi, có gì mới không?" | Chuyển ngay sang vùng phát thải thấp Hà Nội — 9 phường đã hiệu lực từ 1/7/2026, xe nền tảng ứng dụng chạy xăng không được hoạt động trong vùng. |
-| "Vùng phát thải thấp cấm theo khung giờ nào?" | Nghị quyết ghi "theo khung giờ hoặc khu vực", **chưa công bố khung giờ chi tiết**. Không suy đoán. |
-| "Số 68% giảm khiếu nại có đáng tin?" | Didi tự công bố qua kênh công đoàn, không phải số kiểm toán. Nói đúng như vậy. |
+| "Thị phần thì bọn anh biết rồi, có gì mới không?" | Chuyển sang vùng phát thải thấp Hà Nội: xe máy xăng chạy app bị cấm hẳn trong vùng từ 1/1/2027 (Nghị quyết 57/2025, Quyết định 3273). |
+| "Vùng phát thải thấp cấm theo khung giờ nào?" | Với xe máy xăng nói chung, nghị quyết ghi "theo khung giờ/thời điểm quy định". Khung giờ cụ thể theo quyết định của UBND TP — **không suy đoán**. |
+| "Xe máy điện / ô tô chạy app có bị cấm không?" | Lệnh cấm trong nghị quyết là cho **xe máy dùng nhiên liệu hoá thạch** chạy app. Xe máy điện không thuộc lệnh cấm này. Ô tô: chưa đọc kỹ, không trả lời chắc. |
+| "Ở Việt Nam cũng minh bạch phí mà?" | Đúng — app tài xế ở mình cũng ghi phí từng cuốc. Khác biệt ở Didi là **hoa hồng trung bình cả tháng** hiện sẵn trong app, và **mức trần có cam kết** (27%/cuốc, ≤ 25% trung bình tháng nếu chạy từ 50 cuốc). |
+| "Số 68% giảm khiếu nại có đáng tin?" | Là số giám sát của **Ủy ban Giao thông Bắc Kinh**, đăng trên báo Công nhân Trung Quốc. Chưa có đánh giá độc lập. |
+| "Doanh nghiệp có bắt buộc tính phát thải của vận chuyển thuê ngoài không?" | **Chưa.** Kiểm kê cấp cơ sở hiện bắt buộc phát thải trực tiếp và điện năng; phần thuê ngoài chưa bắt buộc. |
 | "Vậy cụ thể mình làm gì với chuyện carbon?" | "Em mới dừng ở mức nêu hướng, chưa bàn với ai và chưa có kế hoạch. Bước đầu chắc chỉ là xem mình đã có sẵn dữ liệu gì." |
 | "Didi tính cước thế nào?" | Theo tài liệu Trung Quốc: hạng Standard 快车 mở cửa ~11–12 tệ, ~1,9–2,6 tệ/km, ~0,38–0,40 tệ/phút; hạng Comfort 优享 mở cửa ~13,5–15 tệ, ~2,3–3,0 tệ/km. Giá khác nhau theo thành phố. [6][7] |
 | "Didi có vào Việt Nam không?" | Chưa. Họ đang dồn lực cho Brazil và Mexico. |
@@ -587,34 +570,37 @@ Tôi đã gom sẵn toàn bộ ảnh đang có vào một thư mục để anh �
 - **[7]** [Phân loại các hạng xe của Didi — 网约车指南](https://www.eycen.com/post/55.html) · [优享 vs 专车 — 太平洋汽车](https://www.pcauto.com.cn/jxwd/1860/18609643.html)
 
 **Đèn đỏ đếm ngược (Amap)**
-- **[8]** [Amap công bố chính thức tính năng đếm ngược đèn đỏ, phủ hơn 80.000 nút giao — Tân Hoa Xã](http://www.news.cn/tech/20220815/fb3ad5003d834046b7c4d0d2e1f7c2a3/c.html)
-- **[9]** [Cơ chế thật: suy ra chu kỳ đèn từ dữ liệu quỹ đạo xe, không đấu nối hệ thống đèn — 泰伯网](https://www.taibo.cn/p/90332)
+- **[8]** [Amap ra mắt đếm ngược đèn giao thông, hỗ trợ hơn 80.000 nút giao; nhắc khi đèn đỏ còn ~5 giây; hiện số nhịp đèn phải chờ — Tân Hoa Xã, 15/08/2022](https://www.news.cn/tech/20220815/fb3ad5003d834046b7c4d0d2e1f7c2a3/c.html)
+- **[8b]** [Đếm ngược đèn của Amap đã phủ gần 500.000 nút giao, chuẩn bị ra nước ngoài — IT之家, 20/05/2026](https://www.ithome.com/0/952/703.htm)
+- **[9]** [Cơ chế: suy chu kỳ đèn từ quỹ đạo xe (dẫn bằng sáng chế của Amap); một số địa phương có chia sẻ thêm dữ liệu đèn — 泰伯网, 08/03/2023](https://www.taibo.cn/p/90332)
 
-**Hoa hồng & hoá đơn minh bạch cho tài xế**
-- **[10]** [Didi hạ trần hoa hồng 29% → 27%, công khai giá toàn trình — IT之家, 5/2026](https://www.ithome.com/0/947/975.htm)
-- **[11]** [Hoá đơn minh bạch trong app tài xế; khiếu nại về hoa hồng tại Bắc Kinh giảm 68% — Báo Công đoàn Trung Quốc / Nhân Dân, 6/2026](http://acftu.people.com.cn/n1/2026/0601/c67502-40731411.html)
+**Hoa hồng & minh bạch cho tài xế**
+- **[10]** [Didi hạ trần hoa hồng mỗi đơn 29% → 27%; từ 50 đơn/tháng thì trung bình tháng ≤ 25% — IT之家, 08/05/2026](https://www.ithome.com/0/947/975.htm)
+- **[11]** [Thương lượng thuật toán: hoa hồng của tài xế có "sổ rõ ràng" — trung bình 7 ngày / tháng trước; thoả thuận ký cuối 2025; Ủy ban Giao thông Bắc Kinh: khiếu nại về hoa hồng giảm 68% — 中工网, 31/05/2026](https://www.workercn.cn/c/2026-05-31/8813487.shtml)
+- **[11b]** [Grab và "khoảng trống" minh bạch trong bài toán giá cước — Thương Gia, 15/09/2026](https://thuonggiaonline.vn/grab-va-khoang-trong-minh-bach-trong-bai-toan-gia-cuoc-post572857.html) · bổ sung: [Vietstock, 09/2026](https://vietstock.vn/2026/09/grab-va-cau-chuyen-ve-quyen-luc-dinh-gia-cua-nen-tang-so-768-1491668.htm)
 
 **Cơ chế carbon**
-- **[12]** [Nền tảng lượng hoá hành vi xanh; sản phẩm carbon của Didi phủ 298 thành phố — 21世纪经济报道, 6/2026](https://m.21jingji.com/article/20260618/herald/267c9983aa2ee5d8b4ee9a785089a8f9.html)
-- **[13]** [Hệ thống 碳普惠 của Thẩm Quyến — 碳中和网](https://www.ccn.ac.cn/carbon-market/carbon-inclusion/1807.html)
+- **[12]** [Didi tự phát triển sản phẩm 碳普惠 "碳元气", đã triển khai ở 298 thành phố — 21世纪经济报道, 18/06/2026](https://m.21jingji.com/article/20260618/herald/267c9983aa2ee5d8b4ee9a785089a8f9.html)
+- **[13]** [Hỏi đáp điểm carbon 碳普惠 Thượng Hải: điểm có hạn 2 năm — Sở Sinh thái Môi trường Thượng Hải, 30/10/2024](https://sthj.sh.gov.cn/hbzhywpt1098/ydqhbh/tph/20241030/a0fd51d73510459e8211da564ce271f5.html)
+- **[13b]** [Ra mắt nền tảng 碳普惠 đầu tiên của Thẩm Quyến "低碳星球" — Cổng TTĐT TP Thẩm Quyến, 12/2021](https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_9462083.html)
 
 **Kiểm kê khí nhà kính Việt Nam**
-- **[14]** [Quyết định 42/2026/QĐ-TTg ban hành 10/8/2026, hiệu lực 25/9/2026; 2.441 cơ sở phải kiểm kê, tăng 275; có lĩnh vực giao thông vận tải — VnEconomy](https://vneconomy.vn/nam-2026-them-hang-tram-co-so-phat-thai-khi-nha-kinh-phai-thuc-hien-kiem-ke.htm)
-- Bổ sung: [Kiểm kê khí nhà kính thành yêu cầu bắt buộc — VTV](https://vtv.vn/kiem-ke-khi-nha-kinh-thanh-yeu-cau-bat-buoc-doanh-nghiep-can-ra-soat-gi-100260627085945544.htm) · [Danh mục lĩnh vực & cơ sở — Cục Biến đổi khí hậu](http://www.dcc.gov.vn/tin-tuc/4033/Ban-hanh-danh-muc-linh-vuc,-co-so-phat-thai-khi-nha-kinh-phai-thuc-hien-kiem-ke-khi-nha-kinh.html)
+- **[14]** [Quyết định 42/2026/QĐ-TTg — văn bản gốc, Cổng TTĐT Chính phủ, ban hành 10/08/2026, hiệu lực 25/09/2026](https://chinhphu.vn/?docid=219154&pageid=27160)
+- **[14b]** [2.441 cơ sở phải kiểm kê, tăng 275; có lĩnh vực giao thông vận tải — VnEconomy, 12/08/2026](https://vneconomy.vn/nam-2026-them-hang-tram-co-so-phat-thai-khi-nha-kinh-phai-thuc-hien-kiem-ke.htm) · phạm vi kiểm kê bắt buộc (phạm vi 1, 2; phạm vi 3 chỉ khuyến khích): [Enviliance](https://enviliance.com/regions/southeast-asia/vn/report_10999)
 
 **Hạ tầng sạc & điện khí hoá Thẩm Quyến**
-- **[15]** [1.057 trạm siêu sạc, hơn 487.000 trụ sạc; đầu tiên thế giới vượt trạm xăng — Cổng thông tin Chính quyền TP Thẩm Quyến](https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_12322460.html)
-- **[16]** [Trạm siêu sạc nhiều hơn trạm xăng; trụ Huawei 600kW "một giây một km" — Nhân Dân Nhật Báo](https://www.peopleapp.com/column/30047064794-500005852700)
-- **[17]** [~99% trong 21.689 taxi của Thẩm Quyến là xe điện — Shenzhen Bus Group](https://en.szbus.com.cn/about_us_1/5.html)
-- Bổ sung: [1,162 triệu xe năng lượng mới; 100 xe bán ra thì 75 là xe năng lượng mới — Sở Phát triển & Cải cách TP Thẩm Quyến](https://fgw.sz.gov.cn/ztzl/qtztzl/cczc/jscx/content/post_11740321.html)
+- **[15]** [1.057 trạm siêu sạc, hơn 487.000 trụ sạc (hết nửa đầu 2025); từ cuối 03/2024 số trạm siêu sạc vượt số trạm xăng; trụ 600 kW — Cổng TTĐT TP Thẩm Quyến, 11/08/2025](https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_12322460.html)
+- **[16]** ["Một giây một km" với trụ siêu sạc từ 480 kW — Nhân Dân Nhật Báo, 22/10/2024](https://www.peopleapp.com/column/30047064794-500005852700)
+- **[17]** [21.689 taxi, đã điện hoá hoàn toàn — 深圳新闻网, 19/09/2019](https://www.sznews.com/news/content/2019-09/19/content_22480112.htm)
 
 **Vùng phát thải thấp Hà Nội**
-- **[18]** [9 phường từ 1/7/2026; lộ trình 2028 và 2030; xe hành nghề trên nền tảng ứng dụng không được hoạt động — VnExpress](https://vnexpress.net/ha-noi-cam-xe-may-xang-trong-vanh-dai-1-theo-khung-gio-tu-1-7-2026-4986524.html)
-- Bổ sung: [HĐND TP Hà Nội thông qua 100% — VietnamNet](https://vietnamnet.vn/tu-1-7-2026-ha-noi-cam-xe-may-xang-tai-mot-so-khu-vuc-vanh-dai-1-theo-khung-gio-2466925.html) · [Chưa cấm toàn bộ xe máy xăng — Tuổi Trẻ](https://tuoitre.vn/ha-noi-chua-cam-toan-bo-xe-may-xang-di-vao-vanh-dai-1-tu-1-7-2026-2026040707583458.htm)
+- **[18]** [Nghị quyết 57/2025/NQ-HĐND: xe máy dùng nhiên liệu hoá thạch kinh doanh qua app "cấm lưu thông trong vùng phát thải thấp"; lộ trình 2026/2028/2030 — hhtp.gov.vn](https://www.hhtp.gov.vn/vi/tin-tuc/quy-dinh-thuc-hien-vung-phat-thai-thap-tren-dia-ban-thanh-pho-ha-noi-2684.html)
+- **[18b]** [Quyết định 3273: từ 1/7/2026 áp dụng khu vực 1, 2 phường Hoàn Kiếm; xe máy xăng chạy app khuyến khích hạn chế, cấm từ 1/1/2027 — Tuổi Trẻ, 30/06/2026](https://tuoitre.vn/ha-noi-cong-bo-de-an-vung-phat-thai-thap-ap-dung-tu-ngay-1-7-100260630153418275.htm)
 
 **Hạ tầng đổi pin Việt Nam**
-- **[19]** [V-Green 4.500 trạm đã lắp, mục tiêu 45.000 tủ; VinFast 9.000đ/lần, miễn phí tối đa 20 lần/tháng tới giữa 2028; Honda mở trạm tại HEAD từ 4/2026 — Kinh tế Chứng khoán](https://kinhtechungkhoan.vn/loat-xe-dien-doi-pin-bung-no-thi-truong-2026-vinfast-phu-tram-day-honda-tao-soc-voi-pin-0-dong-1424386.html)
-- **[20]** [Selex Camel nhắm nhóm shipper, lắp 3 pin đi ~150km, phí đổi 14.000đ/lần — Người Đưa Tin](https://www.nguoiduatin.vn/danh-sach-xe-may-dien-doi-pin-tai-thi-truong-viet-nam-204260807045002722.htm)
+- **[19]** [V-Green ~4.500 trạm, mục tiêu 45.000; ~9.000đ/pin/lần — Kinh tế Chứng khoán, 22/01/2026](https://kinhtechungkhoan.vn/loat-xe-dien-doi-pin-bung-no-thi-truong-2026-vinfast-phu-tram-day-honda-tao-soc-voi-pin-0-dong-1424386.html)
+- **[19b]** [VinFast miễn phí đổi pin tới 30/06/2028: 20 lần/tháng; tài xế Xanh SM không giới hạn — Tuổi Trẻ, 09/02/2026](https://tuoitre.vn/vinfast-mien-phi-sac-pin-o-to-den-dau-nam-2029-xe-may-dien-mien-phi-doi-pin-den-giua-nam-2028-20260209080709921.htm)
+- **[20]** [Selex lắp 3 pin đi ~150km, phí đổi 14.000đ/lần — Người Đưa Tin, 08/2026](https://www.nguoiduatin.vn/danh-sach-xe-may-dien-doi-pin-tai-thi-truong-viet-nam-204260807045002722.htm)
 
 **Robotaxi**
 - **[21]** [Pony.ai được cấp giấy phép robotaxi không người lái thương mại toàn thành phố Thẩm Quyến, 31/10/2025; triển khai đầu ở Nanshan, Tiền Hải, Bảo An — PR Newswire](https://www.prnewswire.com/news-releases/ponyai-granted-shenzhens-first-citywide-permit-for-fully-driverless-commercial-robotaxi-operations-302600723.html)

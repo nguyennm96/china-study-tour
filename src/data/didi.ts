@@ -129,7 +129,7 @@ export const didiTraffic = {
     crop: { x: 0.41, y: 0.36, w: 0.59, h: 0.122 },
     caption: 'Ảnh của đoàn: bản đồ đếm ngược đèn đỏ còn 51 giây ngay cạnh xe tài xế, kèm dòng “Waiting for a traffic light”',
   },
-  no: { label: 'Phần lớn không phải', body: 'Kết nối với đèn tín hiệu của sở giao thông — chỉ một số thành phố có chia sẻ thêm dữ liệu đèn', cite: ['amap-light-taibo'] as Cite },
+  no: { label: 'Phần lớn không phải', body: 'Kết nối với đèn tín hiệu của sở giao thông', note: 'Chỉ một số thành phố có chia sẻ thêm dữ liệu đèn', cite: ['amap-light-taibo'] as Cite },
   yes: { label: 'Mà chủ yếu là', body: 'Nhìn vệt GPS của chính các xe đang chạy app: ở mỗi nút giao, xe dừng rồi đi theo một nhịp đều → từ đó suy ra chu kỳ đèn', cite: ['amap-light-taibo'] as Cite },
   steps: ['Nhiều xe cùng dừng ở nút giao', 'Hệ thống thấy nhịp lặp lại', 'Suy ra chu kỳ đèn'],
   stats: [

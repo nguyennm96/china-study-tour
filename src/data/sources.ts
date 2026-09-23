@@ -188,7 +188,7 @@ export const sources: Source[] = [
   },
   {
     id: 'sz-lowcarbon-planet-gov', publisher: 'Cổng TTĐT Chính quyền TP Thẩm Quyến', title: 'Ra mắt nền tảng 碳普惠 đầu tiên của Thẩm Quyến “低碳星球”', date: '12/2021', tier: 'primary',
-    url: 'http://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_9462083.html',
+    url: 'https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_9462083.html',
     scope: '[13b] Ra mắt 17/12/2021, hợp tác với Tencent; đi xe buýt điện, tàu điện ngầm được cộng điểm carbon. Không nêu giao thông là nguồn phát thải lớn nhất thành phố.',
   },
   {

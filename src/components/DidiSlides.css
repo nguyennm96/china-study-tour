@@ -149,6 +149,7 @@
 .didi-verdict p { margin: 0; font-size: 15px; line-height: 1.45; }
 .didi-verdict .is-no { color: #7b3a2e; background: #fbe9e5; }
 .didi-verdict .is-no p { text-decoration: line-through; text-decoration-color: #7b3a2e80; }
+.didi-verdict .is-no small { display: block; margin-top: 6px; font-size: 13.5px; line-height: 1.35; }
 .didi-verdict .is-yes { color: #0c5a3f; background: #e3f3ec; }
 .didi-verdict .is-yes p { color: var(--paper); font-weight: 500; }
 .didi-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; min-height: 0; }
