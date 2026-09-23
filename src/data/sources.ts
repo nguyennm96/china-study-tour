@@ -123,7 +123,108 @@ export const sources: Source[] = [
     id: 'didi-sam-deck', publisher: 'Nguyễn Trương Tấn Sâm · Ahamove',
     title: 'Trải nghiệm Didi ở Thẩm Quyến — bài chia sẻ study tour', date: '22/09/2026', tier: 'trip',
     url: 'https://drive.google.com/file/d/1dGdoSl5wS7ePTU9mV1scqe05KXf6nah6/view',
-    scope: 'Ghi nhận trực tiếp 11 chuyến Didi của đoàn: ảnh màn hình app, ảnh đường phố và quan sát cá nhân. Các con số thị trường (quy mô Didi, thị phần taxi công nghệ Việt Nam, số chuyến robotaxi) là số Sâm dẫn lại trong bài, chưa đối chiếu báo cáo gốc.',
+    scope: 'Ghi nhận trực tiếp 11 chuyến Didi của đoàn: ảnh màn hình app, ảnh đường phố và quan sát cá nhân. Số thị trường của bài v5 có nguồn riêng ở các mục didi-* bên dưới; ảnh màn hình là bằng chứng một lần, không phải phép đo lặp lại.',
+  },
+  // Nguồn của script "Một cuốc xe Didi ở Thẩm Quyến" v5 (docs/didi-script-v5-present.md), số [n] trong ngoặc là số trong script.
+  {
+    id: 'didi-q2-2026', publisher: 'BigGo Finance', title: 'Didi quý II/2026: hơn 55 triệu đơn/ngày, 5,052 tỷ đơn, GTV lõi 133,9 tỷ NDT', date: '08/2026', tier: 'secondary',
+    url: 'https://finance.biggo.com/news/806884eb-f12d-4346-8047-e6d1d30713a5',
+    scope: '[1] Dẫn lại báo cáo quý II/2026 Didi công bố 14/08/2026: số đơn/ngày, tổng đơn quý (+13,2%) và giá trị giao dịch lõi (+22,2%). Số do Didi tự công bố.',
+  },
+  {
+    id: 'didi-h1-2026-caixin', publisher: 'Caixin Global', title: 'Didi swings to quarterly profit but overseas push weighs on first-half results', date: '14/08/2026', tier: 'secondary',
+    url: 'https://www.caixinglobal.com/2026-08-14/didi-swings-to-quarterly-profit-but-overseas-push-weighs-on-first-half-results-102474321.html',
+    scope: '[2] Didi lãi quý II nhưng lỗ nửa đầu 2026; mảng quốc tế (Brazil, Mexico) kéo lợi nhuận xuống.',
+  },
+  {
+    id: 'vn-ridehail-q1-2026', publisher: 'VnEconomy · dẫn Mordor Intelligence', title: 'Thị trường taxi Việt quý I/2026: xe xanh áp đảo, tái cấu trúc thị phần', date: '2026', tier: 'secondary',
+    url: 'https://vneconomy.vn/automotive/thi-truong-taxi-viet-quy-i2026-xe-xanh-ap-dao-tai-cau-truc-thi-phan.htm',
+    scope: '[3] Thị phần taxi công nghệ Q1/2026 (Green SM 54,51% · Grab 40,92% · Be 4,57%) và 153,26 triệu chuyến. Là ước tính của hãng nghiên cứu, không phải số các hãng gọi xe công bố.',
+  },
+  {
+    id: 'vn-delivery-2w-062026', publisher: 'CafeBiz', title: 'Green SM Express vượt Grab, Be về thị phần GMV giao hàng xe hai bánh', date: '07/2026', tier: 'secondary',
+    url: 'https://cafebiz.vn/green-sm-express-vuot-grab-be-ve-thi-phan-gmv-giao-hang-xe-hai-banh-176260724103344156.chn',
+    scope: '[5] Thị phần GMV giao hàng 2 bánh tháng 6/2026, ba bên chênh nhau chưa tới 1 điểm %. Chỉ dùng làm dải mốc, không phân tích thêm.',
+  },
+  {
+    id: 'amap-light-xinhua', publisher: 'Tân Hoa Xã', title: 'Amap chính thức ra mắt tính năng đếm ngược đèn giao thông', date: '15/08/2022', tier: 'secondary',
+    url: 'https://www.news.cn/tech/20220815/fb3ad5003d834046b7c4d0d2e1f7c2a3/c.html',
+    scope: '[8] Mốc công bố tính năng và độ phủ hơn 80.000 nút giao tại thời điểm công bố. Không phải số phủ hiện tại.',
+  },
+  {
+    id: 'amap-light-taibo', publisher: '泰伯网 (Taibo)', title: 'Cơ chế đếm ngược đèn của Amap: suy ra chu kỳ đèn từ quỹ đạo xe', date: '2022', tier: 'secondary',
+    url: 'https://www.taibo.cn/p/90332',
+    scope: '[9] Bài phân tích cơ chế: suy chu kỳ đèn từ dữ liệu quỹ đạo xe thay vì đấu nối hệ thống đèn tín hiệu. Là phân tích của bên thứ ba, Amap không công bố chi tiết thuật toán.',
+  },
+  {
+    id: 'didi-commission-ithome', publisher: 'IT之家', title: 'Didi hạ trần hoa hồng từ 29% xuống 27%, công khai giá toàn trình', date: '05/2026', tier: 'secondary',
+    url: 'https://www.ithome.com/0/947/975.htm',
+    scope: '[10] Mốc hạ trần hoa hồng do Didi công bố tháng 5/2026.',
+  },
+  {
+    id: 'didi-driver-bill-acftu', publisher: 'Báo Công đoàn Trung Quốc · Nhân Dân', title: 'Hoá đơn minh bạch trong app tài xế Didi; khiếu nại về hoa hồng tại Bắc Kinh giảm 68%', date: '01/06/2026', tier: 'secondary',
+    url: 'https://acftu.people.com.cn/n1/2026/0601/c67502-40731411.html',
+    scope: '[11] Mô tả tính năng hoá đơn minh bạch cho tài xế. Con số giảm 68% khiếu nại là Didi tự công bố, không phải số kiểm toán độc lập.',
+  },
+  {
+    id: 'didi-carbon-21jingji', publisher: '21世纪经济报道', title: 'Nền tảng lượng hoá hành vi xanh; sản phẩm carbon của Didi phủ 298 thành phố', date: '18/06/2026', tier: 'secondary',
+    url: 'https://m.21jingji.com/article/20260618/herald/267c9983aa2ee5d8b4ee9a785089a8f9.html',
+    scope: '[12] Cơ chế 碳普惠 và độ phủ 298 thành phố của sản phẩm carbon Didi, theo số liệu được dẫn trong bài.',
+  },
+  {
+    id: 'sz-carbon-inclusion-ccn', publisher: '碳中和网', title: 'Hệ thống 碳普惠 của Thẩm Quyến', date: '2026', tier: 'secondary',
+    url: 'https://www.ccn.ac.cn/carbon-market/carbon-inclusion/1807.html',
+    scope: '[13] Nền tảng carbon riêng của Thẩm Quyến, điểm carbon hạn dùng 2 năm, giao thông là nguồn phát thải lớn nhất thành phố.',
+  },
+  {
+    id: 'vn-qd42-2026', publisher: 'VnEconomy', title: 'Năm 2026 thêm hàng trăm cơ sở phát thải khí nhà kính phải thực hiện kiểm kê', date: '08/2026', tier: 'secondary',
+    url: 'https://vneconomy.vn/nam-2026-them-hang-tram-co-so-phat-thai-khi-nha-kinh-phai-thuc-hien-kiem-ke.htm',
+    scope: '[14] Quyết định 42/2026/QĐ-TTg ban hành 10/08/2026, hiệu lực 25/09/2026; 2.441 cơ sở phải kiểm kê, tăng 275; có lĩnh vực giao thông vận tải. Chưa đối chiếu nguyên văn trên vanban.chinhphu.vn.',
+  },
+  {
+    id: 'sz-charging-gov', publisher: 'Cổng TTĐT Chính quyền TP Thẩm Quyến', title: 'Thẩm Quyến có 1.057 trạm siêu sạc, hơn 487.000 trụ sạc', date: '2026', tier: 'primary',
+    url: 'https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_12322460.html',
+    scope: '[15] Số trạm siêu sạc, trụ sạc và mốc thành phố đầu tiên có trạm sạc vượt trạm xăng, do chính quyền thành phố công bố.',
+  },
+  {
+    id: 'sz-charging-people', publisher: 'Nhân Dân Nhật Báo', title: 'Trạm siêu sạc nhiều hơn trạm xăng; trụ 600 kW “một giây một kilômét”', date: '2026', tier: 'secondary',
+    url: 'https://www.peopleapp.com/column/30047064794-500005852700',
+    scope: '[16] Trụ sạc nhanh nhất 600 kW và khẩu hiệu “một giây một kilômét” là cách nói quảng bá, không phải thông số đo độc lập.',
+  },
+  {
+    id: 'sz-taxi-szbus', publisher: 'Shenzhen Bus Group', title: 'About us — đội taxi điện của Thẩm Quyến', date: '2026', tier: 'primary',
+    url: 'https://en.szbus.com.cn/about_us_1/5.html',
+    scope: '[17] Khoảng 99% trong 21.689 taxi của thành phố là xe điện, theo trang giới thiệu của doanh nghiệp vận tải thành phố.',
+  },
+  {
+    id: 'hn-lez-vnexpress', publisher: 'VnExpress', title: 'Hà Nội cấm xe máy xăng trong vành đai 1 theo khung giờ từ 1/7/2026', date: '2026', tier: 'secondary',
+    url: 'https://vnexpress.net/ha-noi-cam-xe-may-xang-trong-vanh-dai-1-theo-khung-gio-tu-1-7-2026-4986524.html',
+    scope: '[18] 9 phường áp dụng từ 01/07/2026, lộ trình 2028 và 2030, xe hành nghề trên nền tảng ứng dụng không được hoạt động trong vùng. Khung giờ chi tiết chưa được công bố.',
+  },
+  {
+    id: 'vgreen-swap-ktck', publisher: 'Kinh tế Chứng khoán', title: 'Loạt xe điện đổi pin bùng nổ thị trường 2026', date: '2026', tier: 'secondary',
+    url: 'https://kinhtechungkhoan.vn/loat-xe-dien-doi-pin-bung-no-thi-truong-2026-vinfast-phu-tram-day-honda-tao-soc-voi-pin-0-dong-1424386.html',
+    scope: '[19] V-Green 4.500 trạm đã lắp, mục tiêu 45.000 tủ; VinFast 9.000đ/lần, miễn phí tối đa 20 lần/tháng tới giữa 2028.',
+  },
+  {
+    id: 'selex-swap-ndt', publisher: 'Người Đưa Tin', title: 'Danh sách xe máy điện đổi pin tại thị trường Việt Nam', date: '08/2026', tier: 'secondary',
+    url: 'https://www.nguoiduatin.vn/danh-sach-xe-may-dien-doi-pin-tai-thi-truong-viet-nam-204260807045002722.htm',
+    scope: '[20] Selex Camel nhắm nhóm shipper, lắp 3 pin đi khoảng 150 km, phí đổi 14.000đ/lần. Quãng đường là số nhà sản xuất công bố.',
+  },
+  {
+    id: 'pony-sz-permit', publisher: 'Pony.ai · PR Newswire', title: 'Pony.ai granted Shenzhen’s first citywide permit for fully driverless commercial robotaxi operations', date: '31/10/2025', tier: 'primary',
+    url: 'https://www.prnewswire.com/news-releases/ponyai-granted-shenzhens-first-citywide-permit-for-fully-driverless-commercial-robotaxi-operations-302600723.html',
+    scope: '[21] Giấy phép robotaxi không người lái thương mại toàn thành phố Thẩm Quyến; triển khai đầu ở Nanshan, Tiền Hải, Bảo An. Thông cáo của chính Pony.ai.',
+  },
+  {
+    id: 'didi-r2-uniteai', publisher: 'Unite.AI', title: 'Didi starts driverless trials with R2 robotaxi in Beijing and Guangzhou', date: '09/2026', tier: 'secondary',
+    url: 'https://www.unite.ai/didi-starts-driverless-trials-with-r2-robotaxi-in-beijing-and-guangzhou/',
+    scope: '[22] Didi mở thử nghiệm chở khách hoàn toàn không người lái với R2 từ 31/08/2026, đặt trong app Didi, tại Bắc Kinh và Quảng Châu. Là thử nghiệm, chưa phải dịch vụ thương mại đại trà.',
+  },
+  {
+    id: 'europe-robotaxi-euronews', publisher: 'Euronews', title: 'From Madrid to Zagreb, Europe’s autonomous vehicles are multiplying', date: '18/09/2026', tier: 'secondary',
+    url: 'https://www.euronews.com/next/2026/09/18/from-madrid-to-zagreb-europes-autonomous-vehicles-are-multiplying',
+    scope: '[24] Ngày 10/09/2026: WeRide lấy giấy phép L4 đầu tiên của Tây Ban Nha (Madrid, với Uber); Pony.ai chạy chuyến không người lái có khách đầu tiên của châu Âu (Zagreb, với Verne).',
   },
   {
     id: 'hotel-robot-team-doc', publisher: 'Team Truck On-Demand · Ahamove',

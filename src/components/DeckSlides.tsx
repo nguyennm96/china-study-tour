@@ -246,4 +246,5 @@ export function SlideBody({ slide }: { slide: Slide }) {
 
 /** Slide mở đầu và slide trải nghiệm tự lo phần tiêu đề của mình. */
 export const slideOwnsHeading = (slide: Slide) => slide.kind === 'title' || slide.kind === 'experience' || slide.kind === 'team' || slide.kind === 'itinerary'
-  || (slide.kind === 'didi' && slide.page === 'title')
+  // Trang mở đầu Didi tự dựng tiêu đề; trang mười hạng xe đổi tiêu đề sau khi lật đáp án.
+  || (slide.kind === 'didi' && (slide.page === 'open' || slide.page === 'tiers'))

@@ -6,8 +6,8 @@ import type { ExperienceSpec } from '../components/DronePresentationContent'
 // Sáu thành viên do người dùng cung cấp ngày 22/09/2026; số 01–06 theo đúng thứ tự họ đưa.
 export const teamGroups = [
   { topic: 'Drone giao hàng', illustration: 'drone', members: [{ number: '01', name: 'Phạm Minh Quân' }, { number: '02', name: 'Nguyễn Minh Nguyên' }] },
-  { topic: 'Robot giao tận phòng với Meituan', illustration: 'robots', members: [{ number: '03', name: 'Nguyễn Khánh Công' }, { number: '04', name: 'Nguyễn Trương Tấn Sâm' }] },
-  { topic: 'Đặt xe trên DiDi', illustration: 'didi', members: [{ number: '05', name: 'Nguyễn Thanh Bình' }, { number: '06', name: 'Thiều Vĩnh Tiến' }] },
+  { topic: 'Robot giao tận phòng với Meituan', illustration: 'robots', members: [{ number: '03', name: 'Nguyễn Khánh Công' }, { number: '04', name: 'Thiều Vĩnh Tiến' }] },
+  { topic: 'Đặt xe trên DiDi', illustration: 'didi', members: [{ number: '05', name: 'Nguyễn Trương Tấn Sâm' }, { number: '06', name: 'Nguyễn Thanh Bình' }] },
 ] as const
 
 export type Subject = {

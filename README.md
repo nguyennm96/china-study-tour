@@ -34,6 +34,17 @@ Bản đồ thật dùng OpenFreeMap / OpenStreetMap, marker 2D nhún nhẹ và 
 - Cuối phần giới thiệu, **Mở live-map** đưa về toàn cảnh. Cuối Drone / Robot, chương tiếp theo xuất hiện trên bản đồ trước khi mở nội dung.
 - `public/_redirects` giữ deep link `/v2/` hoạt động khi refresh trên Netlify.
 
+## Bài Didi · deck riêng 9 slide
+
+Mở `/didi/` để chiếu bài "Một cuốc xe Didi ở Thẩm Quyến" (Sâm & Bình, 20 phút gồm Q&A). Đây cũng là nội dung của ghim Sân bay Bảo An trên bản đồ; hai nơi dùng chung `src/data/didi.ts`.
+
+- Mặt slide bám khối "TRÊN SLIDE" của [docs/didi-script-v5-present.md](docs/didi-script-v5-present.md). Lời nói, ghi chú sân khấu và phần Q&A chỉ nằm trong tài liệu đó.
+- Slide 3, 5, 6 có đáp án ẩn: lần bấm `→` / nút "Slide sau" đầu tiên chỉ lật đáp án, lần sau mới sang slide. Bấm vào ô "Hỏi cả phòng" cũng lật được. Cơ chế nằm ở `src/components/slideSteps.ts`, dùng chung cho deck và modal bản đồ.
+- **Ngoại lệ so với quy tắc chung:** bài Didi ghi nguồn chữ nhỏ ở chân mỗi slide có số liệu, theo yêu cầu của script, vì khán giả là toàn công ty. Nguồn đầy đủ nằm trong `src/data/sources.ts` (các id `didi-*`, `sz-*`, `vn-*`, `hn-*`…).
+- Tiền giữ nguyên CNY như trên ảnh chụp màn hình, không quy đổi VND.
+- Góc trên phải mỗi slide ghi người trình bày; thanh tiến trình chia theo ba phần Sâm → Bình → Sâm.
+- `public/_redirects` giữ `/didi/` hoạt động khi refresh trên Netlify.
+
 ## Version 1 · Một bộ slide tuyến tính, 28 slide
 
 Ở Version 1, bài chia sẻ là **một dãy slide**. Mở trang là vào slide 1; bấm `→` đi hết bài. Không slide nào phải cuộn.

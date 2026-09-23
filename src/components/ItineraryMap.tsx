@@ -10,6 +10,7 @@ import { subjects } from '../data/presentation'
 import { didiIntro } from '../data/didi'
 import { places } from '../data/places'
 import { SlideBody, slideOwnsHeading } from './DeckSlides'
+import { consumeNextStep } from './slideSteps'
 
 setWorkerUrl(mapWorkerUrl)
 const subjectTitles: Record<string, string> = { ...Object.fromEntries(subjects.map(item => [item.id, item.title])), didi: didiIntro.title, ...Object.fromEntries(places.map(place => [place.id, place.title])) }
@@ -168,7 +169,7 @@ export function ItineraryMap() {
       event.preventDefault()
       if (event.key === 'Home') setPage(0)
       if (event.key === 'End') setPage(pages.length - 1)
-      if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') setPage(value => Math.min(pages.length - 1, value + 1))
+      if ((event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') && !consumeNextStep()) setPage(value => Math.min(pages.length - 1, value + 1))
       if (event.key === 'ArrowLeft' || event.key === 'PageUp') setPage(value => Math.max(0, value - 1))
     }
     window.addEventListener('keydown', onKeyDown, true)
@@ -222,7 +223,7 @@ export function ItineraryMap() {
 
         <div className="itinerary-modal-body" ref={bodyRef}>
           <div className="itinerary-page" style={{ width: PAGE_WIDTH, height: PAGE_HEIGHT, transform: `translate(-50%, -50%) scale(${scale})`, visibility: scale ? 'visible' : 'hidden' }}>
-            <div className={`deck-canvas ${slideOwnsHeading(current.slide) ? 'is-bare' : ''}`}>
+            <div className={`deck-canvas ${slideOwnsHeading(current.slide) ? 'is-bare' : ''}`} key={`${stop.id}-${page}`}>
               {!slideOwnsHeading(current.slide) && <header className="deck-slide-head">
                 <p className="deck-kicker">{current.slide.kicker}</p>
                 <h2 className="deck-slide-heading">{current.slide.title}</h2>
@@ -240,7 +241,7 @@ export function ItineraryMap() {
           {pages.length > 1 && <div className="itinerary-pager">
             <span aria-live="polite">{String(page + 1).padStart(2, '0')} <small>/ {pages.length}</small></span>
             <button type="button" disabled={page === 0} onClick={() => setPage(value => value - 1)} aria-label="Trang trước"><ArrowLeft size={16} aria-hidden="true" /></button>
-            <button type="button" disabled={page === pages.length - 1} onClick={() => setPage(value => value + 1)} aria-label="Trang sau"><ArrowRight size={16} aria-hidden="true" /></button>
+            <button type="button" disabled={page === pages.length - 1} onClick={() => { if (!consumeNextStep()) setPage(value => value + 1) }} aria-label="Trang sau"><ArrowRight size={16} aria-hidden="true" /></button>
           </div>}
         </footer>
       </article>
