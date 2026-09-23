@@ -4,6 +4,7 @@ import { subjects } from '../data/presentation'
 import { subjectLocations } from '../data/subjectLocations'
 import { classicDeck, deckRail, type Slide } from '../data/deck'
 import { SlideBody, slideOwnsHeading } from './DeckSlides'
+import { consumeNextStep } from './slideSteps'
 
 /** Bề rộng thiết kế cố định: cỡ chữ và bố cục ngang không đổi theo cửa sổ.
  *  Chiều cao suy từ tỷ lệ màn hình thật để slide lấp kín, không để dải trống trên/dưới.
@@ -52,7 +53,8 @@ export function Presentation({ index, onIndex, slides = deck, onComplete, comple
       event.preventDefault()
       if (event.key === 'Home') go(0)
       else if (event.key === 'End') go(slides.length - 1)
-      else go(index + (['ArrowRight', 'PageDown', ' '].includes(event.key) ? 1 : -1))
+      else if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { if (!consumeNextStep()) go(index + 1) }
+      else go(index - 1)
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
@@ -94,7 +96,7 @@ export function Presentation({ index, onIndex, slides = deck, onComplete, comple
             {(onComplete || slides.length > 6) && <div className="deck-controls">
               <span className="deck-number" aria-live="polite">{String(index + 1).padStart(2, '0')}<small> / {slides.length}</small></span>
               <button type="button" className="deck-step" disabled={index === 0} onClick={() => go(index - 1)} aria-label="Slide trước"><ArrowLeft size={17} aria-hidden="true" /></button>
-              <button type="button" className={onComplete && index === slides.length - 1 ? 'deck-next' : 'deck-step'} disabled={index === slides.length - 1 && !onComplete} onClick={() => go(index + 1)} aria-label={onComplete && index === slides.length - 1 ? completeLabel : 'Slide sau'}>
+              <button type="button" className={onComplete && index === slides.length - 1 ? 'deck-next' : 'deck-step'} disabled={index === slides.length - 1 && !onComplete} onClick={() => { if (!consumeNextStep()) go(index + 1) }} aria-label={onComplete && index === slides.length - 1 ? completeLabel : 'Slide sau'}>
                 {onComplete && index === slides.length - 1 && completeLabel}<ArrowRight size={17} aria-hidden="true" />
               </button>
             </div>}
@@ -105,4 +107,3 @@ export function Presentation({ index, onIndex, slides = deck, onComplete, comple
   </div>
 }
 
-export const deckLength = deck.length

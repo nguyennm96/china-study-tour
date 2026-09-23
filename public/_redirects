@@ -1,2 +1,4 @@
 /v2 /index.html 200
 /v2/* /index.html 200
+/didi /index.html 200
+/didi/* /index.html 200

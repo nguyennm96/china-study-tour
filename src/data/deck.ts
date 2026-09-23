@@ -95,11 +95,12 @@ export function placeSlides(): Slide[] {
   ])
 }
 
-/** Bài Didi của Sâm là phần chia sẻ rời: chỉ gắn vào ghim Sân bay Bảo An trên bản đồ,
- *  không nằm trong mạch ba chủ đề chính nên không gọi từ buildPresentation(). */
+/** Bài Didi của Sâm & Bình là phần chia sẻ rời, không nằm trong mạch ba chủ đề chính nên không gọi
+ *  từ buildPresentation(). Nó gắn vào ghim Sân bay Bảo An và chạy thành deck riêng ở /didi/.
+ *  Nhãn chương theo người trình bày để thanh tiến trình cho thấy chỗ chuyển người. */
 export function didiSlides(): Slide[] {
   return didiPages.map(page => ({
-    kind: 'didi' as const, page: page.key, chapter: 'Didi', subjectId: 'didi',
+    kind: 'didi' as const, page: page.key, chapter: page.chapter, subjectId: 'didi',
     kicker: page.kicker, title: page.title,
   }))
 }
