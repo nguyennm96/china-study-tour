@@ -1,12 +1,11 @@
-import { ArrowRight, Brain, Eye, BatteryCharging, Bell, Buildings, CheckCircle, City, Cloud, Coins, Cpu, Door, Elevator, ForkKnife, MapTrifold, Package, Path, PersonSimpleWalk, Robot, Virus, WifiHigh } from '@phosphor-icons/react'
-import { hotelInfrastructure, hotelRobotCore, hotelRobotPages, hotelRobotDrivers, hotelRobotOutdoorNote, hotelRobotShenzhenPhotos, hotelRobotTimeline, hotelRobotFlow, hotelRobotVideo, type HotelRobotPage } from '../data/hotelRobot'
+import { ArrowRight, BatteryCharging, Bell, Brain, Buildings, CheckCircle, City, Cloud, Coins, Cpu, Elevator, Eye, ForkKnife, MapTrifold, Package, PersonSimpleWalk, Robot, Virus, WifiHigh } from '@phosphor-icons/react'
+import { hotelRobotCore, hotelRobotSystem, hotelRobotPages, hotelRobotDrivers, hotelRobotOutdoorNote, hotelRobotShenzhenPhotos, hotelRobotTimeline, hotelRobotFlow, hotelRobotVideo, type HotelRobotPage } from '../data/hotelRobot'
 import './HotelRobotSlides.css'
 
-const icons = { task: Package, map: MapTrifold, elevator: Elevator, wifi: WifiHigh, battery: BatteryCharging, human: PersonSimpleWalk }
+const chainIcons = { pms: Buildings, cloud: Cloud, robot: Robot, elevator: Elevator, guest: Bell }
+const needIcons = { map: MapTrifold, wifi: WifiHigh, battery: BatteryCharging, human: PersonSimpleWalk }
 const driverIcons = { labor: Coins, covid: Virus, hardware: Cpu, city: City }
 const journeyIcons = [ForkKnife, Cloud, Package, Robot, Bell, CheckCircle]
-const art = '/media/illustrations/subjects-2d/hotel-robot.png'
-function RobotArt() { return <img className="hotel-art" src={art} alt="Minh hoạ 2D robot giao phòng cạnh thang máy khách sạn" /> }
 
 type CorePart = typeof hotelRobotCore.eyes | typeof hotelRobotCore.brain
 function CoreCard({ part, icon: Icon, children }: { part: CorePart; icon: typeof Eye; children?: React.ReactNode }) {
@@ -53,7 +52,6 @@ export function HotelRobotSlides({ page }: { page: HotelRobotPage }) {
     <div className="hotel-shenzhen-photos">
       <figure className="is-main"><img src={hotelRobotShenzhenPhotos.main.src} alt={hotelRobotShenzhenPhotos.main.alt} /><figcaption>{hotelRobotShenzhenPhotos.main.credit}</figcaption></figure>
       <figure><img src={hotelRobotShenzhenPhotos.detail.src} alt={hotelRobotShenzhenPhotos.detail.alt} /><figcaption>{hotelRobotShenzhenPhotos.detail.credit}</figcaption></figure>
-      <p className="hotel-shenzhen-cluster">{hotelRobotShenzhenPhotos.cluster}</p>
     </div>
     <div className="hotel-origin-drivers">{hotelRobotDrivers.map(item => {
       const Icon = driverIcons[item.icon]
@@ -77,42 +75,24 @@ export function HotelRobotSlides({ page }: { page: HotelRobotPage }) {
     <p className="hotel-core-support">{hotelRobotCore.support}</p>
   </div></div>
 
-  if (page === 'dispatch') return <div className="hotel-stepped"><StepTrail page="dispatch" /><div className="hotel-dispatch">
-    <div className="hotel-system-chain"><div><Buildings size={30} aria-hidden="true" /><span>PMS / POS</span><small>Đơn & số phòng</small></div><ArrowRight size={28} aria-hidden="true" /><div className="is-central"><Cloud size={36} aria-hidden="true" /><span>Điều phối</span><small>Tác vụ · trạng thái · nhật ký</small></div><ArrowRight size={28} aria-hidden="true" /><div><Robot size={30} aria-hidden="true" /><span>Đội robot</span><small>Vị trí & cảm biến</small></div></div>
-    <div className="hotel-dispatch-rules">{[
-      { Icon: Path, title: 'Gán đúng robot', detail: 'Gần điểm lấy, còn pin, đang rảnh.' },
-      { Icon: Elevator, title: 'Xếp hàng thang máy', detail: 'Phối hợp nhiều robot và nhiều điểm giao.' },
-      { Icon: BatteryCharging, title: 'Giữ đội sẵn sàng', detail: 'Theo dõi pin và điều robot về sạc.' },
-    ].map(({ Icon, title, detail }) => <article key={title}><Icon size={26} aria-hidden="true" /><h3>{title}</h3><p>{detail}</p></article>)}</div>
-    <p className="hotel-bottom-line">Từ đơn hàng đến tác vụ, rồi từ tác vụ trở lại dữ liệu vận hành.</p>
-  </div></div>
-
-  if (page === 'navigation') return <div className="hotel-stepped"><StepTrail page="navigation" /><div className="hotel-split">
-    <div className="hotel-explainer">
-      <div className="hotel-routing" aria-label="Ví dụ ánh xạ phòng"><div><Package size={26} aria-hidden="true" /><small>KHOANG HÀNG</small><strong>01</strong></div><ArrowRight size={24} aria-hidden="true" /><div><Door size={26} aria-hidden="true" /><small>PHÒNG ĐÍCH</small><strong>1205</strong></div></div>
-      <p className="hotel-example-label">Ví dụ ánh xạ · phòng 1205 trên bản đồ tầng 12</p>
-      <h3>Số phòng là một toạ độ</h3><p>Nhận task “phòng 1205”, robot tra điểm có nhãn 1205 trên bản đồ tầng 12 rồi đi tới đó. Nó biết phòng nhờ nhãn trên bản đồ, không phải đọc biển số cửa.</p>
-      <p className="hotel-callout">Robot chỉ biết khoang nào đi phòng nào. Món gì, nóng hay lạnh, là việc của người nạp đồ.</p>
-    </div><div className="hotel-art-panel"><RobotArt /></div>
-  </div></div>
-
-  if (page === 'elevator') return <div className="hotel-stepped"><StepTrail page="elevator" /><div className="hotel-split">
-    <div className="hotel-art-panel"><RobotArt /><p className="hotel-art-line">Robot gửi lệnh điện tử qua hệ thống tích hợp.</p></div>
-    <ol className="hotel-vertical-flow">{[
-      ['Gọi thang', 'Gửi tầng đón và tầng đến qua API hoặc bộ điều khiển tích hợp.'],
-      ['Chờ xác nhận', 'Nhận trạng thái cabin và cửa từ hệ thống thang máy.'],
-      ['Kiểm tra an toàn', 'Cảm biến xác nhận cửa mở và cabin còn chỗ trước khi vào.'],
-      ['Ra đúng tầng', 'Tiếp tục theo bản đồ hành lang tới cửa phòng.'],
-    ].map(([title, detail], i) => <li key={title}><span>0{i + 1}</span><div><h3>{title}</h3><p>{detail}</p></div></li>)}<li className="hotel-flow-note"><p>Từng tòa nhà cần khảo sát khả năng tích hợp thang máy.</p></li></ol>
+  if (page === 'system') return <div className="hotel-stepped"><StepTrail page="system" /><div className="hotel-system">
+    <ol className="hotel-chain">{hotelRobotSystem.chain.map((link, i) => {
+      const Icon = chainIcons[link.icon]
+      return <li key={link.name} className={link.icon === 'cloud' ? 'is-central' : link.icon === 'elevator' ? 'is-hard' : undefined}>
+        {i > 0 && <ArrowRight className="hotel-chain-arrow" size={18} aria-hidden="true" />}
+        <Icon size={26} aria-hidden="true" /><h3>{link.name}</h3><small>{link.via}</small><p>{link.detail}</p>
+      </li>
+    })}</ol>
+    <div className="hotel-needs"><p>Khách sạn phải có sẵn</p>{hotelRobotSystem.needs.map(need => {
+      const Icon = needIcons[need.icon]
+      return <article key={need.title}><Icon size={22} aria-hidden="true" /><div><h4>{need.title}</h4><p>{need.detail}</p></div></article>
+    })}</div>
+    <p className="hotel-bottom-line">{hotelRobotSystem.close}</p>
   </div></div>
 
   if (page === 'video') return <figure className="hotel-video">
     <video src={hotelRobotVideo.src} poster={hotelRobotVideo.poster} controls autoPlay muted playsInline preload="metadata" aria-label={hotelRobotVideo.alt}>Trình duyệt chưa phát được video.</video>
   </figure>
 
-  if (page === 'infrastructure') return <div className="hotel-stepped"><StepTrail page="infrastructure" /><div className="hotel-journey"><div className="hotel-step-grid hotel-infrastructure">{hotelInfrastructure.map(item => {
-    const Icon = icons[item.icon]
-    return <article key={item.title}><div className="hotel-step-top"><Icon size={28} aria-hidden="true" /><small>{item.steps}</small></div><h3>{item.title}</h3><p>{item.detail}</p></article>
-  })}</div><p className="hotel-bottom-line">Robot chỉ là một phần. Thang máy và hệ thống khách sạn cũ mới quyết định có nhân rộng được không.</p></div></div>
   return null
 }

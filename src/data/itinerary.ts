@@ -40,7 +40,7 @@ export const stops: Stop[] = [
     ],
   },
   {
-    id: 'hotel', order: 2, name: 'Rezen Dong Hotel', district: 'Futian', coordinates: [114.0862, 22.5392], anchor: 'top-right', approximate: true, embeddedSubjectIds: ['robots', 'meituan'],
+    id: 'hotel', order: 2, name: 'Rezen Dong Hotel', district: 'Futian', coordinates: [114.0862, 22.5392], anchor: 'top-right', approximate: true, embeddedSubjectIds: ['robots'],
     events: [
       { day: 1, title: 'Nhận phòng · ăn tối dim sum gần khách sạn', contributions: [
         { member: 'Phạm Minh Quân', text: 'Order qua QR ngay tại bàn, không cần gọi phục vụ. Thanh toán bằng Alipay hay ZaloPay đều được, mã nào cũng nhận.' },

@@ -6,13 +6,10 @@ export const hotelRobotSourceId = 'hotel-robot-team-doc'
 export const hotelRobotPages = [
   { key: 'origin', kicker: 'Robot khách sạn · Ra đời từ đâu', title: 'Ra đời ở Mỹ. Nhân rộng ở Trung Quốc.' },
   { key: 'shenzhen', kicker: 'Robot khách sạn · Vì sao là Thâm Quyến', title: 'Vì sao lại là Thâm Quyến.' },
-  { key: 'journey', kicker: 'Robot khách sạn · Từ đơn hàng tới cửa phòng', title: 'Sáu bước. Một lần giao tận phòng.' },
-  // Ba trang sau đi theo đúng chiều của một đơn hàng; `steps` là bước được soi kỹ trên thanh 6 bước.
-  { key: 'dispatch', kicker: 'Bước 02 · Tạo tác vụ', title: 'Đơn hàng thành nhiệm vụ cho cả đội robot.', steps: [2] },
-  { key: 'core', kicker: 'Bước 03–04 · Công nghệ lõi của robot', title: 'Đôi mắt LiDAR. Bộ não SLAM.', steps: [3, 4] },
-  { key: 'navigation', kicker: 'Bước 03–04 · Tìm đúng phòng', title: 'Biết đúng phòng. Không cần nhận diện món.', steps: [3, 4] },
-  { key: 'elevator', kicker: 'Bước 04 · Lên đúng tầng', title: 'Chỗ khó nhất: nói chuyện với thang máy.', steps: [4] },
-  { key: 'infrastructure', kicker: 'Cả sáu bước · Điều kiện triển khai', title: 'Mỗi bước cần một thứ khách sạn phải có.', steps: [1, 2, 3, 4, 5, 6] },
+  // Phần cơ chế đúng ba ý, mỗi ý một trang: quy trình → thuật toán → hệ thống khách sạn.
+  { key: 'journey', kicker: 'Robot khách sạn · 1 · Quy trình', title: 'Sáu bước. Một lần giao tận phòng.' },
+  { key: 'core', kicker: '2 · Thuật toán · Bước 03–04', title: 'Đôi mắt LiDAR. Bộ não SLAM.', steps: [3, 4] },
+  { key: 'system', kicker: '3 · Hệ thống khách sạn · Bước 02, 04–05', title: 'Robot chỉ là một mắt xích.', steps: [2, 4, 5] },
   { key: 'video', kicker: 'Robot khách sạn · Trải nghiệm của đoàn tại Rezen', title: 'Xem một lượt giao thật.' },
 ] as const
 export type HotelRobotPage = typeof hotelRobotPages[number]['key']
@@ -51,8 +48,8 @@ export const hotelRobotTimeline = [
     detail: 'Khách sạn FlyZoo của Alibaba dùng robot mang đồ tận phòng; Meituan thử robot tự đi thang máy ở Bắc Kinh và Thâm Quyến.',
     image: photo('pudu-yunji-robots-1.jpg'), focus: '45% 60%', credit: 'Robot Yunji và Pudu · Vieinrose, CC0',
     source: ['https://technode.com/2018/11/07/alibaba-checks-in-to-unmanned-hotels/', 'https://kr-asia.com/meituan-tests-unmanned-delivery-with-robots-in-beijing-and-shenzhen'] },
-  { year: '2020–2022', place: 'Toàn Trung Quốc', title: 'COVID biến thành chuẩn mực',
-    detail: 'Chuỗi khách sạn lớn dùng robot giao không tiếp xúc; Meituan rót vốn vào Pudu năm 2020.',
+  { year: '2020–2022', place: 'Toàn Trung Quốc', title: 'Từ thử nghiệm thành chuẩn',
+    detail: 'Chuỗi khách sạn lớn đưa robot giao đồ vào cả hệ thống; Meituan rót vốn vào Pudu năm 2020.',
     image: photo('hk-restaurant-pudu-1.jpg'), focus: '60% 35%', credit: 'Robot Pudu · Domixlandz Huangoeiw, CC BY-SA 4.0',
     source: ['https://link.springer.com/article/10.1007/s40558-020-00193-z', 'https://www.caixinglobal.com/2020-07-02/meituan-eyes-robot-enabled-deliveries-with-14-million-investment-in-pudutech-101574672.html'] },
 ] as const
@@ -64,13 +61,12 @@ export const hotelRobotDrivers = [
   { icon: 'hardware', title: 'Linh kiện ngay dưới nhà', detail: 'LiDAR, cảm biến, pin, động cơ có sẵn quanh Châu Giang: từ mẫu thử sang sản xuất lô nhỏ rất nhanh, giá robot giảm mạnh.' },
   { icon: 'labor', title: 'Thiếu người, lương tăng', detail: 'Dân số già, khách sạn khó tuyển ca đêm và việc lặp lại như giao nước, khăn, đồ ăn.' },
   { icon: 'covid', title: 'Cú hích COVID-19', detail: '2020–2022, giao không tiếp xúc thành bắt buộc; khách quen với việc robot mang đồ lên phòng.' },
-  { icon: 'city', title: 'Nền tảng và chính sách kéo cầu', detail: 'Meituan cần robot lên từng tầng thay tài xế; kế hoạch “Robot+” (2023) và kế hoạch robot riêng của Thâm Quyến.' },
+  { icon: 'city', title: 'Chính sách và cụm doanh nghiệp', detail: 'Kế hoạch “Robot+” (2023), kế hoạch robot riêng của Thâm Quyến; cụm “Robot Valley” ở Nam Sơn: Pudu, UBTECH, RoboSense.' },
 ] as const
 
 export const hotelRobotShenzhenPhotos = {
   main: { src: photo('huaqiangbei-street-1.jpg'), alt: 'Phố đi bộ Hoa Cường Bắc, Thâm Quyến, nhìn từ trên cao', credit: 'Hoa Cường Bắc · Mx. Granger, CC0' },
   detail: { src: photo('seg-plaza-interior-2.jpg'), alt: 'Các sạp linh kiện điện tử bên trong SEG Plaza', credit: 'Bên trong SEG Plaza · Bobbie Johnson, CC BY-SA 2.0' },
-  cluster: 'Cụm “Robot Valley” ở Nam Sơn: Pudu, UBTECH, RoboSense (LiDAR), DJI.',
 } as const
 
 // Video do đoàn dựng từ lượt đặt Meituan giao tới khách sạn Rezen; không có tiếng.
@@ -87,20 +83,28 @@ export const hotelRobotCore = {
     how: [['Quét laser 360°', 'Một đầu laser quay liên tục, bắn tia ra mọi hướng.'], ['Đo tia dội lại', 'Tia chạm tường, cột, người rồi dội về; thời gian đi–về cho ra khoảng cách.'], ['Ra “đám mây điểm”', 'Hàng nghìn điểm vẽ nên hình dạng hành lang quanh robot, nhiều lần mỗi giây.']],
     note: 'Thấy được cả khi thiếu sáng. Không đọc chữ, không nhận ra món ăn.' },
   brain: { name: 'SLAM', role: 'Bộ não', question: 'Mình đang đứng ở đâu, đi đường nào tới phòng 1205?',
-    how: [['Lập bản đồ một lần', 'Lúc lắp đặt, robot chạy khảo sát cả toà; kỹ thuật viên gắn nhãn phòng, thang máy, trạm sạc.'], ['Tự định vị liên tục', 'So “đám mây điểm” đang thấy với bản đồ để biết chính xác mình đang ở đâu.'], ['Tìm đường tới đích', 'Tính đường tới toạ độ phòng, đi lại khi gặp vật cản.']],
+    how: [['Lập bản đồ một lần', 'Lúc lắp đặt, robot chạy khảo sát cả toà; kỹ thuật viên gắn nhãn phòng, thang máy, trạm sạc. Mỗi số phòng thành một toạ độ.'], ['Tự định vị liên tục', 'So “đám mây điểm” đang thấy với bản đồ để biết chính xác mình đang ở đâu.'], ['Tìm đường tới đích', 'Nhận “khoang 01 → phòng 1205”, tra toạ độ 1205 trên bản đồ tầng 12 rồi tính đường; gặp vật cản thì đi lại.']],
     note: 'Vừa lập bản đồ vừa định vị: Simultaneous Localization and Mapping.' },
   support: 'Camera, cảm biến siêu âm, hồng ngoại và va chạm lo tầm gần: dừng hoặc né kịp khi có người, hành lý, xe đẩy. Máy gộp mọi nguồn lại (sensor fusion) để không bị “lạc”.',
 } as const
 
-/** Mỗi điều kiện gắn với bước của đơn hàng cần đến nó, theo thứ tự 6 bước. */
-export const hotelInfrastructure = [
-  { icon: 'task', steps: 'Bước 01–02', title: 'Đơn & số phòng', detail: 'Hệ thống khách sạn (PMS/POS) chuyển đơn thành tác vụ, hoặc nhân viên nhập tay.' },
-  { icon: 'human', steps: 'Bước 03 · 06', title: 'Người ở hai đầu', detail: 'Nạp đồ, gán phòng, đỡ khách lúc nhận và tiếp quản khi có sự cố.' },
-  { icon: 'map', steps: 'Bước 03–04', title: 'Bản đồ đã gắn nhãn', detail: 'Phòng, thang máy, điểm lấy hàng và trạm sạc đều có toạ độ.' },
-  { icon: 'elevator', steps: 'Bước 04', title: 'Thang máy kết nối được', detail: 'Bộ điều khiển thang nhận lệnh điện tử, toà cũ phải lắp thêm module.' },
-  { icon: 'battery', steps: 'Bước 04', title: 'Lối đi & trạm sạc', detail: 'Hành lang đủ rộng, sàn phẳng, ngưỡng cửa thấp, có chỗ về sạc.' },
-  { icon: 'wifi', steps: 'Bước 04–05', title: 'Sóng phủ khắp', detail: 'Wi-Fi / 4G từ sảnh tới hành lang và trong thang, để robot gọi thang và báo khách.' },
-] as const
+/** Trang hệ thống: chuỗi mắt xích robot phải nói chuyện được, rồi những thứ khách sạn phải có sẵn. */
+export const hotelRobotSystem = {
+  chain: [
+    { icon: 'pms', name: 'Hệ thống khách sạn', via: 'PMS / POS', detail: 'Nhận đơn và số phòng, biến thành một tác vụ.' },
+    { icon: 'cloud', name: 'Bộ điều phối', via: 'Cloud của hãng robot', detail: 'Chọn robot gần, còn pin, đang rảnh; xếp lượt khi nhiều robot cùng cần thang; gọi về sạc.' },
+    { icon: 'robot', name: 'Robot', via: 'LiDAR + SLAM', detail: 'Tự đi tới đúng phòng, như trang trước.' },
+    { icon: 'elevator', name: 'Thang máy', via: 'Lệnh điện tử qua API', detail: 'Nhận lệnh gọi tầng, báo cửa đã mở; robot kiểm tra cabin còn chỗ rồi mới vào.' },
+    { icon: 'guest', name: 'Khách', via: 'Điện thoại phòng · SMS', detail: 'Được báo khi robot tới, nhập mã để mở khoang.' },
+  ],
+  needs: [
+    { icon: 'map', title: 'Bản đồ đã gắn nhãn', detail: 'Phòng, thang, điểm lấy hàng, trạm sạc.' },
+    { icon: 'wifi', title: 'Sóng phủ khắp', detail: 'Wi-Fi / 4G cả trong thang máy.' },
+    { icon: 'battery', title: 'Lối đi & trạm sạc', detail: 'Hành lang rộng, sàn phẳng, ngưỡng thấp.' },
+    { icon: 'human', title: 'Người ở hai đầu', detail: 'Nạp đồ, đỡ khách, xử lý sự cố.' },
+  ],
+  close: 'Câu đầu tiên phải hỏi không phải “mua robot nào”, mà là “thang máy nhà mình có kết nối được không”.',
+} as const
 
 export const hotelRobotData: TopicData = {
   hero: { value: '~0,7', unit: 'tỷ USD', label: 'Thị trường robot khách sạn toàn cầu', asOf: '2025 · ước lượng', sourceId: hotelRobotSourceId },
