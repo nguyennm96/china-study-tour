@@ -14,6 +14,8 @@ export type Place = {
   photo: { src: string; alt: string; credit: string }
   /** Ảnh thứ hai cho trang đặc điểm, để hai trang không lặp lại một khung hình. */
   photoAlt: { src: string; alt: string; credit: string }
+  /** Dải ảnh ngang cho trang đặc điểm; có thì thay ảnh lớn photoAlt bằng nhiều ảnh xếp ngang. */
+  featurePhotos?: { src: string; alt: string; caption?: string; focus?: string }[]
   /** Trang ảnh tại điểm dừng; ảnh tư liệu phải có ghi công riêng. */
   gallery?: {
     title: string
@@ -172,6 +174,11 @@ export const places: Place[] = [
       alt: 'Phố ăn Đông Môn buổi tối, khách xếp hàng trước các quầy đồ ăn',
       credit: 'TWMEAU rOEPPOUL · CC0 · Wikimedia Commons',
     },
+    featurePhotos: [
+      { src: '/media/places/IMG_6075.jpg', alt: 'Phố Đông Môn buổi tối', caption: 'Phố đi bộ Đông Môn về đêm.' },
+      { src: '/media/places/IMG_6082.jpg', alt: 'Phố Đông Môn buổi tối' },
+      { src: '/media/places/Dongmen_3.jpg', alt: 'Dãy nhà mái ngói kiểu cũ ở Đông Môn sáng đèn về đêm, mặt sàn ướt phản chiếu ánh đèn', caption: 'Đoạn phố dựng lại theo diện mạo thị trấn cũ, sáng đèn về đêm.' },
+    ],
     metrics: [
       { value: '~180.000', unit: 'm²', label: 'Diện tích khu thương mại Đông Môn', asOf: 'hiện trạng' },
       { value: '300', unit: 'năm', label: 'Tuổi chợ cũ theo ghi chép địa phương', asOf: 'từ thời Minh' },
@@ -199,7 +206,7 @@ export const places: Place[] = [
       photos: [
         { src: '/media/places/Dongmen_1.jpg', alt: 'Thành viên đoàn ngồi bên đường Đông Môn buổi tối, sau lưng là biển neon và dòng người, xe giao hàng', caption: 'Biển neon kín hai bên đường, shipper vẫn len giữa dòng người đi bộ.' },
         { src: '/media/places/Dongmen_2.jpg', alt: 'Thành viên đoàn cầm xiên mực nướng dài và ly nước trên phố Đông Môn', caption: 'Phố ăn buổi tối: một xiên mực nướng cỡ lớn, vừa đi vừa ăn.' },
-        { src: '/media/places/Dongmen_3.jpg', alt: 'Dãy nhà mái ngói kiểu cũ ở Đông Môn sáng đèn về đêm, mặt sàn ướt phản chiếu ánh đèn', caption: 'Đoạn phố dựng lại theo diện mạo thị trấn cũ, sáng đèn về đêm.' },
+        { src: '/media/places/dongmen_food.jpg', alt: 'Món ăn đường phố ở Đông Môn', caption: 'Đồ ăn đường phố ở phố ăn Đông Môn.' },
       ],
     },
     sourceIds: ['dongmen-wiki', 'dongmen-duten'],

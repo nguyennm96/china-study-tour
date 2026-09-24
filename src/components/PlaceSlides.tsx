@@ -25,6 +25,15 @@ export function PlaceSlide({ placeId, page }: { placeId: string; page: 'overview
       </li>
     })}
   </ol>
+  if (page === 'features' && place.featurePhotos) return <div className="place-features has-strip-only">
+    <div className="place-feature-strip">
+      {place.featurePhotos.map(photo => <figure key={photo.src}>
+        <img src={photo.src} alt={photo.alt} style={photo.focus ? { objectPosition: photo.focus } : undefined} />
+        {photo.caption && <figcaption>{photo.caption}</figcaption>}
+      </figure>)}
+    </div>
+  </div>
+
   if (page === 'features') return <div className="place-features">
     <figure className="place-photo is-wide">
       <img src={place.photoAlt.src} alt={place.photoAlt.alt} />
