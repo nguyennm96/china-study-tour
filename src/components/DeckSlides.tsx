@@ -288,4 +288,3 @@ export const slideOwnsHeading = (slide: Slide) => slide.kind === 'title' || slid
   || (slide.kind === 'place' && slide.placeId === 'place-talent-park' && slide.page === 'overview')
   // Trang mở đầu Didi tự dựng tiêu đề; trang mười hạng xe đổi tiêu đề sau khi lật đáp án.
   || (slide.kind === 'didi' && (slide.page === 'open' || slide.page === 'tiers'))
-  || (slide.kind === 'iote' && slide.page === 'open')

@@ -19,7 +19,7 @@ export default function App() {
 const classicSlides = classicDeck()
 /** Bài Didi 20 phút chạy thành deck riêng để trình chiếu; cùng dữ liệu với ghim Sân bay Bảo An. */
 const didiDeck = didiSlides()
-/** Bài IOTE 5–10 phút của Tiến, deck riêng ở /iote/. */
+/** Bài IOTE của Tiến: cùng dãy trang với ghim IOTE trên bản đồ, chạy thành deck riêng ở /iote/. */
 const ioteDeck = ioteSlides()
 
 function HashDeck({ slides, title }: { slides: Slide[]; title?: string }) {
