@@ -99,6 +99,8 @@ export function placeSlides(): Slide[] {
       ...(place.features.length ? [{ kind: 'place' as const, placeId: place.id, page: 'features' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Đặc điểm`, title: place.featuresTitle }] : []),
       // Ghim IOTE đi sâu thêm Hall 9: hai trang NFC và RFID ngay sau trang bốn hall.
       ...(place.id === 'place-iote' ? hall9Pages.map(page => ({ kind: 'hall9' as const, page: page.key, chapter: 'Điểm dừng', subjectId: place.id, kicker: page.kicker, title: page.title })) : []),
+      // Lấy từ bài nói của Tiến: trang "AI là máy móc" đứng ngay trước trang ảnh robot của đoàn.
+      ...(place.id === 'place-iote' ? iotePages.map(page => ({ kind: 'iote' as const, page: page.key, chapter: 'Điểm dừng', subjectId: place.id, kicker: page.kicker, title: page.title })) : []),
       ...(!place.gallery?.afterOverview ? gallery : []),
       ...(place.visit ? [{ kind: 'place' as const, placeId: place.id, page: 'visit' as const, chapter: 'Điểm dừng', subjectId: place.id, kicker: `${place.kicker.split(' · ')[0]} · Gợi ý ghé thăm`, title: place.visit.title }] : []),
     ]
@@ -115,12 +117,13 @@ export function didiSlides(): Slide[] {
   }))
 }
 
-/** Bài IOTE của Tiến (5 slide, 5–10 phút) cũng là phần chia sẻ rời: chạy thành deck riêng ở /iote/.
- *  Ghim IOTE trên bản đồ vẫn giữ bốn trang điểm dừng `place-iote`. */
+/** Deck /iote/ là đúng dãy trang của ghim IOTE, để trình chiếu và ghim trên bản đồ không lệch nhau.
+ *  Chỉ đổi nhãn chương cho thanh tiến trình, vì trong ghim mọi trang cùng nhãn "Điểm dừng". */
 export function ioteSlides(): Slide[] {
-  return iotePages.map(page => ({
-    kind: 'iote' as const, page: page.key, chapter: page.chapter, subjectId: 'iote',
-    kicker: page.kicker, title: page.title,
+  const placeChapters = { overview: 'Tổng quan', features: 'Bốn hall', gallery: 'Ảnh của đoàn', visit: 'Ghé thăm' } as const
+  return placeSlides().filter(slide => slide.subjectId === 'place-iote').map(slide => ({
+    ...slide,
+    chapter: slide.kind === 'place' ? placeChapters[slide.page] : slide.kind === 'hall9' ? 'Hall 9' : slide.kind === 'iote' ? iotePages.find(page => page.key === slide.page)!.chapter : slide.chapter,
   }))
 }
 

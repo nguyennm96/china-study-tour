@@ -15,56 +15,47 @@ const load = name => {
   return url
 }
 const { source } = await import(load('sources'))
-const { ioteSlides } = await import(load('deck'))
+const { ioteSlides, placeSlides } = await import(load('deck'))
 const iote = await import(load('iote'))
 const { places } = await import(load('places'))
 
-test('bài IOTE đúng 5 slide theo thứ tự của script, Tiến trình bày', () => {
-  assert.deepEqual(iote.iotePages.map(page => page.key), ['open', 'scale', 'machines', 'shelf', 'takeaway'])
-  assert.equal(iote.ioteIntro.presenter, 'Tiến')
-  const slides = ioteSlides()
-  assert.equal(slides.length, 5)
-  assert.ok(slides.every(slide => slide.kind === 'iote' && slide.subjectId === 'iote'))
+const pageId = slide => `${slide.kind}:${slide.page}`
+
+test('ghim IOTE là bản chính: thứ tự trang của VinhTien, chèn "AI là máy móc" trước trang ảnh', () => {
+  const pin = placeSlides().filter(slide => slide.subjectId === 'place-iote')
+  assert.deepEqual(pin.map(pageId), [
+    'place:overview', 'place:features', 'hall9:basics', 'hall9:ahamove', 'iote:machines', 'place:gallery', 'place:visit',
+  ])
 })
 
-test('mọi slide có nguồn phân giải được, slide có số liệu ghi nguồn ở chân', () => {
+test('deck /iote/ chạy đúng dãy trang của ghim, chỉ khác nhãn chương', () => {
+  const pin = placeSlides().filter(slide => slide.subjectId === 'place-iote')
+  const deck = ioteSlides()
+  assert.deepEqual(deck.map(pageId), pin.map(pageId))
+  assert.deepEqual(deck.map(slide => slide.title), pin.map(slide => slide.title))
+  assert.ok(deck.every(slide => slide.chapter && slide.chapter !== 'Điểm dừng'), 'thanh tiến trình cần nhãn chương riêng cho từng trang')
+})
+
+test('trang AI là máy móc có nguồn phân giải được và ghi nguồn ở chân', () => {
   for (const page of iote.iotePages) {
     for (const id of page.sourceIds) assert.doesNotThrow(() => source(id), `${page.key}: thiếu nguồn "${id}"`)
-    if (page.key !== 'open') assert.ok(page.source && page.source.length > 20, `${page.key} thiếu dòng nguồn ở chân slide`)
+    assert.ok(page.source.length > 20, `${page.key} thiếu dòng nguồn ở chân slide`)
   }
 })
 
-test('quy mô khớp trang ban tổ chức: 1.000+ là doanh nghiệp, không phải gian hàng', () => {
-  const labels = iote.ioteScale.stats.map(stat => `${stat.value} ${stat.label}`)
-  assert.ok(labels.some(text => /1\.000\+ doanh nghiệp/.test(text)))
+test('quy mô ở trang Tổng quan: 1.000+ là doanh nghiệp, không phải gian hàng', () => {
   const overview = places.find(place => place.id === 'place-iote').metrics
+  assert.ok(overview.some(metric => metric.value === '1.000+' && metric.unit === 'doanh nghiệp'))
   assert.ok(!overview.some(metric => metric.unit === 'gian hàng'), 'slide Tổng quan của ghim IOTE không được ghi 1.000 gian hàng')
 })
 
 test('ước lượng của đoàn được ghi rõ là ước lượng', () => {
   assert.match(iote.ioteMachines.estimate, /ước lượng/i)
   assert.match(iote.iotePages.find(page => page.key === 'machines').source, /không phải số thống kê/)
-  assert.match(iote.iotePages.find(page => page.key === 'shelf').source, /ước tính/)
 })
 
-test('ảnh minh hoạ không chụp tại IOTE phải nói rõ trong alt và chú thích, kèm credit', () => {
-  for (const key of ['pda', 'rfid']) {
-    const photo = iote.iotePhotos[key]
-    assert.match(photo.alt, /không chụp tại IOTE/, `${key}: alt phải nói không chụp tại IOTE`)
-    assert.ok(photo.credit && /CC/.test(photo.credit), `${key}: thiếu credit và giấy phép`)
-  }
-  assert.match(iote.ioteShelf.sampleNote, /không chụp tại IOTE/)
-})
-
-test('slide mang về là đề xuất thảo luận, không phải tính năng đã có', () => {
-  assert.match(iote.ioteTakeaway.tag, /đề xuất/i)
-  const text = JSON.stringify(iote.ioteTakeaway)
-  assert.ok(!/Ahamove (sẽ|đã|đang)/.test(text), 'không trình bày như việc Ahamove đang làm hoặc sẽ làm')
-})
-
-test('ảnh và clip dùng trong bài IOTE đều có trong public/', () => {
-  const paths = [...Object.values(iote.iotePhotos).map(photo => photo.src), iote.ioteVideo.src, iote.ioteVideo.poster]
-  for (const path of paths) assert.ok(existsSync(new URL(`../public${path}`, import.meta.url)), `thiếu ${path}`)
+test('ảnh dùng trong trang AI là máy móc đều có trong public/', () => {
+  for (const photo of Object.values(iote.iotePhotos)) assert.ok(existsSync(new URL(`../public${photo.src}`, import.meta.url)), `thiếu ${photo.src}`)
 })
 
 test('route /iote/ không vỡ khi refresh trên Netlify', () => {

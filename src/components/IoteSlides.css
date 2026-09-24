@@ -1,48 +1,15 @@
-/* Bài IOTE: 5 slide dùng chung khung canvas 1280px với bài Didi. Bố cục là grid có hàng
-   minmax(0, 1fr) để nội dung không đẩy slide dài ra; ảnh của đoàn là phần to nhất của slide. */
-.deck-canvas:has(.iote-page) { position: relative; }
-.deck-canvas:has(.iote-page) .deck-slide-head { max-width: 980px; }
-.deck-canvas:has(.iote-page) .deck-slide-heading { font-size: 40px; }
-
+/* Trang "AI là máy móc" trong ghim IOTE, cùng khung 1280px với các trang điểm dừng. Bố cục là grid
+   có hàng minmax(0, 1fr) để nội dung không đẩy slide dài ra; ảnh của đoàn là phần to nhất của slide. */
 .iote-page { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; min-height: 0; }
 .iote-body { display: grid; grid-template-rows: minmax(0, 1fr); min-height: 0; }
 .iote-body > * { min-height: 0; }
-.iote-presenter { position: absolute; z-index: 1; top: 36px; right: 56px; display: flex; align-items: center; gap: 7px; margin: 0; padding: 7px 14px; color: var(--paper); font-size: 14px; font-weight: 600; background: #fff; border: 1px solid var(--line); border-radius: 999px; }
-.iote-presenter svg { color: var(--brand); }
-.iote-presenter span { color: var(--muted); font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
 .iote-source { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.4; }
 
 .iote-photo { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 8px; min-height: 0; margin: 0; }
 .iote-photo img { width: 100%; height: 100%; min-height: 0; object-fit: cover; border-radius: 16px; background: var(--surface); }
 .iote-photo figcaption { color: var(--muted); font-size: 12.5px; line-height: 1.35; }
-.iote-accent { margin: 0; padding: 12px 18px; color: var(--paper); font-size: 17px; font-weight: 600; letter-spacing: -.015em; line-height: 1.45; background: #fff3e3; border-left: 4px solid var(--brand); border-radius: 0 10px 10px 0; }
 
-/* 01 · Mở đầu */
-.iote-open-layout { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; min-height: 0; }
-.iote-open-copy { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
-.iote-open-title { margin: 6px 0 14px; font-size: 56px; font-weight: 600; letter-spacing: -.045em; line-height: 1.08; text-wrap: balance; }
-.iote-open-title span { display: block; margin-top: 8px; color: var(--brand); }
-.iote-open-lead { margin: 0 0 30px; color: var(--mist); font-size: 18px; }
-.iote-ask { display: grid; gap: 10px; padding: 24px 28px; background: #fff3e3; border: 1.5px dashed #d9a472; border-radius: 16px; }
-.iote-ask-label { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--brand); font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
-.iote-ask strong { max-width: 32ch; font-size: 25px; font-weight: 600; letter-spacing: -.025em; line-height: 1.3; text-wrap: balance; }
-.iote-open-video { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 8px; min-height: 0; margin: 56px 0 0; }
-.iote-open-video video { display: block; height: 100%; width: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 20px; background: var(--surface); box-shadow: 0 10px 30px #172b3d1f; }
-.iote-open-video figcaption { max-width: 100%; color: var(--muted); font-size: 12px; }
-
-/* 02 · Quy mô */
-.iote-scale-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 32px; min-height: 0; }
-.iote-scale-photo { min-height: 0; margin: 0; }
-.iote-scale-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
-.iote-scale-facts { display: grid; grid-template-rows: minmax(0, 1fr) auto auto; gap: 12px; min-height: 0; }
-.iote-stats { display: grid; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; min-height: 0; }
-.iote-stats li { display: grid; align-content: center; gap: 6px; padding: 12px 24px; background: #fff; border: 1px solid var(--line); border-radius: 16px; }
-.iote-stats strong { color: var(--brand); font-size: 50px; letter-spacing: -.05em; line-height: 1; font-variant-numeric: tabular-nums; }
-.iote-stats small { font-size: 26px; letter-spacing: -.02em; }
-.iote-stats span { color: var(--mist); font-size: 17px; }
-.iote-asof { margin: 0; color: var(--muted); font-size: 12px; }
-
-/* 03 · AI là máy móc */
+/* AI là máy móc */
 .iote-machines-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px 220px; gap: 24px; min-height: 0; }
 .iote-machines-copy { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 18px; min-height: 0; }
 .iote-slogan { display: flex; flex-direction: column; justify-content: center; gap: 12px; margin: 0; padding: 28px 30px; color: #fffaf2; background: #15364d; border-radius: 20px; }
@@ -55,37 +22,7 @@
 .iote-share em { display: block; margin-top: 4px; color: var(--muted); font-size: 12.5px; font-style: normal; }
 .iote-tunstar { align-self: end; height: 72%; }
 
-/* 04 · Hàng bán sẵn */
-.iote-shelf-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: minmax(0, 1fr) auto; gap: 18px 28px; min-height: 0; }
-.iote-device { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 14px; min-height: 0; padding: 18px; background: #fff; border: 1px solid var(--line); border-radius: 20px; }
-.iote-device figure { min-height: 0; margin: 0; }
-.iote-device img { width: 100%; height: 100%; object-fit: contain; }
-.iote-device h4 { margin: 0 0 6px; font-size: 22px; font-weight: 600; letter-spacing: -.025em; }
-.iote-device p { margin: 0; color: var(--mist); font-size: 16px; line-height: 1.45; }
-.iote-device .iote-credit { margin-top: 8px; color: var(--muted); font-size: 11.5px; }
-.iote-quote { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; margin: 0; padding: 14px 22px; color: #fffaf2; font-size: 21px; font-weight: 600; letter-spacing: -.02em; background: #15364d; border-radius: 14px; }
-.iote-quote svg { flex: none; color: #f2b183; }
-.iote-quote em { margin-left: auto; color: #d3dde4; font-size: 14px; font-style: normal; font-weight: 500; }
-
-/* 05 · Mang về */
-.iote-takeaway-layout { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 16px; min-height: 0; }
-.iote-tag { justify-self: start; margin: 0; padding: 6px 14px; color: var(--brand); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; background: #fff3e3; border: 1px solid #e8c29f; border-radius: 999px; }
-/* Ba bậc thang: bậc sau cao hơn bậc trước, đọc từ rẻ tới đắt. */
-.iote-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 16px; margin: 0; padding: 0; list-style: none; min-height: 0; }
-.iote-steps li { display: grid; align-content: start; gap: 8px; padding: 18px 20px; background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--brand); border-radius: 14px; }
-.iote-steps li:nth-child(1) { min-height: 58%; }
-.iote-steps li:nth-child(2) { min-height: 78%; }
-.iote-steps li:nth-child(3) { min-height: 98%; }
-.iote-steps b { display: grid; place-items: center; width: 30px; height: 30px; color: #fff; font-size: 15px; background: var(--brand); border-radius: 50%; }
-.iote-steps h4 { margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -.025em; line-height: 1.25; }
-.iote-steps p { margin: 0; color: var(--mist); font-size: 15.5px; line-height: 1.45; }
-.iote-close { margin: 0; padding: 22px 28px; color: #fffaf2; font-size: 26px; font-weight: 600; letter-spacing: -.025em; line-height: 1.3; text-wrap: balance; background-color: #15364d; background-size: cover; background-position: center 40%; border-radius: 16px; }
-
 /* Khung thấp (màn 16:9 nhỏ): bớt khoảng đệm, không thu nhỏ chữ nội dung. */
-.deck-slide.is-compact .iote-open-title { font-size: 48px; }
-.deck-slide.is-compact .iote-open-lead { margin-bottom: 20px; }
 .deck-slide.is-compact .iote-slogan { padding: 20px 24px; }
 .deck-slide.is-compact .iote-slogan p { font-size: 32px; }
 .deck-slide.is-compact .iote-slogan .iote-slogan-vi { font-size: 21px; }
-.deck-slide.is-compact .iote-stats strong { font-size: 42px; }
-.deck-slide.is-compact .iote-close { padding: 16px 24px; font-size: 23px; }

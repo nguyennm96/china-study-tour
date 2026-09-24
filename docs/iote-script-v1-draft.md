@@ -1,24 +1,24 @@
 # SCRIPT TRÌNH BÀY — "Một ngày ở IOTE: AI bước ra khỏi màn hình"
 
-**Bản nháp v2 (23/09/2026). Chốt script trước, sau đó mới dựng hoặc sửa slide theo script.**
+**Bản v3 (24/09/2026). Script viết theo đúng 7 trang của ghim IOTE trên bản đồ, cũng là 7 trang ở `/iote/`.**
 
-> **Cập nhật v2 (23/09/2026):** (1) Người trình bày là **Tiến**. Thời lượng **5–10 phút**, khán giả là **toàn thể nhân viên Ahamove**. (2) Cắt từ 7 slide xuống **5 slide chính**, nói hết khoảng **5 phút 30**. Phần còn lại trong 10 phút dành cho Q&A. Slide "Bốn hall" chuyển thành **slide dự phòng**, chỉ dùng khi được trọn 10 phút *và* đã xác nhận chủ đề từng hall. (3) Gộp "Mang về gì" với phần chốt. (4) Thêm ảnh robot bán kem của đoàn và hai ảnh thật minh hoạ thiết bị (máy quét Android, tem RFID) lấy từ Wikimedia, có credit. (5) Sửa đơn vị: 1.000+ **doanh nghiệp**, không phải gian hàng.
+> **Cập nhật v3 (24/09/2026):** (1) Ghim IOTE trên bản đồ (bản của VinhTien) là **bản chính**. `/iote/` chạy đúng dãy trang của ghim (`ioteSlides()` trong `src/data/deck.ts`). (2) Từ bản 5 slide cũ chỉ giữ slide **"AI là máy móc"**, đặt ở trang 5. Các slide Mở đầu, Quy mô, Hàng bán sẵn và Mang về đã gỡ khỏi deck. Nội dung cũ vẫn còn trong git, commit `dd08524`. (3) Lời nói viết lại cho cả 7 trang. Câu hỏi mở đầu giữ nguyên, chuyển sang trang 1, đáp án vẫn ở trang "AI là máy móc". (4) Trang "Bốn hall" giờ nằm trong mạch chính, không còn là slide dự phòng. Chủ đề từng hall vẫn **chưa có nguồn chính thức** (xem 🔎 ở trang 2). (5) Ý "máy quét cầm tay bên trong là Android" không còn trên slide, chuyển sang Q&A.
 
-> **Cập nhật v2.1 (23/09/2026):** (1) Ngày trình bày: **24/09/2026**. (2) Máy bán kem: khách **chọn vị trên màn hình của máy và trả bằng Alipay** (Sâm xác nhận). Slide 3 đã sửa theo. (3) Slide 5, bậc 1: viết lại để **không mô tả quy trình giao hàng hiện tại của Ahamove**, nên không cần hỏi Vận hành nữa. (4) Tiến chưa có câu chuyện riêng ở IOTE: giữ mạch hiện tại, lời nói dẫn ý của đoàn.
+> **Lịch sử:** v2 (23/09) cắt từ 7 xuống 5 slide, thêm ảnh robot bán kem và hai ảnh minh hoạ thiết bị. v2.1 (23/09) chốt ngày trình bày, sửa chi tiết máy bán kem (chọn vị trên màn hình, trả bằng Alipay).
 
 
 |                     |                                                                                                  |
 | ------------------- | ------------------------------------------------------------------------------------------------ |
 | **Người trình bày** | **Tiến**                                                                                         |
 | **Ngày trình bày**  | **24/09/2026**                                                                                   |
-| **Thời lượng**      | **5–10 phút**. Phần nói khoảng **5'40** (khoảng 800 chữ). Còn lại là Q&A                        |
+| **Thời lượng**      | **5–10 phút**. Phần nói khoảng **7'10** (khoảng 1.000 chữ). Còn lại là Q&A                        |
 | **Khán giả**        | **Toàn thể nhân viên Ahamove**                                                                   |
 | **Chuyến đi**       | 24–28/08/2026 · Thẩm Quyến · IOTE là **ngày thứ ba**, đoàn đi trọn một ngày                      |
 | **Xưng hô**         | "em" với phòng · "mình" với công ty/đoàn                                                         |
-| **Số slide**        | **5 chính** + 1 dự phòng                                                                         |
+| **Số trang**        | **7**, mở từ ghim IOTE trên bản đồ hoặc ở `/iote/`                                               |
 
 
-**Cách đọc file:** mỗi slide có 4 khối:
+**Cách đọc file:** mỗi trang có 4 khối:
 🖥️ **TRÊN SLIDE** · 🖼️ **HÌNH / VIDEO** · 🎙️ **LỜI NÓI** · 🎬 **GHI CHÚ SÂN KHẤU**.
 Số `[n]` là nguồn, danh sách ở cuối file. Ô 🔎 ghi chỗ nào đã kiểm tra, chỗ nào chưa.
 
@@ -26,32 +26,26 @@ Số `[n]` là nguồn, danh sách ở cuối file. Ô 🔎 ghi chỗ nào đã 
 
 > **Về cách gọi tên:** lời nói dẫn ý của Công, Quân, Sâm và Bình bằng tên. Tiến tự thêm "anh"/"chị" theo cách thường gọi trong công ty.
 
-> ⚠️ **Khán giả là toàn công ty, không riêng Vận hành hay Tech:** tránh thuật ngữ (IoT, RFID, NFC, PDA, AMR, SaaS, LLM). Nếu buộc phải dùng thì giải thích ngay trong câu.
+> ⚠️ **Khán giả là toàn công ty, không riêng Vận hành hay Tech.** Slide có sẵn chữ NFC, RFID, hub, same-day. Lời nói **giải thích ngay lần đầu nhắc tới**, sau đó mới dùng tên. Không đọc các thuật ngữ khác trên slide (UWB, RTLS, LoRa, LLM, AMR…).
+
+> ⚠️ **Không mô tả quy trình hiện tại của Ahamove.** Trang 4 là đề xuất. Lời nói chỉ nói "có thể làm thế này", không nói "hiện tài xế mình đang làm thế kia".
 
 ---
 
-## 🧭 MẠCH BÀI VÀ LÝ DO CẮT
+## 🧭 MẠCH BÀI
 
-**Mạch:** *cảm giác* → *bức tranh chung* → *hai điều đoàn nhận ra* → *mang về gì*.
+**Mạch:** *quy mô + câu hỏi* → *bốn khu như đường đi một món hàng* → *đi sâu Hall 9* → *liên hệ Ahamove* → *đáp án: AI là máy móc* → *hình ảnh và câu chốt* → *gợi ý ghé thăm, vào Q&A*.
 
-| # | Slide | Giữ vì | Thời gian |
+| # | Trang | Vai trò | Thời gian |
 |---|---|---|---|
-| 1 | **Clip robot pha chế** + câu hỏi cho cả phòng | Hình động kéo chú ý. Câu hỏi gài sẵn cho slide 3 | 0'50 |
-| 2 | **Quy mô**: 4 hall trong một trung tâm 19 hall | Cho người nghe biết đoàn đã đi một nơi lớn cỡ nào. Chỉ một câu so sánh | 0'45 |
-| 3 | **Điều thứ nhất: AI ở đây là máy móc** | Điều đoàn thấy rõ nhất, trả lời câu hỏi ở slide 1 | 1'15 |
-| 4 | **Điều thứ hai: bán sẵn trên kệ, mua về là dùng** | Kéo từ "ấn tượng" xuống "thực tế", làm nền cho phần mang về | 1'15 |
-| 5 | **Mang về gì + chốt** (đề xuất để thảo luận) | Câu người nghe mang theo khi ra khỏi phòng | 1'00 |
-| | **Tổng phần nói** | | **khoảng 5'40** |
-
-**Đã cắt khỏi mạch chính:**
-
-| Slide cũ | Vì sao cắt | Đi đâu |
-|---|---|---|
-| **Bốn hall = đường đi của một món hàng** | Tốn 1'30. Chủ đề từng hall **chưa có nguồn** (ban tổ chức không công bố). Bắt buộc phải có thuật ngữ | **Slide dự phòng** ở cuối file. Chỉ dùng khi có 10 phút *và* đã xác nhận chủ đề hall |
-| **Gợi ý ghé thăm** (metro, đăng ký, lưu ý) | Có ích cho người sắp đi, không có ích cho người nghe | Q&A |
-| **Chốt riêng** | Tách ra thì thêm một lần chuyển slide mà không thêm ý | Gộp vào slide 5 |
-
-**Deck đã dựng (23/09/2026):** 5 slide chính chạy ở **`/iote/`** (dữ liệu `src/data/iote.ts`, component `src/components/IoteSlides.tsx`). Ghim IOTE trên bản đồ vẫn giữ 4 trang điểm dừng cũ. Slide "Tổng quan" trong ghim đã sửa thành 1.000+ doanh nghiệp. Slide dự phòng "Bốn hall" chưa dựng thành slide trong deck: nếu cần thì mở ghim IOTE trên bản đồ, trang "Đặc điểm".
+| 1 | **Tổng quan**: Bốn khu trưng bày về công nghệ IoT | IOTE là gì, lớn cỡ nào. Gài câu hỏi cho trang 5 | 1'10 |
+| 2 | **Bốn khu trưng bày, bốn nhóm chủ đề** | Một hình ảnh dễ nhớ: đi hết bốn khu = đi theo một món hàng | 0'50 |
+| 3 | **Hall 9 · Cùng một con chip. Khác tầm đọc.** | Giải thích NFC và RFID bằng lời thường | 1'20 |
+| 4 | **Hall 9 · Chạm ở hai đầu. Quét cả loạt ở giữa.** | Đề xuất cho Ahamove, kèm ba câu phải trả lời trước | 1'30 |
+| 5 | **AI ở IOTE là máy móc, không phải màn hình.** | Đáp án câu hỏi ở trang 1 | 1'10 |
+| 6 | **Robot và thiết bị AI tại IOTE.** (ảnh của đoàn) | Hình ảnh thật + câu chốt | 0'35 |
+| 7 | **Nếu bạn ghé IOTE** | Mở vào Q&A | 0'25 |
+| | **Tổng phần nói** | | **khoảng 7'10** |
 
 ---
 
@@ -59,221 +53,250 @@ Số `[n]` là nguồn, danh sách ở cuối file. Ô 🔎 ghi chỗ nào đã 
 
 | File | Loại | Nội dung | Dùng ở |
 |---|---|---|---|
-| `iote-robot-bar.mp4` (22 giây, dọc) | **Clip của đoàn** | Cánh tay robot lấy đồ uống từ dãy chai treo ngược | **Slide 1 — chủ lực** |
-| `iote.jpg` | Wikimedia, CC BY-SA 4.0 | Hành lang có mái che dọc các hall, thấy lối vào hall 8 | Slide 2 |
-| `iote-robot-icecream.jpg` (**mới**, dọc 1080×1920) | **Ảnh của đoàn**, 26/08/2026 11:19 | Cánh tay robot trong máy bán kem đặt ly kem có topping lên khay nhận | **Slide 3 — chủ lực** |
-| `iote-team-1.jpg` | **Ảnh của đoàn** | Booth TunStar, khẩu hiệu 让AI走出屏幕，感知真实世界 | Slide 3 |
-| `iote-sample-pda.jpg` (**mới**) | Ảnh thật minh hoạ, **không chụp tại IOTE** · Bartolo Bernoulli, CC BY-SA 4.0 | Máy quét cầm tay Aitronic, màn hình hiện rõ giao diện Android | **Slide 4** |
-| `iote-sample-rfid.jpg` (**mới**) | Ảnh thật minh hoạ, **không chụp tại IOTE** · Pedalito, CC0 | Tem nhãn hàng chiếu ngược sáng, thấy anten RFID dưới mã vạch | **Slide 4** |
-| `iote-team-4.jpg` | **Ảnh của đoàn** | Đoàn trao đổi tại booth thẻ RFID/NFC | Slide 4 (phụ) |
-| `iote-team-5.jpg` | **Ảnh của đoàn** | Đoàn giữa lối đi đông khách | Slide 5 |
+| `iote.jpg` | Wikimedia, CC BY-SA 4.0 · Dinkun Chen | Hành lang có mái che dọc các hall, thấy lối vào hall 8 | Trang 1 |
+| `iote-2.jpg` | Wikimedia, CC BY-SA 4.0 · Lhzss8 | Sảnh vào phía bắc | Trang 2 |
+| `hall9/nfc-alipay-tap-terminal-china.jpg`, `hall9/rfid-uhf-inlay-textile-label-peeled.jpg` | Wikimedia, ảnh minh hoạ, không chụp tại IOTE | Đầu đọc Alipay "碰一下", tem RFID bóc hở thấy anten | Trang 3 |
+| `hall9/iote-hall9-rfid-tags.jpg`, `hall9/iote-hall9-xcc.jpg` | **Ảnh của đoàn** tại Hall 9 | Booth tem dán RFID, booth XCC RFID | Trang 3 |
+| `hall9/nfc-tag-bus-stop-tap-phone.jpg`, `rfid-portal-pallet-gate.jpg`, `rfid-handheld-inventory-warehouse.jpg`, `nfc-phone-tap-pos-terminal.jpg` | Wikimedia, ảnh minh hoạ | Thẻ NFC dán sẵn, cổng đọc RFID, súng đọc kiểm kho, chạm điện thoại | Trang 4 |
+| `iote-robot-icecream.jpg` | **Ảnh của đoàn**, 26/08/2026 11:19 | Cánh tay robot trong máy bán kem đặt ly kem lên khay | **Trang 5 — chủ lực** |
+| `iote-team-1.jpg` | **Ảnh của đoàn** | Booth TunStar, khẩu hiệu 让AI走出屏幕，感知真实世界 | Trang 5, trang 6 |
+| `iote-robot-bar.mp4` (22 giây, dọc) | **Clip của đoàn** | Cánh tay robot lấy đồ uống từ dãy chai treo ngược | Trang 6 |
+| `iote-team-6.jpg` | **Ảnh của đoàn** | Bảng cảm ứng ở một booth: "Xin chào Ahamovers" | Trang 6 |
+| `iote-team-2/3/4/5.jpg` | **Ảnh của đoàn** | Booth CTONE, ZNV, XCC; đoàn giữa lối đi | Trang 6 |
 
-**Quy tắc cho hai ảnh minh hoạ:** chú thích trên slide ghi *"Ảnh minh hoạ loại thiết bị, không chụp tại IOTE"* kèm tên tác giả và giấy phép. Nguồn đầy đủ ở `public/media/places/SOURCES.md`.
-
-**Chưa tìm được ảnh:** máy quét đeo ngón tay. Trên Wikimedia chỉ có một ảnh, độ phân giải quá thấp (741px). Slide 4 nói về món này bằng lời. Nếu ai trong đoàn có ảnh chụp ở IOTE thì thay vào.
-
----
-
-## SLIDE 1 · Mở đầu — 50 giây
-
-🖥️ **TRÊN SLIDE**
-
-- Tiêu đề lớn: **Một ngày ở IOTE: AI bước ra khỏi màn hình**
-- Dòng phụ: Triển lãm IoT quốc tế lần thứ 25 · Thẩm Quyến · 26–28/08/2026 · Tiến
-- Clip robot pha chế chiếm nửa phải slide, tự chạy, lặp lại, tắt tiếng
-
-🖼️ **HÌNH / VIDEO**
-
-- ✅ `iote-robot-bar.mp4`. Nếu clip không chạy: dùng `iote-robot-bar-poster.jpg`.
-
-🎙️ **LỜI NÓI**
-
-> *"Ngày thứ ba của chuyến đi, đoàn mình dành trọn một ngày ở IOTE. Đây là triển lãm về những thiết bị có gắn cảm biến và kết nối mạng: từ con chip, cái tem dán trên hàng, cho tới robot.*
->
-> *Mọi người đang thấy một quầy pha nước không có nhân viên. Cánh tay robot tự lấy chai, tự rót, còn khách đứng quanh thì giơ điện thoại lên quay.*
->
-> **✋ *«Em hỏi cả phòng một câu: ở một triển lãm công nghệ lớn của Trung Quốc năm nay, mọi người nghĩ AI xuất hiện nhiều nhất dưới dạng nào: chatbot trên màn hình, hay máy móc chạy ngoài đời thật? Ai nghĩ là chatbot giơ tay em xem.»*** *(đếm tay)*
->
-> *Em giữ đáp án một chút."*
-
-🎬 **GHI CHÚ SÂN KHẤU**
-
-- Chỉ đếm tay, **không nói đáp án**. Đáp án ở slide 3.
+Giấy phép đầy đủ của mọi ảnh Wikimedia ở `public/media/places/SOURCES.md`.
 
 ---
 
-## SLIDE 2 · IOTE lớn cỡ nào — 45 giây
+## TRANG 1 · Tổng quan — 1 phút 10
 
-🔎 *Đã đối chiếu với trang giới thiệu chính thức của ban tổ chức [1] ngày 23/09/2026: 80.000 m², 1.000+ doanh nghiệp (展商), 100.000+ lượt khách chuyên ngành, 3.000+ khách nước ngoài từ 70 quốc gia và vùng lãnh thổ. Đây là số ban tổ chức **tự công bố**, không có kiểm toán độc lập. 19 hall và 400.000 m² lấy từ hồ sơ của trung tâm hội chợ trên AIPC [2].*
+🔎 *Số liệu đã đối chiếu với trang giới thiệu chính thức của ban tổ chức [1] ngày 23/09/2026: 80.000 m², 1.000+ doanh nghiệp (展商), 100.000+ lượt khách chuyên ngành. Đây là số ban tổ chức **tự công bố**. 19 hall và 400.000 m² lấy từ hồ sơ trung tâm hội chợ trên AIPC [2].*
 
 🖥️ **TRÊN SLIDE**
 
-- Tiêu đề: **Bốn hall trong một trung tâm mười chín hall**
-- Ba ô số (08/2026, ban tổ chức công bố):
-  - **80.000 m²**, khoảng **11 sân bóng đá**
-  - **1.000+** doanh nghiệp trưng bày
-  - **100.000+** lượt khách chuyên ngành
-- Dòng nhỏ: *Cả trung tâm hội chợ có 19 hall, 400.000 m² trong nhà. IOTE dùng 4 hall.*
-- Chân slide: *Nguồn: Ban tổ chức IOTE, 08/2026 · AIPC, hồ sơ Shenzhen World · Ảnh: Dinkun Chen, CC BY-SA 4.0*
+- Kicker: IOTE · Triển lãm IoT quốc tế lần thứ 25
+- Tiêu đề: **Bốn khu trưng bày về công nghệ IoT.**
+- Đoạn giới thiệu: 26–28/08/2026, Trung tâm Hội chợ Quốc tế Thâm Quyến, Bảo An, 4 trong 19 khu, ngày thứ ba của chuyến đi
+- Bốn ô số: **80.000 m²** diện tích IOTE · **400.000 m²** cả trung tâm · **1.000+ doanh nghiệp** · **100.000 lượt** khách chuyên ngành
 
 🖼️ **HÌNH / VIDEO**
 
-- ✅ `iote.jpg` làm nền mờ hoặc nửa trái slide.
+- ✅ `iote.jpg`, khung dọc bên trái.
 
 🎙️ **LỜI NÓI**
 
-> *"Về quy mô: IOTE năm nay rộng 80.000 mét vuông, cỡ 11 sân bóng đá ghép lại. Hơn một nghìn doanh nghiệp mang hàng tới, và theo ban tổ chức là hơn 100.000 lượt khách, toàn là người đi xem để mua hàng hoặc tìm đối tác.*
+> *"Ngày thứ ba của chuyến đi, đoàn mình dành trọn một ngày ở IOTE. Đây là triển lãm về những thiết bị có gắn cảm biến và kết nối mạng, người trong ngành gọi chung là IoT. Nói dễ hiểu là từ con chip, cái tem dán trên hàng, cho tới robot.*
 >
-> **Vậy mà 80.000 mét vuông đó chỉ là 4 hall, trong một trung tâm hội chợ có tới 19 hall.** *Đi hết 4 hall đã mất trọn một ngày."*
+> *IOTE rộng 80.000 mét vuông, cỡ 11 sân bóng đá. Hơn một nghìn doanh nghiệp mang hàng tới, và theo ban tổ chức là khoảng 100.000 lượt khách, toàn người đi tìm hàng hoặc tìm đối tác.* **Vậy mà đó mới chỉ là 4 trong 19 khu của cả trung tâm hội chợ.**
+>
+> **✋ *«Trước khi đi tiếp, em hỏi cả phòng một câu: ở một triển lãm công nghệ lớn của Trung Quốc năm nay, mọi người nghĩ AI xuất hiện nhiều nhất dưới dạng nào: chatbot trên màn hình, hay máy móc chạy ngoài đời thật? Ai nghĩ là chatbot giơ tay em xem.»*** *(đếm tay)*
+>
+> *Em giữ đáp án tới gần cuối bài."*
 
 🎬 **GHI CHÚ SÂN KHẤU**
 
-- "11 sân bóng": một sân tiêu chuẩn 105 × 68 m ≈ 7.140 m², 80.000 ÷ 7.140 ≈ 11,2.
+- "11 sân bóng": một sân 105 × 68 m ≈ 7.140 m², 80.000 ÷ 7.140 ≈ 11,2.
 - Không đọc từng ô số. Câu in đậm là đủ.
-- Số 3.000+ khách nước ngoài để dành cho Q&A.
+- Chỉ đếm tay, **không nói đáp án**. Đáp án ở trang 5.
 
 ---
 
-## SLIDE 3 · Điều thứ nhất: AI ở đây là máy móc — 1 phút 15
+## TRANG 2 · Bốn khu trưng bày, bốn nhóm chủ đề — 50 giây
+
+🔎 ⚠️ *Trang giới thiệu của ban tổ chức [1] **không liệt kê chủ đề của hall 9/10/11/12**. Chủ đề trên slide lấy theo ghi chép của đoàn [3]. Riêng Hall 9 đã có ảnh đoàn chụp biển "9 Hall · Gate 15" và các booth RFID/NFC. Cách kể "đi theo một món hàng" là **cách đoàn diễn giải**, lời nói phải nói rõ như vậy.*
+
+🖥️ **TRÊN SLIDE**
+
+- Kicker: IOTE · Đặc điểm
+- Tiêu đề: **Bốn khu trưng bày, bốn nhóm chủ đề**
+- Bốn thẻ:
+  1. **Hall 9 · Passive IoT và thiết bị đầu cuối**: RFID, mã QR, NFC, thiết bị cầm tay cho kho vận
+  2. **Hall 10 · IoT công nghiệp, cảm biến, định vị**: định vị trong nhà, theo dõi tài sản, cảm biến nhiệt ẩm và rung sốc
+  3. **Hall 11 · Digital China**: nhãn giấy điện tử dùng lại, chống hàng giả, truy xuất hành trình
+  4. **Hall 12 · AI tổng quát**: camera đo kiện và phát hiện hư hỏng, AI cho vận hành, robot
+
+🖼️ **HÌNH / VIDEO**
+
+- ✅ `iote-2.jpg`, sảnh bắc của trung tâm hội chợ.
+
+🎙️ **LỜI NÓI**
+
+> *"Bốn khu này chia theo nhóm công nghệ. Em không đọc hết chữ trên slide, chỉ kể theo cách đoàn thấy dễ nhớ:* **đi hết bốn khu giống như đi theo một món hàng.**
+>
+> *Hall 9 là chỗ món hàng được gắn "chứng minh thư": một cái tem, một mã QR, một con chip. Hall 10 trả lời câu "món hàng đang ở đâu, có bị va đập không". Hall 11 là chuyện chứng minh hàng thật, món hàng đi từ đâu tới. Còn Hall 12 là khu AI: máy tự nhìn, tự đo kiện hàng, robot tự chạy trong kho.*
+>
+> *Em xin đi sâu vào Hall 9, vì đó là khu gần với chuyện giao hàng của mình nhất."*
+
+🎬 **GHI CHÚ SÂN KHẤU**
+
+- Chỉ tay lần lượt vào bốn thẻ khi nói tới từng hall.
+- Không đọc các chữ viết tắt trên thẻ (UWB, RTLS, LoRa, NB-IoT, GNSS RTK, LLM, AMR). Nếu có người hỏi thì trả lời ở Q&A.
+
+---
+
+## TRANG 3 · Hall 9: Cùng một con chip. Khác tầm đọc. — 1 phút 20
+
+🔎 *Kiến thức NFC và RFID theo các nguồn ghi trong `src/data/hall9.ts` [5], VinhTien kiểm chứng ngày 24/09/2026. Alipay Tap (碰一下) ra mắt 7/2024. Chi tiết thẻ NFC trên bàn quán dim sum là ghi chép ngày 1 của Sâm [3]: chạm điện thoại vào là mở thẳng menu. Hai ảnh booth do đoàn chụp tại Hall 9. Hai ảnh lớn là ảnh minh hoạ lấy từ Wikimedia, **không chụp tại IOTE**.*
+
+🖥️ **TRÊN SLIDE**
+
+- Kicker: Hall 9 · NFC và RFID
+- Tiêu đề: **Cùng một con chip. Khác tầm đọc.**
+- Thẻ **NFC · Chạm · Vài centimet**: đọc từng thẻ một, phải chạm gần; điện thoại thường đọc được; Alipay Tap ở Trung Quốc
+- Thẻ **RFID UHF · Quét cả loạt · Vài mét**: đọc hàng trăm thẻ cùng lúc, kể cả trong thùng; cần máy đọc riêng; tem rẻ khi mua nhiều, đọc kém khi sát kim loại hoặc chất lỏng
+- Cột phải: hai ảnh của đoàn ở Hall 9
+- Dải dưới: *Chip và anten, không có pin. Máy đọc phát sóng, thẻ "mượn" chút điện từ sóng đó để gửi lại mã của nó.*
+
+🖼️ **HÌNH / VIDEO**
+
+- ✅ Bốn ảnh đã có sẵn trên slide. Không cần thêm.
+
+🎙️ **LỜI NÓI**
+
+> *"Ở Hall 9, hai thứ gặp nhiều nhất là NFC và RFID. Tên khác nhau, nhưng bên trong giống nhau:* **một con chip nhỏ với một vòng anten, không có pin.** *Máy đọc phát sóng, cái thẻ "mượn" chút điện từ sóng đó để gửi lại mã của nó. Dòng chữ dưới cùng của slide nói đúng ý này.*
+>
+> *Khác nhau là ở tầm đọc. NFC là kiểu **chạm**: phải đưa sát vài centimet mới đọc được, và điện thoại bình thường đọc được luôn. Ở Trung Quốc, Alipay dùng cách này để chạm điện thoại trả tiền. Tối đầu tiên, trên bàn quán dim sum đoàn ăn cũng dán sẵn một cái thẻ như vậy: chạm điện thoại vào là mở ra thực đơn, khỏi cài app.*
+>
+> *RFID thì **quét cả loạt**: đứng cách vài mét vẫn đọc được hàng trăm cái tem cùng lúc, kể cả tem nằm trong thùng. Đổi lại phải có máy đọc riêng, điện thoại không làm được, và đọc kém khi sát kim loại hay chất lỏng.*
+>
+> *Hai ảnh bên phải là đoàn chụp ở Hall 9. Booth làm tem dán RFID lúc nào cũng kín người."*
+
+🎬 **GHI CHÚ SÂN KHẤU**
+
+- Câu cần người nghe nhớ: **NFC là chạm, RFID là quét cả loạt.** Có thể nói chậm lại ở hai chữ "chạm" và "quét cả loạt".
+- Không giải thích chữ "UHF" trên slide.
+
+---
+
+## TRANG 4 · Hall 9: Chạm ở hai đầu. Quét cả loạt ở giữa. — 1 phút 30
+
+🔎 *Đây là **đề xuất để thảo luận**, **không phải** việc Ahamove đang làm hay đã lên kế hoạch. Thứ tự "NFC trước, RFID sau" lấy theo ghi chép của đoàn [3]. Ví dụ UPS, Decathlon, Uniqlo, Zara lấy từ nguồn công khai trong `hall9.ts` [5]. ⚠️ Chữ trên thẻ "Lấy hàng" có cụm "thay cho chụp ảnh hay gọi điện", tức là đang ngầm mô tả cách làm hiện tại. Lời nói bên dưới **cố ý không nhắc tới cụm này**. Thẻ "Hub chia chọn" ghi "UPS và Delta": Delta là hãng bay, họ dùng RFID để theo dõi hành lý ở sân bay chứ không phải ở kho hàng, nên lời nói chỉ nhắc UPS.*
+
+🖥️ **TRÊN SLIDE**
+
+- Kicker: Hall 9 · Liên hệ Ahamove · Đề xuất để thảo luận
+- Tiêu đề: **Chạm ở hai đầu. Quét cả loạt ở giữa.**
+- Bốn bước: **01 Lấy hàng · NFC** · **02 Hub chia chọn · RFID** · **03 Kho same-day · RFID** · **04 Bàn giao · NFC**
+- Dải: túi giữ nhiệt, thùng, xe lồng dùng lại, mỗi món một "căn cước" RFID
+- Khung tối: *Thứ tự nên thử, theo ghi chép của đoàn: NFC trên điện thoại tài xế trước, RFID khi có hub đủ lớn.*
+- Ba câu cần kiểm tra: tỷ lệ tài xế có điện thoại NFC · hàng làm RFID đọc kém · chi phí nằm ở máy đọc và phần mềm
+
+🖼️ **HÌNH / VIDEO**
+
+- ✅ Bốn ảnh minh hoạ đã có sẵn trên slide.
+
+🎙️ **LỜI NÓI**
+
+> *"Vậy chuyện này liên quan gì tới Ahamove?* **Em nói trước: đây là đề xuất để mọi người cùng bàn, không phải việc Ahamove đang làm.**
+>
+> *Tiêu đề slide tóm gọn lại: chạm ở hai đầu, quét cả loạt ở giữa. **Hai đầu** là lúc lấy hàng và lúc giao hàng. Một cái thẻ NFC dán ở quầy, hay trên túi hàng, tài xế hoặc người nhận chạm điện thoại vào là xác nhận xong, không cần mua máy gì thêm. **Ở giữa** là kho trung chuyển, nơi chia hàng, và kho giao trong ngày. Kiện hàng đi qua một cái cổng đọc là tự ghi nhận, không phải quét từng mã. Lia máy đọc qua kệ là đếm xong hàng trong vài giây. UPS, Decathlon, Uniqlo đã làm những việc này.*
+>
+> *Nhưng trước khi thử có ba câu phải trả lời: bao nhiêu tài xế đang dùng điện thoại có NFC, hàng đi qua kho có nhiều đồ uống, thuốc, đồ kim loại không, và chi phí thật nằm ở máy đọc với phần mềm chứ không nằm ở con tem.*
+>
+> *Nên thứ tự đoàn đề xuất là:* **thử cái chạm trên điện thoại tài xế trước. RFID để sau, khi có kho đủ lớn.**"
+
+🎬 **GHI CHÚ SÂN KHẤU**
+
+- Không hứa mốc thời gian. Không nói "Ahamove sẽ…".
+- Nếu trễ giờ: bỏ câu "UPS, Decathlon, Uniqlo…".
+- Dải "túi giữ nhiệt, thùng, xe lồng" không nói trong mạch chính. Để dành cho Q&A.
+
+---
+
+## TRANG 5 · AI ở IOTE là máy móc, không phải màn hình — 1 phút 10
 
 🔎 *"Phần mềm và chatbot chỉ khoảng 10–20%" là **ước lượng bằng mắt của Công** khi đi khu AI, không phải số thống kê. Slide và lời nói đều phải ghi như vậy. Máy bán kem có robot là ghi chú của Sâm. Sâm xác nhận khách chọn vị trên màn hình của máy và trả bằng Alipay. Ảnh do đoàn chụp tại IOTE lúc 11:19 ngày 26/08/2026. Khẩu hiệu TunStar đọc từ ảnh đoàn chụp.*
 
 🖥️ **TRÊN SLIDE**
 
-- Tiêu đề: **AI ở IOTE là máy móc, không phải màn hình**
-- Khẩu hiệu lớn: **让AI走出屏幕，感知真实世界**
-  *"Để AI bước ra khỏi màn hình, cảm nhận thế giới thật"* — booth TunStar
-- Một dòng: *Ở khu AI, phần mềm và chatbot chỉ chiếm khoảng **10–20%**, phần còn lại là robot và thiết bị.*
-- Dòng nhỏ: *Ước lượng bằng mắt của đoàn, không phải số thống kê.*
+- Kicker: IOTE · AI ở IOTE
+- Tiêu đề: **AI ở IOTE là máy móc, không phải màn hình.**
+- Khẩu hiệu lớn: **让AI走出屏幕，感知真实世界** · *"Để AI bước ra khỏi màn hình, cảm nhận thế giới thật"* · Booth TunStar
+- Ô số: **10–20%**. *Ở khu AI, phần mềm và chatbot chỉ chiếm chừng này. Phần còn lại là robot và thiết bị.* · *Ước lượng bằng mắt của đoàn, không phải số thống kê.*
+- Chân slide: nguồn là ghi chép và ảnh của đoàn
 
 🖼️ **HÌNH / VIDEO**
 
-- ✅ `iote-robot-icecream.jpg` làm **ảnh chính**, khung dọc bên phải. Chú thích: *"Máy bán kem: chọn vị trên màn hình, trả bằng Alipay, cánh tay robot tự làm và đưa ra."*
-- ✅ `iote-team-1.jpg` (booth TunStar) làm ảnh phụ, nhỏ hơn.
+- ✅ `iote-robot-icecream.jpg` (ảnh chính) và `iote-team-1.jpg` (booth TunStar).
 
 🎙️ **LỜI NÓI**
 
-> *"Quay lại câu hỏi lúc nãy. **Đáp án là máy móc.***
+> *"Giờ quay lại câu hỏi lúc đầu.* **Đáp án là máy móc.**
 >
-> *Công đi khu AI và ước chừng phần mềm với chatbot chỉ chiếm khoảng 10 tới 20 phần trăm. Đây là cảm nhận bằng mắt của đoàn chứ không phải số đếm, nhưng rất rõ: phần còn lại là robot, là thiết bị đang chạy thật trước mặt mình.*
+> *Công đi khu AI và ước chừng phần mềm với chatbot chỉ chiếm khoảng 10 tới 20 phần trăm. Đây là cảm nhận bằng mắt của đoàn chứ không phải số đếm, nhưng thấy rất rõ: phần còn lại là robot, là thiết bị đang chạy thật trước mặt mình.*
 >
-> *Ví dụ cái máy trong ảnh. Nó là máy bán kem. Khách chọn vị ngay trên màn hình của máy, quét Alipay để trả tiền, rồi cánh tay robot bên trong tự làm kem, rắc topping và đưa ly ra. Từ lúc chọn tới lúc cầm ly, không có ai đứng bán.*
+> *Ví dụ cái máy trong ảnh. Nó là máy bán kem. Khách chọn vị trên màn hình của máy, quét Alipay để trả tiền, rồi cánh tay robot bên trong tự làm kem, rắc topping và đưa ly ra. Từ lúc chọn tới lúc cầm ly, không có ai đứng bán.*
 >
-> *Một booth tên TunStar treo câu khẩu hiệu mà em nghĩ tóm được cả ngày hôm đó: "Để AI bước ra khỏi màn hình, cảm nhận thế giới thật."*
+> *Booth TunStar treo một câu mà em nghĩ tóm được cả ngày hôm đó: "Để AI bước ra khỏi màn hình, cảm nhận thế giới thật."*
 >
 > **Ở Việt Nam, nói tới AI mình hay nghĩ tới ChatGPT. Ở đây, người ta đang lắp AI vào máy móc và bán cho doanh nghiệp dùng ngay."**
 
 🎬 **GHI CHÚ SÂN KHẤU**
 
-- Nếu ở slide 1 nhiều người chọn "chatbot": *"Phần lớn phòng mình đoán giống đoàn trước khi đi."*
+- Nếu ở trang 1 nhiều người chọn "chatbot": *"Phần lớn phòng mình đoán giống đoàn trước khi đi."*
 - Không nói "Trung Quốc vượt xa mình" hay các câu so sánh chung chung. Chỉ kể điều đoàn thấy.
-- Không cần giải thích Alipay: đó là ví điện tử phổ biến nhất ở Trung Quốc, và phần lớn mọi người đã nghe tên.
 
 ---
 
-## SLIDE 4 · Điều thứ hai: bán sẵn trên kệ, mua về là dùng — 1 phút 15
+## TRANG 6 · Robot và thiết bị AI tại IOTE — 35 giây
 
-🔎 *Dựa trên ghi chép của Quân, Sâm và Bình [3]. "Điện thoại làm được khoảng 80%" là **ước tính của Bình**, không phải phép đo. Đoàn **không ghi lại báo giá** tem RFID, nên chỉ nói "rất rẻ khi mua số lượng lớn", **không** đưa con số. Máy trong ảnh minh hoạ là hãng Aitronic, **không phải** mẫu UROVO mà Bình xem ở IOTE.*
+🔎 *Toàn bộ ảnh và clip trên trang này do đoàn chụp tại IOTE, 08/2026.*
 
 🖥️ **TRÊN SLIDE**
 
-- Tiêu đề: **Phần lớn là hàng bán sẵn, mua về là dùng**
-- Hai ảnh cạnh nhau, mỗi ảnh một câu:
-  - **Máy quét cầm tay**: bên trong là một máy Android gắn thêm đầu quét mã
-  - **Tem RFID**: con chip mỏng dán dưới nhãn, máy đọc được từ xa không cần quét từng cái. Có booth in tem tại chỗ, rất rẻ khi mua số lượng lớn
-- Dòng dưới: *"Ít thứ để xây sâu thêm, chủ yếu là mua và dùng."* — Quân
-- Chú thích ảnh: *Ảnh minh hoạ loại thiết bị, không chụp tại IOTE · Bartolo Bernoulli, CC BY-SA 4.0 · Pedalito, CC0*
+- Kicker: IOTE · Ảnh của đoàn
+- Tiêu đề: **Robot và thiết bị AI tại IOTE.**
+- Clip quầy robot pha chế và 6 ảnh: TunStar, "Xin chào Ahamovers", XCC, CTONE, đoàn giữa lối đi, ZNV
 
 🖼️ **HÌNH / VIDEO**
 
-- ✅ `iote-sample-pda.jpg`: màn hình Android thấy rõ, hợp đúng câu "bên trong chỉ là Android".
-- ✅ `iote-sample-rfid.jpg`: thấy vòng anten nằm dưới mã vạch, giúp người không biết RFID hình dung được ngay.
-- ✅ (tuỳ chọn) `iote-team-4.jpg`: đoàn đứng ở booth thẻ RFID/NFC, để nhắc rằng đoàn có tới tận nơi.
+- ✅ `iote-robot-bar.mp4`: **bấm chạy clip khi chuyển sang trang này**. Clip không có tiếng.
 
 🎙️ **LỜI NÓI**
 
-> *"Điều thứ hai hơi ngược với điều thứ nhất. Nhìn thì hoành tráng, nhưng đi vào từng booth thì **phần lớn là sản phẩm đóng gói sẵn**. Quân nhận xét là có ít thứ để mình xây sâu thêm, chủ yếu là mua về rồi dùng.*
+> *"Vài hình ảnh của đoàn trong ngày hôm đó. Quầy pha nước không có nhân viên: cánh tay robot tự lấy chai, khách đứng quanh giơ điện thoại lên quay. Có booth còn viết lên bảng cảm ứng để chào đoàn: "Xin chào Ahamovers".*
 >
-> *Ví dụ cái máy quét cầm tay mà các kho hàng hay dùng. Bình mở ra xem thì bên trong thực chất là **một máy Android, gắn thêm đầu quét mã**. Theo Bình ước tính, một chiếc điện thoại bình thường cài app là làm được chừng 80% việc của nó.*
->
-> *Hay cái tem bên cạnh. Nhìn thì giống tem mã vạch thường, nhưng soi ngược sáng sẽ thấy một vòng anten mỏng. Đó là tem RFID, máy đọc được từ xa mà không phải quét từng món. Có booth đặt luôn máy in tem tại chỗ, mua số lượng lớn thì mỗi tem rất rẻ.*
->
-> *Bình còn chỉ ra một món nhỏ mà em thấy rất hay: máy quét đeo ở ngón tay như chiếc nhẫn. Người soạn hàng khỏi phải cầm máy, rảnh cả hai tay để bê hàng."*
+> *Nếu phải tóm cả ngày ở IOTE trong một câu, em sẽ nói thế này:* **công nghệ ở đây không đứng trên sân khấu. Nó nằm trên kệ, có giá, và mua về dùng được ngay."**
 
 🎬 **GHI CHÚ SÂN KHẤU**
 
-- Không nêu tên hãng (UROVO, Arizon) trong lời nói. Để dành cho Q&A.
-- Không nhắc "+40% hiệu suất" của booth kính AR.
-- Nếu bị trễ giờ: bỏ đoạn máy quét đeo ngón tay.
+- Chỉ tay vào ảnh "Xin chào Ahamovers" khi nhắc tới. Đây là khoảnh khắc riêng của đoàn, người nghe thường cười ở chỗ này.
+- Câu chốt nói chậm, dừng một nhịp rồi mới chuyển trang.
 
 ---
 
-## SLIDE 5 · Mang về gì — 1 phút
-
-🔎 *Đây là **đề xuất để thảo luận** từ ghi chép của Bình [3], **không phải** việc Ahamove đang làm hay đã lên kế hoạch. Slide phải ghi rõ như vậy. Bậc 1 cố ý **không mô tả cách tài xế Ahamove đang xác nhận giao hàng**, chỉ nói nguyên tắc "xem app trên điện thoại làm được tới đâu trước khi mua thiết bị". Nhờ vậy câu chữ đúng bất kể quy trình hiện tại ra sao.*
+## TRANG 7 · Nếu bạn ghé IOTE — 25 giây
 
 🖥️ **TRÊN SLIDE**
 
-- Tiêu đề: **Nếu thử, nên thử theo thứ tự nào?**
-- Nhãn góc: **Đề xuất để thảo luận, chưa phải kế hoạch**
-- Ba bậc thang, thấp lên cao:
-  1. **Tận dụng điện thoại tài xế**: trước khi mua máy quét chuyên dụng, xem app trên điện thoại còn làm thêm được gì
-  2. **Máy quét đeo ngón tay ở kho trung chuyển**: phân loại hàng nhanh hơn, rảnh hai tay
-  3. **Tem RFID, kính thông minh** (kính hiện chỉ dẫn lấy hàng ngay trước mắt): chỉ khi có kho đủ lớn, đủ nhiều hàng để bù chi phí
-- Câu chốt, chữ lớn ở cuối slide: **Công nghệ ở đây không đứng trên sân khấu. Nó nằm trên kệ, có giá, mua về dùng được ngay.**
-
-🖼️ **HÌNH / VIDEO**
-
-- Ba bậc thang vẽ đơn giản. ✅ `iote-team-5.jpg` làm dải ảnh mờ phía sau câu chốt.
+- Kicker: IOTE · Gợi ý ghé thăm
+- Tiêu đề: **Nếu bạn ghé IOTE**
+- Bốn thẻ: Đi thế nào (metro tuyến 20, ga Quốc Triển Bắc) · Đi lúc nào (ba ngày cuối tháng 8, đăng ký trước) · Xem gì (bốn khu theo nhóm công nghệ) · Lưu ý (dành một ngày, chọn trước khu cần xem)
 
 🎙️ **LỜI NÓI**
 
-> *"Vậy mình mang về được gì? **Em nói trước: đây là đề xuất để mọi người cùng bàn, không phải thứ Ahamove đang làm.***
->
-> *Bình gợi ý đi từ rẻ tới đắt. Bậc một là **tận dụng cái đã có sẵn: điện thoại của tài xế**. Như vừa nói, một chiếc điện thoại cài app đã làm được phần lớn việc của máy quét chuyên dụng. Nên trước khi tính chuyện mua thiết bị, câu hỏi đầu tiên là app của mình còn khai thác thêm được gì từ chiếc điện thoại tài xế đang cầm. Bậc hai là thử máy quét đeo ngón tay cho người phân loại hàng ở kho trung chuyển. Bậc ba mới tới tem RFID, hay kính thông minh hiện chỉ dẫn ngay trước mắt để người soạn hàng lấy đúng ô, và chỉ nên tính khi có kho đủ lớn, đủ nhiều hàng để tiền bỏ ra có lời.*
->
-> *Nếu phải tóm cả ngày ở IOTE trong một câu, em sẽ nói thế này: **công nghệ ở đây không đứng trên sân khấu. Nó nằm trên kệ, có giá, và mua về dùng được ngay.***
+> *"Trang cuối dành cho ai muốn đi IOTE năm sau: đi metro tuyến 20 là tới, triển lãm chỉ mở ba ngày vào cuối tháng 8, cần đăng ký trước, và nên chọn trước khu muốn xem, vì đi hết bốn khu là mất trọn một ngày.*
 >
 > *Em cảm ơn mọi người. Ai có câu hỏi thì em nghe ạ."*
 
 🎬 **GHI CHÚ SÂN KHẤU**
 
-- Không hứa mốc thời gian. Không nói "Ahamove sẽ…".
-
----
-
-## 🗂️ SLIDE DỰ PHÒNG · Bốn hall là đường đi của một món hàng — 1 phút 30
-
-**Chỉ dùng khi được trọn 10 phút và đã xác nhận chủ đề từng hall.** Chèn vào giữa slide 2 và slide 3.
-
-🔎 ⚠️ **Chưa có nguồn cho chủ đề từng hall.** Trang giới thiệu của ban tổ chức [1] không liệt kê chủ đề của hall 9/10/11/12. Nội dung dưới đây lấy theo slide "Đặc điểm" đang có, dựa trên ghi chép của đoàn. Phần "với một món hàng thì…" là **cách đoàn diễn giải**.
-
-🖥️ **TRÊN SLIDE**
-
-- Tiêu đề: **Đi hết bốn hall giống như đi theo một món hàng**
-- Dải bốn bước:
-  1. **Hall 9 · Nhận diện**: tem RFID, mã QR, chip chạm NFC, máy quét cầm tay
-  2. **Hall 10 · Theo dõi trên đường**: định vị trong nhà, thiết bị báo vị trí, cảm biến nhiệt độ, độ ẩm, rung lắc
-  3. **Hall 11 · Chứng minh hàng thật**: nhãn giấy điện tử dùng lại nhiều lần, chống hàng giả, truy xuất nguồn gốc
-  4. **Hall 12 · Máy tự nhìn và tự làm**: camera đo kích thước kiện và phát hiện hư hỏng, robot và xe tự chạy trong kho
-
-🎙️ **LỜI NÓI**
-
-> *"Bốn hall, bốn chủ đề. Em kể theo cách dễ hình dung: đi hết bốn hall giống như đi theo một món hàng. Hall 9 là chỗ món hàng được **gắn "chứng minh thư"**: một cái tem, một mã QR. Hall 10 trả lời câu **"món hàng đang ở đâu, có bị va đập không"**. Hall 11 là chuyện **chứng minh hàng thật**, món hàng đi từ đâu tới. Hall 12 là nơi **máy tự nhìn và tự làm**: camera tự đo kiện hàng, tự phát hiện hộp móp, robot tự chạy trong kho.*
->
-> *Bốn hall này không nói về giao hàng, nhưng đi hết một vòng thì thấy cả con đường của một kiện hàng trong đó."*
+- Để nguyên trang này trong lúc Q&A.
 
 ---
 
 ## ⏱️ NẾU CHỈ ĐƯỢC ĐÚNG 5 PHÚT
 
-Phần nói đầy đủ khoảng 5'40. Nếu MC báo chỉ còn 5 phút, cắt theo thứ tự sau, được khoảng 4'30:
+Phần nói đầy đủ khoảng 7'10. Nếu MC báo chỉ còn 5 phút, cắt theo thứ tự sau, còn khoảng 5'15:
 
-1. **Slide 2:** chỉ nói câu in đậm "80.000 mét vuông đó chỉ là 4 hall, trong một trung tâm có tới 19 hall". Bỏ câu về số doanh nghiệp và số khách. *(tiết kiệm khoảng 20 giây)*
-2. **Slide 4:** bỏ đoạn máy quét đeo ngón tay. *(khoảng 15 giây)* Slide 5 vẫn nhắc tới món này ở bậc 2, nên thêm nửa câu: "máy quét đeo ngón tay như chiếc nhẫn".
-3. **Slide 3:** bỏ câu khẩu hiệu TunStar trong lời nói, để chữ trên slide tự nói. *(khoảng 15 giây)*
+1. **Trang 7:** không đọc gợi ý ghé thăm, chỉ nói "Em cảm ơn mọi người, ai có câu hỏi thì em nghe ạ". *(tiết kiệm khoảng 20 giây)*
+2. **Trang 2:** chỉ nói câu in đậm "đi hết bốn khu giống như đi theo một món hàng", rồi chuyển luôn sang Hall 9. *(khoảng 30 giây)*
+3. **Trang 3:** bỏ đoạn Alipay và quán dim sum. *(khoảng 20 giây)*
+4. **Trang 4:** bỏ câu "UPS, Decathlon, Uniqlo…" và bỏ câu "Ở giữa…" về đếm hàng trên kệ. *(khoảng 15 giây)*
+5. **Trang 5:** bỏ câu khẩu hiệu TunStar trong lời nói, để chữ trên slide tự nói. *(khoảng 15 giây)*
+6. **Trang 1:** bỏ câu về số doanh nghiệp và số khách, chỉ giữ câu in đậm "4 trong 19 khu". *(khoảng 15 giây)*
 
-**Không bao giờ cắt:** câu hỏi mở đầu và đáp án của nó, câu "đây là đề xuất để thảo luận" ở slide 5, và câu chốt.
+**Không bao giờ cắt:** câu hỏi mở đầu và đáp án của nó, câu "đây là đề xuất để thảo luận" ở trang 4, và câu chốt ở trang 6.
 
 ---
 
@@ -282,13 +305,15 @@ Phần nói đầy đủ khoảng 5'40. Nếu MC báo chỉ còn 5 phút, cắt 
 | Câu hỏi có thể gặp | Trả lời |
 |---|---|
 | *Đoàn có mua thử thiết bị nào không?* | **Không.** Đoàn không mua và không mang mẫu thử nào về. Mọi nhận xét trong bài là từ việc xem và trao đổi tại booth. |
-| *Robot như vậy có thay được tài xế giao hàng không?* | Chỉ trả lời điều đoàn thấy: robot ở IOTE chủ yếu làm việc trong **một chỗ cố định**, như quầy bán kem, quầy pha nước, hay trong kho. Ở IOTE đoàn **không thấy** robot nào giao hàng ngoài đường. Nếu muốn nói thêm: chuyện drone và robot giao hàng ngoài đường nằm ở các phần khác của chuyến đi. |
-| *Khi nào Ahamove làm mấy thứ này?* | Slide 5 là đề xuất để mọi người cùng bàn, **chưa có kế hoạch hay mốc thời gian**. Không hứa gì thêm. |
-| *Tem RFID giá bao nhiêu?* | Đoàn không ghi lại báo giá. Chỉ biết là booth chào giá rất rẻ khi mua số lượng. **Không đoán số.** |
-| *Máy quét cầm tay trong ảnh là của hãng nào?* | Ảnh trên slide là máy Aitronic, chỉ để minh hoạ, không chụp ở IOTE. Máy Bình xem ở IOTE là của UROVO, cũng chạy Android, gắn đầu quét mã và NFC. |
+| *NFC khác quét mã QR ở chỗ nào?* | Cả hai đều mở được một trang trên điện thoại. QR phải mở camera và ngắm. NFC chỉ cần chạm, và cái thẻ khó bị dán đè mã giả hơn một tờ QR in giấy. Ở quán dim sum, đoàn thấy cả hai cùng lúc. |
+| *Điện thoại có đọc được tem RFID không?* | **Không.** Điện thoại chỉ đọc NFC. Tem RFID loại đọc xa cần súng đọc hoặc cổng đọc riêng. Đây là lý do đoàn đề xuất thử NFC trước. |
+| *Tem RFID giá bao nhiêu?* | Đoàn không ghi lại báo giá. Chỉ biết booth chào giá rất rẻ khi mua số lượng lớn. **Không đoán số.** Tiền chủ yếu nằm ở máy đọc và phần mềm. |
+| *Máy quét cầm tay ở kho có gì đặc biệt?* | Bình mở ra xem: bên trong thực chất là **một máy Android gắn thêm đầu quét mã**. Theo **ước tính của Bình**, không phải phép đo, một chiếc điện thoại cài app làm được khoảng 80% việc của nó. Máy Bình xem là của UROVO. |
+| *Robot như vậy có thay được tài xế giao hàng không?* | Chỉ trả lời điều đoàn thấy: robot ở IOTE chủ yếu làm việc ở **một chỗ cố định**, như quầy bán kem, quầy pha nước, hay trong kho. Ở IOTE đoàn **không thấy** robot nào giao hàng ngoài đường. Chuyện drone và robot giao hàng nằm ở các phần khác của chuyến đi. |
+| *Khi nào Ahamove làm mấy thứ này?* | Trang 4 là đề xuất để mọi người cùng bàn, **chưa có kế hoạch hay mốc thời gian**. Không hứa gì thêm. |
+| *Túi giữ nhiệt, thùng dùng lại thì sao?* | Đây là dải chữ trên trang 4: gắn cho mỗi món một tem RFID để biết ai đang giữ, đã trả về chưa. Zara dùng lại một con chip hơn 100 lần [5]. Vẫn là ý để bàn, chưa ai tính chi phí. |
 | *Kính thông minh có tăng năng suất thật không?* | Có một booth trưng bày xe tự hành mang kệ hàng tới chỗ người soạn, kính chỉ ô cần lấy. Booth công bố tăng **40% hiệu suất**, nhưng đó là số **nhà bán tự nói**, đoàn chưa kiểm chứng. |
 | *Khách quốc tế có đông không?* | Ban tổ chức công bố hơn 3.000 khách nước ngoài, từ 70 quốc gia và vùng lãnh thổ [1]. |
-| *Muốn đi IOTE năm sau thì sao?* | Triển lãm chỉ mở ba ngày, thường vào cuối tháng 8. Cần đăng ký trước để lấy thẻ vào cửa. Đi metro tuyến 20, xuống ga Quốc Triển Bắc là vào thẳng sảnh bắc. Trung tâm hội chợ ở Bảo An, khá xa trung tâm thành phố. Nên chọn trước hall cần xem, vì đi hết bốn hall mất trọn một ngày. |
 
 ---
 
@@ -296,15 +321,14 @@ Phần nói đầy đủ khoảng 5'40. Nếu MC báo chỉ còn 5 phút, cắt 
 
 1. **Ban tổ chức IOTE**, *Giới thiệu triển lãm IOTE 2026 Thâm Quyến*, 08/2026 — https://www.iotexpo.com.cn/sz/HTMLIntro · id `iote-2026` trong `sources.ts`. Ban tổ chức tự công bố. Đã đối chiếu ngày 23/09/2026.
 2. **AIPC**, *Hồ sơ thành viên Shenzhen World Exhibition & Convention Center* — https://aipc.org/member/shenzhen-world-exhibition-convention-center/ · id `shenzhen-world-aipc`.
-3. **Ghi chép của đoàn** (Quân, Công, Sâm, Bình), sheet *Outline_Sharing_Shenzhen_Trip*, ngày 3. Hiện nằm trong `src/data/itinerary.ts`, ghim `iote`.
-4. **Ảnh**: ảnh và clip của đoàn, cùng hai ảnh minh hoạ lấy từ Wikimedia Commons. Chi tiết trong `public/media/places/SOURCES.md`.
+3. **Ghi chép của đoàn** (Quân, Công, Sâm, Bình), sheet *Outline_Sharing_Shenzhen_Trip*, ngày 1 (quán dim sum) và ngày 3 (IOTE). Hiện nằm trong `src/data/itinerary.ts`.
+4. **Ảnh**: ảnh và clip của đoàn, cùng ảnh minh hoạ lấy từ Wikimedia Commons. Chi tiết trong `public/media/places/SOURCES.md`.
+5. **Nguồn kiến thức NFC/RFID của hai trang Hall 9**: danh sách `hall9Sources` trong `src/data/hall9.ts` (Atlas RFID, RedBeam, GS1, KrASIA về Alipay Tap, RFID Journal về UPS, Delta, Impinj về Uniqlo, Inditex về Zara). VinhTien kiểm chứng ngày 24/09/2026.
 
 ---
 
 ## ❓ CÂU HỎI CÒN MỞ
 
-Không còn câu hỏi nào chặn việc dựng slide. Hai việc sau chỉ cần nếu muốn thêm:
-
-1. **Chủ đề từng hall**: chỉ cần chốt nếu định dùng slide dự phòng.
-2. **Ảnh máy quét đeo ngón tay** chụp tại IOTE: nếu ai trong đoàn có thì thêm vào slide 4.
-3. *(Tuỳ chọn)* Nếu trước giờ trình bày Tiến nhớ ra một khoảnh khắc riêng ở IOTE, chèn vào lời mở slide 1: người nghe tin câu chuyện của chính người nói hơn.
+1. **Chủ đề từng hall (trang 2)**: chưa có nguồn chính thức. Nếu ai trong đoàn có ảnh biển tên hall 10/11/12 thì đối chiếu.
+2. **Chữ trên trang 4**: cụm "thay cho chụp ảnh hay gọi điện" và "UPS và Delta" nên sửa trên slide (xem 🔎 trang 4). Lời nói hiện đã tránh hai chỗ này.
+3. *(Tuỳ chọn)* Nếu trước giờ trình bày Tiến nhớ ra một khoảnh khắc riêng ở Hall 9, chèn vào cuối trang 3: người nghe tin câu chuyện của chính người nói hơn.
