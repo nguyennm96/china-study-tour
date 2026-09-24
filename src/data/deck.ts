@@ -10,6 +10,7 @@ import { hall9Pages, type Hall9Page } from './hall9'
 
 export type Slide = { chapter: string; kicker: string; title: string; subjectId?: string } & (
   | { kind: 'team' }
+  | { kind: 'recap' }
   | { kind: 'roster' }
   | { kind: 'itinerary' }
   | { kind: 'title' }
@@ -65,6 +66,7 @@ export function buildPresentation(): Slide[] {
     // chương, nên đặt tên riêng là cách duy nhất để "Hành trình" có nhãn mà không sinh hai
     // nhóm "Mở đầu" rời nhau khi bản đồ chen vào giữa.
     { kind: 'team', chapter: 'Mở đầu', kicker: 'Ahamove Study Tour · Shenzhen', title: 'Sáu người. Năm chủ đề. Một hành trình.' },
+    { kind: 'recap', chapter: 'Recap', kicker: 'Recap · 24–28/08/2026', title: 'Năm ngày ở Thâm Quyến.' },
     { kind: 'roster', chapter: 'Chủ đề', kicker: 'Nội dung buổi chia sẻ', title: 'Năm chủ đề từ chuyến đi Thâm Quyến.' },
     { kind: 'itinerary', chapter: 'Hành trình', kicker: 'Hành trình 24–28/08/2026', title: 'Tám điểm dừng ở Thâm Quyến.' },
     ...subjects.flatMap(subjectSlides),

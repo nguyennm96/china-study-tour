@@ -3,7 +3,7 @@ import type { ChapterId } from './atlas'
 
 const deck = buildPresentation()
 export const atlasChapters = {
-  team: deck.filter(slide => slide.kind === 'team' || slide.kind === 'roster' || slide.kind === 'itinerary'),
+  team: deck.filter(slide => slide.kind === 'team' || slide.kind === 'recap' || slide.kind === 'roster' || slide.kind === 'itinerary'),
   drone: deck.filter(slide => slide.subjectId === 'drone'),
   robots: deck.filter(slide => slide.subjectId === 'robots'),
   meituan: deck.filter(slide => slide.subjectId === 'meituan'),

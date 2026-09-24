@@ -216,6 +216,19 @@ function TeamSlide() {
   </div>
 }
 
+/** Video recap cả chuyến: không tự chạy để người trình bày bấm phát là có nhạc. */
+const recapVideo = {
+  src: '/media/trip/recap/shenzhen-recap.mp4',
+  poster: '/media/trip/recap/shenzhen-recap-poster.jpg',
+  alt: 'Video recap chuyến study tour Thâm Quyến của đoàn Ahamove, 24–28/08/2026',
+}
+
+function RecapSlide() {
+  return <figure className="deck-recap">
+    <video src={recapVideo.src} poster={recapVideo.poster} controls playsInline preload="metadata" aria-label={recapVideo.alt}>Trình duyệt chưa phát được video.</video>
+  </figure>
+}
+
 function RosterSlide() {
   return <ol className="deck-topic-agenda">{teamGroups.map((group, index) => <li className="topic-agenda-item" key={group.topic}>
     <span className="topic-agenda-index" aria-hidden="true">0{index + 1}</span>
@@ -255,6 +268,7 @@ export function SlideBody({ slide }: { slide: Slide }) {
   const subject = slide.subjectId ? subjects.find(item => item.id === slide.subjectId)! : undefined
   switch (slide.kind) {
     case 'team': return <TeamSlide />
+    case 'recap': return <RecapSlide />
     case 'roster': return <RosterSlide />
     case 'itinerary': return <Suspense fallback={<div className="tour-loading" role="status">Đang tải bản đồ hành trình…</div>}><ItineraryMap /></Suspense>
     case 'takeaway': return <TakeawaySlide index={slide.takeawayIndex} />

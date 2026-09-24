@@ -19,8 +19,8 @@ const { buildPresentation } = await import(load('deck'))
 
 test('V2 preserves every original slide once, in presentation order, including the two opening slides', () => {
   assert.deepEqual(Object.values(atlasChapters).flat(), buildPresentation())
-  assert.deepEqual(atlasChapterCounts, { team: 3, drone: 5, robots: 8, meituan: 7, takeaways: 4 })
-  assert.deepEqual(atlasChapters.team.map(slide => slide.kind), ['team', 'roster', 'itinerary'])
+  assert.deepEqual(atlasChapterCounts, { team: 4, drone: 5, robots: 8, meituan: 7, takeaways: 4 })
+  assert.deepEqual(atlasChapters.team.map(slide => slide.kind), ['team', 'recap', 'roster', 'itinerary'])
   for (const id of ['drone', 'robots', 'meituan']) assert.match(atlasChapters[id].at(-1).kicker, /Ahamove/)
 })
 
