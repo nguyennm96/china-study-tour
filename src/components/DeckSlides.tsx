@@ -300,5 +300,7 @@ export function SlideBody({ slide }: { slide: Slide }) {
 export const slideOwnsHeading = (slide: Slide) => slide.kind === 'title' || slide.kind === 'experience' || slide.kind === 'team' || slide.kind === 'itinerary'
   || (slide.kind === 'ahamove' && slide.subjectId === 'drone')
   || (slide.kind === 'place' && slide.placeId === 'place-talent-park' && slide.page === 'overview')
+  // Trang đặc điểm Luohu chỉ có dải ảnh (không danh sách chữ) thì để ảnh chiếm trọn khung, bỏ tiêu đề.
+  || (slide.kind === 'place' && slide.placeId === 'place-luohu' && slide.page === 'features')
   // Trang mở đầu Didi tự dựng tiêu đề; trang mười hạng xe đổi tiêu đề sau khi lật đáp án.
   || (slide.kind === 'didi' && (slide.page === 'open' || slide.page === 'tiers'))

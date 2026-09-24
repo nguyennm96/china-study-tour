@@ -185,7 +185,7 @@ export const places: Place[] = [
       { value: '1990', label: 'McDonald’s đầu tiên của Trung Quốc đại lục mở tại đây, 08/10', asOf: '08/10/1990' },
     ],
     note: 'Khu phố hiện tại được xây dựng lại từ đầu thập niên 1990. Giá trị lịch sử của Đông Môn nằm ở vị trí và vai trò thương mại lâu đời; phần lớn kiến trúc hiện nay đã được tái thiết.',
-    featuresTitle: 'Có gì trong khu phố',
+    featuresTitle: 'Một buổi tối Đông Môn',
     features: [
       { title: 'Hơn 600 thương hiệu', detail: 'Hơn hai mươi trung tâm thương mại lớn cùng hàng trăm cửa hàng nhỏ nằm trên mười mấy tuyến phố nối nhau, tạo thành nhiều tầng giá trong cùng một khu.' },
       { title: 'Di tích nằm xen giữa chợ', detail: 'Thư viện Tư Nguyệt và sở chỉ huy đội du kích Đông Giang vẫn còn giữa khu mua sắm; một đoạn phố được dựng lại theo diện mạo thị trấn biên giới ngày trước.' },
@@ -283,6 +283,10 @@ export const places: Place[] = [
       alt: 'Đường Hoà Bình nhìn về phía cửa khẩu La Hồ',
       credit: 'Huepang2012 · CC BY-SA 3.0 · Wikimedia Commons',
     },
+    featurePhotos: [
+      { src: '/media/places/louho-food.jpg', alt: 'Ẩm thực tại chợ cửa khẩu La Hồ' },
+      { src: '/media/places/louho-food-2.jpg', alt: 'Ẩm thực tại chợ cửa khẩu La Hồ' },
+    ],
     metrics: [
       { value: '55.000', unit: 'm²', label: 'Diện tích kinh doanh, bảy tầng', asOf: 'từ 07/1994' },
       { value: '1.700', unit: 'gian hàng', label: 'Tăng từ 1.280 gian lúc mở bán', asOf: 'sau 1994' },
@@ -301,7 +305,6 @@ export const places: Place[] = [
       title: 'Nếu bạn ghé Luohu',
       items: [
         { label: 'Đi thế nào', title: 'Metro tuyến 1 ga La Hồ, cửa A', detail: 'Đi bộ sang là tới. Cùng một chỗ với cửa khẩu sang Hong Kong, ga tàu và bến xe khách.' },
-        { label: 'Dành bao lâu', title: 'Một buổi, hai buổi nếu may đo', detail: 'Đặt may thì phải quay lại lần hai để thử và sửa, nên đừng để vào ngày cuối chuyến.' },
         { label: 'Mua gì', title: 'Trà, đồ khô, đồ da, vải và may đo', detail: 'Hơn 140 tiệm may đo nằm ngay trong toà nhà — đây là thứ khách Hong Kong sang đặt.' },
         { label: 'Lưu ý', title: 'Kiểm tra chất lượng và nguồn gốc sản phẩm', detail: 'Theo ghi chép của đoàn, giá khá đa dạng và có sản phẩm khó xác định nguồn gốc. Nên kiểm tra kỹ trước khi thương lượng và mua.' },
       ],
