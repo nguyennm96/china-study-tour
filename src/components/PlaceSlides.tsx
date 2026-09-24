@@ -47,7 +47,9 @@ export function PlaceSlide({ placeId, page }: { placeId: string; page: 'overview
   if (page === 'gallery' && place.gallery) {
     const { video, photos, description, credit } = place.gallery
     const figures = photos.map(photo => <figure key={photo.src} className={`place-gallery-item ${photo.tall ? 'is-tall' : ''}`}>
-      <img src={photo.src} alt={photo.alt} style={photo.focus ? { objectPosition: photo.focus } : undefined} />
+      {photo.poster
+        ? <video src={photo.src} poster={photo.poster} autoPlay muted loop playsInline preload="metadata" aria-label={photo.alt} style={photo.focus ? { objectPosition: photo.focus } : undefined} />
+        : <img src={photo.src} alt={photo.alt} style={photo.focus ? { objectPosition: photo.focus } : undefined} />}
       <figcaption>{photo.caption}</figcaption>
     </figure>)
     const columns = video ? undefined : { gridTemplateColumns: photos.map(photo => `minmax(0, ${photo.weight ?? 1}fr)`).join(' ') }
@@ -55,7 +57,7 @@ export function PlaceSlide({ placeId, page }: { placeId: string; page: 'overview
       {description && <p className="place-gallery-description">{description}</p>}
       {video && <figure className="place-gallery-video">
         <video src={video.src} poster={video.poster} controls autoPlay muted loop playsInline preload="metadata" aria-label={video.alt}>Trình duyệt chưa phát được video.</video>
-        <figcaption>{video.caption}</figcaption>
+        {video.caption && <figcaption>{video.caption}</figcaption>}
       </figure>}
       {/* Lưới hai hàng: số cột đủ chứa mọi ảnh, ảnh dọc tính là hai ô. */}
       {video ? <div className="place-gallery-grid" style={{ gridTemplateColumns: `repeat(${Math.ceil(photos.reduce((cells, photo) => cells + (photo.tall ? 2 : 1), 0) / 2)}, minmax(0, 1fr))` }}>{figures}</div> : figures}

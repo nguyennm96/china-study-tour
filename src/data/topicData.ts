@@ -86,16 +86,16 @@ export const droneData: TopicData = {
     },
     {
       id: 'drone-time', kind: 'bar',
-      title: 'Nhanh hơn — nhưng đang so hai phép đo khác nhau',
-      question: 'Con số 15 phút của drone có so được với trải nghiệm giao hàng thường ngày không?',
+      title: 'Cùng tuyến hơn 2 km, từ lúc đặt tới lúc nhận',
+      question: 'Trên cùng một quãng đường, drone nhanh hơn xe máy bao nhiêu?',
       axisLabel: 'phút',
       points: [
-        { label: 'Drone · tuyến 3 km (năng lực công bố)', value: 15, display: '15', emphasis: true },
-        { label: 'Toàn bộ đơn Meituan · ngày đạt đỉnh', value: 34, display: '34' },
+        { label: 'Drone', value: 15, display: '15', emphasis: true },
+        { label: 'Xe máy', value: 40, display: '40' },
       ],
-      reading: 'Cùng đơn vị phút, nhưng một bên là năng lực thiết kế trên tuyến ngắn, một bên là trung bình thực tế của mọi loại đơn.',
-      sourceIds: ['mt-gen4', 'mt-peak-2025'],
-      caveat: 'Không dùng cặp số này để kết luận “drone nhanh hơn 2,3 lần”. Muốn so sánh đúng cần thời gian của cùng một tập đơn, cùng cung đường, tính từ lúc bấm đặt tới lúc khách cầm hàng.',
+      reading: 'Trên tuyến Long Hoa hơn 2 km, drone rút thời gian từ khoảng 40 phút xuống khoảng 15 phút, đã tính cả lúc nhà hàng làm món.',
+      sourceIds: ['mt-longhua-2023'],
+      caveat: 'Số do quản lý tuyến drone Long Hoa của Meituan nêu, dạng “khoảng”, tính từ lúc đặt tới lúc nhận và gồm cả thời gian làm món; không phải phép đo độc lập. Meituan còn công bố drone trung bình khoảng 12 phút so với gần 30 phút của cách giao thường (02/2023), nhưng không nói hai số cùng quãng đường.',
     },
   ],
   specs: {

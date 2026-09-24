@@ -79,7 +79,6 @@ export const hotelRobotVideo = {
   src: '/media/trip/robot/Robot_giao_do-16-33.mp4',
   poster: '/media/trip/robot/Robot_giao_do-poster.jpg',
   alt: 'Video quy trình robot giao đồ tới phòng khách sạn Rezen: đặt hàng, nạp đồ, robot đi thang máy và khách lấy hàng',
-  caption: 'Video của đoàn · Rezen Dong Hotel, 08/2026 · 17 giây, không tiếng',
 }
 
 // Mục 4.1 của tài liệu nguồn: LiDAR là đôi mắt, SLAM là bộ não định vị; cảm biến tầm gần lo an toàn.

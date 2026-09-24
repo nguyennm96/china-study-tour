@@ -22,10 +22,11 @@ export type Place = {
     credit?: string
     afterOverview?: boolean
     /** Video dọc đặt thành cột bên trái; khi có video, chú thích ảnh nằm đè lên ảnh cho gọn. */
-    video?: { src: string; poster: string; alt: string; caption: string }
+    video?: { src: string; poster: string; alt: string; caption?: string }
     /** tall: ảnh dọc chiếm trọn chiều cao lưới ảnh. focus: object-position khi cắt ảnh vào ô.
-     *  weight: độ rộng cột tương đối khi không có video, để ảnh dọc hẹp và ảnh ngang rộng. */
-    photos: { src: string; alt: string; caption: string; tall?: boolean; focus?: string; weight?: number }[]
+     *  weight: độ rộng cột tương đối khi không có video, để ảnh dọc hẹp và ảnh ngang rộng.
+     *  poster: có thì ô này là video ngắn (src là file mp4), tự chạy không tiếng. */
+    photos: { src: string; alt: string; caption: string; tall?: boolean; focus?: string; weight?: number; poster?: string }[]
   }
   /** Trang gợi ý ghé thăm. Điểm chỉ đóng vai dẫn nhập cho một chủ đề thì không có. */
   visit?: { title: string; items: { label: string; title: string; detail: string }[] }
@@ -121,7 +122,7 @@ export const places: Place[] = [
     photo: {
       src: '/media/places/seg.jpg',
       alt: 'Bên trong chợ điện tử SEG Plaza: các gian hàng linh kiện san sát nhau dưới trần thấp',
-      credit: 'Bobbie Johnson · CC BY-SA 2.0 · Wikimedia Commons',
+      credit: '', // Bobbie Johnson · CC BY-SA 2.0 · Wikimedia Commons; ẩn chú thích trên slide theo yêu cầu.
     },
     photoAlt: {
       src: '/media/places/seg-2.jpg',
@@ -129,26 +130,31 @@ export const places: Place[] = [
       credit: 'Charlie fong · CC BY-SA 4.0 · Wikimedia Commons',
     },
     metrics: [],
-    featuresTitle: 'Cách tổ chức và giao dịch tại khu chợ',
+    featuresTitle: 'Một khu chợ, hơn 1 tỷ kiện hàng mỗi năm.',
     features: [
-      { title: 'Các chợ phân theo nhóm sản phẩm', detail: 'Khoảng 35 chợ chuyên ngành nằm cạnh nhau, từ linh kiện, phụ kiện điện thoại đến máy tính, máy ảnh cũ và đèn LED. Nên xác định nhóm sản phẩm trước khi chọn toà nhà để tham quan.' },
-      { title: 'Giá bán lẻ và giá sỉ khác nhau', detail: 'Theo quan sát của đoàn, tầng dưới thường bán lẻ, các tầng cao có nhiều mức giá sỉ hơn. Sự khác biệt thể hiện rõ ở mặt hàng máy dịch cầm tay.' },
-      { title: 'Cần so sánh giá và thương lượng', detail: 'Ghi chép của đoàn có mức giá sau thương lượng còn 40–50% giá chào ban đầu. Nên đối chiếu giữa các quầy và kiểm tra sản phẩm trước khi mua.' },
-      { title: 'Cạnh tranh giữa các gian hàng', detail: 'Nhiều gian hàng bán cùng nhóm sản phẩm. Khả năng tìm nguồn, tốc độ đáp ứng và quản lý dòng tiền là những yếu tố cạnh tranh đáng chú ý.' },
+      { title: 'Hơn 1 tỷ kiện hàng gửi đi mỗi năm', detail: 'Bình quân gần 3 triệu kiện mỗi ngày, đi 183 quốc gia và vùng lãnh thổ; nhận về khoảng 70 triệu kiện mỗi năm.', context: 'Tân Hoa Xã · 08/2025', sourceIds: ['hqb-xinhua'] },
+      { title: 'Hơn 150.000 xe chở hàng', detail: 'Xe điện, xe đẩy và xe tải len giữa các toà nhà: để đi lại, giao linh kiện và giao đồ ăn.', context: 'Tân Hoa Xã · 08/2025', sourceIds: ['hqb-xinhua'] },
+      { title: '750.000 lượt khách mỗi ngày', detail: 'Khoảng 7.000 lượt là khách buôn nước ngoài; riêng Huaqiang Electronic World có ngày đón 60.000 lượt.', context: '21 Thế kỷ Kinh tế Đạo báo · 06/2026', sourceIds: ['hqb-21jingji-2026'] },
+      { title: '1,45 km², 35 chợ, 115.000 hộ', detail: 'Khu dài 930 m, rộng 1.560 m, có 4 ga metro. Các chợ nằm trong những toà nhà dọc trục phố đi bộ 930 m.', context: 'Tân Hoa Xã · Wikipedia · Cục Lưu trữ Thâm Quyến', sourceIds: ['hqb-xinhua', 'hqb-zhwiki', 'hqb-markets'] },
+      { title: 'SEG Plaza 71 tầng, chợ ở tầng 1–10', detail: 'Toà cao 291,6 m, sàn 169.083 m², xong năm 2000. Chợ SEG mở năm 1988 chỉ với 900 m² và 43 hộ kinh doanh.', context: 'Wikipedia · Cục Lưu trữ Thâm Quyến', sourceIds: ['seg-plaza-wiki', 'hqb-markets'] },
+      { title: 'Tầng dưới bán lẻ, tầng trên bán sỉ', detail: 'Mỗi toà một nhóm hàng. Có món đoàn trả xuống còn 40–50% giá người bán hét ban đầu.', context: 'Ghi chép của đoàn · 08/2026', sourceIds: ['trip-sheet'] },
     ],
     gallery: {
       title: 'Chợ linh kiện, và cả robot.',
       video: {
-        src: '/media/places/seg-robot-boxing.mp4', poster: '/media/places/seg-robot-boxing-poster.jpg',
-        alt: 'Robot hình người màu đỏ bạc đá và đấm bao cát trong một sàn đấu nhỏ, khách đứng quanh quay điện thoại',
-        caption: 'Một gian trong chợ: robot hình người biểu diễn đá bao cát.',
+        src: '/media/places/seg-robot-walk.mp4', poster: '/media/places/seg-robot-walk-poster.jpg',
+        alt: 'Robot hình người màu đỏ bạc tự đi quanh sàn đấu thảm xanh vàng rồi vào thế đấm bao cát, khách đứng ngoài rào xem',
       },
       photos: [
         { src: '/media/places/seg-team-1.jpg', tall: true, alt: 'Nhìn lên giếng trời SEG Plaza: nhiều tầng gian hàng với biển hiệu điện tử sáng đèn', caption: 'Nhìn lên giếng trời: tầng nào cũng kín gian hàng, biển quảng cáo điốt và cuộn cảm.' },
-        { src: '/media/places/seg-team-2.jpg', tall: true, alt: 'Ba thành viên đoàn đi giữa các quầy linh kiện điện tử trong SEG Plaza', caption: 'Đoàn dạo giữa các quầy linh kiện.' },
+        { src: '/media/places/seg-team-2.jpg', alt: 'Ba thành viên đoàn đi giữa các quầy linh kiện điện tử trong SEG Plaza', caption: 'Đoàn dạo giữa các quầy linh kiện.' },
+        { src: '/media/places/seg-ayisa.jpg', focus: 'center 55%', alt: 'Quầy AYISA với biển máy chiếu thông minh, kệ đầy máy chiếu mini, camera hành trình, máy sấy tóc và robot AI; thành viên đoàn chỉ vào mặt kính', caption: 'Quầy AYISA: máy chiếu mini, camera hành trình, robot AI.' },
+        { src: '/media/places/seg-toys.jpg', focus: 'center 88%', alt: 'Gian đồ chơi công nghệ viền hồng: đàn piano cuộn, trống điện tử dạng thảm, đàn phím và hộp robot chó, xe điều khiển', caption: 'Gian đồ chơi: piano cuộn, trống điện tử, robot chó.' },
+        { src: '/media/places/seg-bargain.mp4', poster: '/media/places/seg-bargain-poster.jpg', focus: 'center 40%', alt: 'Thành viên đoàn nói vào app dịch trên điện thoại để hỏi giá, người bán cầm máy tính bỏ túi màu xanh', caption: 'Trả giá bằng app dịch, người bán bấm máy tính báo giá.' },
       ],
     },
     sourceIds: ['hqb-xinhua', 'hqb-markets', 'hqb-szgov'],
+    showSources: false,
   },
   {
     id: 'place-dongmen', stopId: 'dongmen',

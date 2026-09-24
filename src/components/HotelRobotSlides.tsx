@@ -108,7 +108,6 @@ export function HotelRobotSlides({ page }: { page: HotelRobotPage }) {
 
   if (page === 'video') return <figure className="hotel-video">
     <video src={hotelRobotVideo.src} poster={hotelRobotVideo.poster} controls autoPlay muted playsInline preload="metadata" aria-label={hotelRobotVideo.alt}>Trình duyệt chưa phát được video.</video>
-    <figcaption>{hotelRobotVideo.caption}</figcaption>
   </figure>
 
   if (page === 'infrastructure') return <div className="hotel-stepped"><StepTrail page="infrastructure" /><div className="hotel-journey"><div className="hotel-step-grid hotel-infrastructure">{hotelInfrastructure.map(item => {

@@ -40,7 +40,7 @@ function subjectSlides(subject: Subject): Slide[] {
   const slides: Slide[] = [
     { kind: 'title', chapter, subjectId: subject.id, kicker: subject.label, title: subject.title },
     { kind: 'experience', chapter, subjectId: subject.id, kicker: subject.experience.eyebrow, title: `${subject.experience.headline} ${subject.experience.highlight}` },
-    { kind: 'data-summary', chartIndex: subject.id === 'drone' ? 0 : 1, chapter, subjectId: subject.id, kicker: subject.id === 'drone' ? 'Drone · Quy mô' : 'Số liệu tổng hợp · Quy mô', title: subject.id === 'drone' ? 'Ở Thâm Quyến, đây không phải trò trình diễn.' : '150 triệu đơn — trong một ngày đạt đỉnh.' },
+    { kind: 'data-summary', chartIndex: subject.id === 'drone' ? 0 : 1, chapter, subjectId: subject.id, kicker: subject.id === 'drone' ? 'Drone · Quy mô' : 'Số liệu tổng hợp · Quy mô', title: subject.id === 'drone' ? 'Ở Thâm Quyến, drone giao hàng đã quen thuộc.' : '150 triệu đơn — trong một ngày đạt đỉnh.' },
   ]
   // Drone chỉ trình bày số liệu Thâm Quyến; bỏ trang thông số theo lựa chọn biên tập.
   if (subject.id !== 'drone') {

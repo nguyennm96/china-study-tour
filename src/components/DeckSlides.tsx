@@ -1,6 +1,7 @@
 import { lazy, Suspense, type ReactNode } from 'react'
-import { ArrowUpRight, Cpu, Drone, Package, Path, PersonSimpleWalk, Robot, Star, UserFocus } from '@phosphor-icons/react'
+import { ArrowUpRight, Cpu, Drone, Path, PersonSimpleWalk, Robot, Star, Timer, UserFocus } from '@phosphor-icons/react'
 import type { Metric, TopicData } from '../data/topicData'
+import { source } from '../data/sources'
 import type { Actor, FlowSpec } from '../data/mechanisms'
 import { subjects, takeaways, teamGroups, type Subject } from '../data/presentation'
 import type { Slide } from '../data/deck'
@@ -85,6 +86,8 @@ function DataSummarySlide({ subject, chartIndex, context = false }: { subject: S
   // Drone: đường đơn luỹ kế của Meituan bên trái, bốn con số cho thấy mạng bay đang dày lên bên phải.
   if (subject.id === 'drone' && data.context) {
     const growth = data.charts[chartIndex]
+    const speed = data.charts[1]
+    const speedMax = Math.max(...speed.points.map(point => point.value))
     return <div className="deck-city-summary">
       <p className="city-summary-scope">Số Meituan và TP Thâm Quyến công bố. Meituan đã giao drone thường xuyên ở Bắc Kinh, Thượng Hải, Thâm Quyến, Hong Kong và Dubai.</p>
       <div className="drone-growth">
@@ -98,10 +101,24 @@ function DataSummarySlide({ subject, chartIndex, context = false }: { subject: S
           </div>)}</dl> : <p className="summary-reading">{growth.reading}</p>}
         </section>
         <ul className="summary-metrics">
-          {[data.context.metrics[1], data.context.metrics[0], data.metrics[2], data.metrics[0]].map((metric, index) => {
-            const Icon = [Drone, Path, Package, UserFocus][index]
+          {[data.context.metrics[1], data.context.metrics[0]].map((metric, index) => {
+            const Icon = [Drone, Path][index]
             return <MetricTile key={metric.label} metric={metric} icon={<Icon size={22} />} />
           })}
+          {/* Thẻ so thời gian giao: drone và xe máy trên cùng một tuyến. */}
+          <li className="metric-tile speed-tile">
+            <span className="metric-icon" aria-hidden="true"><Timer size={22} /></span>
+            <p className="metric-label">{speed.title}</p>
+            <ul className="speed-bars" aria-label={`${speed.title}: ${speed.points.map(point => `${point.label} ${point.display} ${speed.axisLabel}`).join(', ')}`}>
+              {speed.points.map(point => <li key={point.label}>
+                <span>{point.label}</span>
+                <span className="speed-track"><span className={point.emphasis ? 'is-emphasis' : ''} style={{ width: `${(point.value / speedMax) * 100}%` }} /></span>
+                <strong>{point.display} <small>{speed.axisLabel}</small></strong>
+              </li>)}
+            </ul>
+            <p className="metric-meta"><span className="metric-asof">{speed.sourceIds.map(id => `${source(id).publisher} · ${source(id).date}`).join(' · ')}</span></p>
+          </li>
+          <MetricTile metric={data.metrics[0]} icon={<UserFocus size={22} />} />
         </ul>
       </div>
     </div>

@@ -95,9 +95,14 @@ export const sources: Source[] = [
     scope: 'Quy mô cải tạo làng Đại Xung thành khu Hoa Nhuận Thành, nơi MixC World toạ lạc. Số hộ và số công trình di dời do báo chí dẫn từ hồ sơ dự án, không phải công bố của cơ quan quản lý đất đai.',
   },
   {
-    id: 'hqb-markets', publisher: 'Cục Lưu trữ TP Thâm Quyến', title: 'Hoa Cường Bắc — từ chợ linh kiện đến địa danh thương mại công nghệ', date: '2026', tier: 'secondary',
+    id: 'hqb-markets', publisher: 'Cục Lưu trữ TP Thâm Quyến', title: 'Hoa Cường Bắc — từ chợ linh kiện đến địa danh thương mại công nghệ', date: '28/10/2025', tier: 'secondary',
     url: 'https://www.szdag.gov.cn/gzdt/gzdt/content/post_1615342.html',
-    scope: 'Dùng cho quá trình hình thành và cách phân chia chợ chuyên ngành. Chi tiết từng tầng bán gì là tổng hợp từ hướng dẫn mua sắm tiếng Trung, không phải công bố chính thức của ban quản lý chợ.',
+    scope: 'Dùng cho quá trình hình thành và cách phân chia chợ chuyên ngành: chợ SEG mở năm 1988 với 900 m² và 43 hộ, trục phố đi bộ 930 m nối nhiều tuyến metro. Chi tiết từng tầng bán gì là tổng hợp từ hướng dẫn mua sắm tiếng Trung, không phải công bố chính thức của ban quản lý chợ.',
+  },
+  {
+    id: 'hqb-zhwiki', publisher: 'Wikipedia tiếng Trung', title: 'Hoa Cường Bắc', date: '2026', tier: 'secondary',
+    url: 'https://zh.wikipedia.org/zh-hans/%E5%8D%8E%E5%BC%BA%E5%8C%97',
+    scope: 'Kích thước khu: dài 930 m theo hướng bắc nam, rộng 1.560 m theo hướng đông tây, khoảng 1,45 km², có 4 ga metro. Bài ghi 23 chợ chuyên ngành là số cũ; slide lấy 35 chợ theo Tân Hoa Xã 08/2025.',
   },
   {
     id: 'dongmen-duten', publisher: 'Đọc Đặc · Tập đoàn Báo chí Thâm Quyến', title: 'Đến Đông Môn, chứng kiến quá khứ và tương lai của Thâm Quyến', date: '2026', tier: 'secondary',
@@ -112,7 +117,7 @@ export const sources: Source[] = [
   {
     id: 'seg-plaza-wiki', publisher: 'Wikipedia tiếng Anh', title: 'SEG Plaza', date: '2026', tier: 'secondary',
     url: 'https://en.wikipedia.org/wiki/SEG_Plaza',
-    scope: 'Thông số toà nhà và sự cố rung lắc 18/05/2021. Chiều cao 291,6 m là số sau khi tháo cột ăng-ten; trước đó toà nhà được ghi 356 m.',
+    scope: 'Thông số toà nhà (71 tầng nổi, 4 tầng hầm, sàn 169.083 m², xong năm 2000, chợ điện tử SEG ở tầng 1–10) và sự cố rung lắc 18/05/2021. Chiều cao 291,6 m là số sau khi tháo cột ăng-ten; trước đó toà nhà được ghi 356 m.',
   },
   {
     id: 'shenzhen-world-aipc', publisher: 'AIPC · Hiệp hội Trung tâm Hội nghị Quốc tế', title: 'Hồ sơ thành viên Shenzhen World Exhibition & Convention Center', date: '2026', tier: 'secondary',
@@ -138,6 +143,11 @@ export const sources: Source[] = [
     id: 'vn-uav-decree-288', publisher: 'Công báo Chính phủ', title: 'Nghị định 288/2025/NĐ-CP về quản lý tàu bay không người lái và phương tiện bay khác', date: '05/11/2025', tier: 'primary',
     url: 'https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-288-2025-nd-cp-46557.htm',
     scope: 'Văn bản quản lý UAV được dẫn trong công bố tuyến Cần Giờ–Vũng Tàu. Không suy từ giấy phép tuyến này thành quyền khai thác cho tuyến hoặc đơn vị khác.',
+  },
+  {
+    id: 'hqb-21jingji-2026', publisher: '21 Thế kỷ Kinh tế Đạo báo', title: 'Sau 750.000 lượt khách mỗi ngày, Hoa Cường Bắc chuyển mình', date: '16/06/2026', tier: 'secondary',
+    url: 'https://m.21jingji.com/article/20260616/e73357cbebfd0f03f56481398bef6e31.html',
+    scope: 'Lượt khách bình quân mỗi ngày ổn định trên 750.000, trong đó khoảng 7.000 lượt khách buôn nước ngoài; Huaqiang Electronic World có ngày cao nhất 60.000 lượt. Bài không nêu mức tăng so với cùng kỳ.',
   },
   {
     id: 'hqb-xinhua', publisher: 'Tân Hoa Xã', title: 'Nhìn cái đổi và cái không đổi của Hoa Cường Bắc qua “năm cái một”', date: '25/08/2025', tier: 'secondary',
@@ -421,6 +431,11 @@ export const sources: Source[] = [
     id: 'mt-fy2024', publisher: 'Meituan', title: 'Meituan công bố báo cáo năm 2024', date: '21/03/2025', tier: 'primary',
     url: 'https://www.meituan.com/news/NN250321082001991',
     scope: 'Tính đến cuối 2024, drone luỹ kế 450.000 đơn và xe tự hành 4,91 triệu đơn. Số tròn đúng, không có chữ “hơn”; Meituan tự công bố.',
+  },
+  {
+    id: 'mt-longhua-2023', publisher: 'Meituan', title: '3 km 15 phút, đồ ăn từ trên trời rơi xuống', date: '03/2023', tier: 'primary',
+    url: 'https://www.meituan.com/news/NN230322000052122',
+    scope: 'Quản lý tuyến drone Long Hoa (Thâm Quyến) cho biết tuyến dài hơn 2 km: giao bằng rider cộng thời gian làm món mất khoảng 40 phút từ lúc đặt tới lúc nhận, drone rút xuống khoảng 15 phút. Số do Meituan tự nêu.',
   },
   {
     id: 'mt-q2-2025', publisher: 'Meituan', title: 'Báo cáo Q2 2025', date: '27/08/2025', tier: 'primary',
